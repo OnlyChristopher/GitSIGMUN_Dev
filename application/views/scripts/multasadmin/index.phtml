@@ -1,0 +1,34 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_multasadmin.js"></script>
+
+<div class="contentForm" >
+	<!--t_contri:--><input type="hidden" name="tipocontri" id="tipocontri" size="5" readonly class="cajaoff"/>
+	<table class="tableContent" >
+		<tr>
+		  <td><span>Código:</span></td>  
+		  <td><input style="text-transform:uppercase" name="codigoContri" id="codigoContri" type="text" class="cajaoff" size="10" readonly/></td>
+		  <td><span>Nro. Documento:</span></td>
+		  <td><input style="text-transform:uppercase" name="num_doc" id="num_doc" type="text" class="cajaoff" size="15" readonly/></td>  
+		  <td><span>Nombres:</span></td>  
+		  <td><input style="text-transform:uppercase" name="txtNomContri" id="txtNomContri" type="text" class="cajaoff" size="50" readonly/></td> 
+		  </tr>
+	</table>
+</div>
+<div class="contentBoxBr">
+	<div style="padding:5px; background-color:#5296C9; font-weight:bold; color:#FFFFFF"><?php echo $this->title;?></div>
+    <div class="contentBox">    
+	    <br/>
+	    <div id="gridMultas"></div>
+	    <br/>
+	    <div class="divButtons">
+		    <table class='tableContent'>
+		    <tr>
+            	<td colspan="6" align="center"><input name="btnNuevo" id='btnNuevo' type="button" value="Nuevo" /></td> 
+				<td colspan="6" align="center"><input name="btnRecibo" id='btnRecibo' type="button" value="Recibo" /></td> 
+            	<td colspan="6" align="center"><input name="btnSalir" id='btnSalir' type="button" value="Salir" /></td>               
+            </tr>
+		    </table>
+		</div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rptgeneral_exonerados.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+			   <tr>
+                    
+                    <td><b>Año:</b></td>
+                    
+               </tr>
+				<tr>
+                    <td>
+						<select name="cb_anno" id="cb_anno" class="combo" style="width:70px"><?php echo $this->cb_anno;?></select>
+					</td>
+					<td>
+						<input type="button" id="btnProcesar_Exonerados" value="Procesar Exonerados" />
+					</td>
+					<td>
+						<input type="button" id="btnExportarProcesar_Exonerados" value="Exportar" />
+					</td>
+					<!--<td>
+						<input type="button" id="btnGraficoProcesar_Exonerados" value="Gráfica" />
+					</td>-->
+                </tr>
+            </table>	    
+	    	</div>
+			
+			
+
+			
+	    </fieldset>
+
+    </div>
+	<div id="ReporteExonerados" align="center">	
+	   
+	    	
+			</div>
+</div>

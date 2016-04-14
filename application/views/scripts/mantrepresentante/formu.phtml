@@ -1,0 +1,242 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantrepresentante_formu.js"></script>
+<form id="frmrepre">
+<input type="hidden" name="id_pers" id="id_pers">
+<input type="hidden" name="nestado" id="nestado">
+<input type="hidden" name="operador" id="operador">
+<input type="hidden" name="estacion" id="estacion">
+<input type="hidden" name="codigo" id="codigo" />
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos personales:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" >
+			    <tr>
+			      <td><span>Nombre y/o Razón Social:</span></td>  
+			      <td colspan="3"><input style="text-transform:uppercase" name="txtNomRepre" id="txtNomRepre" type="text" class="caja" size="45" /></td>
+		        </tr>
+		        
+		        <tr>
+		          <td><span>Apellido Paterno:</span></td>
+		          <td><input style="text-transform:uppercase" name="txtApePatRepre" id="txtApePatRepre" type="text" class="caja" size="28" /></td>
+			      <td><span>Apellido Materno:</span></td>  
+			      <td><input style="text-transform:uppercase" name="txtApeMatRepre" id="txtApeMatRepre" type="text" class="caja" size="28" /></td> 
+		        </tr>
+		        
+		       <tr>
+			      <td><span id="lblCodigo">Documento:</span></td>
+			      <td>
+                  <select name="cmbDocRepre" id="cmbDocRepre" class="combo"></select>
+                  </td>
+			      <td><span id="lblCodigo">Número:</span></td>
+			      <td><input name="txtNumDocRepre" id="txtNumDocRepre" type="text" class="caja" size="28"/></td>
+		       </tr>
+			   <tr>
+			      <td><span id="lblCodigo">Tipo de Representante:</span></td>
+			      <td>
+                  <select name="cmbTipoRepre" id="cmbTipoRepre" class="combo"></select>
+                  </td>
+		       </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+
+
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Domicilio fiscal:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			      <td><span id="lblDisContri">Distrito:</span></td>
+			      <td colspan="4">
+                  <select name="cmbDis" id="cmbDis" class="combo">
+			        <option>[Seleccione]</option>
+		          </select>
+                  </td>
+		        </tr>
+			    <tr id="rowUrbOtherDisRepre">
+			      <td><span id="lblCodigo">Tipo Urb.:</span></td>
+			      <td>
+                  <select name="cmbTipUrb" id="cmbTipUrb" class="combo">
+			        <option>[Seleccione]</option>
+			      </select>
+                  </td>
+			      <td><span id="lblDesUrb">Descripci&oacute;n Urb.:</span></td>
+			      <td colspan="2"><input style="text-transform:uppercase" name="txtDesUrb" id="txtDesUrb" type="text" class="caja" size="40" maxlength="200" /></td>
+		       </tr>
+			   <tr id="rowViaOtherDisRepre">
+			      <td><span id="lblTipVia">Tipo Vía:</span></td>
+			      <td><select name="cmbTipVia" id="cmbTipVia" class="combo">
+			        <option>[Seleccione]</option>
+			        </select></td>
+			      <td><span id="lblDesVia">Descripción Vía:</span></td>
+			      <td colspan="2"><input style="text-transform:uppercase" name="txtDesVia" id="txtDesVia" type="text" class="caja" size="40" maxlength="200" /></td>
+		      </tr>
+			  <tr id="rowZonaDisRepre">
+			    <td><span id="lblZona">Zona:</span></td> 
+			    <td colspan="4">
+			      <input name="txtZonacodigoRepre" id="txtZonacodigoRepre" type="text" class="cajaoff" size="15" readonly/>
+                  <input name="txtZonaRepre" id="txtZonaRepre" type="text" class="cajaoff" size="25" readonly/>
+			      </td>
+		      </tr>
+			  <tr id="rowUrbDisRepre">
+			      <td><span id="lblUrb">Urbanización:</span></td>
+			      <td colspan="4">
+			       <input name="txtUrbacodigoRepre" id="txtUrbacodigoRepre" type="text" class="cajaoff" size="15" readonly/>
+                   <input name="txtUrbanizacionRepre" id="txtUrbanizacionRepre" type="text" class="cajaoff" size="25" readonly/>
+                  </td>
+                  <td><input type="button" name="btnBusqueda" id="btnBusqueda" value="Busqueda" /></td>
+		      </tr>
+			  <tr id="rowViaDisRepre">
+			      <td><span id="lblVia">Vía:</span></td>
+			      <td colspan="4">
+			      <input name="txtViacodigoRepre" id="txtViacodigoRepre" type="text" class="cajaoff" size="15" readonly/>
+                  <input name="txtViaRepre" id="txtViaRepre" type="text" class="cajaoff" size="25" readonly/>
+                  </td>
+		      </tr>
+			 </table>	    
+        </div>
+    </fieldset>	    
+</div> 
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  <div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos fiscal:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			
+			  
+			  
+			  
+			    <tr>
+			      <td><span id="lblMz">Mz:</span></td>
+			      <td><span id="lblLt">Lote:</span></td>
+			      <td><span id="lblSublt">Sub Lote:</span></td>
+			      <td><span id="lblNum">Número:</span></td>
+			      <td><span id="lblDpto">Dpto:</span></td>
+		      </tr>
+			    <tr>
+			    <td><input style="text-transform:uppercase" name="txtMzRepre" id="txtMzRepre" type="text" class="caja" size="16" maxlength="12" /></td>
+			    <td><input style="text-transform:uppercase" name="txtLtRepre" id="txtLtRepre" type="text" class="caja" size="16" maxlength="12" /></td>
+			    <td><input style="text-transform:uppercase" name="txtSubLtRepre" id="txtSubLtRepre" type="text" class="caja" size="16" maxlength="12" /></td>
+			    <td><input style="text-transform:uppercase" name="txtNumRepre" id="txtNumRepre" type="text" class="caja" size="16" maxlength="12" /></td>
+			    <td><input style="text-transform:uppercase" name="txtDptoRepre" id="txtDptoRepre" type="text" class="caja" size="16" maxlength="12" /></td>
+		      </tr>
+			  
+			  
+			  			     <tr>
+					
+					<td><span id="lblLt1">Letra 1:</span></td>
+					<td><span id="lblNum2">Num 2:</span></td>
+					<td><span id="lblLt2">Letra 2:</span></td>
+					<td><span id="lblPiso">Piso:</span></td>
+				 </tr>
+				 
+				 
+				 <tr>
+					
+					<td><input style="text-transform:uppercase" name="txtletra1" id="txtletra1" type="text" class="caja" size="16" maxlength="10"/></td>
+					<td><input style="text-transform:uppercase" name="txtnumero2" id="txtnumero2" type="text" class="caja" size="16" maxlength="10"/></td>
+					<td><input style="text-transform:uppercase" name="txtletra2" id="txtletra2" type="text" class="caja" size="16" maxlength="10"/></td>
+					<td><input style="text-transform:uppercase" name="txtpiso" id="txtpiso" type="text" class="caja" size="16" maxlength="10"/></td>
+				</tr>
+				 
+				 
+				 <tr>
+				   <td>&nbsp;</td>
+				   <td>&nbsp;</td>
+				   <td align="right">&nbsp;</td>
+				   <td><span>Num:</span></td>
+				   <td><span>Letra:</span></td>
+		      </tr>
+				 <tr>
+					<td><span>Tipo de Interior:</span></td>
+					<td>
+					<select name="cmbTipoInterior" id="cmbTipoInterior" class="combo">
+			        <option>[Seleccione]</option>
+					</select>					</td>
+					
+					<td></td>
+					<td><input style="text-transform:uppercase" name="txtnumero_interno" id="txtnumero_interno" type="text" class="caja" size="16" maxlength="10"/></td>
+					<td><input name="txtletra_interno" type="text" class="caja" id="txtletra_interno" size="16" maxlength="10"/></td>
+				</tr>
+				
+				
+				
+				
+				<tr>
+										
+					<td><span>Tipo de Edificación:</span></td>
+					<td>
+					<select name="cmbTipoEdificacion" id="cmbTipoEdificacion" class="combo">
+					<option>[Seleccione]</option>
+					</select>					</td>
+					
+					<td colspan="2" align="right"><span id="lblEdificicion">Nombre de Edificación:</span></td>
+					<td><input name="txtEdificacion" id="txtEdificacion" type="text" class="caja" size="28"/></td>
+				</tr>
+				
+				
+				<tr>
+				<td><span>Tipo de Ingreso:</span></td>
+				<td>
+				<select name="cmbTipoIngreso" id="cmbTipoIngreso" type="text" class="combo">
+				<option>[Seleccione]</option>
+				</select>				</td>
+				
+				<td colspan='2' align="right"><span id="lblInterior">Nombre de Ingreso:</span></td>
+				<td><input name="txtIngreso" id="txtIngreso" type="text" class="caja" size="28" /></td>
+				</tr>
+				
+				
+				
+				<tr>
+				<td><span>Tipo de Agrupamiento:</span></td>
+				<td>
+				<select name="cmbTipoAgrupamiento" id="cmbTipoAgrupamiento" class="combo">
+				<option>[Seleccione]</option>
+				</select>				</td>
+				
+				<td colspan="2" align="right"><span id="lblAgrupamiento">Nombre de Agrupamiento:</span></td>
+				<td><input name="txtAgrupamiento" id="txtAgrupamiento" type="text" class="caja" size="28"/></td>
+				</tr>
+
+			  
+			    <tr>
+			      <td colspan="5"><span id="lblRef">Referencia:</span></td>
+		      </tr>
+			  
+			  <tr>
+			      <td colspan="5">
+                  <input name="txtRefRepre" type="text" class="caja" id="txtRefRepre" maxlength="300" style="width:100%;text-transform:uppercase" />
+                  </td>
+		      </tr>
+			  
+			      <td colspan="5">
+                  <div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+                    <input type="button" name="btnGrabaRepre" id="btnGrabaRepre" value="Grabar Datos" />
+                    <input type="button" name="btnSalirRepre" id="btnSalirRepre" value="Cerrar Formulario" />
+                    </td>
+                    <td></td>
+                    </table>
+                  </div>
+                  </td>
+		      </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+</form>

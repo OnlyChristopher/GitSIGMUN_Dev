@@ -1,0 +1,171 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Fiscalizacionpredio_modificarpredio.js"></script>
+<form id="formModificarPredio">
+	<input type="hidden" id="txtidpu" name="txtidpu"/>
+	<table class="tableContent" width='100%'>
+		<tr>
+			<td>
+				<div>
+					<fieldset class="ui-widget ui-widget-content">
+						<legend style="margin-left:5px"><b>UBICACION DEL PREDIO :</b></legend>
+						<div class="contentForm">
+							<table class="tableContent" border=1 width='100%'>
+								<tr>
+									<td>Predio</td>
+									<td>Codigo via</td>
+									<td>Direccion predial</td>
+									<td></td>
+									<td>Periodo</td>
+								</tr>
+								<tr>
+									<td><input style="text-transform:uppercase" name="txtcodigopu" id="txtcodigopu" type="text" class="cajaoff" maxlength=15 size="9" value="9999999" readonly /></td>
+									<td><input style="text-transform:uppercase" name="txtcodigovia" id="txtcodigovia" type="text" class="cajaoff" maxlength=15 size="13" value="9999999" readonly /></td>
+									<td><input style="text-transform:uppercase" name="txtdireccpu" id="txtdireccpu" type="text" class="cajaoff" maxlength=250 size="85" value="2000" readonly /></td>
+									<td width='2%'><div id='btncallvia'></div></td>
+									<td><input style="text-transform:uppercase" name="txtperiodopu" id="txtperiodopu" type="text" class="cajaoff" maxlength=12 size="8" value="9999999" readonly /></td>
+								</tr>
+								<tr>
+								<td colspan="5">
+									Nro.<input style="text-transform:uppercase" name="txtnropu" id="txtnropu" type="text" class="caja" maxlength=7 size="7" value="9999999" />
+									Dpto.<input style="text-transform:uppercase" name="txtdptopu" id="txtdptopu" type="text" class="caja" maxlength=7 size="7" value="9999999" />
+									Mza.<input style="text-transform:uppercase" name="txtmzapu" id="txtmzapu" type="text" class="caja" maxlength=7 size="7" value="9999999" />
+									Lte.<input style="text-transform:uppercase" name="txtltepu" id="txtltepu" type="text" class="caja" maxlength=7 size="7" value="9999999" />
+									Sub Lte.<input style="text-transform:uppercase" name="txtsltepu" id="txtsltepu" type="text" class="caja" maxlength=7 size="7" value="9999999" />
+								</td>
+								</tr>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<table class="tableContent" width='100%'>
+		<tr>
+			<td>
+				<div><input type="hidden" id="txtidrq01" name="txtidrq01" />
+					<fieldset class="ui-widget ui-widget-content">
+						<legend style="margin-left:5px"></legend>
+						<div class="contentForm">
+							<table class="tableContent" border=1 width='100%'>
+								<tr>
+									<td>Uso de Predio</td>
+									<td>Tipo de Predio</td>
+									<td>Estado de Construccion</td>
+									<td>Condicion de Propiedad</td>
+									<td>Compra</td>
+								</tr>
+								<tr>
+									<td><select id="cbUsoPredio" name="cbUsoPredio" style="width:135px;padding:2px;"></select></td>
+									<td><select id="cbTipoPredio" name="cbTipoPredio" style="width:145px;padding:2px;"></select></td>
+									<td><select id="cbEstadoPredio" name="cbEstadoPredio" style="width:145px;padding:2px;"></select></td>
+									<td><select id="cbPropiedadPredio" name="cbPropiedadPredio" style="width:150px;padding:2px;"></select></td>
+									<td width='10%'>
+										<!--<input style="text-transform:uppercase" name="txtfcompra" id="txtfcompra" type="text" class="caja" maxlength=20 size="8" value="99/99/9999" />-->
+										<input style="text-transform:uppercase;width:110px;" name="txtfcompra" id="txtfcompra" type="date" class="caja" maxlength=20 size="6" value="" />
+									</td>
+								</tr>
+							</table>
+							<table class="tableContent" border=1 width='100%'>
+								<tr>
+									<td>Area Terreno</td>
+									<td>Area Comun</td>
+									<td>Arancel</td>
+									<td>Frontis</td>
+									<td>Ubipar</td>
+									<td>Afectacion</td>
+									<td>Venta</td>
+								</tr>
+								<tr>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtterreno" id="txtterreno" type="text" class="caja" maxlength=70 size="14" value="999,999,999.99" /></td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtarcomun" id="txtarcomun" type="text" class="caja" maxlength=70 size="14" value="999,999,999.99" /></select></td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtarancel" id="txtarancel" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" readonly /></td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtfrontis" id="txtfrontis" type="text" class="caja" maxlength=70 size="14" value="999,999,999.99" /></td>
+									<td><select id="cbUbipar" name="cbUbipar" style="width:100px;padding:2px;"></select></td>
+									<td><select id="cbPredio" name="cbAfecta" style="width:100px;padding:2px;"></select></td>
+									<td width='10%'>
+									<!--<input style="text-transform:uppercase" name="txtfventa" id="txtfventa" type="text" class="caja" maxlength=20 size="8" value="99/99/9999" />-->
+									<input style="text-transform:uppercase;width:110px;" name="txtfventa" id="txtfventa" type="date" class="caja" maxlength=20 size="6" value="" />
+									</td>
+								</tr>
+							</table>
+							<table class="tableContent" border=1 width='100%'>
+								<tr>
+									<td>Inspeccion en</td>
+									<td>Nro. acta</td>
+									<td>A&ntilde;o</td>
+									<td>Siglas</td>
+									<td>Tecnico</td>
+									<td>Fecha hora</td>
+								</tr>
+								<tr>
+									<td><select id="cbInspeccion" name="cbInspeccion" style="width:115px;padding:2px;"></select></td>
+									<td><input style="text-transform:uppercase" name="txtnroacta" id="txtnroacta" type="text" class="caja" maxlength=7 size="7" value="9999999" /></td>
+									<td><input style="text-transform:uppercase" name="txtanioacta" id="txtanioacta" type="text" class="caja" maxlength=7 size="3" value="9999" /></td>
+									<td><input style="text-transform:uppercase" name="txtsiglaacta" id="txtsiglaacta" type="text" class="caja" maxlength=30 size="18" value="9999999" /></td>
+									<td><select id="cbTecnico" name="cbTecnico" style="width:180px;padding:2px;"></select></td>
+									<td width='30%'>
+									<!--<input style="text-transform:uppercase" name="txtfacta" id="txtfacta" type="text" class="caja" maxlength=30 size="14" value="99/99/9999 99:99" />-->
+									<input style="text-transform:uppercase;width:180px;" name="txtfacta" id="txtfacta" type="datetime-local" class="caja" maxlength=30 size="14" value="" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</fieldset>	    
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div style="overflow:visible;">
+		<div style="margin-left:3px;float:left; width:724px" id='xgridPisos'></div>
+		<div style="margin-right:3px;float:right;" id='btnsPisos'></div>
+	</div>
+	<table class="tableContent" width='100%'>
+		<tr>
+			<td>
+				<div><input type="hidden" id="txtidrq01" name="txtidrq01" />
+					<fieldset class="ui-widget ui-widget-content">
+						<legend style="margin-left:5px"></legend>
+						<div class="contentForm">
+						<table class="tableContent" border=1 width='100%'>
+							<tr>
+								<td colspan="6">	
+									<textarea name="txtobservapu" id="txtobservapu" style="text-transform:uppercase; width:406px !important;" rows="2"  class="caja"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td>Valor total de terreno</td>
+								<td>Valor total de construcion</td>
+								<td>Valor de otras instalaciones</td>
+								<td>Autovaluo</td>
+								<td>% de Propiedad</td>
+								<td>Total Autovaluo</td>
+							</tr>
+							<tr>
+								<td><input readonly style="text-transform:uppercase;text-align:right;" name="txttterreno" id="txttterreno" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" /></td>
+								<td><input readonly style="text-transform:uppercase;text-align:right;" name="txttconstruccion" id="txttconstruccion" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" /></td>
+								<td><input readonly style="text-transform:uppercase;text-align:right;" name="txttinstalacion" id="txttinstalacion" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" /></td>
+								<td><input readonly style="text-transform:uppercase;text-align:right;" name="txttautovaluo" id="txttautovaluo" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" /></td>
+								<td><input style="text-transform:uppercase;text-align:right;" name="txttpropiedad" id="txttpropiedad" type="text" class="caja" maxlength=70 size="14" value="999,999,999.99" /></td>
+								<td><input readonly style="text-transform:uppercase;text-align:right;" name="txttavaluo" id="txttavaluo" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" /></td>
+							</tr>
+						</table>
+						</div>
+					</fieldset>	    
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="divButtons">
+		<table class="tableContent">
+		<tr>
+			<td style="padding-right:43px;padding-top:6px;padding-bottom:4px;">
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnGrabarPredio">Grabar</button>
+				<button type="button" style="width:116px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnCerrarPredio">Cerrar</button>
+			</td>
+		</tr>
+		<td style="padding-left:40px"></td>
+		</table>
+	</div>
+
+</form>

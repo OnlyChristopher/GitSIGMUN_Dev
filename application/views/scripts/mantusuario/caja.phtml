@@ -1,0 +1,32 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantusuario_caja.js"></script>
+<form id="frm_caja">
+<input type="hidden" name="actionCaja" id="actionCaja">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			      <td><span id="lblCaja">Ingresar Caja:</span>  </td>
+			      <td><input name="txtCajaUsuario" id="txtCajaUsuario" type="text" class="caja" size="20" maxlength="3" /></td>
+			      </tr>
+			      
+			    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+	
+                  <div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+                    <input type="button" name="btnGrabaCaja" id="btnGrabaCaja" value="Grabar" />
+                    <input type="button" name="btnSalirCaja" id="btnSalirCaja" value="Salir" />
+                    </td>
+                    <td></td>
+                    </table>
+                  </div>
+		   	    
+     </form>
+     
+

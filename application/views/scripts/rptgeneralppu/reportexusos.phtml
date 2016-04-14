@@ -1,0 +1,39 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<script>
+Ext.onReady(function(){
+    Ext.QuickTips.init();
+    
+	$("input[type='button']").button();	
+	
+});
+
+function exportarPredioDetalle(){
+	
+	var showResult = function(btn){
+		if(btn=='yes'){
+			
+			
+			data = "?codigodetp="+$('#txtCodigos').val()+"&aniodetp="+$('#txtAnio').val()+"&usodetp="+$('#txtUso').val()+"&tipcondidetp="+$('#txtFlag').val();					
+			window.open(urljs+"rptgeneralppu/exportapreppu"+data);
+		}
+	};
+	confirmMessage('Exportar','Desea exportar los datos?',showResult);	
+}
+
+</script>
+<div>	
+	<input type="hidden" id="txtCodigos" name="txtCodigos" />
+	<input type="hidden" id="txtAnio" name="txtAnio"/>
+	<input type="hidden" id="txtUso" name="txtUso"/>
+	<input type="hidden" id="txtFlag" name="txtFlag"/>
+	
+
+	<table class="tableContent">		
+		<tr>            
+			<td><input name="btnExpDetPPUExcel" id="btnExpDetPPUExcel" type="button" value="Exportar a Excel" /></td>
+		</tr>            
+	</table>
+</div>
+
+  

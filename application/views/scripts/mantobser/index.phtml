@@ -1,0 +1,63 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_MantObser.js"></script>
+  <form id="frmdetalleobser">	 
+      <div id="contentBox" class="ui-content-tabs">
+
+    <div class="contentBox">	
+ 
+        <br />
+	    <div id="gridObser"></div>
+	    <br/>
+         
+        <table class="tableContent" width="100%">
+          <tr>
+            <td colspan="2"> 
+         
+            <fieldset class="ui-widget ui-widget-content">
+            	<legend style="margin-left:5px">Certificado N&deg;</legend>
+                <div class="contentForm">
+                 <table class="tableContent">
+            <tr>
+            <td><input name="txtnrocer" id="txtnrocer" type="text" class="caja" size="50" maxlength="20" /></td>
+            </tr>
+              </table>  
+                </div>
+             </fieldset>   
+             </td>
+            <td colspan="2" >
+            <fieldset class="ui-widget ui-widget-content">
+    		<legend style="margin-left:5px">Vigencia</legend>
+            <div class="contentForm">
+            <table class="tableContent" >
+            <tr align="right">
+            	<td><span id="lblTrabH">del</span></td>
+                <td>
+                	<input name="txtFchDes" id="txtFchDes" type="text" class="caja" size="14" maxlength="100" />
+                </td>
+                <td><span id="lblTrabM">al</span></td>
+                <td>
+                	<input name="txtFchHas" id="txtFchHas" type="text" class="caja" size="14" maxlength="100" />
+                </td>
+            </tr>
+            </table>
+            </div>
+            </fieldset>
+            </td>
+          </tr>
+        
+        </table>
+     
+	        <div class="divButtons">
+		    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		    <tr>
+		    <td style="padding-left:5px">
+		    <input type="button" id="btnGrabar" value="Guardar" />
+		    <input type="button" id="btnSalir" value="Salir" style="float:right;"/>
+		    </td>
+		    <td></td>
+		    </table>
+            
+		</div>
+           </div>
+
+</div>   </form>

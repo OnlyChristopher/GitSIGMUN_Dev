@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ResumenConceptos" language="groovy" pageWidth="595" pageHeight="765" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="0" bottomMargin="0">
+	<style name="detalle" isDefault="false" fontName="Times New Roman" fontSize="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<parameter name="FECDESDE" class="java.lang.String"/>
+	<parameter name="FECHASTA" class="java.lang.String"/>
+	<parameter name="CAJERO" class="java.lang.String"/>
+	<parameter name="USUARIO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[exec Caja.sp_rptTesoreriaPartidas @buscar=1,@fec_desde=$P{FECDESDE},@fec_hasta=$P{FECHASTA},@cajero=$P{CAJERO}]]>
+	</queryString>
+	<field name="nivel_suma" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nivel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nro_partida" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nropartida" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_rec" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_operacion_detalle_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monto_total" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno_partida" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="annos_anteriores" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mostrar_en_el_nivel" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="espacio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="color" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="montoTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="caja" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="33" width="585" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Partidas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="17" width="585" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Municipalidad Distrital de Independencia]]></text>
+			</staticText>
+			<textField evaluationTime="Report" pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="376" y="2" width="104" height="11"/>
+				<textElement markup="none">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="2" width="95" height="11"/>
+				<textElement markup="none">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Usuario: "+$P{USUARIO}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="304" y="2" width="72" height="11"/>
+				<textElement markup="none">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Fecha y Hora Reporte:"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="513" y="85" width="59" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="109" y="85" width="381" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="85" width="48" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Partida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="56" width="70" height="15"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha Inicio :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="56" width="84" height="15"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{FECDESDE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="327" y="56" width="68" height="15"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha Fin:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="397" y="56" width="101" height="15"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{FECHASTA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="70" width="63" height="13">
+					<printWhenExpression><![CDATA[$P{CAJERO}.equals("--") ? false:true]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{caja}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="340" y="70" width="55" height="13">
+					<printWhenExpression><![CDATA[$P{CAJERO}.equals("--") ? false:true]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Caja:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="29" y="2" width="80" height="13"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nropartida}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="109" y="2" width="347" height="13"/>
+				<textElement verticalAlignment="Bottom" markup="html">
+					<font fontName="Arial" size="10" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="456" y="2" width="116" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{monto_total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="20" y="1" width="543" height="1">
+					<printWhenExpression><![CDATA[$F{nro_partida}.equals("01.00.0.00.000") || $F{nro_partida}.equals("01.03.0.00.000") || $F{nro_partida}.equals("01.01.0.00.000") ? true : false]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="30">
+			<textField pattern="">
+				<reportElement style="detalle" x="294" y="5" width="129" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{montoTotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="185" y="5" width="109" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[TOTAL GENERAL:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,78 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Cartareq_formu_predio.js"></script>
+<form id="formDirPredio">
+<div>
+    <fieldset class="ui-widget ui-widget-content"  >
+        <legend style="margin-left:5px">Direccion del Predio:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+     			    <tr>
+			    <td width="100"><input type="hidden" name="hdCodigoVia" id="hdCodigoVia" value="" />
+			      <input type="button" name="btnBusVia" id="btnBusVia" value="Buscar Via" /></td>
+			    <td width="160">&nbsp;</td>
+			    <td width="91">&nbsp;</td>
+			    <td width="776">&nbsp;</td>
+                </tr>
+                <tr>
+			    <td><label for="txtCodigoVia">Codigo de Via: </label></td>
+			    <td>
+			      <input type="text" name="txtCodigoVia" id="txtCodigoVia"  class="cajaoff" readonly="readonly"/></td>
+			    <td><label for="txtNomVia">Nombre Via:</label></td>
+			    <td>
+			      <input type="text" name="txtNomVia" id="txtNomVia" class="cajaoff" readonly="readonly" style="width:100%" /></td>
+			    </tr>
+                <tr>
+			    <td><span id="lblSAnexo">N&uacute;mero</span></td>
+			    <td><input type="text" class="caja" id="txtNumero" name="txtNumero" value=""/></td>
+			    <td>&nbsp;</td>
+			    <td>&nbsp;</td>
+			    </tr>
+                <tr>
+			    <td><span id="lblSAnexo">Mz</span></td>
+			    <td><input type="text" class="caja" id="txtMz" name="txtMz" value=""/></td>
+			    <td>&nbsp;</td>
+			    <td>&nbsp;</td>
+			    </tr>
+                <tr>
+			    <td><span id="lblSAnexo">Lote</span></td>
+			    <td><input type="text" class="caja" id="txtLote" name="txtLote" value=""/></td>
+			    <td>&nbsp;</td>
+			    <td>&nbsp;</td>
+			    </tr>
+                <tr>
+			    <td><span id="lblSAnexo">Sub Lote</span></td>
+			    <td><input type="text" class="caja" id="txtSubLote" name="txtSubLote" value=""/></td>
+			    <td>&nbsp;</td>
+			    <td>&nbsp;</td>
+			    </tr>
+                <tr>
+                  <td align="left"><span id="lblSAnexo">Departamento</span></td>
+                  <td align="left"><input type="text" class="caja" id="txtDepartamento" name="txtDepartamento" value=""/></td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="left"><span id="lblSAnexo">Interior</span></td>
+                  <td align="left"><input type="text" class="caja" id="txtInterior" name="txtInterior" value=""/></td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="left"><span id="lblSAnexo">Referencia</span></td>
+                  <td colspan="3" align="left"><input name="txtReferencia" type="text" class="caja" id="txtReferencia" value="" style="width:100%"/></td>
+                </tr>
+                <tr>
+                  <td colspan="4" align="center"><div class="divButtons" style="margin:0px;">
+                    <input type="button" id="btnSaveDirPredio" name="btnSaveDirPredio" value="Guardar" />
+                    <input type="button" id="btnCancelPredio" name="btnCancelPredio" value="Salir" />
+                  </div></td>
+                </tr>
+               
+            </table>	    
+        </div>
+    </fieldset>	
+    <br style=""/>
+   	  
+</div>
+
+</form>

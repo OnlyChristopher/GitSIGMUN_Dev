@@ -1,0 +1,62 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantuit_editar.js"></script>
+<script type="text/javascript">
+</script>
+<form id="frm_editarUIT">
+
+<input name='actionuit' id='actionuit' type="hidden"/>
+
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Editar  Valor UIT:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+        	
+			    <tr>
+			      <td width="200"><span>Año:</span>  </td>
+			      <td><input name="anno" id="anno" type='text' maxlength='4' class="caja" /></td>
+			      </tr>
+			      
+			     <tr>
+          		 <td><span>Tipo:</span></td>
+          	 	 <td><input name="tipo" id="tipo" type='text' class="caja" /></td>
+          		 </tr>
+                 <tr>
+          		 <td><span>Valor UIT:</span></td>
+          	 	 <td><input name="valor_uit" id="valor_uit" type='text' class="caja" /></td>
+          		 </tr>
+			      
+			      <tr>
+			      <td><span>Impuesto Minimo:</span></td>
+			      <td><input name="imp_min" id="imp_min" type="text" class="caja"/></td>
+			      </tr>
+			       
+			     <tr>
+          		 <td><span>Impuesto Maximo:</span></td>
+          	 	 <td><input name="imp_max" id="imp_max" type='text' class="caja" /></td>
+          	 	 </tr>
+			     
+			     <tr>
+			      <td><span>Costo Emision:</span></td>
+			      <td><input name="costo_emision" id="costo_emision" type="text" class="caja" size="20" maxlength="100" /></td>
+			      </tr>
+                  <tr>
+			      <td><span>Costo Adicional:</span></td>
+			      <td><input name="costo_adicional" id="costo_adicional" type="text" class="caja" /></td>
+			      </tr>
+			    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+	
+                  <div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+                    <input type="button" name="btnSaveUit" id="btnSaveUit" value="Grabar" />
+                    <input type="button" name="btnCloseUit" id="btnCloseUit" value="Salir" />
+                    </td>
+                    <td></td>
+                    </table>
+                  </div>
+</form>

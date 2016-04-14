@@ -1,0 +1,166 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Tesocaja_reccontri.js"></script>
+<script>
+var data1='<?php echo $this->data; ?>';
+</script>
+
+<form id="frmcaja" action="<?php echo $path; ?>tesocajareccontri/registrapago" target="_blank">
+
+<div>
+<div class="contentBoxMain">
+        <fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+    		<legend style="margin-left:5px">Datos del Contribuyente:</legend>
+            <table class="tableContent" width="100%">
+			    <tr>
+			    <td><span id="lblCodigo">Código:<input style='display:none;' type="text" name="txtcod" id="txtcod" value='<?php echo $this->codigocaja ?>' /></span></td>
+			    <td><div id="divCodigo"><?php echo $this->codigocaja ?></div></td>
+			    <td><span id="lblApePat">Documento:</span></td>
+			    <td><div id="divDocu"><?php echo $this->doccaja ?></div></td>
+			    <td><span id="lbldocu">Num. Doc.:</span></td>
+			    <td><div id="divnumdocu"><?php echo $this->numdoccaja?></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblNombres">Nombres:</span></td>
+			    <td><div id="divNombres"><?php echo $this->nombrecaja?></div></td>
+			    <td><span id="lblApePat">Ape. Paterno:</span></td>
+			    <td><div id="divApePat"><?php echo $this->apepatercaja?></div></td>
+			    <td><span id="lblApeMat">Ap. Materno:</span></td>
+			    <td><div id="divApeMat"><?php echo $this->apematercaja?></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblSAnexo">Dirección:</span></td>
+			    <td colspan="3"><div id="divDirec"><?php echo $this->direccaja?></div></td>
+			    <td><span id="lblSnpredios">Predios:</span></td>
+			    <td colspan="2"><div id="divnpredios"><?php echo $this->cantpredcaja?></div></td>
+			    </tr>
+			   		    
+			</table>
+        </fieldset>
+        </div>
+        </div>
+	<div class="contentBoxMain">
+  
+   
+    <label for="txtpago"></label>
+
+	    <div id="gridRecContri">
+	      
+      </div>
+  </div>
+   <div style='display:none'>
+    <table width="100%" border="0" align="center"> 
+    <tr>
+			    <td width="10%">Recibos</td>
+			    <td width="10%">Monto</td>
+			    <td width="10%">Años</td>
+			    <td width="10%">Tipo Rec</td>
+			    <td width="10%">Periodo</td>
+			    <td width="10%">Imp_Insol</td>
+			    <td width="10%">Fact. Reaj.</td>
+			    <td width="10%">Imp. Reaj.</td>
+			    <td width="10%">Fact. Mora</td>
+			    <td width="10%">Costo Emis.</td>
+	 </tr>
+    
+      <tr>
+			    <td width="10%"><input name="txtcajarecibos" type="text" id="txtcajarecibos" value="" size="10"></td>
+			    <td width="10%"><input name="txtcajamonto" type="text" id="txtcajamonto" value="" size="10"></td>
+			    <td width="10%"><input name="txtcajaanno" type="text" id="txtcajaanno" value="" size="10"></td>
+			    <td width="10%"><input name="txtcajatiporec" type="text" id="txtcajatiporec" value="" size="10"></td>
+			    <td width="10%"><input name="txtcajaperiodo" type="text" id="txtcajaperiodo" value="" size="10"></td>
+			    <td width="10%"><input name="txtcajaimpinsol" type="text" id="txtcajaimpinsol" value="" size="10"></td>
+			    <td width="10%"><input name="txtcajafactreaj" type="text" id="txtcajafactreaj" value="" size="10"></td>
+			    <td width="10%"><input name="txtcajaimpreaj" type="text" id="txtcajaimpreaj" value="" size="10"></td>
+			    <td width="10%"><input name="txtcajafactmora" type="text" id="txtcajafactmora" value="" size="5"><input name="txtcajainteres" type="text" id="txtcajainteres" value="" size="5"></td>
+			    <td width="10%"><input name="txtcajacostoemis" type="text" id="txtcajacostoemis" value="" size="10"><input name="txtcajacodpred" type="text" id="txtcajacodpred" value="" size="10"></td>
+	 </tr></table></div>
+   <div class="contentForm" style="float:left">
+     <table width="100%" border="0" align="center">
+      <tr>
+        <td width="10%">&nbsp;</td>
+        <td width="20%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">Insoluto</td>
+        <td width="10%">Reajuste</td>
+        <td width="15%">Mora</td>
+        <td width="15%">Emision</td>
+        <td width="15%">Total</td>
+      </tr>
+      <tr>
+        <!--<td><input name="txtpago" type="text" id="txtpago" value="0"></td>-->
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><input name="txtinso" type="text" disabled id="txtinso" value="0.00" size="15"></td>
+        <td><input name="txtreaj" type="text" disabled id="txtreaj" value="0.00" size="15"></td>
+        <td><input name="txtmora" type="text" disabled id="txtmora" value="0.00" size="15"></td>
+        <td><input name="txtemis" type="text" disabled id="txtemis" value="0.00" size="15"></td>
+      	<td><input name="txttotal" type="text" disabled id="txttotal" value="0.00" size="15"></td>
+      </tr>
+    <!--
+    </table>
+    <table class="tableContent" width="100%">
+    <tr>
+        	  <td colspan="4"><input name="radio1" type="radio" id="radio1" value="1" checked="CHECKED" onClick="ocultabotones();" >
+        	    Consulta
+                  <input type="radio" name="radio1" id="radio1" value="2" onClick="mostrbotones();">
+                  Pago
+        </td>
+   	  </tr>
+    </table>
+    
+    <div id="radios" style='display:none'>
+    <table>
+    <tr>
+        	  <td colspan="4"><input name="radio2" type="radio" id="radio2" value="E" checked="CHECKED" onclick="efectivo()">
+        	     Efectivo
+       	          <input type="radio" name="radio2" id="radio2" value="C" onclick="cheque();">
+                  Cheque
+                   <input type="radio" name="radio2" id="radio2" value="T" onclick="cheque();">
+                  Tarjeta
+   	          </td>
+      	  </tr>
+    </table>
+    </div>
+    
+    <DIV ID="divboton" style='display:none'>
+    
+        	<table class="tableContent" width="100%">
+        	<tr>
+        	  <td align="center" >N° Cheque</td>
+        	  <td align="center">Banco</td>
+        	  <td align="center">Girador</td>
+        	  <td align="center">Fecha Cobro</td>
+        	  </tr>
+        	<tr>
+        	  <td  align="center"><input name="txtncheque" type="text" id="txtncheque" value="" size="10" onkeypress="return pulsar(event)"></td>
+        	  <td align="center"> <select name="cbobanco" id="cbobanco"  style="width:150px;">
+        	    <php echo $this->combo?>
+      	    </select></td>
+        	 <td align="center"> <input name="txtgirador" type="text" id="txtgirador" value="" size="20" onkeypress="return pulsar(event)"></td>
+        	 <td align="center"> <input name="txtncheque2" type="text" id="txtncheque2" value="<php echo $this->hoy?>" size="10" onkeypress="return pulsar(event)"></td> 
+        	  </tr>
+        	  </table>
+      </DIV>
+      -->
+      <div id="boton" style=''>
+      <table>
+            <tr>
+              <td width="25%">&nbsp;</td>
+              <td width="25%">
+              <input type="button" id="btnPagarRecibos" value="Pagar" style="width:100px;"/>
+              <input type="button" id="btnFraccionar" value="Fraccionar" style="width:100px;"/>
+              </td>
+              <td width="25%">
+              <input type="button" id="btnCerrarRecibos" value="Cerrar Ventana" style="width:100px;"/>               
+              </td>
+              <td width="25%">&nbsp;</td>
+              </tr>
+     </table>
+     </div>
+   
+       
+</form>
+<div id="popprepago"></div>

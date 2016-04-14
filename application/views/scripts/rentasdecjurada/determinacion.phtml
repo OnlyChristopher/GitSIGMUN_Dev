@@ -1,0 +1,63 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_determinacion.js"></script>
+
+<form id="frmDeterminacion">
+<input type="hidden" name="actionHr" id="actionHr">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos Generales del Contribuyente:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			    <td width="114"><span id="lblCodigo">C&oacute;digo:</span></td>
+			    <td><div id="divECodigo"></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblAnexo">Contribuyente:</span></td>
+			    <td><div id="divENombre"></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblSAnexo">Direcci&oacute;n</span></td>
+			    <td><div id="divDireccion"></div></td>
+			    </tr>
+				<tr>
+			    <td><span id="lblSAnexo">A&ntilde;o</span></td>
+			    <td><div id="divAnno"></div></td>
+			    </tr>
+				<tr>
+			    <td><span id="divTipo">Tipo de Determinaci&oacute;n</span></td>
+			    <td><div id="divTipo"><select id="cb_tipodeterminacion" name="cb_tipodeterminacion"><option value='1'>Determinacion por Emision</option><option value='2'>Determinacion por Fiscalizacion</option></select></div></td>
+			    </tr>
+
+            </table>
+            
+        </div>
+    </fieldset>	    
+</div>
+<!--<br style="clear:both"><br/>-->
+</br>
+
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Seleccione los Predios a Calcular:</legend>
+	
+        
+    </fieldset>	    
+</div>
+
+<div id="gridDeterminacion"></div>
+
+
+<div class="divButtons">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+    <td style="padding-left:5px">
+    <input type="button" value="Determinacion de Impuesto Predial" id="btnDeterminacionip" />
+	<input type="button" value="Determinacion Arbitrios" id="btnDeterminacionarb" />
+	<input type="button" value="Cerrar" id="btnCerrar" />
+    </td>
+    <td></td>
+    </table>
+</div>
+
+</form>

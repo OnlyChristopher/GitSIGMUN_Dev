@@ -1,0 +1,86 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Municipalidad Distrital de Independencia</title>
+	<style type="text/css">
+		BODY{
+			padding: 0px;
+			margin: 0px;
+			font-family: tahoma;
+			font-style: normal;
+			page-break-after: avoid;
+			page-break-before: avoid;
+			page-break-inside: avoid;
+			background-color: #FFF;
+		}
+		.text1{
+			font-family: tahoma;
+			font-size:11px;
+			letter-spacing:2px;
+		}
+		.text2{
+			font-family: tahoma;
+			font-size:12px;
+			letter-spacing:2px;
+		}
+		.text3{
+			font-family: tahoma;
+			font-size:15px;
+			letter-spacing:2px;
+		}
+		.text4{
+			font-family: tahoma;
+			font-size:11px;
+			letter-spacing:2px;
+		}
+	</style>
+</head>
+<body>
+<div style="padding-left:20px">
+	<table width="100%">
+		<tr>
+			<td>
+			<table align="right" class="text1">
+			<tr>
+			<td align="right">Fecha y Hora Reporte:</td>
+			<td align="left"><?php echo $this->fecha_imprime; ?>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="right">Usuario:</td> 
+				<td align="left"><?php echo $this->usuario; ?></td>
+			</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+			<h1 class="text3">
+			Municipalidad Distrital de Independencia<br/>
+			Estados de las Cajas
+			</h1>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<table class="text2" width="100%" cellpadding=0; cellspacing=0; border=0>
+				<tr>
+					<th height="25" style="border-top:1px #000 dotted; border-bottom:1px #000 dotted">Nombre Caja</th>
+					<th height="25" style="border-top:1px #000 dotted; border-bottom:1px #000 dotted">Cuadrada</th>
+					<th height="25" style="border-top:1px #000 dotted; border-bottom:1px #000 dotted">Fecha última apertura</th>
+					<th height="25" style="border-top:1px #000 dotted; border-bottom:1px #000 dotted; width:250px">Fecha Último Cierre</th>
+					<th height="25" style="border-top:1px #000 dotted; border-bottom:1px #000 dotted">Estado</th>
+					<th height="25" style="border-top:1px #000 dotted; border-bottom:1px #000 dotted">Correlativo</th>
+				</tr>
+				<?php echo $this->strHtml; ?>
+			</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+</div>
+</body>
+</html>

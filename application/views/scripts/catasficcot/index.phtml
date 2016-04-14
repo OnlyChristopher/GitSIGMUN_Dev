@@ -1,0 +1,345 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Catasficcot.js"></script>
+<form id="frmficcot">
+<input type="hidden" id="idficind" name="idficind">
+<input type="hidden" id="idficha" name="idficha">
+<input type="hidden" id="cidfich" name="cidfich">
+<input type="hidden" id="cidpers" name="cidpers">
+<input type="hidden" id="periodo" name="periodo">
+<input type="hidden" id="cidtipo" name="cidtipo" />
+<!-- Id tabla Fic. Coti-->
+<input type="hidden" id="idsigma" name="idsigma">
+<div>
+	<div style="float:left;"><img src="<?php echo $this->ruta;?>img/logo.png"></div>
+    <div style="float:left">
+    <table class="tableContentc">
+    	<tr>
+  			<td valign="top">
+                <table class="tableContentc">
+                <tr>
+                <td>
+                    <div class="lblTxtField" style="width:180px; border-bottom:0">Nro. Ficha</div>
+                    <div class="lblObjField" style="clear:left; border-bottom:0">
+                    <input name="nrficha" type="text" class="cajac" id="nrficha" style="width:178px" maxlength="7" />
+					<input type="hidden" id="nrficha_old" name="nrficha_old" />
+                    </div>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <div class="lblTxtField" style="width:180px; border-bottom:0">Nro. Fichas por Lote</div>
+                    <div class="lblObjField" style="clear:left;">
+                    <input name="lote_01" type="text" class="cajac" id="lote_01" style="width:88px" maxlength="3">
+                  </div>
+                    <div class="lblObjField" style="border-left:0">
+                    <input name="lote_02" type="text" class="cajac" id="lote_02" style="width:89px" maxlength="3">
+                    </div>
+                </td>
+                </tr>
+                </table>
+            </td>
+            <td valign="top" style="padding-left:5px">
+            	<table class="tableContentc">
+                <tr>
+                <td>
+               		<div class="lblCodField" style="width:25px">01</div>
+                  	<div class="lblTxtField" style="width:200px;">Código Único Catastral - CUC</div>
+                    <div class="lblCodField" style="width:25px">02</div>
+                    <div class="lblTxtField" style="width:180px;">Código de Hoja Catastral</div>
+                  	<div class="lblCodField" style="width:25px; clear:left">&nbsp;</div>
+                    <div class="lblObjField" style="border-top:0">
+                  	<input name="cunicat" type="text" class="cajac" id="cunicat" style="width:101px" maxlength="8">
+               	  </div>
+                    <div class="lblObjField" style="border-top:0; border-left:0">
+                  	<input name="cuc_cat" type="text" class="cajac" id="cuc_cat" style="width:96px" maxlength="4">
+               	  </div>
+                    <div class="lblCodField" style="width:25px;">&nbsp;</div>
+                    <div class="lblObjField" style="border-top:0;">
+                  	<input name="codhoja" type="text" class="cajac" id="codhoja" style="width:178px" maxlength="10">
+                  	</div>
+                </td>
+                </tr>
+                <tr>
+                  <td>
+                  	<div class="lblCodField" style="width:25px; border-top:0">03</div>
+                  	<div class="lblTxtField" style="width:405px; border-top:0; text-align:center">Código de Referencia Catastral</div>
+                    <div class="lblTxtField" style="clear:left; width:80px; border-top:0; text-align:center">UBIGEO</div>
+                    <div class="lblTxtField" style="width:40px; border-top:0; border-left:0; text-align:center">SECT</div>
+                    <div class="lblTxtField" style="width:40px; border-top:0; border-left:0; text-align:center">MZA</div>
+                    <div class="lblTxtField" style="width:40px; border-top:0; border-left:0; text-align:center">LOTE</div>
+                    <div class="lblTxtField" style="width:40px; border-top:0; border-left:0; text-align:center">EDI</div>
+                    <div class="lblTxtField" style="width:40px; border-top:0; border-left:0; text-align:center">ENT</div>
+                    <div class="lblTxtField" style="width:40px; border-top:0; border-left:0; text-align:center">PISO</div>
+                    <div class="lblTxtField" style="width:70px; border-top:0; border-left:0; text-align:center">UNIDAD</div>
+                    <div class="lblTxtField" style="width:40px; border-top:0; border-left:0; text-align:center">DC</div>
+                    <div class="lblObjField" style="clear:left; border-top:0;">
+                  	<input type="text" name="idubigeo" id="idubigeo" class="cajacoff" style="width:78px; text-align:center" readonly>
+                    <input type="hidden" id="ubgdpto" name="ubgdpto">
+                    <input type="hidden" id="ubgprov" name="ubgprov">
+                    <input type="hidden" id="ubgdist" name="ubgdist">
+                  	</div>
+                    <div class="lblObjField" style="border-top:0; border-left:0;">
+                  	<input name="rsector" type="text" class="cajac" id="rsector" style="width:39px; text-align:center" maxlength="2" />
+                  	</div>
+                    <div class="lblObjField" style="border-top:0; border-left:0;">
+                  	<input name="rmanzan" type="text" class="cajac" id="rmanzan" style="width:39px; text-align:center" maxlength="3" />
+                  	</div>
+                    <div class="lblObjField" style="border-top:0; border-left:0;">
+                  	<input name="reflote" type="text" class="cajac" id="reflote" style="width:39px; text-align:center" maxlength="3" />
+                  	</div>
+                    <div class="lblObjField" style="border-top:0; border-left:0;">
+                  	<input name="redific" type="text" class="cajac" id="redific" style="width:39px; text-align:center" maxlength="2" />
+                  	</div>
+                    <div class="lblObjField" style="border-top:0; border-left:0;">
+                  	<input name="rentrad" type="text" class="cajac" id="rentrad" style="width:39px; text-align:center" maxlength="2" />
+                  	</div>
+                    <div class="lblObjField" style="border-top:0; border-left:0;">
+                  	<input name="refpiso" type="text" class="cajac" id="refpiso" style="width:39px; text-align:center" maxlength="2" />
+                  	</div>
+                    <div class="lblObjField" style="border-top:0; border-left:0;">
+                  	<input name="refunid" type="text" class="cajac" id="refunid" style="width:69px; text-align:center" maxlength="3" />
+                  	</div>
+                    <div class="lblObjField" style="border-top:0; border-left:0;">
+                  	<input name="dc_cata" type="text" class="cajacoff" id="dc_cata" style="width:39px; text-align:center" maxlength="1" readonly>
+                  	</div>
+                  </td>
+                </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+</div>
+<br style="clear:both"/>
+<div class="title4" style="float:left; margin-top:-30px">FICHA COTITULAR</div>
+<br style="clear:both"/>
+<div class="contentBoxBr">
+	<h1>DATOS DEL COTITULAR CATASTRAL</h1>
+    <input type="hidden" id="oldCotItems" name="oldCotItems">
+    <div style="margin-top:5px">
+    	<table class="tableContentc" width="100%">        
+		<tr>
+            <td valign="top">
+            <div id="gridFicCot"></div>
+            </td>
+            <td valign="top">
+            <div class="divButtons" style="width:125px; margin-top:0">
+                <table>
+                <tr id="rowAddCot">
+                <td style="padding:3px"><input type="button" id="btnAddCot" name="btnAddCot" value="Agregar" style="width:100px" /></td>
+                </tr>        
+                <tr id="rowSaveCot">
+                <td style="padding:3px"><input type="button" id="btnSaveCot" name="btnSaveCot" value="Guardar" style="width:100px" /></td>
+                </tr>
+                <tr id="rowEditCot">
+                <td style="padding:3px"><input type="button" id="btnEditCot" name="btnEditCot" value="Editar" style="width:100px" /></td>
+                </tr>
+                <tr id="rowCancelCot">
+                <td style="padding:3px"><input type="button" id="btnCancelCot" name="btnCancelCot" value="Cancelar" style="width:100px" /></td>
+                </tr>
+                <tr>
+                <td style="padding:3px"><input type="button" id="btnDelCot" name="btnDelCot" value="Eliminar" style="width:100px"/></td>
+                </tr>
+                </table>
+            </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <div id="divAddCot" style="margin-top:5px;">
+                <table class="tableContentc">
+                <tr>
+                <td>
+                    <input type="hidden" id="actCot" name="actCot">
+                    <input type="hidden" id="iddcotitu" name="iddcotitu">
+                    <input type="hidden" id="cidpersxx" name="cidpersxx">
+                    <input type="hidden" id="nrodocu" name="nrodocu">
+                    <div id="btnSearchCot" class="lblCodField" style="width:25px; cursor:pointer">. . .</div>
+                    <div class="lblTxtField" style="width:155px;">Cotitular Catastral</div>
+                    <div class="lblCodField" style="width:30px">124</div>
+                    <div class="lblTxtField" style="width:80px;">N° Cotitular</div>
+                    <div class="lblCodField" style="width:30px">125</div>
+                    <div class="lblTxtField" style="width:110px;">Total Cotitulares</div>
+                    <div class="lblCodField" style="width:30px">127</div>
+                    <div class="lblTxtField" style="width:80px;">% Cotitular</div>
+                    <div class="lblCodField" style="width:25px">47</div>
+                    <div class="lblTxtField" style="width:130px;">Forma de Adquisición</div>
+                    <div class="lblCodField" style="width:25px">48</div>
+                    <div class="lblTxtField" style="width:100px;">Fec. Adquisición</div>
+                    <div class="lblObjField" style="clear:left; border-top:0">
+                    <input type="text" name="nompers" id="nompers" class="cajac" style="width:178px" maxlength="200">
+                    </div>
+                    <div class="lblObjField" style="border-top:0; border-left:0">
+                    <input type="text" name="nrcotit" id="nrcotit" class="cajac" style="width:109px" maxlength="20">
+                    </div>
+                    <div class="lblObjField" style="border-top:0; border-left:0">
+                    <input type="text" name="nrtotal" id="nrtotal" class="cajac" style="width:139px" maxlength="20">
+                    </div>
+                    <div class="lblObjField" style="border-top:0; border-left:0">
+                    <input type="text" name="porcenc" id="porcenc" class="cajac" style="width:109px" maxlength="20">
+                    </div>
+                    <div class="lblObjField" style="border-top:0; border-left:0">
+                    <select name="cidfaqu" id="cidfaqu" class="comboc" style="width:154px; height:20px"></select>
+                    </div>
+                    <div class="lblObjField" style="border-top:0; border-left:0">
+                    <input type="text" name="fecadqu" id="fecadqu" class="cajac" style="width:124px" maxlength="10">
+                    </div>                    
+                </td>
+                </tr>
+                </table>
+            </div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <h1 style="margin:5px 0 5px 0; padding:0">INFORMACIÓN COMPLEMENTARIA</h1>
+            <div style="margin-top:5px">
+            <table class="tableContentc">
+            <tr>
+              <td valign="top">
+                <div class="lblCodField" style="width:30px;">114</div>
+                <div class="lblTxtField" style="width:150px;">Condición de Declarante</div>
+                <div class="lblObjField" style="border-left:0">
+                    <select name="ciddecl" id="ciddecl" class="comboc" style="width:240px; height:19px"></select>
+                </div>                                                            
+              </td>
+              <td valign="top">
+              	<div class="lblCodField" style="width:30px;">116</div>
+                <div class="lblTxtField" style="width:160px;">Estado de Llenado de Ficha</div>
+                <div class="lblObjField" style="border-left:0;">
+                    <select name="cidesta" id="cidesta" class="comboc" style="width:206px; height:19px"></select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <div class="lblCodField" style="width:30px; border-top:0">&nbsp;</div>
+              <div class="lblTxtField" style="width:788px; border-top:0">Observaciones</div>
+              <div class="lblObjField" style="clear:left; border-top:0">
+              	<textarea name="vobserv" class="cajac" id="vobserv" style="width:816px; height:37px"></textarea>
+              </div>
+              </td>
+            </tr>
+            </table>
+            </div>
+            </td>
+            <td>&nbsp;</td>
+		</tr>
+    	</table>
+    </div>    
+</div>
+
+<div style="margin-top:15px;">
+    <table class="tableContentc" width="100%">
+    <tr>
+    <td valign="top">
+        <table class="tableContentc">
+        <tr>
+        <td>
+            <div class="lblCodField" style="width:25px;">120</div>
+            <div class="lblTxtField" style="width:210px; text-align:center">
+            Firma del Declarante <input name="dfirmas" type="checkbox" id="dfirmas" style="float:right" value="1" />
+            </div>
+            <div class="lblTxtField" style="clear:left; width:40px; height:21px; border-top:0; text-align:center">D.N.I.</div>
+            <div class="lblObjField" style="border-top:0; border-left:0;"><input type="text" name="cidecla" id="cidecla" class="cajacoff" style="width:65px;" dir="dfirmas" readonly />
+            </div>
+            <div class="lblTxtField" style="width:50px; height:21px; border-left:0; border-top:0; text-align:center">Fecha</div>
+            <div class="lblObjField" style="border-top:0; border-left:0;">
+            <input name="fedecla" type="text" class="cajacoff" id="fedecla" style="width:78px;" maxlength="10" dir="dfirmas" readonly>
+            </div>
+            <div class="lblObjField" style="clear:left; border-top:0;">
+            <input name="nombr01" type="text" class="cajacoff" id="nombr01" style="width:233px;" maxlength="200" dir="dfirmas" readonly>
+            </div>
+        </td>
+        </tr>
+        </table>   
+    </td>
+    <td valign="top" style="padding-left:10px">
+        <table class="tableContentc">
+        <tr>
+        <td>
+            <div class="lblCodField" style="width:25px;">121</div>
+            <div class="lblTxtField" style="width:210px; text-align:center">
+            Firma del Supervisor <input type="checkbox" id="sfirmas" name="sfirmas" style="float:right" value="1" />
+            </div>
+            <div class="lblTxtField" style="clear:left; width:40px; height:21px; border-top:0; text-align:center">D.N.I.</div>
+            <div class="lblObjField" style="border-top:0; border-left:0;">
+            <input name="cidsupe" type="text" class="cajacoff" id="cidsupe" style="width:65px;" dir="sfirmas" readonly>
+            </div>
+            <div class="lblTxtField" style="width:50px; height:21px; border-left:0; border-top:0; text-align:center">Fecha</div>
+            <div class="lblObjField" style="border-top:0; border-left:0;">
+            <input name="fesuper" type="text" class="cajacoff" id="fesuper" style="width:78px;" maxlength="10" dir="sfirmas" readonly>
+            </div>
+            <div class="lblObjField" style="clear:left; border-top:0;">
+            <input name="nombr02" type="text" class="cajacoff" id="nombr02" style="width:233px;" maxlength="200" dir="sfirmas" readonly>
+            </div>
+        </td>
+        </tr>
+        </table>   
+    </td>
+    <td valign="top" style="padding-left:10px">
+        <table class="tableContentc">
+        <tr>
+        <td>
+            <div class="lblCodField" style="width:25px;">122</div>
+            <div class="lblTxtField" style="width:210px; text-align:center">
+            Firma del Técnico Catastral <input type="checkbox" id="tfirmas" name="tfirmas" style="float:right" value="1" />
+            </div>
+            <div class="lblTxtField" style="clear:left; width:40px; height:21px; border-top:0; text-align:center">D.N.I.</div>
+            <div class="lblObjField" style="border-top:0; border-left:0;">
+            <input type="text" name="cidtecn" id="cidtecn" class="cajacoff" style="width:65px;" dir="tfirmas" readonly>
+            </div>
+            <div class="lblTxtField" style="width:50px; height:21px; border-left:0; border-top:0; text-align:center">Fecha</div>
+            <div class="lblObjField" style="border-top:0; border-left:0;">
+            <input name="fetecni" type="text" class="cajacoff" id="fetecni" style="width:78px;" maxlength="10" dir="tfirmas" readonly>
+            </div>
+            <div class="lblObjField" style="clear:left; border-top:0;">
+            <input name="nombr03" type="text" class="cajacoff" id="nombr03" style="width:233px;" maxlength="200" dir="tfirmas" readonly>
+            </div>
+        </td>
+        </tr>
+        </table>   
+    </td>
+    <td valign="top" style="padding-left:10px">
+        <table class="tableContentc">
+        <tr>
+        <td>
+            <div class="lblCodField" style="width:25px;">123</div>
+            <div class="lblTxtField" style="width:210px; text-align:center">
+            V.B. del Verificador Catastral <input type="checkbox" id="vfirmas" name="vfirmas" style="float:right" value="1" />
+            </div>
+            <div class="lblTxtField" style="clear:left; width:40px; height:21px; border-top:0; text-align:center">D.N.I.</div>
+            <div class="lblObjField" style="border-top:0; border-left:0;">
+            <input type="text" name="cidveri" id="cidveri" class="cajacoff" style="width:65px;" dir="vfirmas" readonly>
+            </div>
+            <div class="lblTxtField" style="width:50px; height:21px; border-left:0; border-top:0; text-align:center">Fecha</div>
+            <div class="lblObjField" style="border-top:0; border-left:0;">
+            <input name="feverif" type="text" class="cajacoff" id="feverif" style="width:78px;" maxlength="10" dir="vfirmas" readonly>
+            </div>
+            <div class="lblObjField" style="clear:left; border-top:0;">
+            <input name="nombr04" type="text" class="cajacoff" id="nombr04" style="width:233px;" maxlength="200" dir="vfirmas" readonly>
+            </div>
+            <div class="lblTxtField" style="width:106px; height:21px; border-top:0; text-align:center">
+            N° de Registro</div>
+            <div class="lblObjField" style="border-top:0; border-left:0;">
+            <input name="nroregi" type="text" class="cajacoff" id="nroregi" style="width:128px;" maxlength="25" dir="vfirmas" readonly>
+            </div>
+        </td>
+        </tr>
+        </table>   
+    </td>
+    </tr>
+    </table>
+</div>
+</form>
+<div style="margin-top:15px">
+<fieldset class="ui-widget ui-widget-content" style="padding: 5px;">
+    <table class="tableContent">
+    <tr>
+        <td><input type="button" id="btnSaveFicha" value="Guardar Ficha" /></td>
+        <td><input type="button" id="btnCloseFicha" value="Cerrar Formulario" /></td>
+    </tr>		    
+    </table>
+</fieldset>
+</div>

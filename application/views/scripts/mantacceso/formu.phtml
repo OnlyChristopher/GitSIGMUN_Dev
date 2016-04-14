@@ -1,0 +1,62 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantacceso_formu.js"></script>
+<form id="frmacceso">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <div class="contentForm">
+        	<table class="tableContent" width="100">
+			    <tr>
+			      <td><span>Tipo: </span></td>
+			      <td colspan="3"><select id="cmbTipox" name="cmbTipox" class="combo"></select></td>
+		      </tr>
+			    <tr>
+			      <td><span>Menú: </span></td>
+			      <td colspan="3"><select id="cmbMenux" name="cmbMenux" class="combo" style="width:300px"></select></td>
+		        </tr>
+			    <tr>
+			      <td><span>Pantalla: </span></td>
+			      <td colspan="3"><select id="cmbPantallax" name="cmbPantallax" class="combo" style="width:300px"></select></td>
+		        </tr>
+			    <tr>
+			      <td><span>Acceso: </span></td>
+			      <td colspan="3">
+				  <input type="text" name="txtidacceso" id="txtidacceso" class="caja" maxlength="8" style="width:100px" />
+				  <input type="hidden" name="txtidacceso_old" id="txtidacceso_old" class="caja" size="20" maxlength="8" />
+				  </td>
+			    </tr>
+			    <tr>
+			      <td><span>Nombre: </span></td>
+			      <td colspan="3"><input name="txtNomacceso" id="txtNomacceso" type="text" class="caja" maxlength="100" style="width:300px; text-transform:none" /></td> 
+			    </tr>
+			    <tr>
+			      <td><span>Ícono: </span></td>
+			      <td colspan="3"><input name="txtIcono" id="txtIcono" type="text" class="caja" maxlength="50" style="width:100px; text-transform:none" /></td>
+		      </tr>
+			    <tr>
+			      <td><span>Formulario: </span></td>
+			      <td colspan="3"><input name="txtDoform" id="txtDoform" type="text" class="caja" maxlength="50" style="width:300px; text-transform:none" /></td>
+		      </tr>
+			    <tr>
+			      <td><span>Id Objeto: </span></td>
+			      <td><input name="txtIdobjeto" id="txtIdobjeto" type="text" class="caja" maxlength="50" style="width:100px; text-transform:none" /></td>
+			      <td align="center"><span>Estado: </span></td>
+			      <td><input name="chkestado" id="chkestado" type="checkbox" value="1"/></td> 
+	          </tr>
+			    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+	
+<div class="divButtons">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td style="padding-left:5px">
+<input type="button" name="btnGrabaAcceso" id="btnGrabaAcceso" value="Grabar" />
+<input type="button" name="btnSalirAcceso" id="btnSalirAcceso" value="Salir" />
+</td>
+<td></td>
+</table>
+</div> 
+
+</form>
+

@@ -1,0 +1,27 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Liceninforme.js"></script>
+<form id="frmliceninforme2" style="margin-top:15px;">
+<input type="hidden" name="idSolLice" id="idSolLice" value="<?php echo $this->idSolLice ;?>">   
+<input type="hidden" name="ColSol" id="ColSol" value="<?php echo $this->ColSol ;?>">
+<input type="hidden" name="TipoLice" id="TipoLice" value="<?php echo $this->TipoLice ;?>">
+<input type="hidden" name="TipoCpto" id="TipoCpto" value="<?php echo $this->TipoCpto ;?>">
+<input type="hidden" name="TipoPers" id="TipoPers" value="<?php echo $this->TipoPers ;?>">
+<input type="hidden" name="defensa" id="defensa" value="<?php echo $this->Defensa ;?>">
+<input type="hidden" name="defen" id="defen" value="<?php echo $this->Defen ;?>">
+<input type="hidden" name="informeid" id="informeid" >
+
+<fieldset class="ui-widget ui-widget-content">
+  <legend style="margin-left:5px"></legend>
+    <div class="contentForm">
+    <table class="tableContent">
+     <tr>
+       <td style="padding-left:5px">
+        <input type="button" name="btnGenerarInfor" id="btnGenerarInfor" value="Con Defensa Civil" />
+        <input type="button" name="btnGenerarInfor2" id="btnGenerarInfor2" value="Sin Defensa Civil" />
+        <input type="button" name="btnSalirInfor" id="btnSalirInfor" value="Salir" />
+       </td>
+    </tr>
+    </table>          
+   </div>       
+</fieldset>
+</form>

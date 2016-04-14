@@ -1,0 +1,4 @@
+<?php 
+header("Content-type: application/json");
+echo str_replace('|"','',str_replace('"|','',$this->data));
+?>

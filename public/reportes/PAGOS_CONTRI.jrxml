@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PAGOS_CONTRI" language="groovy" pageWidth="640" pageHeight="750" columnWidth="600" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Cesar\\Desktop\\REPORTES\\REPORTE\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="anno" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[EXEC [Rentas].[Reportes_Diversos] @busc='10',@anno=$P{anno},@fecha=$P{fecha}]]>
+	</queryString>
+	<field name="CODIGO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fech_ing" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<textField>
+				<reportElement x="87" y="0" width="440" height="49"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["PAGOS REALIZADOS EN TESORERIA"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20">
+			<textField>
+				<reportElement x="483" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="563" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="0" y="15" width="51" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="51" y="15" width="397" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="448" y="15" width="58" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fech_ing}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="506" y="15" width="94" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mes}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="35" width="600" height="3" forecolor="#0000FF" backcolor="#0033FF"/>
+			</rectangle>
+			<subreport>
+				<reportElement x="0" y="40" width="600" height="25"/>
+				<subreportParameter name="codigo">
+					<subreportParameterExpression><![CDATA[$F{CODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="fecha">
+					<subreportParameterExpression><![CDATA[$F{fech_ing}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="anno">
+					<subreportParameterExpression><![CDATA[$P{anno}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PAGOS_CONTRI_DETALLE.jasper"]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="0" width="600" height="15" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="51" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="51" y="0" width="397" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DEL CONTRIBUYENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="0" width="58" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="506" y="0" width="94" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[MES]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<subreport>
+				<reportElement x="300" y="0" width="300" height="20"/>
+				<subreportParameter name="fecha">
+					<subreportParameterExpression><![CDATA[$F{fech_ing}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="anno">
+					<subreportParameterExpression><![CDATA[$P{anno}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PAGOS_CONTRI_TOTAL.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,42 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandecostas_bandeja.js"></script>
+<form id="frmdeuda">
+<div>
+	<div>
+		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+    		<div style="float:left; padding-right:40px">
+    			<table class="tableContent" width="100%">
+			    <tr>
+			    <td><span id="lblCodigo">Código:</span></td>
+			    <td><div id="divCodigo"></div>
+				<div><input type="hidden" id="txtcodigo" name="txtcodigo"></div>
+				</td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblNombre">Contribuyente:</span></td>
+			    <td><div id="divNombre"></div></td>
+			    </tr>	
+				<tr>
+			    <td><span id="lblDocumen">Nro. Documento:</span></td>
+			    <td><div id="divDocumen"></div></td>
+			    </tr>			
+			    <tr>
+			    <td><span id="lblDomicilio">Domicilio Fiscal:</span></td>
+			    <td><div id="divDomicilio" style="width:380px"></div></td>
+			    </tr>				
+			    </table>
+    		</div>    	
+    	</fieldset>
+	</div>
+	</br>
+	<div>
+		<div id="gridBandeja"></div>	
+	</div>
+	
+	
+	<div class="divButtons">
+    <input type="button" id="btnNuevodeuda" name="btnNuevodeuda" value="Nuevo" />
+    <input type="button" id="btnCerrardeuda2" name="btnCerrardeuda2" value="Cerrar" />
+    </div>	
+</div>
+</form>

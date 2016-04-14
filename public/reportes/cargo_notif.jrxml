@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cargo_notif" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="20">
+	<parameter name="FLAG" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select case $P{FLAG} WHEN '1' THEN '1' ELSE '1' END FLAG]]>
+	</queryString>
+	<field name="FLAG" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="723" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="25" width="495" height="15" backcolor="#CCCCCC"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="40" width="247" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="25" width="495" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CARGO DE RECEPCIÓN]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="247" y="40" width="248" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="40" width="247" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEPCIÓN]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="55" width="247" height="161"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="247" y="40" width="248" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTIFICADOR DE LA MUNICIPALIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="56" width="45" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I. Titular:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="85" width="28" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="70" width="70" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Doc. de Identidad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="100" width="28" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="178" width="26" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="133" width="44" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Recibido:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="119" width="199" height="12"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II. Recepción por persona distinta al titular:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="162" width="90" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relacion con el titular:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="194" width="27" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="147" width="79" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Doc. de identidad N°]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="247" y="55" width="248" height="161"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="255" y="143" width="30" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="170" width="30" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="117" width="30" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="91" width="85" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Doc. de Identidad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="67" width="85" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre y Apellido:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="216" width="495" height="25"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="5" y="218" width="129" height="15"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REFERENCIA DEL PREDIO Y OTROS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="242" width="494" height="29"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Base legal: Ley N° 27444 - Ley del Procedimiento Administrativo General, y Decreto Legislativo N° 1029 publicado el martes 24 de Julio del 2008, en el Diario Oficial El Peruano.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="76" y="80" width="163" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="41" y="95" width="198" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="41" y="111" width="198" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="56" y="142" width="183" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="91" y="156" width="148" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="104" y="171" width="135" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="41" y="187" width="198" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="41" y="203" width="198" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="343" y="81" width="145" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="343" y="103" width="145" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="294" y="128" width="194" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="294" y="155" width="194" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="294" y="184" width="194" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="134" y="233" width="354" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+</jasperReport>

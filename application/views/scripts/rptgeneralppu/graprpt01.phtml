@@ -1,0 +1,139 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+			
+			
+			<style type="text/css">
+				${demo.css}
+			</style>
+			
+			<style type="text/css">
+				#dynamic_data{
+				border: 1px solid gray;
+				border-radius: 10px;
+				padding: 10px;
+				text-decoration:none;
+				float:left;
+				margin:4px;
+				text-align:center;
+				display: block;
+				color: black;
+				}
+				#txtanno{
+				border: 1px solid gray;
+				border-radius: 10px;
+				padding: 10px;
+				text-decoration:none;
+				float:left;
+				margin:4px;
+				text-align:center;
+				display: block;
+				color: black;
+				}
+				#texto{
+				font-size:12pt;
+				font-family:arial, "courier new", impact;
+				}
+
+			</style>
+		
+<script type="text/javascript">
+        $(function() {
+			//on page load 
+			var anio = '<?php echo $this->anio; ?>';
+			getAjaxData('T',anio);
+
+            var options = {
+                chart: {
+                    renderTo: 'container',
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                },
+                title: {
+					text: 'CONDICION DE PROPIEDAD'
+				},
+				subtitle: {
+					//text: 'Click the slices to view versions. Source: netmarketshare.com.'
+					text: 'Porcentajes de predios X Uso'
+				},
+                tooltip: {
+                    formatter: function() {
+                        return '<b>'+ this.point.name +'</b>: '+ this.percentage.toFixed(2) +' %';
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            color: '#000000',
+                            connectorColor: '#000000',
+                            formatter: function() {
+                                return '<b>'+ this.point.name +'</b>: '+ this.percentage.toFixed(2) +' %';
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: 'Browser share',
+                    data: []
+                }]
+            }
+            
+			function getAjaxData(condicion,anio){
+			
+				$.getJSON("dataimagenppu?condicion="+condicion+"&anio="+anio, function(json) {
+					options.series[0].data = json;
+					chart = new Highcharts.Chart(options);
+				});
+			}
+			
+			//on changing select option
+			$('#dynamic_data').change(function(){
+				var condicion = $('#dynamic_data').val();
+				var anio = $('#txtanno').val();
+				//alert(condicion+'-'+anio);
+				getAjaxData(condicion,anio);
+			});
+			
+        });
+
+		
+		
+ </script>
+	
+	</head>
+	<body>
+
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/highcharts.js"></script>
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/modules/drilldown.js"></script>
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/modules/data.js"></script>
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/modules/exporting.js"></script>
+		<table border="0">
+		<tr>
+		<td>
+			<div id="texto">Condicion :<div>
+		</td>
+		<td>
+			<select id="dynamic_data">
+				<option value="T">--Seleccione--</option>
+				<option value="U" >Unicos</option>
+				<option value="C">Coopropietarios</option>
+			</select>
+		</td>
+		<td><div id="texto">Anio :</div></td>
+		<td>
+		<input type="text" id="txtanno" name="txtanno" readonly />
+		</td>
+		</tr>
+		</table>
+		<div id="container" style="min-width: 450px; max-width: 700px; height: 700; margin: 0 auto"></div>
+
+	</body>
+</html>

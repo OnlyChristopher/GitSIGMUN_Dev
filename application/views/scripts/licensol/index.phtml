@@ -1,0 +1,86 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Licensol.js"></script>
+<style>
+#gridLicen .x-grid-row-selected .x-grid-cell-inner {
+	
+    /*font-weight: bold;*/
+    background-color:#EAEAEA;
+}
+</style>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterio1" type="radio" value="S" checked/><b> Solicitante</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterio2" type="radio" value="E" /><b> Expediente</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterio3" type="radio" value="N" /><b> N° Licencia</b>
+              </label>
+              </td>              
+              <td><input name="txtCriterio" id="txtCriterio" type="text" class="caja" size="20" maxlength="100" /></td>
+              <td>
+              <label>
+               <b> Tipo de Licencia:</b>
+              </label>
+              </td>
+               <td colspan="2"><select name="cmbCpto" id="cmbCpto" style="width:150px;" class="combo"><option>[Seleccione]</option>
+            
+          </select></td>
+              <td><input type="button" id="btnBusLicen" value="Buscar" /></td>
+              </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="gridLicen"></div>
+	    <br/>
+	    <div class="divButtons">
+		    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		    <tr>
+		    <td style="padding-left:5px">
+		    <input type="button" id="btnDetPa" value="Generar Recibo" />
+		    <input type="button" id="btnDetExp" value="Generar Expediente" />		   
+            <input type="button" id="btnDetLic" value="Generar Licencia" />
+			<input type="button" id="btnInforme" value="Generar Informe" />
+            <input type="button" id="btnResolucion" value="Generar Resolución" />
+            <input type="button" id="btnAnuExp" value="Anular / Cese" />
+		    <!--<input type="button" id="btnProgVis" value="Prog. Visitas" />-->
+		    <input type="button" id="btnImpCar" value="Imprimir Cart&oacute;n" />
+            <div style="width:420px; float:right; font-weight:bold;">
+             <div style="float:left; width:120px;">
+                    <div style="background:#D5F4FF; width:12px; height:12px;float:left;"></div>
+                   <div style="float:right;">Recibo Generado</div>
+                </div>
+                <div style="float:left; width:145px; margin-left:10px">
+                    <div style="background:#CCFF99;width:12px; height:12px;float:left;"></div>
+                    
+                     <div style="float:right;">Expediente Generado</div>
+                </div>
+                <div style="float:right; width:130px;">
+                    <div style="background:#FF6666; width:12px; height:12px;float:left;"></div>
+                    <div style="float:right;">Licencia Generado</div>          
+                </div>
+            </div>
+            
+            
+         	    </td>
+		    <td><input type="button" id="btnNueSol" value="Nueva Solicitud" style="float:right;" /></td>
+		    </table>      
+		</div>
+    </div>
+</div>

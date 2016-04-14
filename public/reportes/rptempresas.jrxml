@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptempresas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<queryString>
+		<![CDATA[exec Transporte.Transporte_s @msquery='7']]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="num_doc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="codigo_1" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{codigo}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="44" width="543" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empresas o Asociaciones de Vehículos Menores]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="391" y="67" width="29" height="12"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="424" y="67" width="128" height="12"/>
+				<textElement verticalAlignment="Top" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="1" y="5" width="68" height="57"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.19:8080/img/logo_muni.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="32" y="15" width="132" height="27"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DE  INDEPENDENCIA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<rectangle>
+				<reportElement x="2" y="6" width="550" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="66" y="8" width="383" height="16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Razón Social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="453" y="8" width="100" height="16"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="8" width="59" height="16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement x="7" y="0" width="59" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="0" width="383" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="453" y="0" width="100" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{num_doc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="21" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="494" y="1" width="41" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" de "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="1" width="66" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Página "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="5" width="47" height="12"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{codigo_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="179" y="5" width="91" height="12"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de Registros :]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

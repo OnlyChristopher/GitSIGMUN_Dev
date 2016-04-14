@@ -1,0 +1,58 @@
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Tesomenuemitidos.js"></script>
+
+<table id="table3" cellspacing="1" cellpadding="1" width="500" border="0" align="center">
+	<tr>
+		<td style="height: 18px" nowrap>Caja:</td>
+		<td colspan="2">
+			<select name="cmbcajas" id="cmbcajas" class="combo">
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 18px" nowrap>Fecha (D/M/A):</td>
+		<td style="height: 18px">Desde:
+			<input name="tesodesde" type="text" value="15/10/2013" id="tesodesde" class="caja" />
+		</td>
+		<td style="height: 18px">Hasta:
+			<input name="tesohasta" type="text" value="15/10/2013" id="tesohasta" class="caja" />
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 23px" nowrap>Tipo Operaci&oacute;n:</td>
+		<td style="height: 23px" colspan="2">
+			<select name="tipooperacion" id="tipooperacion" class="combo">
+				<option value="--">Todos</option>
+				<option value="1">Sismuni</option>
+				<option value="2">Tupa</option>
+				<option value="4">Entrada</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 17px" nowrap>Extornada:</td>
+		<td colspan="2">
+			<select name="extornada" id="extornada" class="combo">
+				<option value="--">Todos</option>
+				<option value="1">Sin Extornar</option>
+				<option value="0">Extornada</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 17px" nowrap>Cod. Contribuyente:</td>
+		<td colspan="2"><input name="txtcodigo" type="text" id="txtcodigo"  class="caja"/></td>
+	</tr>
+	<tr>
+		<td style="height: 17px" nowrap>Movimiento:</td>
+		<td colspan="2"><input name="txtrecibo" type="text" id="txtrecibo"  class="caja"/></td>
+	</tr>
+	<tr>
+		<td align="center" colspan="3">
+			<br>
+			<br>
+			<br>
+			<input type="button" name="btnaceptar" value="Aceptar" id="btnaceptar" />
+			<input type="button" name="btnvolver" value="Volver" id="btnvolver" />
+		</td>
+	</tr>
+</table>

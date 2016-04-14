@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteConvenio.jrxml" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="PCODIGO" class="java.lang.String"/>
+	<parameter name="PCONVENIO" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA["C:\\Users\\Administrador.INDEPENDENCIA\\Desktop\\rpt_convenio\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[exec Rentas.ImprimeConvenio @buscar=1,@codigo=$P{PCODIGO} ,@convenio=$P{PCONVENIO}]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombres" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dirfiscal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="convenio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="costo_emi" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deuda_ini" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="montoletra" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="int_frac_i" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="int_frac_t" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="num_cuotas" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_ini" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="porce_ini" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_men" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_conve" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_estado" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="operador" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fech_ing" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="170" splitType="Stretch">
+			<textField>
+				<reportElement x="83" y="72" width="100" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="72" width="62" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Cod.Contrib.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="120" width="49" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Nro.Doc:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="103" width="105" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Domicilio Fiscal/Legal :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="8" width="120" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DISTRITAL
+DE INDEPENDENCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="87" width="49" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Nombre :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="42" y="50" width="470" height="18"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Solicitud - Convenio de Fraccionamiento  N° "+$F{convenio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="87" width="429" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="121" width="397" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dirfiscal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="135" width="502" height="31"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Por la presente solicito el fraccionamiento de las deudas tributarias ascendente a S/. "+$F{deuda_ini}+"(son "+$F{montoletra}+") de acuerdo al siguiente detalle:"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="2" y="0" width="40" height="44"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.19:8080/img/logo_muni.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="10">
+			<subreport>
+				<reportElement x="0" y="0" width="540" height="10"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PCODIGO">
+					<subreportParameterExpression><![CDATA[$P{PCODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PCONVENIO">
+					<subreportParameterExpression><![CDATA[$P{PCONVENIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "RpteConvenio_SubReporteOrigen.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="10">
+			<subreport>
+				<reportElement x="0" y="0" width="540" height="10"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PCODIGO">
+					<subreportParameterExpression><![CDATA[$P{PCODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PCONVENIO">
+					<subreportParameterExpression><![CDATA[$P{PCONVENIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "RteConvenio_SubReporteDestino.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,222 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Banderegistro_formu.js"></script>
+<form id="frmBanderegistro">
+<input type="hidden" name="fechainicio" id="fechainicio" size="22">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos del Contribuyente</legend>
+        <div class="contentForm">
+        	<table class="tableContent" >
+			    <tr>
+			      <td><span id="lblCodigo">Código Registro:</span></td>
+			      <td colspan="3"><input name="txtCodregistro" id="txtCodregistro" type="text" class="cajaoff" size="10"  readonly /></td>
+			    </tr>
+				
+				<tr>
+			      <td><span id="lblCodigo">Digitador:</span></td>
+			      <td><input name="txtDigitador" id="txtDigitador" type="text" class="cajaoff" size="15" style="text-transform:uppercase;" readonly  /></td>
+				  
+				  <td><span id="lblCodigo">Nº Archi.:</span></td>
+			      <td><input name="txtNumarchi" id="txtNumarchi" type="text" class="caja" size="15" maxlength="7"/></td>
+				  
+				  <!-- <td width="99"><span id="lblCodigo">Item:</span></td> 
+			      <td width="344"><input name="txtItem" id="txtItem" type="text" class="caja" maxlength="7" size="15" style="text-transform:uppercase;" /></td> -->				 
+			    </tr>
+				
+				<tr>				  
+			      <td><span id="lblCodigo">Código:</span>  </td>
+			      <td><input name="txtCodcontrib" id="txtCodcontrib" type="text" class="cajaoff" size="8" readonly />    <input type="button" name="btnBusContrib" id="btnBusContrib" value="..." /></td> 
+				  <td><span id="lblCodigo">DNI:</span>  </td>
+				  <td><input name="txtNumdocu" id="txtNumdocu" type="text" class="caja" size="8"  /></td> 
+			    </tr>
+				
+				<tr>
+				 <td width="200"><span id="lblCodigo">Nombre o Razon Social:</span></td>
+			      <td colspan="3"><input name="txtNombre" id="txtNombre" type="text" class="caja" size="60"  /></td>
+				</tr>
+				
+				<tr>
+			      <td width="200"><span id="lblCodigo">Domicilio Fiscal:</span></td>
+			      <td colspan="3">
+				  <textarea name="txtDomifis" id="txtDomifis" cols="57" rows="3" class="caja" style="text-transform:uppercase;" ></textarea>
+				  </td>
+			    </tr>
+											
+				<tr>
+			      <td width="200"><span id="lblCodigo">Sector/Zona:</span></td>
+			       <td colspan="3">
+				  <input name="txtSector" id="txtSector" type="text" class="caja" size="15"  />   <input type="button" name="btnBusPredio" id="btnBusPredio" value="..."  />	
+				  </td>
+			    </tr>	
+
+				<tr>
+			      <td width="200"><span id="lblCodigo">Domicilio Predio:</span></td>
+				  <td colspan="3">
+				  <textarea name="txtDomipre" id="txtDomipre" cols="57" rows="3" class="caja" style="text-transform:uppercase;" ></textarea>	 		  
+				  </td>
+			    </tr>
+			</table>	
+		 </div>		
+	</fieldset>	 			
+	</br>	
+
+	
+
+
+	
+	<fieldset class="ui-widget ui-widget-content">	 
+		<legend style="margin-left:5px">Datos del Expediente</legend>
+		<div class="contentForm">		
+			<table class="tableContent" width="100%">	
+				<tr>
+					<td><span>Nº Expediente:</span></td>			
+					<td><input name="txtNumexpedi" id="txtNumexpedi" type="text" class="caja" size="9" maxlength="7" /> - <input name="txtAnoexpedien" id="txtAnoexpedien" type="text" class="caja" size="5" maxlength="8"/></td>
+					
+					<td><span>Valor:</span></td>
+					<td><select name="cmbvalor" id="cmbvalor" class="combo"></select></td>
+				
+				</tr>
+				
+				<tr>
+					<td><span>Num. Valor:</span></td>
+					<td><input name="txtNumvalor" id="txtNumvalor" type="text" class="caja" size="8" maxlength="7"     />  <select name="anios_deuda" id="anios_deuda" class="combo"></select>   </td>
+					<td><span>Estado:</span></td>			
+					<td><select name="cmbEstado" id="cmbEstado" class="combo"></select></td>
+				</tr>
+			
+								
+				<tr>
+					<td><span>REC 1:</span></td>			
+					<td><input name="rdRec" id="rdRecSi" type="radio" value="1" checked /><b> SI</b>  <input name="rdRec" id="rdRecNo" type="radio" value="0" /><b> NO</b></td>
+					<td><span>Fecha Rec:</span></td>			
+					<td><input name="txtFechrec" id="txtFechrec" type="text" class="caja" size="20"  /></td>
+				</tr>
+				
+				<tr>					
+					<td><span>Monto:</span></td>			
+					<td><input name="txtMonto" id="txtMonto" type="text" class="cajaoff" size="20" readonly /></td>	
+					<td><span>Fecha Registro:</span></td>			
+					<td><input name="txtFechareg" id="txtFechareg" type="text" class="cajaoff" size="20" readonly  /></td>
+				</tr>
+				
+			    
+		    </table>	    
+        </div>
+    </fieldset>	  
+	
+		<fieldset class="ui-widget ui-widget-content" style='padding:10px'>
+    <legend style="margin-left:1px">Detalle Valor:</legend>
+	<input type="hidden" id="oldConItems" name="oldConItems">
+	<table class="tableContent" width="100%">
+	<tr>
+	  <td valign="top" width="1%">
+		  <div id="gridDetalle" style="float:left"></div>	  
+	  </td>
+	  <td align="left" valign="top">
+		 
+		  <div class="divButtons" style="margin:0 0 0 10px; width:100px; float:left">
+			<table>
+				<tr id="rowAddConst">
+				<td style="padding:1px"><input type="button" id="btnAddConst" name="btnAddConst" value="Agregar" style="width:80px" /></td>
+				</tr>        
+				<tr id="rowSaveConst">
+				<td style="padding:1px"><input type="button" id="btnSaveConst" name="btnSaveConst" value="Guardar" style="width:80px" /></td>
+				</tr>
+				<tr id="rowEditConst">
+				<td style="padding:1px"><input type="button" id="btnEditConst" name="btnEditConst" value="Editar" style="width:80px" /></td>
+				</tr>
+				<tr id="rowCancelConst">
+				<td style="padding:1px"><input type="button" id="btnCancelConst" name="btnCancelConst" value="Cancelar" style="width:80px" /></td>
+				</tr>
+				<tr>
+				<td style="padding:1px"><input type="button" id="btnDelConst" name="btnDelConst" value="Eliminar" style="width:80px"/></td>
+				</tr>
+			</table>
+		  </div>
+	  </td> 
+	</tr>
+	<tr>
+		<td colspan="2">
+			<div id="divAddConst" style="margin-top:5px;">
+					<table class="tableContent">
+				<tr>
+					<td><span id="lblCp">Tipo Tributo:</span></td>
+					<td><select  name="cmb_tributo" id="cmb_tributo" class="combo"></select>
+					
+					<input type="hidden" name="idDetalle" id="idDetalle" value="">
+					<input type="hidden" id="actConst" name="actConst" value="">
+					<input type="hidden" name="num_archivador" id="num_archivador" value="">
+					<input type="hidden" name="idregistro" id="idregistro" value="">				
+					
+					</td>
+				
+			
+				
+					<td><span id="lblVia">Año:</span></td>
+					<td><select name="cmb_anno" id="cmb_anno" class="combo"></select></td>
+				
+				   
+					<td><span id="lblVia">Periodo:</span></td>
+					<td><input type='text' id="txtPeriodo"  style="width:68px"  class='caja' ></td>
+				
+					<td><span id="lblDir">Total:</span></td>
+					<td><input type='text' id="txtTotal"  style="width:68px" class='caja' ></td>
+					
+				
+					
+					
+				</tr>
+				<tr>
+				<!--	<td><span id="lblDir">Reaj.</span></td> -->
+					<td><input type='hidden' id="txtReajuste"  style="width:68px" class='caja' value="0.00"></td>
+				
+				
+				<!--	<td><span id="lblDir">Costo Emision:</span></td> -->
+					<td><input type='hidden' id="txtCosto_emision"  style="width:68px" class='caja' value="0.00"></td>
+				
+				
+				<!--	<td><span id="lblDir">Mora:</span></td>  -->
+					<td><input type='hidden' id="txtMora"  style="width:68px" class='caja' value="0.00"></td>
+				
+				<!--	<td><span id="lblVia">Insoluto:</span></td>  <-->
+					<td><input type='hidden' id="txtInsoluto"  style="width:68px"  class='caja' value="0.00"></td>
+				</tr>
+				
+			</table>
+			</div>
+		</td>
+	</tr>
+</table>
+	</legend>
+</fieldset>
+
+
+	<fieldset class="ui-widget ui-widget-content">	 
+		<legend style="margin-left:5px">Observación</legend>
+		<div class="contentForm">		
+			<table class="tableContent" width="100%">	
+				
+				<tr>
+					<td><span>Observación:</span></td>			
+					<td><textarea name="txtObservacion" id="txtObservacion" cols="90" rows="3" class="caja" style="text-transform:uppercase;"></textarea> </td>					
+				</tr>
+				
+			    
+		    </table>	    
+        </div>
+    </fieldset>	 
+
+	 <div class="divButtons">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+		<td style="padding-left:5px">
+		  <input type="button" name="btnGrabaRegistros" id="btnGrabaRegistros" value="Grabar" />
+		  <input type="button" name="btnSalirRegistros" id="btnSalirRegistros" value="Salir" />
+		</td>
+		</tr>
+		</table>
+    </div>
+	
+</div>
+<div ID="MSG_ERROR"></div>
+</form>

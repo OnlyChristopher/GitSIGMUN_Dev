@@ -1,0 +1,368 @@
+<fieldset class="ui-widget ui-widget-content" style='padding:10px'>
+    <legend style="margin-left:1px">Construcción:</legend>
+	<input type="hidden" id="oldConItems" name="oldConItems">
+	<table class="tableContentc">
+	<tr>
+	  <td valign="top" width="1%">
+		  <div id="gridFicIndConst" style="float:left"></div>	  
+	  </td>
+	  <td align="left" valign="top">
+		  <div id="hd_valores_pisos" class='contentBoxBr' style='float:left; margin:0 0 10px 10px'>
+			<table class="tableContent">
+				<tr>
+					<td><span id="lblCp">Valor Unit.:</span></td>
+					<td><input type='text'  id="txtValUni"  style="width:68px" class='cajaoff'></td>
+				</tr>
+				<tr>
+					<td><span id="lblCp">Valor A. Const.:</span></td>
+					<td><input type='text' id="txtValAreaConst"  style="width:68px" class='cajaoff'></td>
+				</tr>
+				<tr>
+					<td><span id="lblVia">Incremento:</span></td>
+					<td><input type='text' id="txtIncre"  style="width:68px" class='cajaoff'></td>
+				</tr>
+				<tr>
+					<td><span id="lblVia">Valor A. Com.:</span></td>
+					<td><input type='text' id="txtValorAreaCom"  style="width:68px"  class='cajaoff'></td>
+				</tr>
+				<tr>
+					<td><span id="lblDir">Depreciaci&oacute;n:</span></td>
+					<td><input type='text' id="txtDeprec"  style="width:68px" class='cajaoff'></td>
+				</tr>
+				<tr>
+					<td><span id="lblDir">Valor del Piso:</span></td>
+					<td><input type='text' id="txtValorPiso"  style="width:68px" class='cajaoff'></td>
+				</tr>
+				<tr>
+					<td><span id="lblDir">Valor Unit. Deprec.:</span></td>
+					<td><input type='text' id="txtValUnitDeprec"  style="width:68px" class='cajaoff'></td>
+				</tr>
+			</table>
+		  </div>
+		  <div class="divButtons" style="margin:0 0 0 10px; width:100px; float:left">
+			<table>
+				<tr id="rowAddConst">
+				<td style="padding:1px"><input type="button" id="btnAddConst" name="btnAddConst" value="Agregar" style="width:80px" /></td>
+				</tr>        
+				<tr id="rowSaveConst">
+				<td style="padding:1px"><input type="button" id="btnSaveConst" name="btnSaveConst" value="Guardar" style="width:80px" /></td>
+				</tr>
+				<tr id="rowEditConst">
+				<td style="padding:1px"><input type="button" id="btnEditConst" name="btnEditConst" value="Editar" style="width:80px" /></td>
+				</tr>
+				<tr id="rowCancelConst">
+				<td style="padding:1px"><input type="button" id="btnCancelConst" name="btnCancelConst" value="Cancelar" style="width:80px" /></td>
+				</tr>
+				<tr>
+				<td style="padding:1px"><input type="button" id="btnDelConst" name="btnDelConst" value="Eliminar" style="width:80px"/></td>
+				</tr>
+			</table>
+		  </div>
+	  </td> 
+	</tr>
+	<tr>
+		<td colspan="2">
+			<div id="divAddConst" style="margin-top:5px;">
+				<table class="hovertable">
+				<tr>
+					<th>
+					Nivel
+					<input type="hidden" id="actConst" name="actConst" value="">
+					<input type="hidden" id="idcpisos" name="idcpisos" value="">
+					<input type="hidden" id="itempiso" name="itempiso" value="">
+					</th>
+					<th>Tipo N.</th>
+					<th style="width:45px">Materi.</th>
+					<th style="width:45px">Estado.</th>
+					<th style="width:45px">Clasif</th>
+					<th style="width:30px">Mes</th>
+					<th style="width:45px">A&ntilde;o</th>
+					<th>(1)</th>
+					<th>(2)</th>
+					<th>(3)</th>
+					<th>(4).</th>
+					<th>(5)</th>
+					<th>(6).</th>
+					<th>(7)</th>
+					<th>Area Const.</th>
+					<th>Area Comun.</th>
+					<th>Un. Med.</th>
+				</tr>
+				<tr>
+					<td><input  type='text' name='nropiso' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"pisos")' onblur='this.value = this.value.toUpperCase()' id='nropiso' class='caja' size='3' maxlength='3' onclick='cargapiso(1)'/></td>
+					<td><select id="cb_tiponivel" style="width:100px" class="combo"></select></td>
+					<td><select id="cb_material" style="width:100px" class="combo"></select></td>
+					<td><select id="cb_estado" style="width:100px" class="combo"></select></td>
+					<td><select id="cb_clasifica" style="width:100px" class="combo"></select></td>
+					<td><input style="width:30px" type='text' name='detallesPisos[4][]' id='mes' class='caja' size='2' maxlength='2' onclick='cargapiso(1)'/></td>
+					<td><input  style="width:45px" type='text' name='detallesPisos[5][]' id='anoc' class='caja' size='4' maxlength='4' onclick='cargapiso(1)'/></td>
+					<td><input type='text' name='detallesPisos[6][]' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"letras")' onblur='this.value = this.value.toUpperCase()' id='muro' class='caja' size='1' maxlength='1' onclick='cargapiso(1)'/></td>
+					<td><input type='text' name='detallesPisos[7][]' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"letras")' onblur='this.value = this.value.toUpperCase()' id='techo' class='caja' size='1' maxlength='1' onclick='cargapiso(1)'/></td>
+					<td><input type='text' name='detallesPisos[8][]' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"letras")' onblur='this.value = this.value.toUpperCase()'id='piso' class='caja' size='1' maxlength='1' onclick='cargapiso(1)'/></td>
+					<td><input type='text' name='detallesPisos[9][]' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"letras")' onblur='this.value = this.value.toUpperCase()' id='puerta' class='caja' size='1' maxlength='1' onclick='cargapiso(1)'/></td>
+					<td><input type='text' name='detallesPisos[10][]' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"letras")' onblur='this.value = this.value.toUpperCase()' id='revestim' class='caja' size='1' maxlength='1' onclick='cargapiso()'/></td>
+					<td><input type='text' name='detallesPisos[11][]' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"letras")' onblur='this.value = this.value.toUpperCase()'id='bano' class='caja' size='1' maxlength='1' onclick='cargapiso(1)'/></td>
+					<td><input type='text' name='detallesPisos[12][]' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"letras")' onblur='this.value = this.value.toUpperCase()' id='inst' class='caja' size='1' maxlength='1' onclick='cargapiso(1)'/></td>
+					<td><input type='text' name='detallesPisos[13][]' id='areacons' class='caja' size='8' /></td>
+					<td><input type='text' name='detallesPisos[14][]' id='areacom' class='caja' size='8' onclick='cargapiso(1)'/><input type='hidden' name='detallesPisos[15][]' value='0' id='itempiso' class='caja'/></td>
+					<td><select id="cb_unidad_medida" style="width:40px" class="combo"></td>
+				<!--	<td><input type='text' name='detallesPisos[15][]' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"alpha")' onblur='this.value = this.value.toUpperCase()' id='referencia' class='caja' size='3'  /></td>-->
+				</tr>
+				<tr><th colspan="17">Referencia</th></tr>
+				<tr><td colspan="17"><input type='text' name='detallesPisos[15][]' style='text-transform:uppercase;width:100%;' onkeypress='return valoresUnitarios(event,"alpha")' onblur='this.value = this.value.toUpperCase()' id='referencia' class='caja'  /></td></tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+	</legend>
+</fieldset>
+
+    <div class="contentForm" id="divMuro" style="display:none">
+    
+    	<fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Muros y Columnas(1):</legend>
+	        
+	   		<table class="tableContent">
+              <tr>
+              <td><span id="lblAM" style="font-size: 80%">A-Estructura Laminares Curvadas de Concreto Armado que incluyen en una sola armadura la cimentacion y el techo</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblBM" style="font-size: 80%">B-Columna y viga de concreto armado y/o metalica</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblCM" style="font-size: 80%">C-Placa de Concreto, Albañileria armada,ladrillo o similar, con columnas de amarre</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblDM" style="font-size: 80%">D-Ladrillo o similar</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblEM" style="font-size: 80%">E-Adobe, Tapial o quincha</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblFM" style="font-size: 80%">F-Madera</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblGM" style="font-size: 80%">G-Pircado con mezcla de barro</span></td>
+              </tr>
+            </table>	   
+	    </fieldset>
+    </div>
+	
+	<div class="contentForm" id="divTecho" style="display:none">
+    
+    	<fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Techo(2):</legend>
+	        
+	   		<table class="tableContent">
+              <tr>
+              <td><span id="lblAT" style="font-size: 80%">A-Losa o aligerado de concreto armado con luces mayores de 6M, o que soporten carros o maquinarias</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblBT" style="font-size: 80%">B-Aligerado o losas de concreto armado inclinadas</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblCT" style="font-size: 80%">C-Aligerado o losas de concreto armado horizontales</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblDT" style="font-size: 80%">D-Calamina metalica, fibrocemento sobre viga metalica</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblET" style="font-size: 80%">E-Madera con material impermeabilizante</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblFT" style="font-size: 80%">F-Calamina metalica, fibrocemento sobre viga metalica o tejas sobre vigería de madera corriente</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblGT" style="font-size: 80%">G-Madera Rustica o Caña con torta de Barro</span></td>
+              </tr>
+			  <tr>
+			  <td><span id="lblHT" style="font-size: 80%">H-Sin Techo</span></td>
+              </tr>
+            </table>	    
+	    </fieldset>
+    </div>
+	
+	<div class="contentForm" id="divPiso" style="display:none">
+    
+    	<fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Piso(3):</legend>
+	        
+	   		<table class="tableContent">
+              <tr>
+              <td><span id="lblAP" style="font-size: 80%">A-Mármol importado porcelanato</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblBP" style="font-size: 80%">B-Mármol nac,parquet fino,ceramica import,madera fina</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblCP" style="font-size: 80%">C-Madera fina machihembrada,terrazo</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblDP" style="font-size: 80%">D-Parquet guayacan,ceramica nac,loseta veneciana 40x40</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblEP" style="font-size: 80%">E-Parquet de 2da., loseta veneciana 30x30 lajas de cemento con canto rodado</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblFP" style="font-size: 80%">F-Loseta corriente o tipo corcho,canto rodado</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblGP" style="font-size: 80%">G-Loseta vinilca,cemento bruñado colorado</span></td>
+              </tr>
+			  <tr>
+			  <td><span id="lblHP" style="font-size: 80%">H-Cemento pulido,ladrillo corriente,entablado corriente</span></td>
+              </tr>
+			  <tr>
+			  <td><span id="lblIP" style="font-size: 80%">I-Tierra compactada</span></td>
+              </tr>
+            </table>	    
+	    </fieldset>
+    </div>
+	
+	<div class="contentForm" id="divVentana" style="display:none">
+    
+    	<fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Puerta Ventana(4):</legend>
+	        
+	   		<table class="tableContent">
+              <tr>
+              <td><span id="lblAV" style="font-size: 80%">A-Aluminio pesado con perfiles especiales madera fina ornamental(caoba cedro o pino selecto) cristales</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblBV" style="font-size: 80%">B-Alumino o madera fina (caoba o similar) de diseño especial, vidrio polarizado curvado</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblCV" style="font-size: 80%">C-Alumino o madera fina (caoba o similar) vidrio polarizado </span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblDV" style="font-size: 80%">D-Ventanas de aluminio,puertas de madera selecta,vidrio transparente</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblEV" style="font-size: 80%">E-Ventanas de fierro,puertas de madera selecta (caoba o similar) vidrio transparente</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblFV" style="font-size: 80%">F-Ventanas de fierro o aluminio industrial,puertas contraplacadas de madera (cedro o similar) vidrio transparente semidoble o simple</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblGV" style="font-size: 80%">G-Madera corriente con marcos en puertas y ventanas de PVC o madera corriente</span></td>
+              </tr>
+			  <tr>
+			  <td><span id="lblHV" style="font-size: 80%">H-Madera rústica</span></td>
+              </tr>
+			  <tr>
+			  <td><span id="lblIV" style="font-size: 80%">I-Sin puertas ni ventanas</span></td>
+              </tr>
+            </table>	    
+	    </fieldset>
+    </div>	
+	
+	<div class="contentForm" id="divRevestimiento" style="display:none">
+    
+    	<fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Revestimiento(5):</legend>
+	        
+	   		<table class="tableContent">
+              <tr>
+              <td><span id="lblAR" style="font-size: 80%">A-Mármol importado,madera fina (caoba o similar) bladoza acústico en techo similar</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblBR" style="font-size: 80%">B-Mármol nacional madera fina (caoba o similar) enchapes en techo</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblCR" style="font-size: 80%">C-Superficie caravista obtenida mediante encofrado especial, enchapes en techo</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblDR" style="font-size: 80%">D-Enchape de madera o laminado, piedra o material vitrificado</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblER" style="font-size: 80%">E-Superficie de ladrillo caravista</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblFR" style="font-size: 80%">F-Tarrageo frotachado y/o yeso moldurado, pintura lavable</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblGR" style="font-size: 80%">G-Estucado de yeso y/o barro, pintura al temple o agua</span></td>
+              </tr>
+			  <tr>
+			  <td><span id="lblHR" style="font-size: 80%">H-Pintado en ladrillo rústico, placa de concreto similar</span></td>
+              </tr>
+			  <tr>
+			  <td><span id="lblIR" style="font-size: 80%">I-Sin revistimiento en ladrillo, adobe o similar</span></td>
+              </tr>
+            </table>	    
+	    </fieldset>
+    </div>	
+	
+	<div class="contentForm" id="divBanos" style="display:none">
+    
+    	<fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Baños(6):</legend>
+	        
+	   		<table class="tableContent">
+              <tr>
+              <td><span id="lblAB" style="font-size: 80%">A-Baños completos de lujo importado con enchape fino (adobe o similar)</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblBB" style="font-size: 80%">B-Baños completos improtado con mayólica o cerámico decorativo importado</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblCB" style="font-size: 80%">C-Baños completos nacionales de color con mayólica o cerámico nacional de color</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblDB" style="font-size: 80%">D-Baño completo nacional blanco con mayólica blanca</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblEB" style="font-size: 80%">E-Baños conmayólicas blanca o parcial</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblFB" style="font-size: 80%">F-Baños blanco sin mayólica</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblGB" style="font-size: 80%">G-Saniatrios básicos de losa de segunda, fierro fundido o granito</span></td>
+              </tr>
+			  <tr>
+			  <td><span id="lblHB" style="font-size: 80%">H-Pintado en ladrillo rústico, placa de concreto similar</span></td>
+              </tr>
+			  <tr>
+			  <td><span id="lblIB" style="font-size: 80%">I-Sin aparatos sanitarios</span></td>
+              </tr>
+            </table>	    
+	    </fieldset>
+    </div>	
+	
+	<div class="contentForm" id="divInstalaciones" style="display:none">
+    
+    	<fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Instalaciones Electricas y Sanitarias(7):</legend>
+	        
+	   		<table class="tableContent">
+              <tr>
+              <td><span id="lblAI" style="font-size: 80%">A-Aire acondicionado, iluminación especial sist. Hidroneumatico agua caliente y fría, intercomunicador, alarmas ascensor, desague por bombeo,teléfono</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblBI" style="font-size: 80%">B-Sistema de bombeo de agua potable, ascensor, teléfono, agua caliente y fría</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblCI" style="font-size: 80%">C-Igual punto[B] sin ascensor</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblDI" style="font-size: 80%">D-Agua fría, agua caliente, corriente trifásica, teléfono</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblEI" style="font-size: 80%">E-Agua fría, agua caliente, corriente monofásica, teléfono</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblFI" style="font-size: 80%">F-Agua fría, corriente monofásica</span></td>
+			  </tr>
+			  <tr>
+			  <td><span id="lblGI" style="font-size: 80%">G-Agua fría, corriente monofásica sin emportrar</span></td>
+              </tr>
+			  <tr>
+			  <td><span id="lblHI" style="font-size: 80%">H-Sin instalación eléctrica ni sanitaria</span></td>
+              </tr>
+            </table>	    
+	    </fieldset>
+    </div>	
+	
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>

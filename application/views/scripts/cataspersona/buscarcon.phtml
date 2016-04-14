@@ -1,0 +1,43 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Cataspersona_buscarcon.js"></script>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Criterios:</legend>
+        <div class="contentForm">
+        <table class="tableContent">
+          <tr>
+          <td>
+          <label>
+          <input id="rdCriterioy1" name="rdCriterioy" type="radio" value="C" checked/><b> Código</b>
+          </label>
+          </td>
+          <td>
+          <label>
+          <input id="rdCriterioy2" name="rdCriterioy" type="radio" value="N" /><b> Nombre</b>
+          </label>
+          </td>
+          <td>
+          <label>
+          <input id="rdCriterioy3" name="rdCriterioy" type="radio" value="D" /><b> Documento</b>
+          </label>
+          </td>              
+          <td><input name="txtCriterioy" id="txtCriterioy" type="text" class="caja" size="30" maxlength="100" style="text-transform:uppercase" /></td>
+          <td><input type="button" id="btnSearchCon" value="Buscar" /></td>
+          </tr>
+        </table>	    
+        </div>
+    </fieldset>
+    <br/>
+    <div id="gridCPersony"></div>
+    <br/>
+    <div class="divButtons">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+        <td style="padding-left:5px">
+        <input type="button" id="btnNewCon" value="Nuevo" />
+        <input type="button" id="btnCloseCon" value="Cancelar" />
+        </td>
+        <td></td>
+        </table>
+    </div>
+</div>

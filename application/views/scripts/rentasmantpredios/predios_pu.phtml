@@ -1,0 +1,181 @@
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">Características del Predio:</legend>
+    <div class="contentForm">
+    	<fieldset class="ui-widget ui-widget-content">
+	    <legend style="margin-left:5px">Ubicación:</legend>
+        <div class="contentForm">
+        	<div style="float:left">
+           	<table class="tableContent">
+			<tr>
+			    <td><span id="lblCp">CP:</span></td>
+			    <td colspan="3"><input name="txtCp" id="txtCp" type="text" class="cajaoff" size="80" maxlength="100" readonly /></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblVia">Vía:</span></td>
+			    <td><input name="txtVia" id="txtVia" type="text" class="cajaoff" size="50" maxlength="100" readonly /></td>
+			    <td><span id="lblCvia">Código:</span></td>
+			    <td><input name="txtCvia" id="txtCvia" type="text" class="cajaoff" size="14" maxlength="100" readonly /></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblDir">Dir:</span></td>
+			    <td colspan="3"><input name="txtDir" id="txtDir" type="text" class="caja" size="80" maxlength="100" /></td>
+			</tr>
+		    </table>
+            </div>
+            <div style="float:left">
+            <input type="button" id="btnCopiar" value="Copiar Predio" />
+            </div>
+        	<div style="clear:both">
+            <table class="tableContent">
+              <tr>
+              <td><span id="lblNro">Nro:</span></td>
+              <td><input name="txtNro" id="txtNro" type="text" class="caja" size="10" maxlength="100" /></td>
+              <td><span id="lblNro">Dpto:</span></td>
+              <td><input name="txtDpto" id="txtDpto" type="text" class="caja" size="10" maxlength="100" /></td>
+              <td><span id="lblNro">Mza:</span></td>
+              <td><input name="txtMza" id="txtMza" type="text" class="caja" size="10" maxlength="100" /></td>
+              <td><span id="lblNro">Lte:</span></td>
+              <td><input name="txtLte" id="txtLte" type="text" class="caja" size="10" maxlength="100" /></td>
+              <td><span id="lblNro">Sub Lte:</span></td>
+              <td><input name="txtSubLte" id="txtSubLte" type="text" class="caja" size="10" maxlength="100" /></td>
+              <td><span id="lblNro">Frontis:</span></td>
+              <td><input name="txtFrontis" id="txtFrontis" type="text" class="caja" size="10" maxlength="100" /></td>
+              </tr>
+            </table>
+            </div>        	    
+        </div>
+        </fieldset>
+        <br/>
+        <div style="float:left; margin-right:5px">
+        	<fieldset class="ui-widget ui-widget-content">
+            <legend style="margin-left:5px">Descripción:</legend>
+            <div class="contentForm">
+            <table class="tableContent">
+              <tr>
+              <td><span id="lblTipPredio">Tipo de predio:</span></td>
+              <td colspan="3"><select name="cmbTipPredio" id="cmbTipPredio" class="combo"><option>[Seleccione]</option></select></td>
+              </tr>
+              <tr>
+              <td><span id="lblTipPredio">Uso:</span></td>
+              <td colspan="3">
+              <select name="cmbUso" id="cmbUso" class="combo">
+              <option>[Seleccione]</option>
+              <option value="1">Ocultar Pisos</option>
+              <option value="2">Mostrar Pisos</option>
+              </select>
+              </td>
+              </tr>
+              <tr>
+              <td><span id="lblTipPredio">Tipo de predio urbano:</span></td>
+              <td colspan="3"><select name="cmbTipPredio" id="cmbTipPredio" class="combo"><option>[Seleccione]</option></select></td>
+              </tr>
+              <tr>
+              <td><span id="lblTipPredio">Estado de construcción:</span></td>
+              <td colspan="3"><select name="cmbTipPredio" id="cmbTipPredio" class="combo"><option>[Seleccione]</option></select></td>
+              </tr>
+              <tr>
+              <td><span id="lblTipPredio">Condición de la propiedad:</span></td>
+              <td colspan="3"><select name="cmbTipPredio" id="cmbTipPredio" class="combo"><option>[Seleccione]</option></select></td>
+              </tr>
+              <tr>
+                <td><span id="lblNro">Nro. Pisos:</span></td>
+                <td><input name="txtNro" id="txtNro" type="text" class="cajaoff" size="10" maxlength="100" readonly /></td>
+                <td><span id="lblNro">Nro. Cond:</span></td>
+                <td><input name="txtNro" id="txtNro" type="text" class="caja" size="10" maxlength="100" /></td>
+              </tr>
+              <tr>
+                <td><span id="lblNro">Area de terreno (m2):</span></td>
+                <td><input name="txtNro2" id="txtNro2" type="text" class="caja" size="10" maxlength="100"/></td>
+                <td>&nbsp;</td>
+                <td><input name="txtNro2" id="txtNro2" type="text" class="caja" size="10" maxlength="100" /></td>
+              </tr>
+              <tr>
+                <td><span id="lblNro">Area comun:</span></td>
+                <td><input name="txtNro2" id="txtNro3" type="text" class="caja" size="10" maxlength="100" /></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              </table>
+            </div>
+            </fieldset>
+            <br/>
+            <fieldset class="ui-widget ui-widget-content">
+            <legend style="margin-left:5px">Datos compra y/o venta:</legend>
+            <div class="contentForm">
+            <table class="tableContent">
+              <tr>
+              <td><span id="lblFecAdqui">F. Adquisición:</span></td>
+              <td><input name="txtFecAdqui" id="txtFecAdqui" type="text" class="caja" size="12" maxlength="10" /></td>
+              <td>&nbsp;</td>
+              <td><span id="lblFecAdqui"><input type="checkbox"> Predio vendido</span></td>
+              </tr>
+              <tr>
+              <td><span id="lblFecTrans">F. Transferencia:</span></td>
+              <td><input name="txtFecTrans" id="txtFecTrans" type="text" class="caja" size="12" maxlength="10" /></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              </tr>
+            </table>
+            </div>
+            </fieldset>
+        </div>
+        <div style="float:left; margin-left:5px">
+        	<fieldset class="ui-widget ui-widget-content">
+            <legend style="margin-left:5px">Doc. sobre la construcción:</legend>
+            <div class="contentForm">
+            <table class="tableContent">
+              <tr>
+              <td><span id="lblFecAdqui"><input type="checkbox"> Licencia de construcción</span></td>
+              </tr>
+              <tr>
+              <td><span id="lblFecAdqui"><input type="checkbox"> Conformidad de obra</span></td>
+              </tr>
+              <tr>
+              <td><span id="lblFecAdqui"><input type="checkbox"> Declaración de fábrica</span></td>
+              </tr>
+            </table>
+            </div>
+            </fieldset>
+            <br/>
+            <fieldset class="ui-widget ui-widget-content">
+            <legend style="margin-left:5px">Servicios:</legend>
+            <div class="contentForm">
+            <table class="tableContent">
+              <tr>
+              <td><span id="lblFecAdqui">Sum. Agua:</span></td>
+              <td><input name="txtAgua" id="txtAgua" type="text" class="caja" size="20" maxlength="10" /></td>
+              </tr>
+              <tr>
+              <td><span id="lblFecAdqui">Sum. Luz:</span></td>
+              <td><input name="txtAgua" id="txtAgua" type="text" class="caja" size="20" maxlength="10" /></td>
+              </tr>
+            </table>
+            </div>
+            </fieldset>
+            <br/>
+            <fieldset class="ui-widget ui-widget-content">
+            <legend style="margin-left:5px">Códigos Alternos:</legend>
+            <div class="contentForm">
+            <table class="tableContent">
+              <tr>
+              <td><span id="lblFecAdqui">Cod. Predio:</span></td>
+              <td><input name="txtAgua" id="txtAgua" type="text" class="caja" size="20" maxlength="10" /></td>
+              </tr>
+            </table>
+            </div>
+            </fieldset>
+            <br/>
+            <fieldset class="ui-widget ui-widget-content">
+            <legend style="margin-left:5px">Observaciones:</legend>
+            <div class="contentForm">
+            <table class="tableContent">
+              <tr>
+              <td><textarea name="txtAgua" cols="30" rows="3" class="caja" id="txtAgua"></textarea></td>
+              </tr>
+            </table>
+            </div>
+            </fieldset>
+        </div>
+        <br style="clear:both"/>
+    </div>
+</fieldset>

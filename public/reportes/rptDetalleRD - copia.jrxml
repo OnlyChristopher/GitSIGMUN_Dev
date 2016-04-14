@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptDetalleRD" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<parameter name="id_valor" class="java.lang.String"/>
+	<parameter name="num_val" class="java.lang.String"/>
+	<parameter name="ano_val" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[exec Rentas.sp_ImprimeRD @buscar=1,@id_valor=$P{id_valor},@num_val=$P{num_val},@ano_val=$P{ano_val}]]>
+	</queryString>
+	<field name="id_valor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="num_val" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ano_val" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_insol" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mora" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solidos" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="barrido" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="parques" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="serenazgo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="periodo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="solidos_1" class="java.math.BigDecimal" resetType="Group" resetGroup="rptdetallerdd" calculation="Sum">
+		<variableExpression><![CDATA[$F{solidos}]]></variableExpression>
+	</variable>
+	<variable name="barrido_1" class="java.math.BigDecimal" resetType="Group" resetGroup="rptdetallerdd" calculation="Sum">
+		<variableExpression><![CDATA[$F{barrido}]]></variableExpression>
+	</variable>
+	<variable name="serenazgo_1" class="java.math.BigDecimal" resetType="Group" resetGroup="rptdetallerdd" calculation="Sum">
+		<variableExpression><![CDATA[$F{serenazgo}]]></variableExpression>
+	</variable>
+	<variable name="imp_insol_1" class="java.math.BigDecimal" resetType="Group" resetGroup="rptdetallerdd" calculation="Sum">
+		<variableExpression><![CDATA[$F{imp_insol}]]></variableExpression>
+	</variable>
+	<variable name="mora_1" class="java.math.BigDecimal" resetType="Group" resetGroup="rptdetallerdd" calculation="Sum">
+		<variableExpression><![CDATA[$F{mora}]]></variableExpression>
+	</variable>
+	<variable name="imp_total_1" class="java.math.BigDecimal" resetType="Group" resetGroup="rptdetallerdd" calculation="Sum">
+		<variableExpression><![CDATA[$F{imp_total}]]></variableExpression>
+	</variable>
+	<variable name="parques_1" class="java.math.BigDecimal" resetType="Group" resetGroup="rptdetallerdd" calculation="Sum">
+		<variableExpression><![CDATA[$F{parques}]]></variableExpression>
+	</variable>
+	<group name="rptdetallerdd">
+		<groupExpression><![CDATA[$V{PAGE_NUMBER}]]></groupExpression>
+		<groupHeader>
+			<band height="42">
+				<line>
+					<reportElement x="4" y="2" width="1" height="40"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="13" y="4" width="37" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[TRIBUTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="24" width="37" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[PERIODO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="204" y="18" width="66" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[PARQUES Y]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="64" y="27" width="51" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[SOLIDOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="362" y="17" width="63" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[INSOLUTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="59" y="2" width="511" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ARBITRIOS MUNICIPALES]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="64" y="17" width="51" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[RESIDUOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="129" y="27" width="55" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[CALLES]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="129" y="17" width="55" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[BARRIDO]]></text>
+				</staticText>
+				<line>
+					<reportElement x="120" y="15" width="1" height="26"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="204" y="27" width="66" height="10"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[JARDINES]]></text>
+				</staticText>
+				<line>
+					<reportElement x="280" y="15" width="1" height="26"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="505" y="15" width="1" height="26"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="5" y="1" width="565" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="512" y="16" width="53" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[SUB]]></text>
+				</staticText>
+				<line>
+					<reportElement x="192" y="15" width="1" height="26"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="445" y="17" width="49" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[INTERES]]></text>
+				</staticText>
+				<line>
+					<reportElement x="352" y="15" width="1" height="26"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="512" y="26" width="53" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="290" y="17" width="49" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[SERENAZGO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="445" y="27" width="49" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[DIARIO]]></text>
+				</staticText>
+				<line>
+					<reportElement x="59" y="14" width="511" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="58" y="2" width="1" height="40"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="570" y="2" width="1" height="40"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="434" y="15" width="1" height="26"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="15">
+				<line>
+					<reportElement x="192" y="0" width="1" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="570" y="0" width="1" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="4" y="13" width="567" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="-423" y="2" width="37" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ANUALES]]></text>
+				</staticText>
+				<line>
+					<reportElement x="5" y="0" width="566" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="4" y="0" width="1" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="120" y="0" width="1" height="14"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="58" y="0" width="1" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="280" y="1" width="1" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="434" y="1" width="1" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="352" y="0" width="1" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="505" y="1" width="1" height="13"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="13" y="1" width="37" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ANUALES]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="64" y="1" width="51" height="11"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{solidos_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="129" y="1" width="55" height="11"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{barrido_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="290" y="1" width="49" height="11"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{serenazgo_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="362" y="1" width="63" height="11"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{imp_insol_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="445" y="1" width="49" height="11"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{mora_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="512" y="1" width="53" height="11"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{imp_total_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="204" y="2" width="66" height="11"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{parques_1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<line>
+				<reportElement x="4" y="0" width="1" height="12"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="58" y="0" width="1" height="12"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="120" y="0" width="1" height="12"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="192" y="0" width="1" height="12"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="280" y="0" width="1" height="12"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="352" y="0" width="1" height="12"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="434" y="0" width="1" height="12"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="505" y="0" width="1" height="12"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="570" y="0" width="1" height="12"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="64" y="1" width="51" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{solidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="1" width="55" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{barrido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="204" y="1" width="66" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{parques}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="1" width="49" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{serenazgo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="1" width="63" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_insol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="1" width="49" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{mora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="512" y="1" width="53" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="1" width="52" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{anno}+ "-" +$F{periodo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="4" y="0" width="566" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

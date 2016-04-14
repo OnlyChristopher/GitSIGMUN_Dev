@@ -1,0 +1,73 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Transporte_manten_conductores.js"></script>
+<style type="text/css">
+	.text1{
+		font-family: tahoma;
+		font-size:11px;
+	}
+</style>
+
+<form id="frmConductor">
+<input type="hidden" name="actionHr" id="actionHr">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><span class="text1">DATOS DEL CONDUCTOR :</span></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="60%" border="0" cellpadding="0">
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">Id :</span>
+					<td>
+						<input type="text" name="txtidx" id="txtidx" class="cajaoff" readonly>
+						<input type="hidden" name="txttranid" id="txttranid" value="0">
+					<td>
+			    </tr>
+			    <tr>
+				    <td>
+						<span id="lblplaca" class="text1">C&oacute;digo </span>
+					<td>
+						<span id="lblpadron" class="text1">Raz&oacute;n Social </span>
+					<td>	
+						&nbsp;
+			    </tr>
+				<tr>
+					<td>
+						<input type="text" name="txtconcodigo" id="txtconcodigo" class="cajaoff" readonly style="width:60px;">
+					<td>	
+						<input type="text" name="txtconnombre" id="txtconnombre" class="cajaoff" readonly style="width:520px;">
+					<td>	
+						<input type="button" value="Buscar" id="btnconbuscar" />
+				</tr>
+			    <tr>
+				<table class="tableContent" width="90%" border="0" cellpadding="0">
+					<td>
+						<span id="lblcodigo" class="text1">Licencia :</span>
+					<td>
+						<input type="text" name="txtlicencia" id="txtlicencia" class="caja">
+					<td>
+						<span id="lblcodigo" class="text1">Desde :</span>
+					<td>
+						<input type="text" name="txtfecdesde" id="txtfecdesde" class="caja" style="width:80px;">
+					<td>
+						<span id="lblcodigo" class="text1">Hasta :</span>
+					<td>
+						<input type="text" name="txtfechasta" id="txtfechasta" class="caja" style="width:80px;">
+			    </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br style="clear:both">
+<div class="divButtons">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td style="padding-left:5px">
+				<input type="button" value="Grabar" id="btncongrabar" style="width:150px; height:40px" />
+				<input type="button" value="Cerrar" id="btnconcierra" style="width:150px; height:40px" />
+			</td>
+			<td>
+			</td>
+		</tr>
+    </table>
+</div>
+</form>

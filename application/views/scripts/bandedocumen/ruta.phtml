@@ -1,0 +1,82 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script> 
+var valor='<?php echo $this->valor;?>';  
+var num='<?php echo $this->num;?>';
+var ano='<?php echo $this->ano;?>';
+</script>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandedocumen_ruta.js"></script>
+<form id="frmruta">
+<input type="hidden" name="txtValorruta" id="txtValorruta">   
+<input type="hidden" name="txtNumruta" id="txtNumruta">  
+<input type="hidden" name="txtAnoruta" id="txtAnoruta">  
+
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        
+        <div style="float:left;padding-right:5px">
+        
+        	<table class="tableContent"> <!--  tableContent me permite separar-->
+				<tr>
+			     	<td style="padding-right: 10px"><span id="lblCodiruta">Código:</span></td>
+			     	<td><h1 id="lblCodigoruta"></h1></td>
+					<td style="padding:0 10px 0 20px"><span id="lblContriruta">Contribuyente:</span></td>
+			     	<td><h1 id="lblContribuyenteruta"></h1></td>
+				</tr>
+			</table >
+			
+			
+			<table class="tableContent" align="center">	
+				<tr>
+					<td style="padding-right: 10px">
+			     		<h1 id="lblDocumentoruta" class="title3"></h1>
+					</td>
+		    	 </tr>
+		    	 <tr><td></td></tr>
+			</table>
+		</div>
+					
+			
+		<div style="float:left;padding-right:5px">
+        	<table class="tableContent"> <!--  tableContent me permite separar-->
+				    <tr>
+					    <td style="padding:0 0 0 350px"><span id="lblExpedienteruta">Nro. Expediente:</span></td>
+			     		<td><h1 id="lblExperuta">0000051.00000</h1></td>
+				    </tr>
+			</table>
+		</div>
+			
+			<br style="clear:both">
+		<!--	
+	   	<table border="0" cellspacing="0" cellpadding="0">
+	              <tr>
+	              <td><span id="lblOrigen"><input name="txtOrigen" id="txtOrigen" type="text" class="cajaoff" size="100" readonly value="Origen" /></span></td>
+	              <td><span id="lblDestino"><input name="txtDestino" id="txtDestino" type="text" class="cajaoff" size="100" readonly value="Destino" /></span></td>
+	              </tr>
+	    </table>
+         -->   
+        <div id="gridRuta">
+        </div>   	    
+	
+	    <div >           
+	      <div class="divButtons">
+		    <table class="tableContent">
+		     <tr>
+			    <td><span id="lblObservacion">Observación:</span></td>
+			    <td><span id="lblSituacion">Situación:</span></td>
+			    <td></td>
+			 </tr>
+			 <tr>
+			    <td><textarea name="txtobsruta" id="txtobsruta" cols="100" rows="3" class="cajaoff" readonly></textarea></td>
+			    <td valign="top"><input name="txtSituacionruta" id="txtSituacionruta" type="text" class="cajaoff" size="20" readonly/></td>
+			    <td valign="top" style="padding-left: 180px"><input type="button" name="btnSalidaruta" id="btnSalidaruta" value="Salir" /></td>
+			 </tr>
+		    </table>
+		  </div>           
+	    </div>
+  
+   </div>   
+  </fieldset>
+</div>
+</form>

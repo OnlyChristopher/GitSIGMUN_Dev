@@ -1,0 +1,30 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rentasdecjurada_nuevo.js"></script>
+<form id="frmAnioHr">
+<fieldset class="ui-widget ui-widget-content">
+	<legend style="margin-left:5px">Seleccione Años:</legend>
+    <div class="contentForm">
+    <table class="tableContent" width="100%">
+		<tr>
+		<td width="1"><span id="lblCodigo">Desde:</span></td>
+		<td><input name="txtHrDesde" id="txtHrDesde" type="text" class="caja" size="10" maxlength="4" /></td>
+		</tr>
+		<tr>
+		<td><span id="lblAnexo">Hasta:</span></td>
+		<td><input name="txtHrHasta" id="txtHrHasta" type="text" class="caja" size="10" maxlength="4" /></td>
+		</tr>
+	</table>	    
+    </div>
+    </fieldset>
+    <div class="divButtons">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+        <td style="padding-left:5px">
+        <input type="button" value="Grabar" id="btnGrabarHr" />
+    	<input type="button" value="Cerrar" id="btnCerrarHr" />
+        </td>
+        <td></td>
+        </table>
+    </div>
+    
+</form>

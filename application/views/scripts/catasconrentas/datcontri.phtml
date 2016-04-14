@@ -1,0 +1,14 @@
+<?php header('Content-Type: text/html; charset=utf-8'); ?>
+<script>
+	var datax = '<?php echo $this->json; ?>';
+	datax = datax.replace('[','');
+	datax = datax.replace(']','');
+	datax = JSON.parse(datax);
+</script>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Catasconrentas_datcontri.js"></script>
+<div id="gridDContri"></div>
+
+<div class="divButtons">
+    <input type="button" name="btnDContriAceptar" id="btnDContriAceptar" value=" Aceptar " />
+    <input type="button" name="btnDContriCancelar" id="btnDContriCancelar" value=" Cancelar " />
+</div>

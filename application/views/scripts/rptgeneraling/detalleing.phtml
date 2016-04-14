@@ -1,0 +1,58 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rptgeneraling_detalle.js"></script>
+
+
+<form id="frmdetalle">
+<input type="hidden" name="txtAnioPago" id="txtAnioPago">   
+<input type="hidden" name="txtAnioObl" id="txtAnioObl">  
+<input type="hidden" name="txtIdZona" id="txtIdZona"> 
+<input type="hidden" name="txtIdMes" id="txtIdMes">  
+
+<div >
+    <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        	<div style="padding:0 0 0 0"> <!-- arriba derecha abajo izquierda -->
+        	    <table align="center">
+	 			 <tr>
+					<td colspan="4" style="padding-top: 10px">
+			     		<h1 id="lblDetalle" class="title3"></h1>
+					</td>
+			     </tr>       
+			    </table> 
+        		<br>
+        		<table class="tableContent" border="0">
+			     <tr>
+			     	<td style="padding-right: 10px" align="left"><span id="lblData1">Anio Ingreso:</span></td>
+			     	<td><span>:</span></td>
+					<td width="200px"><h1 id="lblAnio_Ingreso"></h1></td>
+					<td style="padding-right: 10px"><span id="lblDataCombo">Vias:</span></td>
+			     	<td><select name="cb_Vias" id="cb_Vias" class="combo" style="width:250px"><?php echo $this->cb_Vias;?></select></td>
+				 </tr>
+				 <tr>
+			     	<td style="padding-right: 10px" align="left"><span id="lblData2">Anio Obligacion:</span></td>
+					<td><span>:</span></td>
+			     	<td><h1 id="lblAnio_Obligacion"></h1></td>
+				 </tr>
+				 <tr>
+			     	<td style="padding-right: 10px" align="left"><span id="lblData3">Sector:</span></td>
+					<td><span>:</span></td>
+			     	<td><h1 id="lblSector"></h1></td>
+				 </tr>
+				 <tr>
+					<td style="padding-right: 10px" align="left"><span id="lblData4">Mes:</span></td>
+					<td><span>:</span></td>
+			     	<td><h1 id="lblMes"></h1></td>
+				 </tr>
+			
+				</table>
+			</div>
+			
+        	<div id="ReporteIngre_Detallado">	
+	   
+	    	
+			</div>  
+   </div>   
+  </fieldset>
+</div>
+</form>

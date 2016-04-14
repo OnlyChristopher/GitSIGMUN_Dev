@@ -1,0 +1,45 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Catasmantvia_via.js"></script>
+<form id="frmcatavia">
+<input  type="hidden"  name="txtCodcatavia_via" id="txtCodcatavia_via">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			      <td><span id="lblCodigo">Código:</span></td>
+			      <td><input name="txtCodcatavia" id="txtCodcatavia" type="text" class="caja" size="10" /></td>
+			    </tr>
+			    
+			    <tr>
+			      <td><span id="lblTipo">Tipo:</span></td>
+			      <td><select name="cmbTipovia" id="cmbTipovia" class="combo"><option>[Seleccione]</option></select></td>
+			    </tr>
+			     		
+				<tr>
+			      <td><span id="lblDescripcion">Nombre:</span></td>
+				  <td><input name="txtNomvia" id="txtNomvia" type="text" class="caja" size="30" style="text-transform:uppercase;" /></td>
+			    </tr>  
+			    
+			    <tr>
+			      <td colspan="7">
+                  <div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+           	          <input type="button" name="btnGrabaVia" id="btnGrabaVia" value="Grabar" />
+                      <input type="button" name="btnSalirVia" id="btnSalirVia" value="Salir" />
+                    </td>
+                    </tr>
+                    </table>
+                  </div>
+                  </td>
+		      </tr>
+			    
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<div ID="MSG_ERROR"></div>
+</form>

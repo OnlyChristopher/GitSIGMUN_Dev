@@ -1,0 +1,142 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Cargonotifica_formu.js"></script>
+
+	<script>
+	$(function() {
+		$( "#dpFechaRecepciona" ).datepicker();
+		$( "#dpFechaVisita" ).datepicker()
+		$( "#dpFechaCedulon" ).datepicker()
+		$( "#dpFechaNotifica" ).datepicker()
+
+	});
+	</script>
+    
+    
+<form id="formNotificacion" name="formNotificacion">
+<div>
+    <div id="contentBox6" class="ui-content-tabs"  style="float:left;width:100%">					
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px">CARGO DE NOTIFICACION</li>
+    </ul>
+       		
+        	 <table class="tableContent"  style="width:100%">
+  <tr>
+   <td valign="top">
+    <fieldset class="ui-widget ui-widget-content"  style="margin-left:5px" >
+            <legend style="margin-left:5px">Datos:</legend>
+            <table class="tableContent"  style="width:100%">
+            <tr>
+              <td width="15%">
+              <input type="hidden" name="hcodCartaReq" id="hcodCartaReq" />
+              <input type="hidden" name="hcodNotificacion" id="hcodNotificacion" />
+              <label for="txtNroNotificacion">Nro :</label>
+              </td>
+              <td width="27%">
+              <input type="text" name="txtNroNotificacion" id="txtNroNotificacion" readonly="readonly" class="cajaoff" /></td>
+              <td width="9%">&nbsp;</td>
+              <td width="49%">&nbsp;</td>
+            </tr>
+            
+            <tr>
+              <td><label for="txtCodigoContribuyenteN">Codigo de Contribuyente:</label></td>
+              <td>
+              <input name="txtCodigoContribuyenteN" type="text" class="cajaoff" id="txtCodigoContribuyenteN" readonly="readonly" /></td>
+              <td><label for="txtContribuyenteN">Contribuyente:</label></td>
+              <td>
+              <input name="txtContribuyenteN" type="text" class="cajaoff" id="txtContribuyenteN" size="50" readonly="readonly" />
+              <input type="hidden" name="hTipoDocIdent" id="hTipoDocIdent"  />
+              <input type="hidden" name="hNroDocIdent" id="hNroDocIdent"  />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4" align="left">
+                      <table style="width:100%">
+                            <tr>
+                              <td width="15%">Domicilio Fiscal:</td>
+                              <td colspan="3"><label for="txtDomicilioFiscal"></label>
+                              <input name="txtDomicilioFiscal" type="text" class="cajaoff" id="txtDomicilioFiscal" style="width:100%" readonly="readonly" /></td>
+                              <td width="12%" align="center">Distrito</td>
+                              <td width="16%"><label for="txtDistrito"></label>
+                              <input name="txtDistrito" type="text" class="cajaoff" id="txtDistrito" readonly="readonly"  /></td>
+                              </tr>
+                            <tr>
+                              <td>Tipo de documento:</td>
+                              <td width="44%"><label for="txtTipoDocCartaReq"></label>
+                              <input name="txtTipoDocCartaReq" type="text" class="cajaoff" id="txtTipoDocCartaReq" style="width:100%" value="CARTA DE PRESENTACION Y REQUERIMIENTO DE DOCUMENTACION" readonly="readonly"/></td>
+                              <td width="5%" align="right">A&ntilde;o:</td>
+                              <td width="8%" align="right"><label for="txtAnioN"></label>
+                              <input name="txtAnioN" type="text" class="cajaoff" id="txtAnioN" size="10" readonly="readonly" /></td>
+                              <td align="center">Nro Documento:</td>
+                              <td><label for="txtNroCartaReqN"></label>
+                              <input name="txtNroCartaReqN" type="text" class="cajaoff" id="txtNroCartaReqN" readonly="readonly" /></td>
+                        </tr>
+                          </table>
+                  </td>
+              </tr>      
+            
+            <tr>
+              <td colspan="4"><br />
+	<div id="tabsNotificacion">
+		        <ul >
+                	  
+					<li id="tabPersona">
+	                    <a href="#tabDatosPersona">
+	                    <div>Datos de la persona quien recepciona</div>
+	                    </a>
+	                </li>
+		             <li  id="tabCedulon">
+	                    <a href="#tabNotCedulon">
+	                    <div>Notificacion por pegado de cedulon y Motivos de no entrega</div>
+	                    </a>
+	                </li>                      
+                     <li  id="tabVisita">
+	                    <a href="#tabVisitaEfectuada">
+	                    <div>Visita efectuada</div>
+	                    </a>
+	                </li>               
+		        </ul>
+                <div id="tabDatosPersona">
+                 <?php include_once('not_persona.phtml');  ?>
+                </div>
+		        <div id="tabNotCedulon">
+                 <?php include_once('not_cedulon_motivo.phtml');  ?>
+                </div>	                
+                <div id="tabVisitaEfectuada">
+                 <?php include_once('not_visita.phtml');  ?>
+                </div>			
+		</div>
+              </td>           
+
+            </tr>                      
+               <tr>
+              <td colspan="4" align="center">
+			 <div class="divButtons" >
+                	<input type="button" id="btnSaveNotificacion" name="btnSaveNotificacion" value="Guardar" />
+                    <input type="button" id="btnImprimirCargo" name="btnImprimirCargo" value="Imprimir" />
+                    <input type="button" id="btnCancelCedulon" name="btnCancelCedulon" value="Cancelar" />
+                </div>
+	
+               </td>           
+
+            </tr>
+               
+               
+            </table>	
+        </fieldset>   
+        </td>
+  </tr>
+  <tr>
+    <td valign="bottom">
+    
+ </td>
+    </tr>
+</table> 
+             
+    	 	
+ 
+	 	
+    </div>
+</div>
+
+
+</form>

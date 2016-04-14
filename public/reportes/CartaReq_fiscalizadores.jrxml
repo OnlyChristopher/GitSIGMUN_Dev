@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CartaReq_fiscalizadores" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<parameter name="idCartaReq" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT UPPER(f.apellido_paterno+' '+f.apellido_materno+', '+f.nombres) fiscalizador,f.dni nroDoc
+FROM fiscalizacion.FISCALIZADORES f INNER JOIN Fiscalizacion.CARTAFISCALIZA cf ON cf.idFiscalizador = f.idFiscalizador AND cf.idCarta = $P{idCartaReq}]]>
+	</queryString>
+	<field name="fiscalizador" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nroDoc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<textField>
+				<reportElement x="33" y="0" width="259" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fiscalizador}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="13" y="4" width="2" height="2" backcolor="#000000"/>
+			</rectangle>
+			<textField>
+				<reportElement x="348" y="0" width="115" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DNI N°"+$F{nroDoc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

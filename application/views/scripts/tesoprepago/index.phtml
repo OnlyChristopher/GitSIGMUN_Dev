@@ -1,0 +1,100 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_tesoprepago.js"></script>
+<?php echo $this->text;?>
+<form id="frmpago">
+<input type="hidden" name="actionPago" id="actionPago">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        	<table class="tableContent">
+			<!--manuel-->
+			    <tr><input type="hidden" id="txtmicriterio" name="txtmicriterio" ></tr>
+			<!---------->  	
+				<tr>
+			      <td width="100"><span id="lblCobrar">Total a cobrar:</span></td>
+			      <td><input name="txtCobrar" id="txtCobrar" value="0.00" type="text" class="cajaoff" size="20" maxlength="100" readonly /></td>
+			    </tr>
+			    
+			    <tr>
+			      <td width="100"><span id="lblEfectivo">Efectivo:</span></td>
+			      <td><input name="txtEfectivo" id="txtEfectivo" value='0.00' type="text" class="caja" size="20" maxlength="100" /></td>
+			    </tr>
+			    
+			    <tr>
+			      <td width="100"><span id="lblDevolucion">Devolución:</span></td>
+			      <td><input name="txtDevolucion" id="txtDevolucion" value='0.00' type="text" class="cajaoff" size="20" maxlength="100" readonly /></td>
+			    </tr>
+			    
+			    <tr>
+			      <td colspan="7">
+                  <div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+                      <label>
+                      <input name="rdformaPago" id="rdformaPago1" type="radio" value="E" checked/><b>Efectivo</b>
+                      </label>
+                      </td>
+                      <td>
+                      <label>
+                      <input name="rdformaPago" id="rdformaPago2" type="radio" value="C" /><b>Cheque</b>
+                      </label>
+                      </td>
+                      <td>
+                      <label>
+                      <input name="rdformaPago" id="rdformaPago3" type="radio" value="T" /><b>Tarjeta</b>
+                      </label>
+                    </td>
+                    </tr>
+                    </table>
+                  </div>
+                  </td>
+		      </tr>
+			    
+		    </table>	 
+		    
+		    
+		   <table class="tableContent">
+			    
+			   	<tr>
+			      <td width="100"><span id="lblGirador">Tarjeta :</span></td>
+			      <td><select style="width:125px" name="cmbTarjeta" id="cmbTarjeta" class="combo" disabled ></select></td>
+			    </tr>
+			    
+			    <tr>
+			      <td width="100"><span id="lblCheque">Nº Cheque :</span></td>
+			      <td><input name="txtCheque" id="txtCheque" type="text" class="cajaoff" size="20" maxlength="100" readonly /></td>
+			    </tr>
+			    <tr>
+			      <td width="100"><span id="lblBanco">Banco: </span></td>
+			      <td><select style="width:125px" name="cmbBanco" id="cmbBanco" class="combo" disabled></select></td>
+			    </tr>
+			    <tr>
+			      <td width="100"><span id="lblCobro">Fecha de cobro:</span></td>
+			      <td><input name="txtFecCobro" id="txtFecCobro" type="text" class="cajaoff" size="20" maxlength="100" readonly /></td>
+			    </tr>
+			    <tr>
+			      <td width="100"><span id="lblObservacion">Ref.:</span></td>
+			      <td><input name="txtObservacion" id="txtObservacion" type="text" class="cajaoff" size="20" maxlength="100" readonly /></td>
+			    </tr>
+			    <tr>
+			      <td colspan="7">
+                  <div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+           	          <input type="button" name="btnAceptarPago" id="btnAceptarPago" value="Aceptar" />
+                      <input type="button" name="btnprintSalir" id="btnprintSalir" value="Salir" />
+                    </td>
+                    </tr>
+                    </table>
+                  </div>
+                  </td>
+		      </tr>
+		    </table>	
+        </div>
+    </fieldset>	    
+</div>
+</form>
+<div id="div_pintaboton"></div>

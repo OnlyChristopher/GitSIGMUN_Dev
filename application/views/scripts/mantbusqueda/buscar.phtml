@@ -1,0 +1,20 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Buscar.js"></script>
+<form id="frmbuscar">
+<div>
+	 <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">CriteriosS:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td><span id="lblNombre">Ingrese Nombre:</span></td>
+              <td><input name="txt_busvia" id="txt_busvia" style="text-transform: uppercase" type="text" class="caja" size="20" maxlength="100" /></td>
+              <td><input type="button" id="btnBusquedacri" value="Buscar" /></td>
+              </tr>
+            </table>	    
+	    	</div>
+	  </fieldset>   
+	  <br/>
+  	  <div id="gridBuscar"></div>
+</div>
+</form>

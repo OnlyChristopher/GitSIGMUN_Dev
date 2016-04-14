@@ -1,0 +1,368 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_notificacion.js"></script>
+<form id="frmultedit">
+<!--codigo--><input type="text" name="codigo" id='codigo' size="10" class="cajaoff" readonly />
+<!--tip_cont--><input type="text" name="numeroMulta" id='numeroMulta' size="10" class="cajaoff" readonly />
+t_contri<input type="text" name="tipocontri_multa" id='tipocontri_multa' size="10" class="cajaoff" readonly />
+anno<input type="text" name="anno_area" id="anno_area" size="5" class="cajaoff" readonly value="<?php echo $this->anno_area; ?> " />
+
+<input type="hidden" name="tipocontri_multa" id='tipocontri_multa' size="10" class="cajaoff" readonly />
+
+<fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px">Datos Generales</legend>
+				<div class="contentForm">
+				  <table>
+				  <tr>
+					<td>&nbsp;id_notif: &nbsp;</td>
+					<td><input name="txtnotificacion" type="text" class="cajaoff" id="txtnotificacion" style="text-transform:uppercase; width:120px" readonly /></td>
+					<td>&nbsp;anno_notif: &nbsp;</td>
+					<td><input name="txtannonotif" type="text" class="cajaoff" id="txtannonotif" style="text-transform:uppercase; width:120px" readonly /></td>
+				  </tr>
+				  </table>
+				</div>
+</fieldset>
+<br>
+		<div id="contentTabsLeft" class="ui-tabs-left">
+	        <ul>
+	            <li style="width:62px" id="tab1">
+                    <a href="#tabs-1">
+                    <img src="<?php echo $this->ruta;?>img/icon_licencias.png"><div>NOTIF.</div>
+                    </a>
+                </li>
+	                         
+                <li style="width:62px" id="tab5">
+                	<a href="#tabs-5">
+                    <img src="<?php echo $this->ruta;?>img/icon_licencias.png"><div>LOCAL</div>
+                    </a>
+                </li>
+				<li style="width:62px" id="tab7">
+                	<a href="#tabs-7">
+                    <img src="<?php echo $this->ruta;?>img/icon_licencias.png"><div>TESTIGO</div>
+                    </a>
+                </li>
+              	<div style="position:absolute; bottom:0;">
+                    <div style="padding-bottom:15px">
+                    <input type="button" name="btnSaveForm" id="btnSaveForm" value="Grabar" style="width:57px; height:40px; margin:5px 0 5px 0"/>
+                    <input type="button" name="btnCloseForm" id="btnCloseForm" value="Salir" style="width:57px; height:40px; margin:5px 0 5px 0"/>
+					
+                    </div>
+                </div>
+              
+	        </ul>   
+			
+			
+			<div id="tabs-5">
+			
+				</fieldset>
+                <!--<br>-->
+                <fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px">Registro de local</legend>
+				
+				<div class="contentForm">
+				  <table width="100%" border="0" class="tableContent">
+				    <tr>
+				      <td height="24" colspan="2">N. Via: </td>
+				      <td colspan="5"><input name="txtnomvia" type="text" class="cajaoff" id="txtnomvia" style="text-transform:uppercase; width:330px" readonly /></td>
+				      <td width="368"><input name="btnBusVia" id='btnBusVia' type="button" value="Buscar" style="width:60px; height:20px"/></td>
+			        </tr>
+				    <tr>
+				      <td colspan="2">Sector:</td>
+				      <td colspan="5"><input name="txtsector" type="text" class="cajaoff" id="txtsector" style="text-transform:uppercase; width:190px" readonly /></td>
+				      <td><input name="txtidvia" type="hidden" class="cajaoff" id="txtidvia" style="text-transform:uppercase; width:120px"  readonly /></td>
+			        </tr>
+                    <tr>
+				      <td colspan="2">Numero: </td>
+				      <td><input name="txtnumero" type="text" class="caja" id="txtnumero" style="text-transform:uppercase; width:60px" maxlength="10"  /></td>
+				      <td>&nbsp;</td>
+				      <td width="69">Manzana :</td>
+				      <td width="100"><input name="txtmanzana" type="text" class="caja" id="txtmanzana" style="text-transform:uppercase; width:60px" maxlength="10" /></td>
+				      <td width="47">Lote:</td>
+				      <td><input name="txtnlote" type="text" class="caja" id="txtnlote" style="text-transform:uppercase; width:60px" maxlength="10" /></td>
+			        </tr>
+                    <tr>
+				      <td colspan="2">Referencia:</td>
+				      <td colspan="6"><input name="txtinterior" type="text" class="caja" id="txtinterior" style="text-transform:uppercase; width:330px" maxlength="40"  /></td>
+			        </tr>
+                    <tr>
+				      <td colspan="2">Uso:</td>
+				      <td colspan="6"><select name="cmbuso" id='cmbuso' class="combo" style="width:330px">
+			          </select></td>
+			        </tr>
+                    <tr>
+				      <td colspan="2">Actividad:</td>
+				      <td colspan="6"><select name="cmbactividad" id='cmbactividad' class="combo" style="width:330px">
+			          </select></td>
+			        </tr>
+                    <tr>
+				      <td colspan="2">Giro:</td>
+				      <td colspan="6"><input name="giro" type="text" class="caja" id="giro" style="text-transform:uppercase; width:330px" maxlength="30"  /></td>
+			        </tr>
+                    <tr>
+				      <td width="100">Licencia:</td>
+				      <td width="29" align="center"><input type="checkbox" name="chkLicencia" id="chkLicencia" value="1" /></td>
+				      <td width="129">N.    
+			            <input name="nlicencia" type="text" class="caja" id="nlicencia" style="text-transform:uppercase; width:100px" maxlength="10"  /></td>
+				      <td width="7">&nbsp;</td>
+				      <td>Periodo :</td>
+				      <td><select name="cmbanolic" id='cmbanolic' class="combo" style="width:100px"> <?php echo $this->cb_anno;?>  </select></td>
+				      <td colspan="2">&nbsp;</td>
+			        </tr>
+			      </table>
+				</div>
+				
+				</fieldset>
+                <br>
+                <fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px">Registro de Informe:
+				
+				</legend>
+				<div class="contentForm">
+				  <table width="100%" border="0">
+				    <tr>
+				      <td width="137">N. Informe :</td>
+				      <td width="138"><input name="informe" type="text" class="caja" id="informe" style="text-transform:uppercase; width:120px" maxlength="10" /></td>
+				      <td width="94"> A&ntildeo :</td>
+				      <!--<td width="496"><input name="fechinf" type="text" class="caja" id="fechinf" style="text-transform:uppercase; width:120px" maxlength="10" /></td>-->
+					  <td width="496"><select name="cb_fechinf" id='cb_fechinf' class="combo" style="width:100px"><?php echo $this->cb_anno2;?></select></td>
+			        </tr>
+				    
+			      </table>
+				</fieldset>
+			</div>
+			
+	        <div id="tabs-1">
+			
+				<fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px">Registro de Notificaciones</legend>
+						
+				<div class="contentForm">
+					<table class="tableContent" border=0 width="100%">
+					  <tr>
+						<td><span>N. Preventiva :</span></td>
+						<td colspan="4"><input name="notificacion" type="text" class="caja" id="notificacion" style="text-transform:uppercase; width:120px" maxlength="7" /></td>
+					  </tr>
+					
+                      <tr>
+						  <td><span>Tip. Documento: </span></td>
+						  <td width="4%"><input type="radio" name="rbttnoti" id="rbttnoti1" value="A"/></td>
+						  <td width="10%">Acta</td>
+						  <td width="5%"><input type="radio" name="rbttnoti" id="rbttnoti2" value="N"/></td>
+						  <td width="56%">Notificacion</td>
+					  </tr>
+                      <tr>
+						  <td><span>Autoridad Municipal: </span></td>
+						  <td colspan="4"><select name="codigo_autoridad_municipal" id='codigo_autoridad_municipal' class="combo" style="width:300px"></select></td>
+					  </tr>
+					  <tr>
+						<td><span>Fecha de Notificacion: </span></td>
+						<td colspan="4">
+						<input type="hidden" id="anno_multa" name="anno_multa">
+						<input name="fecha_multa" type="text" class="caja" id="fecha_multa" style="text-transform:uppercase; width:100px" maxlength="10" />
+						<span>&nbsp;&nbsp;&nbsp;dd/mm/aaaa </span>
+						</td>
+					  </tr>
+					  <tr>
+						<td><span>Hora: </span></td>
+						<td colspan="4"><input name="fecha_notificacion" type="hidden" class="caja" id="fecha_notificacion" style="text-transform:uppercase; width:100px" maxlength="10" /> 
+						  <span>						  
+						  <input name="txthora"  type="time" class="caja" id="txthora" style="text-transform:uppercase; width:100px" maxlength="10" />
+						  &nbsp;&nbsp;&nbsp;hh:mm  
+						  </span></td>
+					  </tr>
+					  <!--<tr>
+						<td><span>Preimpreso: </span></td>
+						<td colspan="4"><input name="preimpreso" type="text" class="caja" id="preimpreso"  style="text-transform:uppercase; width:100px"/></td>
+					  </tr>-->
+					  <tr>
+						  <td><span>Infraccion: </span></td>
+						  <td colspan="4"><select name="codigo_area" id='codigo_area' class="combo" style="width:300px"></select></td>
+					  </tr>
+					  <tr>
+						  <td><span>&nbsp;&nbsp;&nbsp; </span></td>
+						  <td colspan="4"><select name="tipo_infraccion" id='tipo_infraccion' class="combo" style="width:300px"></select></td>
+					  </tr>
+					  <tr>
+						  <td><span>&nbsp;&nbsp;&nbsp; </span></td>
+						  <td colspan="4" ><select name="codigo_infraccion" id='codigo_infraccion' class="combo" style="width:300px"></select></td>
+					  </tr>
+					  <!--<tr>
+						<td><span>Cantidad: </span></td>
+						<td colspan="4"><input name="cantidad" id="cantidad" type="text" class="cajaoff"  readonly style="text-transform:uppercase; width:100px"  /><span>&nbsp;&nbsp;&nbsp;unidades(mayor a cero) </span></td>
+					  </tr>-->
+					  <tr>
+						<td><span>Base de Calculo: </span></td>
+						<td colspan="4"><input name="cantidad" id="cantidad" type="hidden" class="cajaoff"  readonly style="text-transform:uppercase; width:100px"  /><input name="base" id="base" type="text" class="cajaoff"  style="text-transform:uppercase; width:100px" readonly /><span>&nbsp;&nbsp;&nbsp;(mayor a cero) </span></td>
+					  </tr>
+					  <tr>
+						<td><span>Factor: </span></td>
+						<td colspan="4"><input name="factor" id="factor" type="text" class="cajaoff"  style="text-transform:uppercase; width:100px" readonly /><span>&nbsp;&nbsp;&nbsp;(0%-100%) </span></td>
+					  </tr>
+					  <tr>
+						<td><span>Monto de la Multa: </span></td>
+						<td colspan="4"><input name="montoTotal" id="montoTotal" type="text" class="cajaoff"  style="text-transform:uppercase; width:100px" readonly /><span>&nbsp;&nbsp;&nbsp;Nuevos Soles </span></td>
+					  </tr>
+					  <tr>
+							<td><span>Observaciones: </span></td>
+							<td colspan="4"><textarea name="glosa" rows="3" class="caja" id="glosa" style="width:300px"></textarea></td>
+					  </tr>
+					  <!--<tr>
+							<td><span>Subsanado:</span></td>
+							<td colspan="4"><input type="checkbox" name="chkResoluciones" id="chkResoluciones" value="1"/></td>
+					  </tr>-->
+					</table>	
+				</div>                
+			</fieldset>
+			
+			<!--<div id="divresolucion">
+				<fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px">Datos de Subsanacion:
+					</legend><div class="contentForm">
+					 <table class="tableContent" border=0 width="100%">
+					 <tr>
+						<td width="171"><span>Fech. Sub.:</span></td>
+						<td width="122"><input type="text" name="txtFechResolucion"  class="caja" id="txtFechResolucion" style="text-transform:uppercase; width:100px" maxlength="10" /></td>
+						<td width="82">Fech. Carta:</td>
+						<td width="490"><input type="text" name="txtFechCarta"  class="caja" id="txtFechCarta" style="text-transform:uppercase; width:100px" maxlength="10" /></td>
+					 </tr>
+					 <tr>
+						<td><span>Sustento:</span></td>
+						<td colspan="3"><input type="text" name="txtSustento"  class="caja" id="txtSustento" style="text-transform:uppercase; width:302px" /></td>
+					 </tr>
+					 <tr>
+						<td><span>N. Carta:</span></td>
+						<td colspan="3"><input type="text" name="txtNCarta"  class="caja" id="txtNCarta" style="text-transform:uppercase; width:150px" /></td>
+					 </tr>
+					 
+					 <tr>
+						<td><span>Observaciones: </span></td>
+						<td colspan="3"><textarea name="txaObservacion" rows="3"  class="caja" id="txaObservacion" style="width:302px;"></textarea></td>
+					 </tr>
+					 </table>
+					</div>
+				</fieldset>
+			</div>-->
+			
+			
+			
+			
+			
+			</div>
+			
+			<div id="tabs-7">
+			
+				<fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px">Datos del testigo</legend><div class="contentForm">
+				  <table width="100%" border="0" class="tableContent">
+                  	<tr>
+				      <td width="137">Nombre :</td>
+				      <td colspan="3"><input name="txttestigo" type="text" class="caja" id="txttestigo" style="text-transform:uppercase; width:313px"  /></td>
+			        </tr>
+				    <tr>
+				      <td width="137">Documento :</td>
+				      <td width="116"><select name="cmb_doctestigo" id='cmb_doctestigo' class="combo" style="width:100px">
+			          </select></td>
+				      <td width="70"> Numero :</td>
+				      <td width="542"><input name="txtndoc" type="text" class="caja" id="txtndoc" style="text-transform:uppercase; width:120px" maxlength="8" /></td>
+			        </tr>
+				    
+			      </table>
+				</div>
+				
+				</fieldset>
+                <br>
+                <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Domicilio fiscal:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			      <td width="13%"><span id="lblDisContri">Distrito:</span></td>
+			      <td colspan="4">
+                  <select name="cmbDisContri" id="cmbDisContri" class="combo"  style="width:140px">
+			        <option>[Seleccione]</option>
+		          </select>
+                  </td>
+		        </tr>
+			    <tr id="rowUrbOtherDis">
+			      <td><span id="lblCodigo">Tipo Urb.:</span></td>
+			      <td width="16%">
+                  <select name="cmbTipUrb" id="cmbTipUrb" class="combo" style="width:140px">
+			        <option>[Seleccione]</option>
+			      </select>
+                  </td>
+			      <td width="11%"><span id="lblDesUrb">Descripci&oacute;n </span></td>
+			      <td colspan="2"><input style="text-transform:uppercase" name="txtDesUrb" id="txtDesUrb" type="text" class="caja" size="40" maxlength="200" /></td>
+		       </tr>
+			   <tr id="rowViaOtherDis">
+			      <td><span id="lblTipVia">Tipo Vía:</span></td>
+			      <td><select name="cmbTipVia" id="cmbTipVia" class="combo" style="width:140px">
+			        <option>[Seleccione]</option>
+			        </select></td>
+			      <td><span id="lblDesVia">Descripcion </span></td>
+			      <td colspan="2"><input style="text-transform:uppercase" name="txtDesVia" id="txtDesVia" type="text" class="caja" size="40" maxlength="200" /></td>
+		      </tr>
+			  <tr id="rowZonaDis">
+			    <td><span id="lblZona">Zona:</span></td> 
+			    <td colspan="4">
+			      <input name="txtZonacodigo" id="txtZonacodigo" type="text" class="cajaoff" size="15" readonly/>
+                  <input name="txtZona" id="txtZona" type="text" class="cajaoff" size="25" readonly/>
+                   <input type="button" name="btnBusqueda" id="btnBusqueda" value="Busqueda" />
+			      </td>
+		      </tr>
+			  <tr id="rowUrbDis">
+			      <td><span id="lblUrb">Urbanizacion:</span></td>
+			      <td colspan="4">
+			       <input name="txtUrbacodigo" id="txtUrbacodigo" type="text" class="cajaoff" size="15" readonly/>
+                   <input name="txtUrbanizacion" id="txtUrbanizacion" type="text" class="cajaoff" size="25" readonly/>
+                  </td>
+                  <td width="26%">&nbsp;</td>
+		      </tr>
+			  <tr id="rowViaDis">
+			      <td><span id="lblVia">Via:</span></td>
+			      <td colspan="4">
+			      <input name="txtViacodigo" id="txtViacodigo" type="text" class="cajaoff" size="15" readonly/>
+                  <input name="txtViacontri" id="txtViacontri" type="text" class="cajaoff" size="25" readonly/>
+                  </td>
+		      </tr>
+			  <tr>
+			      <td><span id="lblVia">Referencia:</span></td>
+		        <td colspan="4">
+			      <input name="txtRef_Dom_test" id="txtRef_Dom_test" type="text" class="caja" size="73" /></td>
+		      </tr> 
+              <tr>
+			      <td colspan="5">
+                  	<table border="0"  width="100%">
+                    
+                    	<tr>
+                        	<td width="14%"><span id="lblVia">Manzana:</span></td>
+                        	<td width="19%">
+                            <input name="txtinfmanz" id="txtinfmanz" type="text" class="caja" size="16" />
+                            </td>
+                            <td width="8%"><span id="lblVia">Lote:</span></td>
+                        	<td width="19%">
+                            <input name="txtinflote" id="txtinflote" type="text" class="caja" size="16" />
+                            </td>
+                            <td width="11%"><span id="lblVia">Numero:</span></td>
+                        	<td width="29%">
+                            <input name="txtinfnum" id="txtinfnum" type="text" class="caja" size="16" />
+                            </td>
+                        </tr>
+                    
+                    </table>                  </td>
+	          </tr> 			   
+		    </table>	    
+        </div>
+    </fieldset>	    
+                
+                
+			</div>
+			
+			
+			
+			
+	                
+</div>
+
+
+		
+		
+</form>

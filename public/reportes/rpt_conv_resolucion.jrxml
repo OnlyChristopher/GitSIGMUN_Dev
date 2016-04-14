@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_conv_resolucion" language="groovy" pageWidth="595" pageHeight="842" columnWidth="585" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5">
+	<parameter name="codigo" class="java.lang.String"/>
+	<parameter name="convenio" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[exec Rentas.ResolucionConvenio @buscar=1,@codigo=$P{codigo},@convenio=$P{convenio}]]>
+	</queryString>
+	<field name="numero_documento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_contribuyente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero_cuotas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_convenio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_inicial" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero_letra" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero_ingreso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_cancelado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valores" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="121" splitType="Stretch">
+			<staticText>
+				<reportElement x="52" y="10" width="159" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DE INDEPENDENCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="22" width="159" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[GERENCIA DE RENTAS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="12" width="38" height="39"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.60:8080/img/logo_muni.jpg"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="68" width="585" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>RESOLUCIÓN DE GERENCIA N°_2007 - GAT/GM/MDI<p>Independencia,</p></b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="81" y="99" width="368" height="14"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>EL GERENTE DE ADMINISTRACIÓN TRIBUTARIA DE LA MUNICIPALIDAD DISTRITAL DE INDEPENDENCIA.</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="487" splitType="Stretch">
+			<textField>
+				<reportElement x="94" y="0" width="418" height="62"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Visto, el expediente N°_ seguido por el contribuyente "+"<style isBold='true' pdfFontName='Helvetica-Bold'>"+ $F{nombre_contribuyente}+"</style>"+" identificado(a) con " +$F{numero_documento}+ ", domicilio fiscal en "+$F{direcion}+" y código de contribuyente "+$P{codigo}+", solicita fraccionamiento de pago por su deuda tributaria por concepto de "+$F{valores}+" ."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="94" y="68" width="418" height="12"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial" isBold="false" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["CONSIDERANDO:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="94" y="83" width="418" height="60"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Que, el Artículo 36° del D.S. 135-99-EF Texto Unico Ordenado del Código Tributario establece que la Administración Tributaria esta facultada a conceder aplazamiento y/o fraccionamiento para el pago de la deuda tributaria al deudor tributario que lo solicite, siempre que éste cumpla requerimientos o garantías que aquella establezca mediante Ordenanza o norma de rango similar."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="94" y="148" width="418" height="37"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Que mediante Decreto de Alcaldía N° 0010-2003-MDI. se aprueba el reglamento de Fraccionamiento de la Deuda Tributaria y no Tributaria, estableciendo los requisitos, el procedimiento y démas aspectos referidos para su aprobación."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="94" y="190" width="418" height="71"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Que,el (la) recurrente adjunta a su solicitud, el Convenio y Solicitud de Fraccionamiento N° Convenio de fecha "+$F{fecha_convenio}+" , suscrito para el pago en ***"+$F{numero_cuotas}+" cuotas mensuales por concepto de "+$F{valores}+" y ha cumplido con cancelar la cuota inicial por S./"+ $F{cuota_inicial} +" "+ $F{numero_letra} +" según recibo N° "+$P{convenio}+" en fecha "+$F{fecha_cancelado}+", en consecuencia habiendo cumplido con los requisitos establecidos da mérito a la aprobación del fraccionamiento solicitado."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="94" y="274" width="418" height="47"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Estando a lo informado por la Unidad de Recaudación y Fiscalización Tributaria mediante Informe N°, y contando con su visación respectiva, en uso de las facultades otorgadas por  la Resolución de Alcaldía N° 0578-2004-MDI, de conformidad con las atribuciones conferidas por la Ley Órganica de Municipalidades Ley N° 27972."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="94" y="332" width="418" height="12"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial" isBold="false" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["SE RESUELVE:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="94" y="347" width="418" height="58"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>ARTICULO 1°:</b>Aprobar el Fraccionamiento de Pago, solicitado por el contribuyente "+$F{nombre_contribuyente}+", en mèrito a lo expuesto en la parte considerativa y de conformidad con el cronogroma de pago suscrito en fecha "+$F{fecha_convenio}+", mediante Solicitud de Fraccionamiento N° "+$F{fecha_convenio}+" por concepto de "+$F{valores}+"."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="94" y="417" width="418" height="25"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>ARTICULO 2°:</b>Encargar a la Sub Gerencia de Recaudación, el cumplimiento de la presente resolución."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="94" y="453" width="418" height="12"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial" isBold="false" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>Regístrese, comuníquese y Cúmplase.</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

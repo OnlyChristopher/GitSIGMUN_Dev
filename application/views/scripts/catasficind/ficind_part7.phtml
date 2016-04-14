@@ -1,0 +1,124 @@
+<h1>INFORMACIÓN COMPLEMENTARIA</h1>
+<input type="hidden" id="oldComItems" name="oldComItems">
+<div style="margin-top:5px">
+<table class="tableContentc" width="100%">
+<tr>
+  <td colspan="2" valign="top" style="padding-bottom:10px">
+  	<div class="lblCodField" style="width:30px">114</div>
+    <div class="lblTxtField" style="width:180px;">Condición de Declarante</div>
+    <div class="lblObjField" style="border-left:0">
+    <select name="ciddecla" id="ciddecla" class="comboc" style="width:250px"></select>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td valign="top">
+  <div id="gridFicIndComple"></div>
+  </td>
+  <td valign="top">
+  		<div class="divButtons" style="width:125px; margin-top:0">
+          <table>
+            <tr id="rowAddComple">
+              <td style="padding:3px"><input type="button" id="btnAddComple" name="btnAddComple" value="Agregar" style="width:100px" /></td>
+              </tr>        
+            <tr id="rowSaveComple">
+              <td style="padding:3px"><input type="button" id="btnSaveComple" name="btnSaveComple" value="Guardar" style="width:100px" /></td>
+              </tr>
+            <tr id="rowEditComple">
+              <td style="padding:3px"><input type="button" id="btnEditComple" name="btnEditComple" value="Editar" style="width:100px" /></td>
+              </tr>
+            <tr id="rowCancelComple">
+              <td style="padding:3px"><input type="button" id="btnCancelComple" name="btnCancelComple" value="Cancelar" style="width:100px" /></td>
+              </tr>
+            <tr>
+              <td style="padding:3px"><input type="button" id="btnDelComple" name="btnDelComple" value="Eliminar" style="width:100px"/></td>
+              </tr>
+        </table>
+      	</div>    
+  </td>
+</tr>
+<tr>
+  <td colspan="2" valign="top">
+  <div id="divAddComple" style="margin-top:2px;">
+    <table class="tableContentc">
+    <tr>
+    <td>
+  		<input type="hidden" id="actComple" name="actComple">
+        <input type="hidden" id="idcinfcom" name="idcinfcom">
+        
+        <div class="lblCodField" style="width:25px; border-bottom:0">115</div>
+        <div class="lblTxtField" style="width:775px; ; border-bottom:0">Identificación de los Litigantes</div>
+        
+        <div class="lblCodField" style="clear:left; width:25px">&nbsp;</div>
+        <div class="lblTxtField" style="width:175px;">Tipo de Documento</div>
+        <div class="lblCodField" style="width:25px">&nbsp;</div>
+        <div class="lblTxtField" style="width:95px;">N° de Docum.</div>
+        <div class="lblCodField" style="width:25px">&nbsp;</div>
+        <div class="lblTxtField" style="width:295px;">Apellidos y Nombres de los Litigantes</div>
+        <div class="lblCodField" style="width:25px">&nbsp;</div>
+        <div class="lblTxtField" style="width:135px;">Cod. Contrib.</div>
+        
+        <div class="lblObjField" style="clear:left; border-top:0">
+        <select name="ciddocuc" id="ciddocuc" class="comboc" style="width:198px"></select>
+		</div>
+        <div class="lblObjField" style="border-top:0; border-left:0">
+        <input name="nrodocuc" type="text" class="cajac" id="nrodocuc" style="width:119px" maxlength="15">
+        </div>
+        <div class="lblObjField" style="border-top:0; border-left:0">
+        <input name="vnombrec" type="text" class="cajac" id="vnombrec" style="width:319px" maxlength="150">
+		</div>
+        <div class="lblObjField" style="border-top:0; border-left:0">
+        <input name="cidcontc" type="text" class="cajac" id="cidcontc" style="width:159px" maxlength="7">
+        </div>
+  	</td>
+    </tr>
+    </table>
+  </div>
+  </td>
+</tr>
+<tr>
+  <td colspan="2" valign="top">
+  <div style="margin-top:15px">
+    <table class="tableContentc">
+    <tr>
+      <td valign="top">
+            <div class="lblCodField" style="width:30px;">116</div>
+            <div class="lblTxtField" style="width:120px;">Est. de la Ficha</div>
+            <div class="lblObjField" style="border-left:0">
+            <select name="cidestf" id="cidestf" class="comboc" style="width:296px"></select>
+            </div>
+            <div class="lblCodField" style="clear:left; width:30px; border-top:0">117</div>
+            <div class="lblTxtField" style="width:120px; border-top:0">N° de Habitantes</div>
+            <div class="lblObjField" style="border-left:0; border-top:0">
+            <input name="nrohabi" type="text" class="cajac" id="nrohabi" style="width:85px" maxlength="14" />
+            </div>
+            <div class="lblCodField" style="width:30px; border-top:0">118</div>
+            <div class="lblTxtField" style="width:110px; border-top:0">N° de Familias</div>
+            <div class="lblObjField" style="border-left:0; border-top:0">
+            <input name="nrofami" type="text" class="cajac" id="nrofami" style="width:70px" maxlength="14" />
+            </div>
+            <div class="lblCodField" style="clear:left; width:30px; border-top:0">119</div>
+            <div class="lblTxtField" style="width:120px; border-top:0">Mantenimiento</div>
+            <div class="lblObjField" style="border-left:0; border-top:0; border-right:0">
+            <select name="cidmant" id="cidmant" class="comboc" style="width:296px"></select>
+            </div>
+      </td>
+      <td valign="top">
+      		<div class="lblCodField" style="width:30px;">&nbsp;</div>
+            <div class="lblTxtField" style="width:150px;">Cercanía Parque</div>
+            <div class="lblObjField" style="border-left:0;">
+			  <select name="cidcerc" id="cidcerc" class="comboc" style="width:317px"></select>			  
+            </div>
+			<div class="lblCodField" style="clear:left; width:30px; border-top:0">&nbsp;</div>
+            <div class="lblTxtField" style="width:468px; border-top:0">Observaciones</div>
+            <div class="lblObjField" style="clear:left; border-top:0">
+			<textarea name="vobserv" rows="3" class="cajac" id="vobserv" style="width:496px"><?php echo $this->vobserv; ?></textarea>
+            </div>
+      </td>
+    </tr>
+  	</table>
+  </div>
+  </td>
+</tr>
+</table>
+</div>

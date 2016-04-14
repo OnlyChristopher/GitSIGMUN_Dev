@@ -1,0 +1,28 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_banderegistroconsulta_reconsu.js"></script>
+<div class="contentBoxBr">
+	<div style="padding:5px; background-color:#5296C9; font-weight:bold; color:#FFFFFF"><?php echo $this->title;?></div>
+    <form id="frmBandeconsulta">
+    	<input name="num_archi" id="num_archi" type="hidden" />
+		<input name="cod_contri" id="cod_contri" type="hidden" />
+        <input name="nom_contri" id="nom_contri" type="hidden" />
+        <input name="num_expe" id="num_expe" type="hidden" />
+        <input name="ano_expe" id="ano_expe" type="hidden" />
+        <input name="fec_desde" id="fec_desde" type="hidden" />
+        <input name="fec_hasta" id="fec_hasta" type="hidden" />
+        <input name="registro_estado" id="registro_estado" type="hidden" />
+        <input name="usuario_cod" id="usuario_cod" type="hidden" />		
+    </form>
+	<br/>    
+    <div id="gridRegisconsul"></div> 
+    <br/>
+    <div class="divButtons">
+        <table class="tableContent">		
+        <tr>
+            <td><input name="btnNewSearch" id="btnNewSearch" type="button" value="Nueva Búsqueda" /></td>
+            <td><input name="btnExpExcel" id="btnExpExcel" type="button" value="Exportar a Excel" /></td>
+        </tr>            
+        </table>
+    </div>
+    </div>
+</div>

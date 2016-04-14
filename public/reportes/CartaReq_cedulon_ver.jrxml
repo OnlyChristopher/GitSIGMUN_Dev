@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CartaReq_cedulon_ver" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="idCartaReq" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[DECLARE @idCartaReq int = $P{idCartaReq}
+
+
+DECLARE @nomdoc1 varchar(100) = ''
+DECLARE @nomdoc2 varchar(100) = ''
+DECLARE @nomdoc3 varchar(100) = ''
+DECLARE @nrodoc1 varchar(100) = ''
+DECLARE @nrodoc2 varchar(100) = ''
+DECLARE @nrodoc3 varchar(100) = ''
+
+SElECT @nomdoc1=r.nomdocu,@nrodoc1=r.nro_documento FROM (
+	SElECT (ROW_NUMBER() OVER(ORDER BY cd.idItem)) AS ROW, cd.idItem,d.nomdocu,cd.nroDocumento  nro_documento
+	FROM fiscalizacion.CEDULON_DETALLE cd,fiscalizacion.CEDULON c,fiscalizacion.CEDULON_DOC d
+	WHERE c.idCarta=@idCartaReq  AND cd.idCedulon = c.idCedulon AND cd.idTipo = d.codigo
+	) AS r WHERE r.ROW=1
+
+SElECT @nomdoc2=r.nomdocu,@nrodoc2=r.nro_documento FROM (
+	SElECT (ROW_NUMBER() OVER(ORDER BY cd.idItem)) AS ROW, cd.idItem,d.nomdocu,cd.nroDocumento  nro_documento
+	FROM fiscalizacion.CEDULON_DETALLE cd,fiscalizacion.CEDULON c,Fiscalizacion.CEDULON_DOC d
+	WHERE c.idCarta=@idCartaReq  AND cd.idCedulon = c.idCedulon AND cd.idTipo = d.codigo
+	) AS r WHERE r.ROW=2
+
+SElECT @nomdoc3=r.nomdocu,@nrodoc3=r.nro_documento FROM (
+	SElECT (ROW_NUMBER() OVER(ORDER BY cd.idItem)) AS ROW, cd.idItem,d.nomdocu,cd.nroDocumento  nro_documento
+	FROM fiscalizacion.CEDULON_DETALLE cd,fiscalizacion.CEDULON c,Fiscalizacion.CEDULON_DOC d
+	WHERE c.idCarta=@idCartaReq  AND cd.idCedulon = c.idCedulon AND cd.idTipo = d.codigo
+	) AS r WHERE r.ROW=3
+
+
+		Select ce.idCedulon,ce.nroCedulon,ce.año,ce.horaNotifica,
+		DAY(ce.fecNotifica) dian,MONTH(ce.fecNotifica) mesn,YEAR(ce.fecNotifica) anion,
+		co.codigo,co.paterno+' '+co.materno+' '+co.nombres as contribuyente,co.num_doc nro_documento,fiscalizacion.fn_fisca_getDirFiscal(co.codigo) dirCompleta,ce.PersonaIncapaz,ce.DomicilioCerrado,
+		DAY(ce.fecPrimeraVisita) diav1,MONTH(ce.fecPrimeraVisita) mesv1,YEAR(ce.fecPrimeraVisita) aniov1,
+		ce.firmaPrimera,DAY(ce.fecSegundaVisita) diav2,MONTH(ce.fecSegundaVisita) mesv2,YEAR(ce.fecSegundaVisita) aniov2,
+		ce.firmaSegunda,@nomdoc1 nomdoc1,@nrodoc1 nrodoc1,@nomdoc2 nomdoc2,@nrodoc2 nrodoc2,@nomdoc3 nomdoc3,@nrodoc3 nrodoc3
+
+		FROM fiscalizacion.CEDULON ce,Rentas.MContribuyente co
+		WHERE ce.codContrib=co.codigo AND ce.idCarta=@idCartaReq]]>
+	</queryString>
+	<field name="idCedulon" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nroCedulon" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="año" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaNotifica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dian" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mesn" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anion" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contribuyente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nro_documento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dirCompleta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PersonaIncapaz" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DomicilioCerrado" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="diav1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mesv1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aniov1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="firmaPrimera" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="diav2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mesv2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aniov2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="firmaSegunda" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomdoc1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nrodoc1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomdoc2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nrodoc2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomdoc3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nrodoc3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="fechaNotifica" class="java.lang.String">
+		<variableExpression><![CDATA[($F{dian}=="" || $F{dian}==null)? "     /      /      " : $F{dian}+" / "+$F{mesn}+" / "+$F{anion}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<rectangle>
+				<reportElement positionType="Float" x="185" y="746" width="13" height="14"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="90" y="294" width="44" height="489"/>
+				<textElement textAlignment="Justified" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Siendo las "+
+(($F{horaNotifica}=="" || $F{horaNotifica}==null)? "..................... " : $F{horaNotifica} )
++" del día "+$V{fechaNotifica}+" , me constituí en el domicilio del administrado "+
+(($F{contribuyente}=="" || $F{contribuyente}==null) ? "......................................................................................": $F{contribuyente}.trim().toUpperCase())
++" ubicado en "+
+(($F{dirCompleta}=="" || $F{dirCompleta}==null) ? "......................................................................................................" :$F{dirCompleta}.trim().toUpperCase() )+" , con documento de identidad Nº "+
+(($F{nro_documento}=="" || $F{nro_documento}==null)? ".................." : $F{nro_documento} )+", con el propósito de Notificar el(los) documentos(s) que se indican en el detalle adjunto."]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="95" y="21" width="142" height="244"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="157" y="160" width="13" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{aniov1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="157" y="194" width="13" height="23"/>
+				<textElement textAlignment="Center" rotation="Left"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mesv1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="139" y="225" width="11" height="24"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Día]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="105" y="21" width="11" height="244"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Visitas efectuadas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="35" width="11" height="24"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Año]]></text>
+			</staticText>
+			<line>
+				<reportElement x="206" y="153" width="1" height="100"/>
+			</line>
+			<staticText>
+				<reportElement x="122" y="170" width="11" height="52"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[1ra. Visita]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="156" y="70" width="13" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mesv2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="139" y="159" width="11" height="24"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Año]]></text>
+			</staticText>
+			<line>
+				<reportElement x="158" y="218" width="13" height="6"/>
+			</line>
+			<staticText>
+				<reportElement x="139" y="193" width="11" height="24"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Mes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="153" width="10" height="100"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA[Identificación y firma del notificador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="61" width="11" height="48"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[2da. Visita]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="157" y="226" width="13" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{diav1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="156" y="36" width="13" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{aniov2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="156" y="104" width="13" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{diav2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="139" y="103" width="11" height="24"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Día]]></text>
+			</staticText>
+			<line>
+				<reportElement x="171" y="225" width="1" height="28"/>
+			</line>
+			<staticText>
+				<reportElement x="139" y="68" width="11" height="24"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Mes]]></text>
+			</staticText>
+			<line>
+				<reportElement x="158" y="186" width="13" height="6"/>
+			</line>
+			<line>
+				<reportElement x="171" y="194" width="1" height="28"/>
+			</line>
+			<line>
+				<reportElement x="171" y="162" width="1" height="28"/>
+			</line>
+			<line>
+				<reportElement x="171" y="70" width="1" height="28"/>
+			</line>
+			<line>
+				<reportElement x="171" y="101" width="1" height="28"/>
+			</line>
+			<line>
+				<reportElement x="171" y="38" width="1" height="28"/>
+			</line>
+			<line>
+				<reportElement x="158" y="94" width="13" height="6"/>
+			</line>
+			<line>
+				<reportElement x="158" y="62" width="13" height="6"/>
+			</line>
+			<staticText>
+				<reportElement x="209" y="35" width="10" height="100"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA[Identificación y firma del notificador]]></text>
+			</staticText>
+			<line>
+				<reportElement x="206" y="35" width="1" height="100"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="147" y="294" width="11" height="489"/>
+				<textElement textAlignment="Justified" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Durante la diligencia de la notificación en dicho domicilio se constató el motivo de no acuse de recibo marcado a continuación:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement positionType="Float" x="185" y="747" width="12" height="13"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{DomicilioCerrado}==true) ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<elementGroup>
+				<staticText>
+					<reportElement x="12" y="494" width="15" height="227"/>
+					<textElement rotation="Left">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[GERENCIA DE ADMINISTRACION TRIBUTARIA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="27" y="479" width="15" height="242"/>
+					<textElement rotation="Left">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[SUBGERENCIA DE FISCALIZACION TRIBUTARIA]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="65" y="0" width="17" height="802"/>
+					<textElement textAlignment="Center" rotation="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NOTIFICACIÓN POR CEDULÓN Nº "+$F{nroCedulon}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<staticText>
+				<reportElement positionType="Float" x="186" y="568" width="11" height="168"/>
+				<textElement rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[El domicilio se encontró cerrado]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement positionType="Float" x="185" y="527" width="13" height="14"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="186" y="321" width="11" height="192"/>
+				<textElement rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[No se ha encontrado persona capaz en el domicilio.]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="186" y="527" width="12" height="13"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{PersonaIncapaz}==true) ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="215" y="292" width="22" height="491"/>
+				<textElement textAlignment="Justified" rotation="Left">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Por lo que procedió a dejar en sobre cerrado bajo la puerta del domicilio, el(los) documentos(s) y fijar el cedulón en la puerta del domicilio. Se deja que de esta forma el administrado ha sido bien notificado.]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="285" y="18" width="1" height="765"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="271" y="18" width="1" height="765"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="272" y="14" width="13" height="769"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DETALLE DE DOCUMENTOS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="323" y="659" width="55" height="118"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nomdoc1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="323" y="551" width="55" height="100"/>
+				<textElement textAlignment="Center" rotation="Left"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{nrodoc1}=="" ||$F{nrodoc1}==null )? "" : ($F{nrodoc1}+" - "+$F{anion})]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="301" y="543" width="1" height="240"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="287" y="661" width="13" height="118"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="287" y="544" width="13" height="110"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº DOCUMENTO]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="317" y="543" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="332" y="543" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="347" y="543" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="378" y="543" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="393" y="543" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="363" y="543" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="288" y="400" width="13" height="118"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="288" y="282" width="13" height="110"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="288" y="132" width="13" height="118"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="288" y="18" width="13" height="110"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº DOCUMENTO]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="394" y="281" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="302" y="281" width="1" height="240"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="333" y="281" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="348" y="281" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="379" y="281" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="318" y="281" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="364" y="281" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="395" y="18" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="303" y="18" width="1" height="240"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="334" y="18" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="349" y="18" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="380" y="18" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="319" y="18" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="365" y="18" width="1" height="240">
+					<printWhenExpression><![CDATA[($F{nomdoc1}==null || $F{nomdoc1}=="")]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="323" y="288" width="55" height="100"/>
+				<textElement textAlignment="Center" rotation="Left"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{nrodoc2}=="" ||$F{nrodoc2}==null )? "" : ($F{nrodoc2}+" - "+$F{año})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="323" y="396" width="55" height="118"/>
+				<textElement textAlignment="Center" rotation="Left"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nomdoc2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="323" y="132" width="55" height="118"/>
+				<textElement textAlignment="Center" rotation="Left"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nomdoc3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="324" y="23" width="55" height="100"/>
+				<textElement textAlignment="Center" rotation="Left"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{nrodoc3}=="" ||$F{nrodoc3}==null )? "" : ($F{nrodoc3}+" - "+$F{año})]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="469" y="544" width="1" height="240"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="469" y="282" width="1" height="240"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="468" y="18" width="1" height="240"/>
+			</line>
+			<staticText>
+				<reportElement x="522" y="18" width="26" height="765"/>
+				<textElement textAlignment="Justified" rotation="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Para cualquier consulta acercarse a la Subgerencia de Fiscalización Av. Túpac Amaru Km. 4.5 - Independencia -  en el horario de Lunes a Viernes de 8:00 a.m. a 17:30 p.m. ]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

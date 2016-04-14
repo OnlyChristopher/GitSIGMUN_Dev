@@ -1,0 +1,98 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Licenresolucion.js"></script>
+<form id="frmresolucion">
+<input type="hidden" name="idSolLice2" id="idSolLice2" value="<?php echo $this->idSolLice2 ;?>">   
+<input type="hidden" name="ColSol2" id="ColSol2" value="<?php echo $this->ColSol2 ;?>">
+<input type="hidden" name="TipoLice2" id="TipoLice2" >
+<input type="hidden" name="TipoCpto2" id="TipoCpto2" >
+<input type="hidden" name="TipoPers2" id="TipoPers2" >
+
+<input type="hidden" name="Tipoinforme" id="Tipoinforme" >
+<input type="hidden" name="idresolucion" id="idresolucion" >
+
+  <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        <table class="tableContent">
+         <tr>
+            <td><span id="lblCodi">Area:</span></td>
+            <td><h1 id="txtArea"></h1></td>
+            <td>&nbsp;</td>
+            <td><span id="lblCodi">Sub Gerente:</span></td>
+            <td><h1 id="txtEncargado"></h1></td>
+        </tr>
+        </table>
+          <table class="tableContent" style="margin-top:5px;">
+        <tr>
+          <td><span id="lblCodi">T&eacute;cnico:</span></td>
+            <td><h1 id="txtTecnico"></h1></td> 
+                        <td>&nbsp;</td>
+
+              <td><span id="lblCodi">Resolucion:</span></td>
+            <td><input style="text-transform:uppercase;" autofocus="autofocus" name="txtresol" id="txtresol" type="text" class="caja" size="20" maxlength="100" /></td> 
+             <td>&nbsp;</td>  
+             <td><span id="lblCodi">Fecha:</span></td>
+            <td><input name="txtfechresol" readonly="readonly" id="txtfechresol" type="text" class="caja" size="15" maxlength="100" /></td>
+              
+            </tr>
+        </table>
+          <table class="tableContent" style="margin-top:5px;">
+        <tr>
+           
+            <td colspan="2"><span id="lblCodi">Nombre o Raz&oacute;n Social:</span></td>
+            <td colspan="2"><h1 id="txtrazonL"></h1></td>        
+        </tr>
+        </table>
+              <table class="tableContent" style="margin-top:5px;">   
+            <tr>
+				<td><span id="lblCodi">Vigencia:</span></td>
+                <td><h1 id="txtvigenL"></h1></td>
+                 <td>&nbsp;</td>
+                 <td><span id="lblContri">Zonificacion:</span></td>
+                 <td><h1 id="txtzonif"></h1></td>
+			 <td>&nbsp;</td>
+               
+                <td><span id="lblContri">Ordenanza:</span></td>
+                <td><h1 id="txtordeL"></h1></td>
+                
+			</tr>
+            </table>
+              <table class="tableContent" style="margin-top:5px;">
+           
+            <tr>
+				
+				<td><span id="lblContri">Ubicaci&oacute;n:</span></td>
+                <td><h1 id="txtubiL"></h1></td>
+                 <td>&nbsp;</td>
+                <td><span id="lblContri">Giro:</span></td>
+                <td><h1 id="txtgiroL"></h1></td>
+			</tr>
+            </table>
+              <table class="tableContent" style="margin-top:5px;">
+           
+            <tr>
+				 <td><span id="lblContri">R.U.C:</span></td>
+                 <td><h1 id="txtrucL"></h1></td>
+                  <td>&nbsp;</td>
+                <td><span id="lblCodi">Area:</span></td>
+                <td><h1 id="txtareaL"></h1></td>
+			</tr>
+            </table>
+           
+	   </div> 
+       <div class="contentForm">           
+       <div class="divButtons">
+	    <table class="tableContent">
+	     <tr>
+	      <td style="padding-left:5px">
+		    <input type="button" name="btnGenerarResol3" id="btnGenerarResol3" value="Generar Resolucion" />
+		    <input type="button" name="btnSalirResol2" id="btnSalirResol2" value="Salir" />
+			<input type="button" name="btnImprimiresol" id="btnImprimiresol" value="Imprimir" />
+		  </td>
+		 </tr>
+	    </table>
+	   </div>           
+    </div>
+  </fieldset>
+</div>
+</form>

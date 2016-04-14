@@ -1,0 +1,64 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Mantpers_buscar.js"></script>
+<style type="text/css">
+.invisible {display: none; }
+</style>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterioC" type="radio" value="C" checked/><b> Código</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterioN" type="radio" value="N" /><b> Nombres</b>
+              </label>
+              </td>
+			   <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterioR" type="radio" value="R" /><b> Razón Social</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterioD" type="radio" value="D" /><b> Documento</b>
+              </label>
+              </td>              
+              </tr>
+			  </table>
+			  <table class="tableContent"> 
+			  <tr>
+				<td colspan="4">
+				<div style="float:left">
+					<div id="C" class="visible"><input name="txtCriterioC" id="txtCriterioC" type="text" class="caja" size="20" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="N" class="invisible">Nombres <input name="txtCriterioNombre" id="txtCriterioNombre" type="text" class="caja" size="25" maxlength="100" style="text-transform: uppercase"/> 
+												  Apellido Paterno <input name="txtCriterioAPaterno" id="txtCriterioAPaterno" type="text" class="caja" size="25" maxlength="100" style="text-transform: uppercase"/>
+												  Apellido Materno <input name="txtCriterioAMaterno" id="txtCriterioAMaterno" type="text" class="caja" size="25" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="R" class="invisible"><input name="txtCriterio" id="txtCriterioRazon" type="text" class="caja" size="40" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="D" class="invisible"><input name="txtDocumento" id="txtDocumento" type="text" class="caja" size="20" maxlength="100" style="text-transform: uppercase"/></div>
+				</div>
+					<div style="float:right"><input type="button" id="btnBusPers" value="Buscar" /></div>
+				</td>
+			  </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+    <br/>
+    <div id="gridBusPers"></div>
+    <br/>
+    <div class="divButtons">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+        <td style="padding-left:5px">
+        <input type="button" id="btnNuevaPers" value="Nueva Persona" />
+        <input type="button" id="btnCerrarPers" value="Cerrar Ventana" />
+        </td>
+        <td></td>
+        </table>
+    </div>
+</div>

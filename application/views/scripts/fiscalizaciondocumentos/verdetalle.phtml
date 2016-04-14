@@ -1,0 +1,80 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Fiscalizaciondocumentos_verdetalle.js"></script>
+<style type="text/css">
+        .task .x-grid-cell-inner {
+            padding-left: 15px;
+        }
+        .x-grid-row-summary {
+            color:#333;
+            background: #f1f2f4;
+        }
+        .x-grid-row-summary  .x-grid-cell-inner {
+            font-weight: bold;
+            font-size: 11px;
+            padding-bottom: 4px;
+        }
+        .x-grid-hide-summary .x-grid-row-summary {
+            display:none;
+        }
+        .x-grid-row .x-grid-cell-rowTotal {
+            background-color:#f1f2f4;
+        }
+        .x-grid-row-summary .x-grid-cell-rowTotal {
+            background-color:#e1e2e4;
+        }
+		/* style rows on mouseover */
+		/*
+		.x-grid-row-over .x-grid-cell-inner {
+			font-weight: bold;
+		}*/
+</style>
+<!--
+<div>    
+
+ 
+			<table class="tableContent" style="border: 1px solid #99bce8;" border="1" width="100%"> <!--tableContent me permite separar-->
+<!--				<tbody><tr>
+					<td width="10%"><span style="font-family:Calibri,sans-serif;font-size:11px;" id="lblCodiruta">CONTRIBUYENTE:</span></td>
+					<td colspan="2"><h1 style="font-family:Calibri,sans-serif;font-size:11px;" id="lblContribuyente"></h1></td>
+					<td width="7%"><span style="font-family:Calibri,sans-serif;font-size:11px;">CODIGO:</span></td>
+					<td width="11%"><h1 style="font-family:Calibri,sans-serif;font-size:11px;" id="lblCodigo"></h1></td>
+				</tr>
+				<tr>
+					<td><span style="font-family:Calibri,sans-serif;font-size:11px;" id="lblCodiruta">DOMICILIO:</span></td>
+					<td colspan="4"><h1 style="font-family:Calibri,sans-serif;font-size:11px;" id="lblDomicilio"></h1></td>
+				</tr>
+				<tr>
+					<td colspan="2"><span style="font-family:Calibri,sans-serif;font-size:11px;" id="lblCodiruta">DOCUMENTO GENERADO:</span></td>
+					<td><h1 id="lblDocumento"></h1></td>
+					<td width="7%"><span style="font-family:Calibri,sans-serif;font-size:11px;" id="lblContriruta">FECHA:</span></td>
+					<td width="11%"><h1 style="font-family:Calibri,sans-serif;font-size:11px;" id="lblfecha"></h1></td>
+				</tr>
+				<tr>
+					<td colspan="2"><span style="font-family:Calibri,sans-serif;font-size:11px;">EXPEDIENTE COACTIVO N°:</span></td>
+					<td colspan="3"><h1 style="font-family:Calibri,sans-serif;font-size:11px;" id="lblExpediente"></h1></td>
+				</tr>
+			</tbody>
+			</table>
+
+
+</div>		
+<br/>
+-->
+
+<input type="hidden" id="txtres" name="txtres" />
+ <div id="gridDetalledeuda">
+</div> 
+<br/>
+	    <div class="divButtons">
+		    <table class="tableContent">
+		    <tr>
+			<td align="left" style="padding-right:43px;padding-top:6px;padding-bottom:4px;">
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnvercerrar">Cerrar</button>
+			</td>
+		    <td>
+
+			</td>
+			<td style="padding-left:40px"></td>
+		    </table>
+		</div>
+

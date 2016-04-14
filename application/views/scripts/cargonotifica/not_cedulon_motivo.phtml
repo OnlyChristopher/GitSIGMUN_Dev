@@ -1,0 +1,103 @@
+<table width="100%">
+  <tr>
+    <td width="66%" valign="top">
+    <fieldset class="ui-widget ui-widget-content"  style="margin-left:5px" >
+            <legend style="margin-left:5px">Notificacion por pegado de cedulon:</legend><br />
+	<input type="hidden" name="hcodCedulon" id="hcodCedulon" />
+            <table width="100%">
+  <tr>
+    <td align="right"><input type="checkbox" name="chkPersonaIncapaz" id="chkPersonaIncapaz" />
+      </td>
+    <td><label for="chkPersonaIncapaz">Persona Incapaz</label></td>
+    <td><label for="dpFechaCedulon">Fecha</label></td>
+    <td>
+      <input name="dpFechaCedulon" type="text" class="caja" id="dpFechaCedulon" readonly="readonly" /></td>
+  </tr>
+  <tr>
+    <td align="right">
+      <input type="checkbox" name="chkDomicilioCerrado" id="chkDomicilioCerrado" />
+     </td>
+    <td> <label for="chkDomicilioCerrado">Domicilio Cerrado</label></td>
+    <td><label for="txtHoraCedulon">Hora:</label> </td>
+    <td>
+      <input type="text" name="txtHoraCedulon" id="txtHoraCedulon" class="caja" /></td>
+  </tr>
+</table><br />
+
+
+      </fieldset>
+    
+    
+    </td>
+    <td width="34%" rowspan="2" valign="top"> 
+    	
+    	<fieldset class="ui-widget ui-widget-content"  style="margin-left:5px" >
+            <legend style="margin-left:5px">Datos del inmueble:</legend>
+            <input type="hidden" name="hcodInmueble" id="hcodInmueble" />
+            <table width="100%">
+              
+              <tr>
+                <td width="33%"><label for="txtNroPisos">Nro de Pisos :</label></td>
+                <td width="67%">
+                <input type="text" name="txtNroPisos" id="txtNroPisos" class="caja" /></td>
+              </tr>
+              <tr>
+                <td><label for="txtColor">Color:</label></td>
+                <td>
+                <input type="text" name="txtColor" id="txtColor" class="caja"/></td>
+              </tr>
+              <tr>
+                <td>Tipo:</td>
+                <td>
+                <input type="checkbox" name="chkCasa" id="chkCasa" />
+                <label for="chkCasa">Casa</label>
+                <input type="checkbox" name="chkEdificio" id="chkEdificio" />
+                <label for="chkEdificio">Edificio</label></td>
+              </tr>
+              <tr>
+                <td>Puerta</td>
+                <td><input type="checkbox" name="chkMadera" id="chkMadera" />
+                  <label for="chkMadera">Madera</label>
+                  <input type="checkbox" name="chkFierro" id="chkFierro" />
+                <label for="chkFierro">Fierro</label></td>
+              </tr>
+              <tr>
+                <td valign="top"><label for="txtSuministroElectrico">Suminist. Elect.:</label></td>
+                <td>
+                <input type="text" name="txtSuministroElectrico" id="txtSuministroElectrico" class="caja" />
+                <br />
+                <br /></td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" name="chkInmuebleOtros" id="chkInmuebleOtros" />
+                <label for="chkInmuebleOtros">Otros </label></td>
+                <td><input name="txtInmuebleOtros" type="text" class="cajaoff" id="txtInmuebleOtros" readonly="readonly" /></td>
+              </tr>
+            </table>
+    </fieldset></td>
+  </tr>
+  <tr>
+    <td> <fieldset class="ui-widget ui-widget-content"  style="margin-left:5px" >
+            <legend style="margin-left:5px">Motivos de no entrega:</legend><br />
+
+            <table width="100%">
+              <tr>
+                <td align="right"><input type="checkbox" name="chkDireccionIncorrecta" id="chkDireccionIncorrecta" />
+                  </td>
+                <td><label for="chkDireccionIncorrecta">Direccion incorrecta:</label></td>
+                <td><input type="checkbox" name="chkDireccionInexistente" id="chkDireccionInexistente" /></td>
+                <td><label for="chkDireccionInexistente">Direccion inexistente</label></td>
+              </tr>
+              <tr>
+                <td align="right">
+                  <input type="checkbox" name="chkMotNoEntregaOtros" id="chkMotNoEntregaOtros" />
+                <label for="chkMotNoEntregaOtros">Otros:</label></td>
+                <td colspan="3">
+                <input name="txtNoEntregaOtros" type="text" class="cajaoff" id="txtNoEntregaOtros" style="width:100%" readonly="readonly"/></td>
+              </tr>
+            </table><br />
+
+    </fieldset></td>
+  </tr>
+</table>

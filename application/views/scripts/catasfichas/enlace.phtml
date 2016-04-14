@@ -1,0 +1,33 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Catasfichas_enlace.js"></script>
+<form id="frmenlace">
+<input  type="hidden" name="idficha" id="idficha" />
+<input  type="hidden" name="cidtipo" id="cidtipo" />
+<fieldset class="ui-widget ui-widget-content">
+    <div class="contentForm">
+        <table class="tableContent" width="100%">
+            <tr>
+              <td><span>Tipo Ficha:</span></td>
+              <td><input name="txtTipoficha" id="txtTipoficha" type="text" class="cajaoff" style="width:150px" readonly /></td>
+            </tr>			    		     		
+            <tr>
+              <td><span>N° Ficha:</span></td>
+              <td><input name="txtNroficha" id="txtNroficha" type="text" class="cajaoff" style="width:150px" readonly /></td>
+            </tr>
+            <tr>
+              <td><span>N° Ficha Destino:</span></td>
+              <td><input name="txtDestficha" type="text" class="caja" id="txtDestficha" style="width:150px" maxlength="7" /></td>
+            </tr>
+        </table>	    
+    </div>
+</fieldset>	    
+</form>
+<br />
+<div class="divButtons">
+<table class="tableContent">
+<tr>
+	<td><input type="button" name="btnGrabaEnlace" id="btnGrabaEnlace" value="Enlazar Ficha" /></td>
+	<td><input type="button" name="btnSalirEnlace" id="btnSalirEnlace" value="Cerrar Formulario" /></td>
+</tr>
+</table>
+</div>

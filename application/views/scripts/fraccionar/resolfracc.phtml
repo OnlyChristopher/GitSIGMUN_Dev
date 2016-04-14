@@ -1,0 +1,91 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_resolfracc.js"></script>
+<form id="frmfraccionamiento">
+<input type="hidden" name="actionFraccionamiento" id="actionFraccionamiento">
+
+<div>
+    <div style="float:left;padding-right:5px"> <!-- Primera Parte -->
+      <div>
+	    <fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+	     <legend style="margin-left:5px"></legend>
+	    	<table class="tableContent" width="100%">
+	    	<!--  tableContent me permite separar--> <!-- arriba derecha abajo izquierda -->		
+			    <tr>
+			    	<td><span id="lblFecha">Fecha Conven:</span> </td>
+				    <td><input name="txtFecha" id="txtFecha" type="text" class="cajaoff" size="10" readonly/></td>
+					<td><input type="hidden" id="hdCodigofrac" name="hdCodigofrac" value=""></td>
+				    <td><input type="hidden" id="hdCodConvenio" name="hdCodConvenio" value=""></td>
+			    </tr>
+	   
+	   			<tr>
+			    	<td><span id="lblFracc">Monto Total Frac.:</span> </td>
+				    <td colspan="3"><input name="txtFracc" id="txtFracc" type="text" class="cajaoff" size="10" value="0.00" readonly style="text-align:right"/></td>
+			    </tr>
+
+	   			<tr>
+			    	<td><span id="lblInicial">Cuota Inicial:</span> </td>
+				    <td>
+				    <input name="txtInicial" id="txtInicial" type="text" class="cajaoff" size="10" value="0.00" style="text-align:right" readonly/></td>
+			    </tr>
+			    <tr>	
+					<td><span id="lblFracc">Porcentaje inicial:</span> </td>
+				    <td>
+				    	<input name="txtPorcentaje" id="txtPorcentaje" type="text" class="cajaoff" size="10" value="0.00" style="text-align:right" readonly /><span> %</span>
+				    </td>
+				</tr>
+	   			<tr>
+			    	<td><span id="lblSaldo">Saldo:</span> </td>
+				    <td><input name="txtSaldo" id="txtSaldo" type="text" class="cajaoff" size="10" value="0.00" style="text-align:right" readonly/></td>
+			    </tr>
+				<tr>
+			    	<td><span id="lblNumero">Numero de Cuotas:</span> </td>
+				    <td>
+				    	<!--<input name="txtNumero" id="txtNumero" type="text" class="caja" size="10"  value="0"/>-->
+				    	<input type="text" name="txtNumero" id="txtNumero" class="cajaoff" readonly size="10" style="text-align:right">
+				    </td>
+			    </tr>	
+				<tr>
+			    	<td><span id="lblNumero">Estado:</span> </td>
+				    <td>
+				    	<span id="lblEstadoConvenio"></span>
+				    	<input type="hidden" name="hdEstadoConvenio" id="hdEstadoConvenio" size="5" >
+						<input type="hidden" name="hdNroRecibo" id="hdNroRecibo" >
+				    </td>
+			    </tr>
+			</table>
+		</fieldset>
+	  </div>
+ 	  
+    </div> <!-- Fin de la Primera Parte -->
+    
+    <div style="float:left;padding-left:5px">        <!-- Segunda Parte -->
+	    	
+    	<div>		
+		  <fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+     		<legend style="margin-left:5px"></legend>
+ 			 <div style="overflow:auto;height: 315px;width: 512px">
+				<div id="gridCuotasfr"></div>
+	         </div>
+		   </fieldset>
+		 </div>
+	</div> <!-- Fin de la Segunda Parte -->
+	<br style="clear:both">
+	
+</div>
+
+
+<div class="divButtons">
+	<table class="tableContent" width="100%">
+		<tr>
+			<td style="padding-left:5px">
+			    <input type="button" id="btnGenResol" value="Generar Resolucion" />
+				<input type="button" id="btnImproResol" value="Imprimir Resolucion" />
+			    <input type="button" id="BtnAnularConvenio" value="Anular Convenio" />
+			    <input type="button" id="BtnAnularConveniosc" value="Anular Convenio S/C" />
+			    <input type="button" id="btnSalirResol" value="Salir" />
+			</td>
+		</tr>
+    </table>
+</div>
+
+</form>

@@ -1,0 +1,109 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Consultadocumen.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+		<!--
+	   <div style="float:left;padding-right:5px"> 
+	    	
+	    		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		    	 <legend style="margin-left:5px">Estados:</legend>
+		    		<table class="tableContent" width="100%"> 
+					    <tr>
+						    <td style="padding-left:5px">
+							    <input type="button" id="btnRecibidos" value="Recibidos" />
+						    </td>
+					    </tr>
+					    
+					    <tr>
+						    <td style="padding-left:5px">
+							     <input type="button" id="btnEspera" value="En Espera" />
+						    </td>
+					    </tr>
+					    
+					    <tr>
+					    	<td style="padding-left:5px">
+						  	  <input type="button" id="btnEmitidos" value="Emitidos" />
+					    	</td>
+				  		</tr>
+					    
+					</table>
+				</fieldset>
+	    
+	    	
+	    </div> 
+	    
+	    -->
+	    
+	    <div style="float:left;padding-left:5px">        <!-- Segunda Parte -->
+	    	
+	    	<div>		
+				<fieldset class="ui-widget ui-widget-content">
+				    <legend style="margin-left:5px">Criterios:</legend>
+			        <div class="contentForm">
+			   		<table class="tableContent">
+		              <tr>
+		              <td>
+		              <label>
+		              <input name="rdCriterio" id="rdCriterio1" type="radio" value="C" checked/><b> Codigo</b>
+		              </label>
+		              </td>
+		              <td>
+		              <label>
+		              <input name="rdCriterio" id="rdCriterio2" type="radio" value="T" /><b> Contribuyente</b>
+		              </label>
+		              </td>
+		              <td>
+		              <label>
+		              <input name="rdCriterio" id="rdCriterio3" type="radio" value="D" /><b> Documento</b>
+		              </label>
+		              </td>
+		              <td><input name="txtCriterio" id="txtCriterio" style="text-transform: uppercase" type="text" class="caja" size="83" maxlength="100" /></td>
+		              <td><input type="button" id="btnBusBandeja" value="Buscar" /></td>
+		              </tr>
+		            </table>	    
+			    	</div>
+		       </fieldset>
+			</div>
+			
+	    	<br/>
+	    	
+	    	<div>
+	    		<div id="gridBandeja"></div>
+	    	</div>
+	    	
+	    	<br/>
+	    	
+	    	<!--  
+	    	<div>
+	    		<div id="contaDocumento" style="font-weight: bold">Se encontraron  Documento(s) Recibido(s)</div>  
+	    	</div>
+	        -->
+	        
+	    	<div>
+		    	<div class="divButtons">
+				    <table class="tableContent" width="100%">
+					    <tr>
+						    <td style="padding-left:5px">
+							    <input type="button" id="btnVerdocumento" value="Ver Documento" />
+								 <input type="button" id="btnVer" value="Ver Ruta" />								
+								 <!--
+							    <input type="button" id="btnDuplicado" value="Duplicado" />
+							    <input type="button" id="btnEstados" value="Estados" />
+							    <input type="button" id="btnEnviar" value="Enviar" />
+							    <input type="button" id="btnVer" value="Ver Ruta" />
+							    <input type="button" id="btnRecepcion" value="Recepción" />
+							    <input type="button" id="btnExpendiente" value="Expediente" />
+								-->
+						    </td>
+					    </tr>
+				    </table>
+				</div>
+	    	</div>
+	    
+	    </div> <!-- Fin de la Segunda Parte -->
+		<br style="clear:both"> <!-- para que no se ajuste a la pantalla -->
+	</div>    
+</div>

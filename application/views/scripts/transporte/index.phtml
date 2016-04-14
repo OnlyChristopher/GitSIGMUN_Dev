@@ -1,0 +1,285 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Transporte_manten_vehiculo.js"></script>
+
+<style type="text/css">
+	.text1{
+		font-family: tahoma;
+		font-size:11px;
+	}
+</style>
+
+<form id="frmVehiculo">
+<input type="hidden" name="action" id="action">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><span class="text1">DATOS DEL VEHICULO :</span></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%" border="0" cellpadding="0">
+			<tbody>
+			<!--<tr>
+				<td  Colspan="8">&nbsp;</td>
+			</tr>-->
+			<tr>
+				<td>
+					<span id="lblcodigo" class="text1">C&oacute;digo :</span>
+				</td>
+				<td>
+					<input type="text" name="txtcodigo" id="txtcodigo" class="cajaoff" readonly style="width:90px;">
+				</td>
+				<td>
+					<span id="lblinscripcion" class="text1">Inscripci&oacute;n :</span>
+				</td>
+				<td>
+					<input type="text" name="txtinscripcion" id="txtinscripcion" class="caja" style="width:80px;">
+				</td>
+				<td>
+					<span id="lblvencimiento" class="text1">Vencimiento :</span>
+				</td>
+				<td>
+					<input type="text" name="txtvencimiento" id="txtvencimiento" class="caja" style="width:80px;">
+				</td>
+				<td>
+					<span id="lblsticker" class="text1">Nro. Sticker :</span>
+				</td>
+				<td>
+					<input type="text" name="txtsticker" id="txtsticker" class="caja" style="width:160px; text-transform:uppercase">
+				</td>
+			</tr>
+			</tbody>
+		    </table>
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%" border="0">
+			    <tr>
+					<td>
+						<span id="lblplaca" class="text1">Placa </span>
+					</td>
+					<td>
+						<input type="text" name="txtplaca" id="txtplaca" class="caja">
+					</td>
+					<td>
+						<span id="lblpadron" class="text1">Padr&oacute;n </span>
+					</td>
+					<td>
+						<input type="text" name="txtpadron" id="txtpadron" class="caja">
+					</td>
+					<td>
+						<span id="lblclase" class="text1">Clase </span>
+					</td>
+					<td>
+						<input type="text" name="txtclase" id="txtclase" class="caja">
+					</td>
+					<td>
+						<span id="lblmarca" class="text1">Marca </span>
+					</td>
+					<td>
+						<input type="text" name="txtmarca" id="txtmarca" class="caja">
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<span id="lblplaca" class="text1">Año Fab. </span>
+					</td>
+					<td>
+						<input type="text" name="txtanio" id="txtanio" class="caja">
+					</td>
+					<td>
+						<span id="lblpadron" class="text1">Modelo </span>
+					</td>
+					<td>
+						<input type="text" name="txtmodelo" id="txtmodelo" class="caja">
+					</td>
+					<td>
+						<span id="lblclase" class="text1">Combustible </span>
+					</td>
+					<td>
+						<input type="text" name="txtcombustible" id="txtcombustible" class="caja">
+					</td>
+					<td>
+						<span id="lblmarca" class="text1">Carroceria </span>
+					</td>
+					<td>
+						<input type="text" name="txtcarroceria" id="txtcarroceria" class="caja">
+					</td>
+					</tr>
+			    <tr>
+					<td>
+						<span id="lblplaca" class="text1">Eje </span>
+					<td>
+						<input type="text" name="txteje" id="txteje" class="caja">
+					<td>
+						<span id="lblpadron" class="text1">Colores </span>
+					<td>
+						<select  name="txtcolor" id="txtcolor" class="combo" style="width:125px">
+						</select>
+					<td>
+						<span id="lblclase" class="text1">Motor </span>
+					<td>
+						<input type="text" name="txtmotor" id="txtmotor" class="caja">
+					<td>
+						<span id="lblmarca" class="text1">Cilindros </span>
+					<td>
+						<input type="text" name="txtcilindros" id="txtcilindros" class="caja">
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<span id="lblplaca" class="text1">Serie </span>
+					<td>
+						<input type="text" name="txtserie" id="txtserie" class="caja">
+					<td>
+						<span id="lblpadron" class="text1">Ruedas </span>
+					<td>
+						<input type="text" name="txtruedas" id="txtruedas" class="caja">
+					<td>
+						<span id="lblclase" class="text1">Pasajeros </span>
+					<td>
+						<input type="text" name="txtpasajeros" id="txtpasajeros" class="caja">
+					<td>
+						<span id="lblmarca" class="text1">Asientos </span>
+					<td>
+						<input type="text" name="txtasientos" id="txtasientos" class="caja">
+			    </tr>
+			    <tr>
+					<td>
+						<span id="lblplaca" class="text1">Peso Seco </span>
+					<td>
+						<input type="text" name="txtpesoseco" id="txtpesoseco" class="caja" value="0.00" style="text-align:right;">
+					<td>
+						<span id="lblpadron" class="text1">Peso Bruto </span>
+					<td>
+						<input type="text" name="txtpesobruto" id="txtpesobruto" class="caja" value="0.00" style="text-align:right;">
+					<td>
+						<span id="lblclase" class="text1">Longitud </span>
+					<td>
+						<input type="text" name="txtlongitud" id="txtlongitud" class="caja" value="0.00" style="text-align:right;">
+					<td>
+						<span id="lblmarca" class="text1">Altura </span>
+					<td>
+						<input type="text" name="txtaltura" id="txtaltura" class="caja" value="0.00" style="text-align:right;">
+			    </tr>
+			    <tr>
+					<td>
+						<span id="lblplaca" class="text1">Ancho </span>
+					<td>
+						<input type="text" name="txtancho" id="txtancho" class="caja" value="0.00" style="text-align:right;">
+					<td>
+						<span id="lblpadron" class="text1">Carga Util </span>
+					<td>
+						<input type="text" name="txtcargautil" id="txtcargautil" class="caja" value="0.00" style="text-align:right;">
+					<td Colspan="4">
+			    </tr>
+			</table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><span class="text1">DATOS DEL SOAT :</span></legend>
+        <div class="contentForm">
+        	<table class="tableContent"  width="100%" border="0" cellpadding="0">
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">Empresa </span>
+					<td>	
+						<select name="txtempresa" id="txtempresa" class="combo" style="width:280px">
+						</select>
+					<td>
+						<span id="lblinscripcion" class="text1">SOAT </span>
+					<td>
+						<input type="text" name="txtsoat" id="txtsoat" class="caja">
+					<td>
+						<span id="lblvencimiento" class="text1">Desde </span>
+					<td>	
+						<input type="text" name="txtdesde" id="txtdesde" class="caja" style="width:80px;">
+					<td>
+						<span id="lblsticker" class="text1">Hasta </span>
+					<td>
+						<input type="text" name="txthasta" id="txthasta" class="caja" style="width:80px;">
+			    </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><span class="text1">DATOS DEL PROPIETARIO :</span></legend>
+        <div class="contentForm">
+        	<table class="tableContent"  width="100%" border="0" cellpadding="0">
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">C&oacute;digo </span>
+					</td>
+					<td>
+						<span id="lblcodigo" class="text1">Apellidos y Nombres / Raz&oacute;n Social </span>
+					</td>
+					<td>
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<input type="text" name="txtpcodigox" id="txtpcodigox" class="cajaoff" readonly style="width:80px;">
+					</td>
+					<td>
+						<input type="text" name="txtpnombrex" id="txtpnombrex" class="cajaoff" readonly style="width:590px;">
+					</td>
+					<td>
+						<input type="button" value="Buscar" id="btnpbuscar" style="width:80px"/>
+					</td>
+			    </tr>
+		    </table>
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><span class="text1">EMPRESA :</span></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%" border="0" cellpadding="0">
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">C&oacute;digo </span>
+					</td>
+					<td>
+						<span id="lblcodigo" class="text1">Apellidos y Nombres / Raz&oacute;n Social </span>
+					</td>
+					<td>
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<input type="hidden" name="txtaction" id="txtaction">
+						<input type="text" name="txtecodigo" id="txtecodigo" class="cajaoff" readonly style="width:80px;">
+					</td>
+					<td>
+						<input type="text" name="txtenombre" id="txtenombre" class="cajaoff" readonly style="width:590px;">
+					</td>
+					<td>
+						<input type="button" value="Buscar" id="btnebuscar" style="width:80px"/>
+					</td>
+			    </tr>
+		    </table>    
+        </div>
+    </fieldset>	    
+</div>
+<br style="clear:both">
+<div class="divButtons">
+    <table border="0" cellpadding="0" width="100%">
+		<tr>
+			<td style="padding-left:5px">
+				<input type="button" value="Grabar" id="btngrabar" style="width:150px; height:40px" class="text1"/>
+				<input type="button" value="Cerrar" id="btncierra" style="width:150px; height:40px" class="text1"/>
+			</td>
+		</tr>
+    </table>
+</div>
+</form>

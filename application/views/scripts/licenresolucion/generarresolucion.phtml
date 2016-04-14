@@ -1,0 +1,26 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Liceninforme.js"></script>
+<form id="frmliceninforme">
+<input type="hidden" name="idSolLice" id="idSolLice" value="<?php echo $this->idSolLice ;?>">   
+<input type="hidden" name="ColSol" id="ColSol" value="<?php echo $this->ColSol ;?>">
+<input type="hidden" name="TipoLice" id="TipoLice" value="<?php echo $this->TipoLice ;?>">
+<input type="hidden" name="TipoCpto" id="TipoCpto" value="<?php echo $this->TipoCpto ;?>">
+<input type="hidden" name="TipoPers" id="TipoPers" value="<?php echo $this->TipoPers ;?>">
+
+  <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        <table class="tableContent">
+         <tr>
+           <td style="padding-left:5px">
+		    <input type="button" name="btnGenerarResol" id="btnGenerarResol" value="Con Resolución" />
+			<input type="button" name="btnGenerarResol2" id="btnGenerarResol2" value="Sin Resolución" />
+		    <input type="button" name="btnSalirResolucion" id="btnSalirResolucion" value="Salir" />
+		   </td>
+        </tr>
+        </table>
+          
+	   </div>       
+  </fieldset>
+</div>
+</form>

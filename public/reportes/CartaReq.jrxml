@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CartaReq" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="idCartaReq" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Trabajo\\Muni\\SIGMUNI\\Reportes 3.7\\CartaReq\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[DECLARE @idCartaReq int = $P{idCartaReq}
+
+SELECT cr.idCarta,cr.nroCarta,cr.anio añoregistro,co.codigo idContrib,co.nombres nomContrib,co.paterno apellPat,co.materno apellMat,
+fiscalizacion.fn_fisca_getDirFiscal(co.codigo) dirCompleta,
+cr.fecEmision,
+DAY(cr.fecInspec) fi_dia,MONTH(cr.fecInspec) fi_mes,YEAR(cr.fecInspec) fi_anio,cr.horaInspec ,t.ruta,cr.anioDesde añodesde,
+DATENAME(DAY,cr.fecemision)+'  de  '+DATENAME(month,cr.fecemision)+'  del  '+DATENAME(YEAR,cr.fecemision) as fechaemision
+FROM  Rentas.MContribuyente co ,
+fiscalizacion.CARTA_REQ cr
+LEFT JOIN fiscalizacion.T_FIRMAS t ON cr.IdFirma = t.idFirma AND t.flag_estado=1
+WHERE cr.codContrib = co.codigo AND cr.idCarta= @idCartaReq]]>
+	</queryString>
+	<field name="idCarta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nroCarta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="añoregistro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idContrib" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomContrib" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellPat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellMat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dirCompleta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecEmision" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fi_dia" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fi_mes" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fi_anio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaInspec" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ruta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="añodesde" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaemision" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<filterExpression><![CDATA[$P{idCartaReq}]]></filterExpression>
+	<title>
+		<band height="721" splitType="Stretch">
+			<staticText>
+				<reportElement x="83" y="6" width="206" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DISTRITAL DE INDEPENDENCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="19" width="206" height="11"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SUBGERENCIA DE FISCALIZACION TRIBUTARIA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="80" width="555" height="13"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["CARTA DE PRESENTACIÓN Y REQUERIMIENTO DE DOCUMENTACIÓN Nº "+$F{nroCarta}+" - "+$F{añoregistro}+" -SFT-GAT-MDC"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="335" y="155" width="205" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Programa: Proyecto Selectivo 2015-SGFT-GAT-MDC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="171" width="100" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Código de Contribuyente:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="36" y="193" width="500" height="55"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["La Subgerencia de Fiscalización Tributaria de la Municipalidad de Independencia, en esta oportunidad se presenta ante usted (es) con la finalidad de comunicarles que, continuando con el plan de Verificación de Declaraciones Juradas,requiere de su invalorable apoyo a efectos de poder actualizar los datos de su predio en nuestra Base de Datos de Registro de Contribuyente.Para tal caso le solicitamos se sirva brindar las facilidades necesarias para que el personal encargado de esta administración realice una visita de inspección el día: "+$F{fi_dia}+"/"+$F{fi_mes}+"/"+$F{fi_anio}+" , entre las  "+$F{horaInspec}+" , al (de los) predio(s) ubicados(s) en: "]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" onErrorType="Blank">
+				<reportElement x="0" y="0" width="67" height="65"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.60:8080/img/logo_muni.jpg"]]></imageExpression>
+			</image>
+			<subreport>
+				<reportElement positionType="Float" x="36" y="251" width="497" height="9"/>
+				<subreportParameter name="idCartaReq">
+					<subreportParameterExpression><![CDATA[$P{idCartaReq}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["http://10.0.1.60:8080/reportes/CartaReq_predios.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="36" y="263" width="266" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FISCALIZADORES ASIGNADOS: ]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="37" y="277" width="494" height="9"/>
+				<subreportParameter name="idCartaReq">
+					<subreportParameterExpression><![CDATA[$P{idCartaReq}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["http://10.0.1.60:8080/reportes/CartaReq_fiscalizadores.jasper"]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement positionType="Float" x="33" y="655" width="479" height="45"/>
+			</rectangle>
+			<rectangle>
+				<reportElement positionType="Float" x="33" y="511" width="479" height="113"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="34" y="291" width="497" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cabe mencionar que para la realización de este acto, el personal se encontrará debidamente identificado con el fotocheck y/o Documento Nacional de Identidad, asimismo ejecutarán las labores que a continuación se detallan:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="64" y="318" width="401" height="11"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Toma de medidas de los perímetros del terreno, construcciones y obras complementarias.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="64" y="332" width="401" height="11"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Verificación de usos y categorías construidas del predio.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="64" y="345" width="401" height="11"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Toma de fotografía a características constructivas del predio.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="65" y="358" width="401" height="11"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Recepción de documentos solicitados.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="37" y="374" width="497" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Estimado vecino: En caso usted no pueda estar presente, podrá nombrar un representante que acompañe y verifique el proceso de inspección.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="37" y="396" width="497" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Finalmente de tener alguna duda respecto a la identidad del fiscalizador, comuníquese al 7170500 anexo 123 y solicite la certificación correspondiente.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="37" y="421" width="65" height="11"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Atentamente,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="37" y="496" width="497" height="11"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Se hace de conocimiento que para el momento de la inspección Ud. deberá presentar la siguiente documentación:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="69" y="513" width="198" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Ficha Registrar, Título de propiedad, Minuta de Compra-Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="69" y="536" width="198" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Partida defunción, Suc. Intestada, Declaratoria de Herederos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="69" y="558" width="198" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Testimonio de Partición, División, Acumulación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="69" y="581" width="198" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Declaratoria de fábrica, independización, reglamento interno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="69" y="608" width="198" height="13"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Licencia de Construcción, Conformidad de Obra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="311" y="558" width="188" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Certificado de Numeración]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="311" y="608" width="188" height="13"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Otros .........................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="311" y="536" width="188" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Licencia de Funcionamiento, Licencia de Anuncios, RUC.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="311" y="580" width="188" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Carta Poder con firma legalizada y/o Vigencia de Poder]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="310" y="513" width="189" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Planos de distribución, ubicación (cuadro de áreas)]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="275" y="511" width="1" height="113"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="62" y="511" width="1" height="113"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="305" y="511" width="1" height="113"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="33" y="535" width="479" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="33" y="557" width="479" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="33" y="579" width="479" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="33" y="602" width="479" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="33" y="643" width="479" height="1"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="38" y="660" width="64" height="12"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IMPORTANTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="37" y="673" width="473" height="22"/>
+				<textElement textAlignment="Justified">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Los documentos requeridos y no presentados o exhibidos en la etapa de fiscalización no serán admitidos como medios probatorios en un eventual reclamo por parte del contribuyente, de conformidad con el artículo 141 del Código Tributario.]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement positionType="Float" x="47" y="323" width="2" height="2" backcolor="#000000"/>
+			</rectangle>
+			<rectangle>
+				<reportElement positionType="Float" x="47" y="335" width="2" height="2" backcolor="#000000"/>
+			</rectangle>
+			<rectangle>
+				<reportElement positionType="Float" x="47" y="347" width="2" height="2" backcolor="#000000"/>
+			</rectangle>
+			<rectangle>
+				<reportElement positionType="Float" x="47" y="359" width="2" height="2" backcolor="#000000"/>
+			</rectangle>
+			<image hAlign="Center" onErrorType="Blank">
+				<reportElement positionType="Float" x="111" y="419" width="324" height="75"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://oseas:8082/firmas/"+$F{ruta}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="335" y="96" width="201" height="12"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Independencia, "+$F{fechaemision}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="108" width="529" height="13"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Señor(es): "+($F{apellPat}+" "+$F{apellMat}+" "+$F{nomContrib}).toUpperCase().trim()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="121" width="529" height="12"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Domicilio Fiscal:   "+$F{dirCompleta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="138" width="100" height="14"/>
+				<textElement>
+					<font size="9" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Presente.-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="456" y="169" width="58" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{idContrib}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="25">
+			<staticText>
+				<reportElement positionType="Float" x="34" y="0" width="479" height="25"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Este pedido se realiza en uso de las facultades obligacionales de fiscalización que posee la Administración Tributaria y que se encuentra regulado en el artículo 62,87 y 104 del TUO del código Tributario aprobado por D.S.Nº 133-2013-EF]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

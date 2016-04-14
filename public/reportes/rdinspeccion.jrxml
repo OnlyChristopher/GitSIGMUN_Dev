@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rdinspeccion" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="5">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Documents and Settings\\Miguel\\Escritorio\\Fisca\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idres" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Exec Fiscalizacion.sp_Imprime_Inspeccion @buscar=1, @idRes=$P{idres}]]>
+	</queryString>
+	<field name="idres" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="info" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codpred" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fech_fisca" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imprime" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nrodocu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_res" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_decla" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="consejo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gerencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subgeren" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_autovaluo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="por_propiedad" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_autovaluo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_autovaluo2" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="por_propiedad2" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_autovaluo2" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="predios" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{anio}+$F{codpred}]]></groupExpression>
+		<groupHeader>
+			<band height="150">
+				<image scaleImage="FillFrame" onErrorType="Blank">
+					<reportElement x="78" y="0" width="45" height="40"/>
+					<imageExpression class="java.lang.String"><![CDATA["http://127.0.0.1:8083/img/logo_lima_160x160.png"]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement x="0" y="39" width="199" height="7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{consejo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="45" width="199" height="7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{gerencia}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="51" width="199" height="7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="Arial" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{subgeren}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="67" width="595" height="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["IMPUESTO PREDIAL - COMPARACIÓN DE INFORMACIÓN OBTENIDA EN FISCALIZACIÓN Y LA REGISTRADA EN EL SISTEMA"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="21" y="88" width="125" height="10"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Código :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="98" width="125" height="10"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nombre o Razón Social :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="108" width="125" height="10"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Documento de Identidad :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="118" width="125" height="10"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Predio Fiscalizado :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="128" width="125" height="10"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Declaración Jurada Observada :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="138" width="142" height="10"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fecha de Inspección ó Fiscalización :]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="147" y="88" width="125" height="10"/>
+					<textElement markup="none">
+						<font fontName="Arial" size="7" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{codigo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="147" y="98" width="423" height="10"/>
+					<textElement markup="none">
+						<font fontName="Arial" size="7" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="147" y="108" width="125" height="10"/>
+					<textElement markup="none">
+						<font fontName="Arial" size="7" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nrodocu}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="147" y="118" width="423" height="10"/>
+					<textElement markup="none">
+						<font fontName="Arial" size="7" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="147" y="128" width="125" height="10"/>
+					<textElement markup="none">
+						<font fontName="Arial" size="7" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{fec_decla}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="147" y="138" width="125" height="10"/>
+					<textElement markup="none">
+						<font fontName="Arial" size="7" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{fech_fisca}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="449" y="40" width="121" height="9"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Fecha de Emisión: "+$F{fec_res}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="79">
+				<staticText>
+					<reportElement x="22" y="26" width="48" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Fiscalizados]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="18" width="48" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Ejercicios]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="72" y="34" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[(a)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="72" y="26" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Fiscalizado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="72" y="18" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Predio ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="131" y="34" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[(b)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="131" y="18" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[participación en]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="131" y="26" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[la Propiedad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="131" y="10" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[% verificado de ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="34" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[(a)x(b)=(c)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="10" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Autoavalúo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="26" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Resultante]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="18" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Verificado]]></text>
+				</staticText>
+				<line>
+					<reportElement x="21" y="44" width="403" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="249" y="34" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[(d)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="34" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[(e)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="10" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[% declarado de ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="26" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[la Propiedad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="249" y="18" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Declarado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="367" y="10" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Autoavalúo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="249" y="26" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[del Predio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="249" y="10" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Autoavalúo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="367" y="34" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[(d)x(e)=(f)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="367" y="26" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Resultante]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="18" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[participación en]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="367" y="18" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Declarado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="72" y="10" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<text><![CDATA[Autoavalúo]]></text>
+				</staticText>
+				<line>
+					<reportElement x="21" y="10" width="1" height="47"/>
+				</line>
+				<line>
+					<reportElement x="21" y="9" width="403" height="1"/>
+				</line>
+				<textField>
+					<reportElement x="24" y="47" width="44" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{anio}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="70" y="10" width="1" height="47"/>
+				</line>
+				<line>
+					<reportElement x="129" y="10" width="1" height="47"/>
+				</line>
+				<line>
+					<reportElement x="188" y="10" width="1" height="47"/>
+				</line>
+				<line>
+					<reportElement x="247" y="10" width="1" height="47"/>
+				</line>
+				<line>
+					<reportElement x="306" y="10" width="1" height="47"/>
+				</line>
+				<line>
+					<reportElement x="365" y="10" width="1" height="47"/>
+				</line>
+				<line>
+					<reportElement x="424" y="9" width="1" height="48"/>
+				</line>
+				<line>
+					<reportElement x="21" y="57" width="404" height="1"/>
+				</line>
+				<textField>
+					<reportElement x="72" y="47" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{val_autovaluo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="130" y="47" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{por_propiedad}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="188" y="47" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{total_autovaluo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="366" y="47" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{total_autovaluo2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="307" y="47" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{por_propiedad2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="248" y="47" width="57" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="7"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{val_autovaluo2}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<detail>
+		<band height="19">
+			<subreport>
+				<reportElement x="0" y="0" width="595" height="19"/>
+				<subreportParameter name="anio">
+					<subreportParameterExpression><![CDATA[$F{anio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="idres">
+					<subreportParameterExpression><![CDATA[$F{idres}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="codpred">
+					<subreportParameterExpression><![CDATA[$F{codpred}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "rdinspeccion_pisos01.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="19">
+			<subreport>
+				<reportElement x="0" y="0" width="595" height="19"/>
+				<subreportParameter name="anio">
+					<subreportParameterExpression><![CDATA[$F{anio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="idres">
+					<subreportParameterExpression><![CDATA[$F{idres}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="codpred">
+					<subreportParameterExpression><![CDATA[$F{codpred}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "rdinspeccion_pisos02.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="27">
+			<textField>
+				<reportElement x="13" y="10" width="134" height="9"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Fecha de Impresión: "+$F{imprime}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

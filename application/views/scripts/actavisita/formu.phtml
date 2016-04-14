@@ -1,0 +1,258 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Actavisita_formu.js"></script>
+
+	<script>
+	$(function() {
+		$( "#dpFechaTI" ).datepicker();
+		$( "#dpFechaII" ).datepicker();
+	});
+	</script>
+    
+    
+<form id="formActaVisita" name="formActaVisita">
+<div>
+    <div id="contentBox4" class="ui-content-tabs"  style="float:left;width:100%">					
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px">ACTA DE VISITA</li>
+    </ul>
+       		
+        	 <table class="tableContent"  style="width:100%">
+  <tr>
+   <td valign="top">
+    <fieldset class="ui-widget ui-widget-content"  style="margin-left:5px" >
+            <legend style="margin-left:5px">Datos:</legend>
+            <table class="tableContent"  style="width:100%">
+            <tr>
+              <td width="25%">
+              <input type="hidden" name="hcodCartaReq" id="hcodCartaReq" />
+              <input type="hidden" name="hcodActaVisita" id="hcodActaVisita" />
+              <label for="txtNroActaVisita">Nro :</label>
+              </td>
+              <td width="20%">
+              <span><?php echo $this->nroActaVisita; ?></span></td>
+              <td width="10%">&nbsp;</td>
+              <td width="45%">&nbsp;</td>
+            </tr>
+            
+            <tr>
+              <td><label for="txtCodigoContribuyenteAV">Codigo de Contribuyente:</label></td>
+              <td>
+              	<span><?php echo $this->codContrib; ?></span>
+              </td>
+              <td><label for="txtContribuyenteAV">Contribuyente:</label></td>
+              <td>
+              <span><?php echo $this->contribuyente; ?></span>
+              </td>
+            </tr>     
+            <tr>
+              <td><label for="txtFecha">Referencia a <br />
+                Carta de Requerimiento Nro :</label></td>
+              <td><span><?php echo $this->nroCartaReq ?></span></td>
+              <td colspan="2">&nbsp;</td>
+              </tr>
+             <tr>
+              <td valign="top"><label for="txtFecha">Predios :</label></td>
+              <td colspan="3">
+                 <?php echo $this->predios; ?>
+                <textarea name="txaPredios" cols="45" rows="3" readonly="readonly" class="cajaoff" id="txaPredios" style="width:100%"></textarea></td>
+              </tr>
+            <tr>
+              <td colspan="4" align="center">
+			
+               </td>           
+
+            </tr>      
+            <tr>
+              <td colspan="4">
+			<div id="tabsActaVisita">
+		        <ul >
+					<li id="tabII">
+	                    <a href="#tabInicioInspeccion">
+	                    <div>Inicio de Inspeccion</div>
+	                    </a>
+	                </li>
+		            <li  id="tabTI">
+	                    <a href="#tabTerminoInspeccion">
+	                    <div>Termino de Inspeccion</div>
+	                    </a>
+	                </li>                    
+		        </ul>
+                <div id="tabInicioInspeccion">
+                		
+               		    <table cellpadding="3" style="width:100%">
+                		    <tr>
+                		      <td width="25%">Fecha:</td>
+                		      <td width="36%"><label for="dpFechaTI"></label>
+               		          <input name="dpFechaII" type="text" id="dpFechaII" readonly="readonly" class="caja" /></td>
+                		      <td width="8%">Hora:</td>
+                		      <td width="31%"><label for="txtHoraTI"></label>
+               		          <input name="txtHoraII" type="text" id="txtHoraII" class="caja" /></td>
+               		        </tr>
+                		    <tr>
+                		      <td>Sr./Sra que recibe:</td>
+                		      <td colspan="3"><label for="txtRecibe"></label>
+               		          <input name="txtRecibe" type="text" class="caja" id="txtRecibe" style="width:100%" /></td>
+               		        </tr>
+                		    <tr>
+                		      <td>Observaciones:</td>
+                		      <td colspan="3"><label for="txaObservaciones"></label>
+               		          <textarea name="txaObservaciones" id="txaObservaciones" cols="45" rows="5" class="caja" style="width:100%"></textarea></td>
+               		        </tr>
+                		    <tr>
+                		      <td>Firma del Inspector:</td>
+                		      <td colspan="3">
+                              <label for="cbInspectorII"></label>
+                		        <select name="cbInspectorII" id="cbInspectorII" class="combo">
+              		            </select>
+                		        <div id="radioIIFirmaInspec" style="display:inline">
+                            <input name="rdIIFirmaInspec" type="radio" id="rdIIFirmaInspecSi" value="1" />
+                            <label id="l1" for="rdIIFirmaInspecSi">Si</label>
+                            <input name="rdIIFirmaInspec" type="radio" id="rdIIFirmaInspecNo"  value="0"  checked="checked"/>
+                            <label id="l2" for="rdIIFirmaInspecNo">No</label>
+                           	 </div>
+                            </td>
+               		        </tr>
+                		    <tr>
+                		      <td>Firma del Contribuyente</td>
+                		      <td>
+                               <div id="radioIIFirmaContrib">
+                                <input name="rdIIFirmaContrib" type="radio" id="rdIIFirmaContribSi" value="1" />
+                                <label for="rdIIFirmaContribSi">Si</label>
+                                <input name="rdIIFirmaContrib" type="radio" id="rdIIFirmaContribNo"  value="0"  checked="checked"/>
+                                <label for="rdIIFirmaContribNo">No</label>
+                             </div>
+                             </td>
+                		      <td>&nbsp;</td>
+                		      <td>&nbsp;</td>
+               		        </tr>
+       		            </table>
+                		  <br />
+                		  <br />
+                        <br />
+                </div>
+		        <div id="tabTerminoInspeccion">
+          
+                	<table cellpadding="3" style="width:100%">
+                		    <tr>
+                		      <td>Fecha:</td>
+                		      <td><label for="dpFechaTI"></label>
+               		          <input name="dpFechaTI" type="text" id="dpFechaTI" readonly="readonly" class="caja" /></td>
+                		      <td>Hora:</td>
+                		      <td><label for="txtHoraTI"></label>
+               		          <input name="txtHoraTI" type="text" id="txtHoraTI" class="caja" /></td>
+               		        </tr>
+                		    <tr>
+                		      <td colspan="4">
+                              <div class="divButtons" >
+                              <table style="width:100%">
+                		        <tr>
+                		          <td><input name="chk1" type="checkbox" id="chk1" />
+               		              </td>
+                		          <td><label for="chk1">Ficha Registral,Titulo de propiedad, Minuta de Compra - Venta</label></td>
+                		          <td><input type="checkbox" name="chk6" id="chk6" />
+               		              </td>
+                		          <td><label for="chk6">Planos de distribucion, ubicacion (cuadro de areas)</label></td>
+              		          </tr>
+                		        <tr>
+                		          <td><input type="checkbox" name="chk2" id="chk2" />
+               		            </td>
+                		          <td>  <label for="chk2">Partida de funcion, Suc. Intestada, Declaratoria de herederos</label></td>
+                		          <td><input type="checkbox" name="chk7" id="chk7" />
+               		              </td>
+                		          <td><label for="chk7">Licencia de Funcionamiento, Licencia de Anuncios, RUC.</label></td>
+              		          </tr>
+                		        <tr>
+                		          <td><input type="checkbox" name="chk3" id="chk3" />
+               		              </td>
+                		          <td><label for="chk3">Testimonio de Particion, Division, Acumulacion</label></td>
+                		          <td><input type="checkbox" name="chk8" id="chk8" />
+               		             </td>
+                		          <td> <label for="chk8">Certificado de Numeracion</label></td>
+              		          </tr>
+                		        <tr>
+                		          <td><input type="checkbox" name="chk4" id="chk4" />
+               		             </td>
+                		          <td> <label for="chk4">Declaratoria de Fabrica, Independizacion, Reglamento Interno</label></td>
+                		          <td><input type="checkbox" name="chk9" id="chk9" />
+               		              </td>
+                		          <td><label for="chk9">Carta Poder con firma legalizada y/o Vigencia de Poder</label></td>
+              		          </tr>
+                		        <tr>
+                		          <td><input type="checkbox" name="chk5" id="chk5" />
+               		              </td>
+                		          <td><label for="chk5">Licencia de Construccion, Conformidad de Obra</label></td>
+                		          <td><input type="checkbox" name="chk10" id="chk10" />
+               		              </td>
+                		          <td><label for="chk10">Otros:</label>                 		           
+               		              <input name="txtotrosDoc" type="text" class="cajaoff" id="txtotrosDoc" size="50" readonly="readonly"/></td>
+              		          </tr>
+              		        </table>              
+                          	  </div>
+                              </td>
+               		        </tr>
+                		    <tr>
+                		      <td>Firma del Inspector:</td>
+                		      <td colspan="3"><label for="cbInspectorII"></label>
+                		        <select name="cbInspectorTI" id="cbInspectorTI" class="combo">
+              		            </select>
+                		        <div id="radioTIFirmaInspec" style="display:inline">
+                            <input name="rdTIFirmaInspec" type="radio" id="rdTIFirmaInspecSi" value="1" />
+                            <label id="l3" for="rdTIFirmaInspecSi">Si</label>
+                            <input name="rdTIFirmaInspec" type="radio" id="rdTIFirmaInspecNo"  value="0"  checked="checked"/>
+                            <label id="l4" for="rdTIFirmaInspecNo">No</label>
+                            </div>
+                            </td>
+               		        </tr>
+                		    <tr>
+                		      <td>Firma del Contribuyente</td>
+                		      <td>
+                               <div id="radioTIFirmaContrib">
+                            <input name="rdTIFirmaContrib" type="radio" id="rdTIFirmaContribSi" value="1" />
+                            <label for="rdTIFirmaContribSi">Si</label>
+                            <input name="rdTIFirmaContrib" type="radio" id="rdTIFirmaContribNo"  value="0"  checked="checked"/>
+                            <label for="rdTIFirmaContribNo">No</label>
+                            </div>
+                             </td>
+                		      <td>&nbsp;</td>
+                		      <td>&nbsp;</td>
+               		        </tr>
+       		            </table>	
+                  
+                </div>				
+				</div>
+	
+              </td>           
+
+            </tr>                      
+               <tr>
+              <td colspan="4" align="center">
+			 <div class="divButtons" >
+             
+
+                	<input type="button" id="btnSaveActaVisita" name="btnSaveActaVisita" value="Guardar" />
+   	             <input type="button" id="btnImprimirActaVisita" name="btnImprimirActaVisita" value="Imprimir" />
+                    <input type="button" id="btnCancelActaVisita" name="btnCancelActaVisita" value="Cancelar" />
+                </div>
+	
+               </td>           
+
+            </tr>  
+          </table>	
+        </fieldset>   
+        </td>
+  </tr>
+  <tr>
+    <td valign="bottom">
+    
+ </td>
+    </tr>
+</table> 
+             
+    	 	
+ 
+	 	
+    </div>
+</div>
+
+
+</form>

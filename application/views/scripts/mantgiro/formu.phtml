@@ -1,0 +1,85 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Mantgiro_formu.js"></script>
+<form id="frmgiro">
+
+<input type="hidden" name="nestado" id="nestado">
+<input type="hidden" name="operador" id="operador">
+<input type="hidden" name="estacion" id="estacion">
+
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos del Giro:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			      <td><span id="lblCodContri">Código:</span></td>
+			      <td><span id="lblNomContri">Descripcion:</span></td>
+			   
+		      </tr>
+			    <tr>
+			    <td><input style="text-transform:uppercase" name="txtCodGiro" id="txtCodGiro" type="text" class="caja" size="10" maxlength="6" <?php echo $this->readonly;?> /></td>
+			    <td><input style="text-transform:uppercase" name="txtDesGiro" id="txtDesGiro" type="text" class="caja" size="80" maxlength="200" /></td>
+			    
+			    </tr>
+			  </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    
+			    <tr>
+			      <td><span id="lblMz">RDM:</span></td>
+			      <td><span id="lblLt">RDA:</span></td>
+			      <td><span id="lblSublt">VT:</span></td>
+			      <td><span id="lblNum">CV:</span></td>
+			      <td><span id="lblDpto">CZ:</span></td>
+		      </tr>
+              
+			    <tr>
+			    <td><input style="text-transform:uppercase" name="txtrdm" id="txtrdm" type="text" class="caja" size="10" maxlength="1" /></td>
+			    <td><input style="text-transform:uppercase" name="txrda" id="txrda" type="text" class="caja" size="10" maxlength="1" /></td>
+			    <td><input style="text-transform:uppercase" name="txtvt" id="txtvt" type="text" class="caja" size="10" maxlength="1" /></td>
+			    <td><input style="text-transform:uppercase" name="txtcv" id="txtcv" type="text" class="caja" size="10" maxlength="1" /></td>
+			    <td><input style="text-transform:uppercase" name="txtcz" id="txtcz" type="text" class="caja" size="10" maxlength="1" /></td>
+		      </tr>
+               <tr>
+			      <td><span id="lblMz">CM:</span></td>
+			      <td><span id="lblLt">I1:</span></td>
+			      <td><span id="lblSublt">I2:</span></td>
+			      <td><span id="lblNum">I3:</span></td>
+                  <td><span id="lblNum">I4:</span></td>
+			      <td>&nbsp;</td>
+		      </tr>
+              
+			    <tr>
+			    <td><input style="text-transform:uppercase" name="txtcm" id="txtcm" type="text" class="caja" size="10" maxlength="1" /></td>
+			    <td><input style="text-transform:uppercase" name="txti1" id="txti1" type="text" class="caja" size="10" maxlength="1" /></td>
+			    <td><input style="text-transform:uppercase" name="txti2" id="txti2" type="text" class="caja" size="10" maxlength="1" /></td>
+			    <td><input style="text-transform:uppercase" name="txti3" id="txti3" type="text" class="caja" size="10" maxlength="1" /></td>
+                <td><input style="text-transform:uppercase" name="txti4" id="txti4" type="text" class="caja" size="10" maxlength="1" /></td>
+			    <td>&nbsp;</td>
+		      </tr>
+			    <tr>
+			      <td colspan="5">
+                  <div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+                    <input type="button" name="btnGrabaGiro" id="btnGrabaGiro" value="Grabar Datos" />
+                    <input type="button" name="btnSalirGiro" id="btnSalirGiro" value="Cerrar Formulario" />
+                    </td>
+                    <td></td>
+                    </table>
+                  </div>
+                  
+                  </td>
+		      </tr>
+		    </table> 	    
+        </div>
+    </fieldset>	    
+</div>
+</form>

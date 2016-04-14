@@ -1,0 +1,47 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rptgeneral_predxuso.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+			   <tr>
+                    <td><b>Codigo:</b></td>
+                    <td><b>Año:</b></td>
+                    <td><b>Uso:</b></td>
+               </tr>
+				<tr>
+                    <td>
+						<input name="txtCodigo" id="txtCodigo" type="text" class="caja" size="15" maxlength="7" />
+					</td>
+                    <td>
+						<select name="cb_anno" id="cb_anno" class="combo" style="width:70px"><?php echo $this->cb_anno;?></select>
+					</td>
+                    <td>
+						<select id="cb_uso" name="cb_uso" class="combo" style="width:380px"><?php echo $this->cb_uso;?></select>
+					</td>
+					<td>
+						<input type="button" id="btnProcesarReporteXUso" value="Procesar" />
+					</td>
+					<td>
+						<input type="button" id="btnExportarReporteXUso" value="Exportar" />
+					</td>
+					<td>
+						<input type="button" id="btnGraficoReporteXUso" value="Gráfica" />
+					</td>
+                </tr>
+            </table>	    
+	    	</div>
+			
+			
+
+			
+	    </fieldset>
+
+    </div>
+	<div id="ReporteXUso" height="650px" align="center">	</div>
+</div>

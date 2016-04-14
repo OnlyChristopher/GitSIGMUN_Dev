@@ -1,0 +1,128 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Cartareq_formu.js"></script>
+
+	<script>
+	$(function() {
+		$( "#txtFecha" ).datepicker();
+	});
+	</script>
+    
+    
+<form id="formCartareq" name="formCartareq">
+<div>
+    <div id="contentBox2" class="ui-content-tabs"  style="float:left">					
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px">CARTA DE PRESENTACION Y REQUERIMIENTO DE DOCUMENTACION</li>
+    </ul>
+       		
+        	 <table class="tableContent">
+  <tr>
+    <td valign="top">
+            
+    </td>
+    <td rowspan="2" valign="top">
+    <fieldset class="ui-widget ui-widget-content"  style="margin-left:5px" >
+            <legend style="margin-left:5px">Datos:</legend>
+            <table class="tableContent">
+            <tr>
+              <td>
+              <input type="hidden" name="hcodCarta" id="hcodCarta" />
+              <input type="hidden" name="hcartaestado" id="hcartaestado" />
+              <label for="txtNroCartaReq">Nro :</label>
+              </td>
+              <td>
+              <input type="text" name="txtNroCartaReq" id="txtNroCartaReq" readonly="readonly" class="cajaoff" /></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            
+            <tr>
+              <td><label for="txtCodigoContribuyente">Codigo de Contribuyente:</label></td>
+              <td>
+              <input name="txtCodigoContribuyente" type="text" class="caja" id="txtCodigoContribuyente" readonly="readonly" /></td>
+              <td><label for="txtContribuyente">Contribuyente:</label></td>
+              <td>
+              <input name="txtContribuyente" type="text" class="caja" id="txtContribuyente" size="50" readonly="readonly" /></td>
+            </tr>     
+            <tr>
+              <td><label for="txtFecha">Fecha:</label></td>
+              <td><input name="txtFecha" type="text" class="caja" id="txtFecha"  /></td>
+              <td><label for="txtHora2">Hora:</label></td>
+              <td><input name="txtHora" type="text" class="caja" id="txtHora" value="8:00 - 17:30" /></td>
+            </tr>
+            <tr>
+              <td align="left"> <label for="cbAnioDesde">Desde:</label></td>
+              <td align="left">
+                <select name="cbAnioDesde" id="cbAnioDesde" class="combo">
+                </select></td>
+              <td align="left"><label for="cbMotivo">Motivo:</label></td>
+              <td align="left">
+                <select name="cbMotivo" id="cbMotivo" class="combo">
+                </select></td>           
+
+            </tr>  
+             <tr>
+                 <td align="left">A&ntilde;o: </td>
+                 <td  colspan="3" align="left"><span><div id="dvAnio"></div></span></td>
+               </tr>    
+            <tr>
+              <td colspan="4">
+			<div id="tabs">
+		        <ul >
+					<li  id="tab1">
+	                    <a href="#tabs-1">
+	                    <div>Predios</div>
+	                    </a>
+	                </li>
+		            <li  id="tab2">
+	                    <a href="#tabs-2">
+	                    <div>Fiscalizadores</div>
+	                    </a>
+	                </li>                    
+		        </ul>
+                <div id="tabs-1">
+                	<div id="gridPredios" style="width:100%"></div>   
+                </div>
+		        <div id="tabs-2">
+                	<div id="gridFiscalizadores"></div>  
+                     </div>				
+				</div>
+	
+              </td>           
+
+            </tr>                      
+               <tr>
+              <td colspan="3" align="center">
+              <div class="divButtons" style="margin:0px">
+    				<input type="button" id="btnActaVisita" name="btnActaVisita" value="ACTA DE VISITA"/> 
+                	<input type="button" id="btnNotificacionCedulon" name="btnNotificacionCedulon" value="NOTIFICACION POR CEDULON" /> 
+                    <input type="button" id="btnCargoNotificacion" name="btnCargoNotificacion" value="CARGO DE NOTIFICACION" /> 
+               
+ </div></td>
+              <td align="center"><div class="divButtons" >
+                <input type="button" id="btnSaveCartareq" name="btnSaveCartareq" value="Guardar" />
+                <input type="button" id="btnImprimirCartaReq" name="btnImprimirCartaReq" value="Imprimir" />
+                <input type="button" id="btnCancelCartareq" name="btnCancelCartareq" value="Cancelar" />
+              </div></td>           
+
+               </tr>
+              
+               
+            </table>	
+        </fieldset>   </td>
+  </tr>
+  <tr>
+    <td valign="bottom">
+    
+ </td>
+    </tr>
+</table> 
+             
+    	 	
+ 
+	 	
+    </div> 
+</div>
+
+
+</form>

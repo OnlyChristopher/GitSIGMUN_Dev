@@ -1,0 +1,13 @@
+<script>
+Ext.onReady(function() {
+
+    var loginDialog = Ext.create('Ext.ux.LoginDialog', {
+        formPanel: {
+        	url: 'index/login'
+		}
+	});
+	
+    loginDialog.show();
+   
+});
+</script>

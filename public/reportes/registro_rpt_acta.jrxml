@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="registro_rpt_acta" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ccd96122-c30a-441a-8dad-bb1789782f05">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="499"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="53a55181-0c2c-402e-9495-b96252ea5bca"/>
+	<subDataset name="Table Dataset 2" uuid="c2333a03-55b9-4625-8a4f-b2abb95ef481"/>
+	<parameter name="id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[exec store_registro_extra @msquery=27,@idregistro=$P{id}]]>
+	</queryString>
+	<field name="id_registro" class="java.lang.Integer"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="edad1" class="java.lang.Integer"/>
+	<field name="estado_civil1" class="java.lang.String"/>
+	<field name="ocupacion" class="java.lang.String"/>
+	<field name="naturalde" class="java.lang.String"/>
+	<field name="nacionalidad1" class="java.lang.String"/>
+	<field name="nombre_padre" class="java.lang.String"/>
+	<field name="nacionalidad_padre" class="java.lang.String"/>
+	<field name="nombre_madre" class="java.lang.String"/>
+	<field name="nacionalidad_madre" class="java.lang.String"/>
+	<field name="direc_novio" class="java.lang.String"/>
+	<field name="docum1" class="java.lang.String"/>
+	<field name="edad2" class="java.lang.Integer"/>
+	<field name="estado_civil2" class="java.lang.String"/>
+	<field name="nacionalidad2" class="java.lang.String"/>
+	<field name="direc_novia" class="java.lang.String"/>
+	<field name="docum2" class="java.lang.String"/>
+	<field name="edad3" class="java.lang.Integer"/>
+	<field name="estado_civil3" class="java.lang.String"/>
+	<field name="domicilio_fiscal_testigo_a" class="java.lang.String"/>
+	<field name="docum3" class="java.lang.String"/>
+	<field name="edad4" class="java.lang.Integer"/>
+	<field name="estado_civil4" class="java.lang.String"/>
+	<field name="domicilio_fiscal_testigo_b" class="java.lang.String"/>
+	<field name="docum4" class="java.lang.String"/>
+	<field name="dia" class="java.lang.Integer"/>
+	<field name="mes" class="java.lang.String"/>
+	<field name="anio" class="java.lang.Integer"/>
+	<field name="naturalnovio" class="java.lang.String"/>
+	<field name="naturalnovia" class="java.lang.String"/>
+	<field name="nacta" class="java.lang.Integer"/>
+	<field name="nov_nom" class="java.lang.String"/>
+	<field name="nov_apater" class="java.lang.String"/>
+	<field name="nov_amater" class="java.lang.String"/>
+	<field name="novia_nom" class="java.lang.String"/>
+	<field name="novia_apater" class="java.lang.String"/>
+	<field name="novia_amater" class="java.lang.String"/>
+	<field name="testi1_apater" class="java.lang.String"/>
+	<field name="testi1_amater" class="java.lang.String"/>
+	<field name="testi1_nombre" class="java.lang.String"/>
+	<field name="testi2_apater" class="java.lang.String"/>
+	<field name="testi2_amater" class="java.lang.String"/>
+	<field name="testi2_nombre" class="java.lang.String"/>
+	<field name="fecha_celebracion" class="java.lang.String"/>
+	<field name="hora_celeb" class="java.lang.String"/>
+	<field name="docu" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="7b277c21-d6f9-4f76-a3fa-2551a0626405" x="55" y="0" width="435" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ACTA DE CELEBRACION DE MATRIMONIO CIVIL N° "+$F{nacta}+"-"+$F{anio}+"-MDI"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d62b511b-1267-4a3b-aaae-19372cdc24e6" x="500" y="0" width="55" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_registro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="734" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="0" y="4" width="555" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="95916154-6b6c-4556-b082-ee5b4f82e4f7" x="1" y="5" width="163" height="14"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0809d427-9fa8-4090-8ac7-401ae35c8110" x="163" y="3" width="195" height="16"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[EL CONTRAYENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d1ea9086-1b79-441f-b985-9fce0d3b66ec" x="357" y="5" width="198" height="14"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[LA CONTRAYENTE]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="0" y="19" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="164" y="19" width="194" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="19" width="197" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="0" y="34" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="164" y="34" width="194" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="34" width="197" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="0" y="49" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="164" y="49" width="194" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="49" width="197" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="d7e8285a-7aff-46a6-9adc-d52e116d4736" x="1" y="19" width="163" height="15"/>
+				<textElement/>
+				<text><![CDATA[Documento de Identidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2be6211e-66ba-40bf-be08-dec52ac7a35e" x="1" y="34" width="163" height="15"/>
+				<textElement/>
+				<text><![CDATA[Primer Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="39ae3b46-2e91-4dd5-9287-13c6ee26dd72" x="1" y="49" width="163" height="15"/>
+				<textElement/>
+				<text><![CDATA[Segundo Apellido]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="0" y="64" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="164" y="64" width="194" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="64" width="197" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="0" y="79" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="164" y="79" width="194" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="79" width="197" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="0" y="94" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="164" y="94" width="194" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="94" width="197" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="6c95a215-a060-4048-ae20-bc68ef0a10d0" x="1" y="64" width="163" height="16"/>
+				<textElement/>
+				<text><![CDATA[Prenombre(s)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4fb1fab6-646e-4f40-955a-2945a4e24ded" x="1" y="79" width="163" height="15"/>
+				<textElement/>
+				<text><![CDATA[Estado Civil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4929330f-8ee6-4772-9440-3ff14672bcab" x="1" y="94" width="163" height="15"/>
+				<textElement/>
+				<text><![CDATA[Edad]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="0" y="109" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="0" y="124" width="164" height="41"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="b7dba7bf-e2f2-4124-915a-2d60acf2efe7" x="2" y="109" width="163" height="15"/>
+				<textElement/>
+				<text><![CDATA[Nacionalidad]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="164" y="109" width="194" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="109" width="197" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="164" y="124" width="194" height="41"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="124" width="197" height="41"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="0" y="165" width="164" height="41"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="164" y="165" width="194" height="41"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="165" width="197" height="41"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="66a4d8b2-58d5-4c97-a96b-f7b7a1f853b8" x="1" y="124" width="163" height="40"/>
+				<textElement/>
+				<text><![CDATA[Lugar de Nacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6fafc597-ba76-4e04-abc8-c3ebbbfe2097" x="1" y="166" width="163" height="40"/>
+				<textElement/>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="9f8c597d-6e7f-4dde-bb39-137177425b91" x="165" y="19" width="192" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{docum1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6e0c4866-a1fd-43f4-bea5-4e816041a545" x="359" y="19" width="196" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{docum2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="124e659d-9fc0-44f1-809e-843a6f8da495" x="164" y="4" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="124e659d-9fc0-44f1-809e-843a6f8da495" x="358" y="5" width="1" height="22"/>
+			</line>
+			<textField>
+				<reportElement uuid="aa7cfdae-ee90-4b42-908f-e2fef374d7af" x="165" y="34" width="192" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nov_apater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2663b770-a0d6-44ce-8243-6a6cdf0c480d" x="359" y="34" width="196" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{novia_apater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fb93c8ab-f05a-470b-86f8-4a3bb165e7ff" x="165" y="49" width="192" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nov_amater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d7164e04-c8d5-42c9-bf5d-79112b6542c5" x="360" y="49" width="195" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{novia_amater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="44022b5c-aa39-497d-ad3e-3f717f109070" x="165" y="64" width="192" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nov_nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="46bca221-1331-4b30-8021-d03f85317404" x="360" y="64" width="195" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{novia_nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ccf46e93-d22f-45aa-a7e0-59672614eb7a" x="165" y="79" width="192" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{estado_civil1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b59dc692-2efb-44d3-80e0-b5cc1f80a96c" x="360" y="79" width="195" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{estado_civil2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d234c405-7c6e-49c2-8c68-58f670fce313" x="165" y="94" width="100" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{edad1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d648053b-2b04-4ec0-81ea-a38cfc727ef4" x="360" y="94" width="100" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{edad2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="274c45f8-9b2c-4889-948f-c25bbbfca44f" x="165" y="109" width="192" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nacionalidad1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5f5771aa-3a7d-4786-8497-0b8400d7818a" x="360" y="109" width="195" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nacionalidad2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="93871545-993f-4e23-9c06-af871e5834f4" x="165" y="124" width="192" height="40"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{naturalnovio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d6402e33-b375-4121-82d9-ee8fde8d4026" x="360" y="124" width="195" height="40"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{naturalnovia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="00cc59cf-ac7d-444d-9c54-4a5e3a1cc094" x="165" y="166" width="193" height="40"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{direc_novio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49a233c9-4d58-4ce2-b667-e5b4a0bccb0b" x="360" y="166" width="195" height="40"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{direc_novia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2365c745-46ae-4f57-9d7c-35aaa5e403de" x="55" y="216" width="445" height="15"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPARECIERON ANTE LA AUTORIDAD MUNICIPAL, ACOMPAÑADOS DE SUS TESTIGOS:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="1" y="231" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="165" y="231" width="194" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="231" width="197" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="1" y="246" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="165" y="246" width="193" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="246" width="197" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="1" y="261" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="165" y="261" width="193" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="261" width="197" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="b2c17be2-e85b-4396-b181-01d886a1689a" x="2" y="231" width="161" height="15"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4854697d-f127-4cf2-a514-ef03b88068b3" x="165" y="231" width="193" height="15"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[1er. Testigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4854697d-f127-4cf2-a514-ef03b88068b3" x="359" y="231" width="196" height="15"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[2do. Testigo]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="1" y="276" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="1" y="291" width="164" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="1" y="306" width="164" height="41"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="165" y="276" width="193" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="165" y="291" width="193" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="165" y="306" width="193" height="41"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="276" width="197" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="291" width="197" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="93edfac7-bbcb-4a82-9c3a-611f0c6f6a1d" x="358" y="306" width="197" height="41"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="d7e8285a-7aff-46a6-9adc-d52e116d4736" x="1" y="246" width="163" height="15"/>
+				<textElement/>
+				<text><![CDATA[Documento de Identidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2be6211e-66ba-40bf-be08-dec52ac7a35e" x="1" y="261" width="163" height="15"/>
+				<textElement/>
+				<text><![CDATA[Primer Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="39ae3b46-2e91-4dd5-9287-13c6ee26dd72" x="1" y="276" width="163" height="15"/>
+				<textElement/>
+				<text><![CDATA[Segundo Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6c95a215-a060-4048-ae20-bc68ef0a10d0" x="2" y="291" width="163" height="16"/>
+				<textElement/>
+				<text><![CDATA[Prenombre(s)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6fafc597-ba76-4e04-abc8-c3ebbbfe2097" x="2" y="307" width="163" height="40"/>
+				<textElement/>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="0cdf978a-071a-4e3f-a550-1d80ba0f4c9f" x="165" y="246" width="192" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{docum3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d2027ef7-885b-41bf-9639-019566d912fc" x="360" y="246" width="195" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{docum4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a75ced16-c44e-4f71-9b46-3dc1c47def34" x="165" y="261" width="192" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{testi1_apater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fe39c89b-f3d2-414b-87d8-e481561abb61" x="360" y="261" width="195" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{testi2_apater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6481f075-13fd-40cf-aa08-b741b4c2c81a" x="165" y="276" width="192" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{testi1_amater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f56d644f-057b-4e1a-a3a4-a19ea70da4ea" x="360" y="276" width="195" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{testi2_amater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3ac2855e-4cbd-412b-98f7-c339e0d13355" x="165" y="291" width="192" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{testi1_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="30b30227-a148-4c6a-b7b1-454a6d2e0475" x="360" y="291" width="195" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{testi2_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="81c101f7-e25d-449f-b47b-f6b9d3136f12" x="165" y="307" width="192" height="40"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{domicilio_fiscal_testigo_a}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="48913f9e-a81f-40e6-a2dd-3bec1c703fa5" x="360" y="307" width="195" height="40"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{domicilio_fiscal_testigo_b}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="257250c8-5941-4344-b869-6463fb9b5287" x="13" y="376" width="152" height="15"/>
+				<textElement/>
+				<text><![CDATA[Lugar de Celebracion :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="257250c8-5941-4344-b869-6463fb9b5287" x="13" y="391" width="152" height="15"/>
+				<textElement/>
+				<text><![CDATA[Fecha :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="257250c8-5941-4344-b869-6463fb9b5287" x="13" y="407" width="152" height="15"/>
+				<textElement/>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="257250c8-5941-4344-b869-6463fb9b5287" x="13" y="423" width="203" height="15"/>
+				<textElement/>
+				<text><![CDATA[Nombre y DNI de Autoridad Celebrante :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="257250c8-5941-4344-b869-6463fb9b5287" x="296" y="376" width="194" height="15"/>
+				<textElement/>
+				<text><![CDATA[Municipalidad Distrital de Independencia]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="8850cbd8-666a-4909-8744-1260edb8113f" x="296" y="391" width="194" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha_celebracion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e0f18f14-72cc-403c-9652-7f36abbca5e8" x="296" y="407" width="194" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{hora_celeb}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="296" y="423" width="226" height="15"/>
+				<textElement/>
+				<text><![CDATA[RITA MABEL AGUILAR RODRIGUEZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="296" y="438" width="226" height="15"/>
+				<textElement/>
+				<text><![CDATA[Identificada con DNI 07137807]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="257250c8-5941-4344-b869-6463fb9b5287" x="13" y="454" width="203" height="15"/>
+				<textElement/>
+				<text><![CDATA[Cargo de Autoridad Celebrante :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="296" y="454" width="226" height="15"/>
+				<textElement/>
+				<text><![CDATA[Registradora: Encargada de Celebrar Matrimonios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ec23a04f-1baa-43b7-b9cb-b3913d6d9a32" x="13" y="577" width="528" height="14"/>
+				<textElement textAlignment="Justified">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Observacion: ___________________________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="60" y="629" width="133" height="15"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[______________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="332" y="629" width="133" height="15"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[______________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="60" y="674" width="133" height="15"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[______________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="332" y="674" width="133" height="15"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[______________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="60" y="640" width="133" height="15"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[El Contrayente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="332" y="640" width="133" height="15"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[La Contrayente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="60" y="686" width="133" height="15"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[1er. Testigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="332" y="686" width="133" height="15"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[2do.. Testigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dc39bf3-b482-41d2-94c5-74034bd2be8a" x="193" y="719" width="139" height="15"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORIDAD CELEBRANTE]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ae57e1da-8ad7-4425-aa05-80c42bc65d24" x="13" y="480" width="528" height="97"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Con el objeto de llevar a efecto el matrimonio que pretenden contraer y habiendo quedado expedidos por no tener impedimento según "+$F{docu}+" el cual queda archivado en esta oficina, siendo alcalde el señor EVANS RODOLFO SIFUENTES OCAÑA. Después de dar lectura a los artículos del Código Civil se preguntó separadamente a los contrayentes si persisten en su voluntad de contraer matrimonio y habiendo respondido ambos afirmativamente en nombre de la ley se declaran unidos en matrimonio. Extendiéndose la presente acta, en la que se deja constancia que han cumplido con todos los requisitos que señala la ley, firmando los intervinientes	conforme a lo dispuesto por el Artículo 259° de Código Civil."]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="28" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,171 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_multasadmin_editar.js"></script>
+<form id="frmultedit">
+<input type="hidden" name="codigo" id='codigo' size="10" class="cajaoff" readonly />
+<input type="hidden" name="numeroMulta" id='numeroMulta' size="10" class="cajaoff" readonly />
+<input type="hidden" name="tipocontri_multa" id='tipocontri_multa' size="10" class="cajaoff" readonly />
+<input type="hidden" name="anno_area" id="anno_area" size="5" class="cajaoff" readonly value="<?php echo $this->anno_area; ?> " />
+
+<fieldset class="ui-widget ui-widget-content">
+	<legend style="margin-left:5px">Multas Administrativas</legend>
+	<div class="contentForm">
+	<table class="tableContent" border=0 width="100%">
+	  <tr>
+		  <td><span>Autoridad Municipal: </span></td>
+		  <td><select name="codigo_autoridad_municipal" id='codigo_autoridad_municipal' class="combo" style="width:300px"></select></td>
+	  </tr>
+	  <tr>
+		<td><span>Fecha de Imposicion: </span></td>
+		<td>
+        <input type="hidden" id="anno_multa" name="anno_multa">
+        <input name="fecha_multa" type="text" class="caja" id="fecha_multa" style="text-transform:uppercase; width:100px" maxlength="10" />
+        <span>&nbsp;&nbsp;&nbsp;dd/mm/aaaa </span>
+	    </td>
+	  </tr>
+      <tr>
+		<td><span>Fecha de Notificacion: </span></td>
+		<td><input name="fecha_notificacion" type="text" class="caja" id="fecha_notificacion" style="text-transform:uppercase; width:100px" maxlength="10" />
+        <span>&nbsp;&nbsp;&nbsp;dd/mm/aaaa </span></td>
+	  </tr>
+	  <tr>
+		<td><span>Antecedente: </span></td>
+		<td><input name="antecedente" type="text" class="caja" id="antecedente" style="text-transform:uppercase; width:300px" maxlength="50" /></td>
+	  </tr>
+	  <tr>
+		<td><span>Preimpreso: </span></td>
+		<td><input name="preimpreso" type="text" class="caja" id="preimpreso"  style="text-transform:uppercase; width:100px"/></td>
+	  </tr>
+	  
+	  <tr>
+			<td><span>Guardiania:</span></td>
+			<td><input type="checkbox" name="chkGuardiania2" id="chkGuardiania2" value="1"/></td>
+	  </tr>
+	 </table>
+ <div id="divguardiania">
+	<table class="tableContent" border=0 width="100%">
+	  <tr>
+		  <td width="28%" ><span>Infraccion: </span></td>
+		  <td><select name="codigo_area" id='codigo_area' class="combo" style="width:300px"></select></td>
+	  </tr>
+      <tr>
+      	  <td><span>&nbsp;&nbsp;&nbsp; </span></td>
+		  <td><select name="tipo_infraccion" id='tipo_infraccion' class="combo" style="width:300px"></select></td>
+	  </tr>
+      <tr>
+          <td><span>&nbsp;&nbsp;&nbsp; </span></td>
+		  <td><select name="codigo_infraccion" id='codigo_infraccion' class="combo" style="width:300px"></select></td>
+	  </tr>
+  
+	  <tr id="divPeriodo">	        
+	        <td><span>No Aplicar Descuento: </span></td>
+	        <td><input type="checkbox" name="chkPeriodo" id="chkPeriodo" /></td>			
+	  </tr>
+      <tr>
+		<td><!--<span>Cantidad: </span>--></td>
+		<td><input name="cantidad" id="cantidad" type="hidden" class="caja"  style="text-transform:uppercase; width:100px"  /><!--<span>&nbsp;&nbsp;&nbsp;unidades(mayor a cero) </span>--></td>
+	  </tr>
+	</table >
+	<div id="divcalculo">
+	<table class="tableContent" border=0 width="100%">
+      <tr>
+		<td width="28%"><span>Base de Calculo: </span></td>
+		<td><input name="base" id="base" type="text" class="cajaoff"  style="text-transform:uppercase; width:100px" readonly /><span>&nbsp;&nbsp;&nbsp;(mayor a cero) </span></td>
+	  </tr>
+      <tr>
+		<td><span>Factor: </span></td>
+		<td><input name="factor" id="factor" type="text" class="cajaoff"  style="text-transform:uppercase; width:100px" readonly /><span>&nbsp;&nbsp;&nbsp;(0%-100%) </span></td>
+	  </tr>
+      <tr>
+		<td><span>Monto de la Multa: </span></td>
+		<td><input name="montoTotal" id="montoTotal" type="text" class="cajaoff"  style="text-transform:uppercase; width:100px" readonly /><span>&nbsp;&nbsp;&nbsp;Nuevos Soles </span></td>
+	  </tr>
+	 </table>
+	</div>
+</div>
+		
+		
+
+<div id="divvalorizacion">
+	<table  border=0 width="100%">
+	 <tr>
+		<td width="28%"><span>Valor de la Contruccion: </span></td>
+		<td><input name="txtvalorizacion" id="txtvalorizacion" type="text" class="caja"  style="text-transform:uppercase; width:70px"/>&nbsp;X&nbsp;
+			<input name="txtfactorvalorizacion" id="txtfactorvalorizacion" type="text" class="cajaoff"  readonly style="text-transform:uppercase; width:40px"/>&nbsp;%&nbsp;=&nbsp;
+			<input name="txtmultavalorizacion" id="txtmultavalorizacion" type="text" class="cajaoff"  readonly style="text-transform:uppercase; width:70px"/>
+		</td>
+	 </tr>
+	</table>
+</div>
+
+<div id="divmonto">
+</br>
+	<table class="tableContent" border=0 width="100%">
+	 
+	 <tr>
+		<td width="28%"><span>Vehiculo: </span></td>
+		<td><input name="rbtvehiculomenor" id="rbtmototaxi" type="radio" value="M"/>mototaxi &nbsp;&nbsp;&nbsp;<input name="rbtvehiculomenor" id="rbtcarreta" type="radio" value="C" />carreta</td>
+	 </tr>
+	 
+	 <tr>
+		<td width="28%"><span>Dias Internados: </span></td>
+		<td><input name="txtdias" id="txtdias" type="text" class="caja"  style="text-transform:uppercase; width:50px"/>&nbsp;X&nbsp;
+		<input name="txtvalor" id="txtvalor" type="text" class="cajaoff"  style="text-transform:uppercase; width:50px" readonly />&nbsp;=&nbsp;
+		<input name="txtvalorinternamiento" id="txtvalorinternamiento" type="text" class="cajaoff"  style="text-transform:uppercase; width:60px" readonly /></td>
+	 </tr>
+	</table>
+</div>
+</br>	
+	<table class="tableContent" border=0 width="100%">
+      <tr>
+		<td><span>Estado: </span></td>
+		<td><select name="estado" id="estado" class="combo"  style="width:150px"/></td>
+	  </tr>
+	  <tr>
+	        <td><span>Observaciones: </span></td>
+	        <td><textarea name="glosa" rows="3" class="caja" id="glosa" style="width:300px"></textarea></td>
+	  </tr>
+	  <tr>
+			<td><span>Presenta Resolucion:</span></td>
+			<td><input type="checkbox" name="chkResoluciones" id="chkResoluciones" value="1"/></td>
+	  </tr>
+	</table>	
+	</div>                
+</fieldset>
+</br>
+<!--Div para la emisión de resoluciones-->
+<div id="divresolucion">
+<fieldset class="ui-widget ui-widget-content">
+<legend style="margin-left:5px">Resoluciones de Gerencia Municipal</legend>
+	<div class="contentForm">
+	 <table class="tableContent" border=0 width="100%">
+	 <tr>
+		<td width="133px"><span>Fech. Resolucion:</span></td>
+		<td><input type="text" name="txtFechResolucion"  class="caja" id="txtFechResolucion" style="text-transform:uppercase; width:100px" maxlength="10" /></td>
+	 </tr>
+	 
+	 <tr>
+		<td><span>N. de Rsolucion:</span></td>
+		<td><input type="text" name="txtNResolucion"  class="caja" id="txtNResolucion" style="text-transform:uppercase; width:150px" /></td>
+	 </tr>
+	 
+	 <tr>
+		<td><span>Observaciones: </span></td>
+		<td><textarea name="txaObservacion" rows="4"  class="caja" id="txaObservacion" style="width:302px;"></textarea></td>
+	 </tr>
+	 </table>
+	</div>
+</fieldset>
+</div>
+<!--Fin de div para la emisión de resoluciones-->
+
+
+<div class="divButtons">
+	<table class="tableContent">
+	<tr>
+		<td><input name="btnSaveForm" id='btnSaveForm' value='Grabar' type="button"></td>
+		<td><input name="btnCloseForm" id='btnCloseForm' value='Salir' type="button"></td>
+	</tr>            
+	</table>
+</div>
+
+</form>

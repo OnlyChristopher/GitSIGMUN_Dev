@@ -1,0 +1,145 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Fraccionar.js"></script>
+
+
+<form id="frmfraccionamiento">
+<input type="hidden" name="actionFraccionamiento" id="actionFraccionamiento">
+
+<div>
+    <div style="float:left;padding-right:5px"> <!-- Primera Parte -->
+      <div>
+	    <fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+	     <legend style="margin-left:5px"></legend>
+	    	<table class="tableContent" width="100%">
+	    	<!--  tableContent me permite separar--> <!-- arriba derecha abajo izquierda -->		
+			    <tr>
+			    	<td><span id="lblEmision">Costo Emisión:</span> </td>
+				    <td>
+				    	<input name="txtEmision" id="txtEmision" type="text" class="cajaoff" size="10" value="0.00" style="text-align:right"/>
+				    </td>
+			    	<td style="padding-left:10px"><span id="lblFecha">Fecha:</span> </td>
+				    <td>
+				    <input name="txtFecha" id="txtFecha" type="text" class="cajaoff" size="10" readonly/>
+				    </td>
+			    </tr>
+	   
+	   			<tr>
+			    	<td><span id="lblFracc">Monto Total a Fracc.:</span> </td>
+				    <td colspan="3"><input name="txtFracc" id="txtFracc" type="text" class="cajaoff" size="10" value="0.00" readonly style="text-align:right"/></td>
+			    </tr>
+
+	   			<tr>
+			    	<td><span id="lblInicial">Cuota Inicial:</span> </td>
+				    <td>
+				    <input name="txtInicial" id="txtInicial" type="text" class="caja" size="10" value="0.00" style="text-align:right"/></td>
+				    <td>
+				    	<input type="button" id="btnInicial" value="..." />
+				    </td>
+				    <td>
+				    	<input name="txtPorcentaje" id="txtPorcentaje" type="text" class="cajaoff" size="10" value="0.00" style="text-align:right" readonly /><span> %</span>
+				    </td>
+			    </tr>
+			    
+	   			<tr>
+			    	<td><span id="lblSaldo">Saldo:</span> </td>
+				    <td><input name="txtSaldo" id="txtSaldo" type="text" class="cajaoff" size="10" value="0.00" style="text-align:right" readonly/></td>
+			    </tr>
+
+	   			<tr>
+			    	<td><span id="lblInteres">Interés Aprobado:</span> </td>
+				    <td><input name="txtInteres" id="txtInteres" type="text" class="cajaoff" size="10" value="0.00" style="text-align:right" readonly/></td>
+			    </tr>
+
+			</table>
+		</fieldset>
+	  </div>
+	  
+	  <br style="clear:both">
+	  <div>
+	    <fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+	     <legend style="margin-left:5px"></legend>
+	    	<table class="tableContent">
+	    	 <!--  tableContent me permite separar--> <!-- arriba derecha abajo izquierda -->		
+			    <tr>
+			    	<td><span id="lblNumero">Numero de Cuotas:</span> </td>
+				    <td>
+				    	<!--<input name="txtNumero" id="txtNumero" type="text" class="caja" size="10"  value="0"/>-->
+				    	<input type="number" name="txtNumero" id="txtNumero" class="caja" min="1" max="99" step="1" value="4">
+				    </td>
+			    </tr>
+	   
+	   			<tr>
+			    	<td><span id="lblFracc">Intereses del Fracc.:</span> </td>
+				    <td colspan="3">
+				    <input name="txtFact" id="txtFact" type="text" class="cajaoff" size="10" value="0.00" readonly style="text-align:right"/>
+				    </td>
+			    </tr>
+
+	   			<tr>
+			    	<td><span id="lblSininteres">Total sin Intereses:</span> </td>
+				    <td>
+				    	<input name="txtSininteres" id="txtSininteres" type="text" class="cajaoff" size="10" value="0.00" readonly style="text-align:right"/>
+				    </td>
+				     <!--<td style="padding-left:10px"><span id="lbltTotal">Total:</span> </td> -->
+			    </tr>
+			    
+			    <tr>
+			    	<td><span id="lblConinteres">Total con Intereses:</span> </td>
+				    <td>
+				    	<input name="txtConinteres" id="txtConinteres" type="text" class="cajaoff" size="10"  value="0.00" readonly style="text-align:right"/>
+				    </td>
+				    <td>
+				    	<!--<input name="txtTotal" id="txtTotal" type="text" class="cajaoff" size="10" value="0.00" style="text-align:right"/> -->
+				    </td>
+			    </tr>
+			    
+	   			<tr>
+			    	<td><span id="lblVencimiento">Vencimiento de la 1ª Cuota:</span> </td>
+				    <td>
+				    	<input name="txtVencimiento" id="txtVencimiento" type="text" class="cajaoff" size="10" readonly/>
+				    </td>
+				    <td>
+				    	<input type="button" id="btnVencimiento" value="..." />
+				    </td>
+			    </tr>
+			</table>
+		</fieldset>
+	  </div>
+	  
+	  
+    </div> <!-- Fin de la Primera Parte -->
+    
+    <div style="float:left;padding-left:5px">        <!-- Segunda Parte -->
+	    	
+    	<div>		
+		  <fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+     		<legend style="margin-left:5px"></legend>
+ 			 <div style="overflow:auto;height: 315px;width: 512px">
+				<div id="divgridCuotas"></div>
+	         </div>
+		   </fieldset>
+		 </div>
+	</div> <!-- Fin de la Segunda Parte -->
+	<br style="clear:both">
+	
+</div>
+
+
+<div class="divButtons">
+	<table class="tableContent" width="100%">
+		<tr>
+			<td style="padding-left:5px">
+			    <input type="button" id="btnDeudas" value="Calcular Cuotas" />
+				<input type="button" id="btnSimulado" value="Simular Convenio" />
+			    <input type="button" id="btnConvenio" value="Generar Convenio" />
+			    <input type="button" id="btnSalir" value="Salir" />
+			</td>
+		</tr>
+    </table>
+</div>
+<input type="hidden" id="txtflag" name="txtflag" size='3px' class="cajaoff" readonly>
+<input type="hidden" id="porc_ini" name="porc_ini" size='5px' class="cajaoff" readonly>
+<input type="hidden" id="max_cuotas" name="max_cuotas" size='3px' class="cajaoff" readonly>
+<input type="hidden" id="condicion_id" name="condicion_id" size='10px' class="cajaoff" readonly>
+<input type="hidden" id="estado" name="estado" size='10px' class="cajaoff" readonly>
+</form>

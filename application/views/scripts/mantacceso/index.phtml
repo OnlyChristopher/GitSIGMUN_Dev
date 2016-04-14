@@ -1,0 +1,49 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantacceso.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdC1" type="radio" value="C" checked/><span> Acceso</span>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdC3" type="radio" value="D" /><span> Nombre</span>
+              </label>
+              </td>
+              <td><input name="txtCriterio" id="txtCriterio" type="text" class="caja" size="20" maxlength="100" /></td>
+              <td><span> Menú</span></td>
+			  <td><select class="combo" id="cmbMenu" name="cmbTipo" style="width:200px"></select></td>
+			  <td><span> Módulo</span></td>
+			  <td><select class="combo" id="cmbPantalla" name="cmbPantalla" style="width:200px"></select></td>
+			  <td><span> Tipo</span></td>
+			  <td><select class="combo" id="cmbTipo" name="cmbTipo"></select></td>
+			  <td><input type="button" id="btnBusAcceso" value="Buscar" /></td>
+              </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="gridAcceso"></div>
+	    <br/>
+	    <div class="divButtons">
+		    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		    <tr>
+		    <td style="padding-left:5px">
+		    <input type="button" id="btnNuevoAcceso" value="Nuevo" />
+		    </td>
+		    <td></td>
+		    </table>
+		</div>
+    </div>
+</div>
+<div id="popup"></div>

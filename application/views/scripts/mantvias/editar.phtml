@@ -1,0 +1,60 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantvias_editar.js"></script>
+<script type="text/javascript">
+</script>
+<form id="frm_editarvia">
+<input name='datosvias' id='datosvias' type="hidden"/>
+<input style="display:none;" name="centroP" id='centroP' type="text"/>
+<input style="display:none;" name="urbanizacion" id='urbanizacion' type="text"/>
+<input style="display:none;" name="sector" id='sector' type="text"/>
+<input style="display:none;" name="id_vias" id='id_vias' type="text"/>
+
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Detalle de Vias:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100">
+        	
+			    <tr>
+			      <td><span>Codigo Via:</span>  </td>
+			      <td><input name="txtcod_via" id="txtcod_via" type="text" class="cajaoff" size="20" maxlength="100"  READONLY/></td>
+			      </tr>
+			      
+			     <tr>
+          		 <td><span>Urbanizacion:</span></td>
+          	 	 <td><select name="cb_urba" id="cb_urba" class="combo" disabled="disabled" ><option>[Seleccione]</option></select></td>
+          		 </tr>
+                 <tr>
+          		 <td><span>Tipo via:</span></td>
+          	 	 <td><select name="cb_tipovia" id="cb_tipovia" class="combo" ><option>[Seleccione]</option></select></td>
+          		 </tr>
+			      
+			      <tr>
+			      <td><span>Cuadra:</span></td>
+			      <td><input name="txtcuadra" id="txtcuadra" type="text" class="caja" size="20" maxlength="2"/></td>
+			      </tr>
+			       
+			     <tr>
+          		 <td><span>Sector:</span></td>
+          	 	 <td><select name="cb_sector_1" id="cb_sector_1" class="combo" disabled="disabled"><option>[Seleccione]</option></select></td>
+          	 	 </tr>
+			     
+			     <tr>
+			      <td><span>Nombre:</span></td>
+			      <td><input name="txtnombre" id="txtnombre" type="text" class="caja" size="20" maxlength="100" style="text-transform: uppercase;"/></td>
+			      </tr>
+			    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+	
+<div class="divButtons">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+    <td style="padding-left:5px">
+    <input type="button" name="btnSaveVia" id="btnSaveVia" value="Grabar" />
+    <input type="button" name="btnCloseVia" id="btnCloseVia" value="Salir" />
+    </td>
+    </table>
+</div>
+</form>

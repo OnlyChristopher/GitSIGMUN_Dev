@@ -1,0 +1,72 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Fiscalizacion_muestrarequerimiento.js"></script>
+<script>
+
+</script>
+<form id="formRequerimiento">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><b>Datos del Documento:</b></legend>
+        <div class="contentForm">
+		<input name="txtAction" id="txtAction" type="hidden" class="cajaoff" size="10" value="1" readonly />
+		<input name="txtIdx" id="txtIdx" type="hidden" class="cajaoff" size="10" value="0" readonly />
+		<table class="tableContent">
+			<tr>
+			<td><span id="lblNrocargo">N&uacute;mero:</span></td>  
+			<td colspan="3">
+			<input style="text-transform:uppercase" name="txtNumero" id="txtNumero" type="text" class="cajaoff" size="10" value="" readonly />&nbsp;&nbsp;
+			<input style="text-transform:uppercase" name="txtAnio" id="txtAnio" type="text" class="cajaoff" size="3" value="" readonly /></td>
+			</tr>
+			<tr>
+			<tr>
+			<td><span id="lblRecepcionista">C&oacute;digo:</span></td>  
+			<td colspan="3">
+			<input style="text-transform:uppercase" name="txtCodigo" id="txtCodigo" type="text" class="cajaoff" size="10" value="" readonly />&nbsp;
+			<button type="button" style="width:60px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnBusper">...</button>
+			</td></td>
+			</tr>
+			<tr>
+			<td><span id="lblRecepcionista">Nombres:</span></td>  
+			<td colspan="3">
+			<input style="text-transform:uppercase" name="txtContribuyente" id="txtContribuyente" type="text" class="cajaoff" size="76" readonly value=""/></td></td>
+			</tr>
+			<tr>  
+			<tr>
+			<td><span id="lblTipoDocumento">Documento: </span>&nbsp;</td>
+			<td>
+			<select id="cbDocumento" name="cbDocumento" style="width:174px;padding:2px;" ></select>
+			</td>
+			</tr>
+			<tr>
+			<td><span id="lblTipoDocumento">Motivo: </span>&nbsp;</td>
+			<td>
+			<select id="cbMotivo" name="cbMotivo" style="width:174px;padding:2px;" ></select>
+			</td>
+			</tr> 
+			<tr>
+			<td><span id="lblFechaRecepcion">Fecha:</span></td>  
+			<td colspan="3"><input style="text-transform:uppercase" name="txtFecha" id="txtFecha" type="text" class="caja txtdates"  size="11" maxlength="10" value="" /></td></td>
+			</tr>
+			<tr>
+			<td valign="top"><span id="lblObservaciones">Observaciones:</span></td>  
+			<td colspan="3">	
+			<textarea name="txtObservaciones" id="txtObservaciones" style="text-transform:uppercase; width:406px !important;" rows="6"  class="caja"></textarea>
+			</td>
+			</tr>
+		</table>
+		<div class="divButtons" style="margin:0px !important; ">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td style="padding-left:5px">
+						<button type="button" id="btnGuardar" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px">Guardar</button>
+						<button type="button" id="btnCancelar" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px">Cancelar</button>
+					</td>
+					 <td style="padding-left:5px">					   
+					</td>
+				</tr>
+			</table>
+		</div>
+        </div>
+    </fieldset>	    
+</div>
+</form>

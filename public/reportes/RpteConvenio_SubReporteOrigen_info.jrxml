@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteConvenio_SubReporteOrigen" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true">
+	<parameter name="PCODIGO" class="java.lang.String"/>
+	<parameter name="PCONVENIO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Exec [Rentas].[ImprimeConvenio_infosat]  @buscar=2,@codigo=$P{PCODIGO} ,@convenio=$P{PCONVENIO}]]>
+	</queryString>
+	<field name="codigo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_referencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solicitud_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno_obligacion" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="concepto_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconcepto_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="desc_abrv" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="predio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="periodo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Monto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="RPT_ORIGEN">
+		<groupExpression><![CDATA[$F{codigo}]]></groupExpression>
+		<groupFooter>
+			<band height="15">
+				<textField>
+					<reportElement isPrintRepeatedValues="false" x="345" y="0" width="162" height="13"/>
+					<textElement textAlignment="Right">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["TOTAL S/. "+$F{total}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="14" width="555" height="1"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="214" y="5" width="100" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cod.Predio/Veh.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="5" width="37" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cuotas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="5" width="52" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto S/.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="5" width="49" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Año]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="5" width="49" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cpto.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="149" y="5" width="49" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="2" width="555" height="1"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<textField>
+				<reportElement x="7" y="0" width="49" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{anno_obligacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="0" width="89" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="48" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desc_abrv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="0" width="100" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{predio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="0" width="55" height="11"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Monto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="132" height="11"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{periodo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

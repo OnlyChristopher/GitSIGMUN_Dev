@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CartaReq_predios" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<parameter name="idCartaReq" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+dbo.fn_fisca_getDirPredio(id_via,num_manz,num_lote,sub_lote,num_call,num_depa,referenc,cr.anio) DirCompleta
+FROM fiscalizacion.CARTAPREDIOS c INNER JOIN fiscalizacion.CARTA_REQ cr ON c.idCarta = cr.idCarta AND cr.idCarta = $P{idCartaReq}]]>
+	</queryString>
+	<field name="DirCompleta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="direccion" class="java.lang.String"/>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<rectangle>
+				<reportElement x="14" y="5" width="2" height="2" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="26" y="0" width="508" height="11"/>
+				<textElement>
+					<font size="8" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DirCompleta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

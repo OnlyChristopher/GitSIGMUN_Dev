@@ -1,0 +1,57 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rptgeneral_top_deudaIP.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+			   <tr>
+                    <td><b>Cantidad de Registros:</b></td>
+					<td><b>Concepto:</b></td>
+
+               </tr>
+				<tr>
+
+                    <td>
+						<select name="cb_limita" id="cb_limita" class="combo" style="width:140px">
+						<option value="T1">Top 50</option>
+						<option value="T2">Top 100</option>
+						<option value="T3">Top 200</option>
+						<option value="T4">Top 500</option>
+						<option value="T5">Top 1000</option>
+						<option value="T6">Top 2000</option>
+						</select>
+					</td>
+					
+					<td>
+						<select name="cb_concepto" id="cb_concepto" class="combo" style="width:140px">
+						<option value="IP">Predial</option>
+						<option value="ARB">Arbitrios</option>
+						<option value="FRACC">Fraccionamientos</option>
+						<option value="FRAC_ANT">Fracc. Ant.</option>
+						</select>
+					</td>
+ 
+					<td>
+						<input type="button" id="btnProcesarTOP" value="Procesar" />
+						<input type="button" id="btnExportartopdeudor" value="Exportar" />
+					</td>
+                </tr>
+            </table>	    
+	    	</div>
+			
+			
+
+			
+	    </fieldset>
+
+    </div>
+	<div id="ReporteTopDeudores" align="center">	
+	   
+	    	
+			</div>
+</div>

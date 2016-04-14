@@ -1,0 +1,1727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_datos_inspeccion" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="832" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5">
+	<style name="Crosstab Data Text" isDefault="false" hAlign="Center"/>
+	<style name="detalle" isDefault="false" fill="Solid" fontName="Times New Roman" fontSize="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Roman"/>
+	<parameter name="anio_rq" class="java.lang.String"/>
+	<parameter name="tipo_rq" class="java.lang.String"/>
+	<parameter name="nros_rq" class="java.lang.String"/>
+	<parameter name="anio" class="java.lang.String"/>
+	<parameter name="ccodpre" class="java.lang.String"/>
+	<parameter name="cidproc" class="java.lang.String"/>
+	<parameter name="estado_proces" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Exec Fiscalizacion.sp_ImprimeRQ @buscar='2',@cidproc=$P{cidproc},@estado_proces=$P{estado_proces}]]>
+	</queryString>
+	<field name="xrow" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contrib" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nrodocu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="datos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidpers" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidpred" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ccodpre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anio_rq" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_rq" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nros_rq" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_pred" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub_anexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acta_nume" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acta_anio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acta_base" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ccodvia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidcondi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ciduso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidestado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidtipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidgiro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidtran" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidtdoc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="partida" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="notaria" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="num_pisos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="num_condo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_adqui" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_trans" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidubipar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="habitantes" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="frontis" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_area_constru" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="area_terreno" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="area_comun" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="arancel" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_total_terreno" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_total_constru" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_total_instala" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_autoavaluo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="porcen_propiedad" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_autoavaluo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidtecnico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_fisc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="niv_piso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_clafica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_estados" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_materia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anio_antig" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="por_deprec" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_unitar" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incremento" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_deprec" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_un_dep" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="area_const" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valo_areas" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="area_comu" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unitario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direcpred" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dif_val_total_constru" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dif_area_terreno" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dif_arancel" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dif_val_total_terreno" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dif_val_total_instala" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dif_total_autoavaluo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="val_un_dep_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_hoja" calculation="Sum">
+		<variableExpression><![CDATA[($F{item}== 1 ? $F{val_un_dep} : 0) - ($F{item}== 2 ? $F{val_un_dep} : 0)]]></variableExpression>
+	</variable>
+	<variable name="area_const_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_hoja" calculation="Sum">
+		<variableExpression><![CDATA[($F{item}== 1 ? $F{area_const} : 0)-($F{item}== 2 ? $F{area_const} : 0)]]></variableExpression>
+	</variable>
+	<variable name="valo_areas_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_hoja" calculation="Sum">
+		<variableExpression><![CDATA[($F{item}== 1 ? $F{valo_areas} : 0)-($F{item}== 2 ? $F{valo_areas} : 0)]]></variableExpression>
+	</variable>
+	<variable name="area_comu_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_hoja" calculation="Sum">
+		<variableExpression><![CDATA[($F{item}== 1 ? $F{area_comu} : 0)-($F{item}== 2 ? $F{area_comu} : 0)]]></variableExpression>
+	</variable>
+	<variable name="val_total_constru_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_hoja" calculation="First">
+		<variableExpression><![CDATA[$F{val_total_constru}]]></variableExpression>
+	</variable>
+	<variable name="area_terreno_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_hoja" calculation="First">
+		<variableExpression><![CDATA[$F{area_terreno}]]></variableExpression>
+	</variable>
+	<variable name="arancel_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_hoja" calculation="First">
+		<variableExpression><![CDATA[$F{arancel}]]></variableExpression>
+	</variable>
+	<variable name="val_total_terreno_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_hoja" calculation="First">
+		<variableExpression><![CDATA[$F{val_total_terreno}]]></variableExpression>
+	</variable>
+	<variable name="val_total_instala_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_hoja" calculation="First">
+		<variableExpression><![CDATA[$F{val_total_instala}]]></variableExpression>
+	</variable>
+	<variable name="total_autoavaluo_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_hoja" calculation="First">
+		<variableExpression><![CDATA[$F{total_autoavaluo}]]></variableExpression>
+	</variable>
+	<group name="grupo_hoja" isStartNewPage="true" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{cidpers}+$F{anio}+$F{ccodpre}]]></groupExpression>
+		<groupHeader>
+			<band height="195">
+				<staticText>
+					<reportElement x="217" y="99" width="158" height="12">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Valor de la Edificación]]></text>
+				</staticText>
+				<line>
+					<reportElement x="52" y="126" width="711" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="55" y="160" width="12" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Pi]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="169" width="12" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[so]]></text>
+				</staticText>
+				<line>
+					<reportElement x="69" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="71" y="140" width="20" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[rial]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="71" y="131" width="20" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Mate]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="71" y="154" width="20" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Predo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="71" y="163" width="20" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[minan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="71" y="172" width="20" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[te]]></text>
+				</staticText>
+				<line>
+					<reportElement x="92" y="126" width="1" height="68"/>
+				</line>
+				<line>
+					<reportElement x="112" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="94" y="172" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[va]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="94" y="131" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Esta]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="94" y="163" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ser]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="94" y="140" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[do]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="94" y="154" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Con]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="94" y="181" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ción]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="114" y="145" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Cla]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="114" y="154" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[si]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="114" y="172" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ca]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="114" y="181" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ción]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="114" y="163" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[fi]]></text>
+				</staticText>
+				<line>
+					<reportElement x="132" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="134" y="150" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[An]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="134" y="168" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[gue]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="134" y="159" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ti]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="134" y="177" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[dad]]></text>
+				</staticText>
+				<line>
+					<reportElement x="152" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="162" y="163" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[rias]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="162" y="145" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[te]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="162" y="154" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[go]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="162" y="136" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Ca]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="127" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Va]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="136" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[lor]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="150" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Uni]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="168" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[rio x]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="182" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[M2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="159" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ta]]></text>
+				</staticText>
+				<line>
+					<reportElement x="188" y="126" width="1" height="69"/>
+				</line>
+				<staticText>
+					<reportElement x="231" y="150" width="15" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[men]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="231" y="132" width="15" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[In]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="231" y="159" width="15" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[to]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="231" y="141" width="15" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[cre]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="231" y="173" width="15" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[5%]]></text>
+				</staticText>
+				<line>
+					<reportElement x="226" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="261" y="146" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[cia]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="261" y="128" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[De]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="261" y="155" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ción]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="261" y="137" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[pre]]></text>
+				</staticText>
+				<line>
+					<reportElement x="250" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="251" y="184" width="18" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[%]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="278" y="184" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[S/.]]></text>
+				</staticText>
+				<line>
+					<reportElement x="303" y="126" width="1" height="68"/>
+				</line>
+				<line>
+					<reportElement x="251" y="183" width="52" height="1"/>
+				</line>
+				<line>
+					<reportElement x="269" y="183" width="1" height="11"/>
+				</line>
+				<staticText>
+					<reportElement x="305" y="177" width="30" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Dep.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="305" y="159" width="30" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ta]]></text>
+				</staticText>
+				<line>
+					<reportElement x="338" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="305" y="136" width="30" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[lor]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="305" y="150" width="30" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Uni]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="305" y="168" width="30" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[rio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="305" y="127" width="30" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Va]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="373" y="184" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[S/.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="184" width="22" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[M2]]></text>
+				</staticText>
+				<line>
+					<reportElement x="339" y="183" width="60" height="1"/>
+				</line>
+				<line>
+					<reportElement x="399" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="352" y="150" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Constr.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="352" y="141" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Area]]></text>
+				</staticText>
+				<line>
+					<reportElement x="365" y="183" width="1" height="11"/>
+				</line>
+				<staticText>
+					<reportElement x="407" y="184" width="12" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[M2]]></text>
+				</staticText>
+				<line>
+					<reportElement x="399" y="183" width="52" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="406" y="138" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Común]]></text>
+				</staticText>
+				<line>
+					<reportElement x="451" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="430" y="184" width="17" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[S/.]]></text>
+				</staticText>
+				<line>
+					<reportElement x="424" y="183" width="1" height="11"/>
+				</line>
+				<staticText>
+					<reportElement x="406" y="147" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Constr.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="406" y="129" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Area]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="453" y="149" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="453" y="158" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(1)]]></text>
+				</staticText>
+				<line>
+					<reportElement x="488" y="96" width="1" height="98"/>
+				</line>
+				<staticText>
+					<reportElement x="504" y="99" width="68" height="12">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Valor Terreno]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="489" y="158" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[de]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="489" y="149" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Area]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="489" y="167" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Terr.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="526" y="160" width="32" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Arancel]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="526" y="151" width="32" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Valor]]></text>
+				</staticText>
+				<line>
+					<reportElement x="525" y="126" width="1" height="68"/>
+				</line>
+				<line>
+					<reportElement x="592" y="96" width="1" height="98"/>
+				</line>
+				<line>
+					<reportElement x="558" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="559" y="159" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(3)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="559" y="150" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="774" y="102" width="48" height="12">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Valor]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="774" y="118" width="48" height="12">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[de]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="774" y="135" width="48" height="12">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Auto-]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="774" y="146" width="48" height="12">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Valuo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="774" y="163" width="48" height="12">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(1+2+3)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="626" y="99" width="133" height="12">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Valor de Instalaciones Fijas y]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="626" y="111" width="133" height="12">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Permanentes]]></text>
+				</staticText>
+				<line>
+					<reportElement x="763" y="96" width="1" height="99"/>
+				</line>
+				<staticText>
+					<reportElement x="729" y="160" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(3)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="729" y="150" width="34" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="695" y="160" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[d]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="695" y="150" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[tal.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="695" y="140" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None" markup="html">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[In<u>s</u>]]></text>
+				</staticText>
+				<line>
+					<reportElement x="729" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="661" y="160" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[c]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="661" y="150" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[tal.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="661" y="140" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None" markup="html">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[In<u>s</u>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="627" y="160" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[b]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="627" y="150" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[tal.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="627" y="140" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None" markup="html">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[In<u>s</u>]]></text>
+				</staticText>
+				<line>
+					<reportElement x="693" y="126" width="1" height="68"/>
+				</line>
+				<line>
+					<reportElement x="658" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="3" y="146" width="14" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ñ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="3" y="137" width="14" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[A]]></text>
+				</staticText>
+				<line>
+					<reportElement x="1" y="96" width="1" height="98"/>
+				</line>
+				<line>
+					<reportElement x="2" y="96" width="829" height="1"/>
+				</line>
+				<line>
+					<reportElement x="830" y="96" width="1" height="98"/>
+				</line>
+				<line>
+					<reportElement x="1" y="194" width="830" height="1"/>
+				</line>
+				<line>
+					<reportElement x="51" y="96" width="1" height="98"/>
+				</line>
+				<staticText>
+					<reportElement x="594" y="150" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[tal.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="594" y="160" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[a]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="594" y="140" width="30" height="11">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None" markup="html">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[In<u>s</u>]]></text>
+				</staticText>
+				<line>
+					<reportElement x="625" y="126" width="1" height="68"/>
+				</line>
+				<staticText>
+					<reportElement x="3" y="155" width="14" height="10">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[o]]></text>
+				</staticText>
+				<line>
+					<reportElement x="19" y="96" width="1" height="98"/>
+				</line>
+				<staticText>
+					<reportElement x="31" y="134" width="10" height="14">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[In]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="31" y="148" width="10" height="14">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[for]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="31" y="161" width="10" height="14">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ma]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="31" y="175" width="10" height="14">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center" rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ción]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="40" y="32" width="756" height="14"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="12" isBold="true" isUnderline="false" pdfFontName="Times-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["ANEXO: IMPUESTO PREDIAL – COMPARACION DE DATOS DE LA INSPECCION Y DE LA DECLARACION JURADA (*) "+$F{anio}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="628" y="50" width="97" height="13">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Documento de Identidad]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="100" y="68" width="508" height="23"/>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{direcpred}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="50" width="508" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{contrib}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="628" y="68" width="97" height="13">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Fecha de la inspección]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="50" width="91" height="13">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Nombre ó Razón Social]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="68" width="91" height="13">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Predio Fiscalizado]]></text>
+				</staticText>
+				<image scaleImage="FillFrame" onErrorType="Blank">
+					<reportElement x="7" y="2" width="30" height="30"/>
+					<imageExpression class="java.lang.String"><![CDATA["D:\\Resportes_Fiscalizacion\\logo-muni.jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="41" y="5" width="261" height="11"/>
+					<textElement textAlignment="Center">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[MUNICIPALIDAD DISTRITAL DE INDEPENDENCIA]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="497" y="2" width="315" height="14"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Página "+$V{PAGE_NUMBER}+" de "+$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="725" y="68" width="100" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_fisc}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="725" y="50" width="100" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nrodocu}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="41" y="16" width="278" height="13">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[GERENCIA DE  FISCALIZACIÓN  Y CONTROL MUNICIPAL]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="90">
+				<staticText>
+					<reportElement x="5" y="22" width="819" height="18">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Observaciones:  ______________________________________________________________________________________________________________________________________________________________________________________________]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="39" width="819" height="18">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement rotation="None">
+						<font fontName="Times New Roman" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ ____________________________________________________________________________________________________________________________________________________________________________________________________________]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="5" y="61" width="385" height="8"/>
+					<textElement>
+						<font fontName="Times New Roman" size="6"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["(*) Actualización 2010 de la Declaración Jurada de fecha 27/01/2009 ó No presento Declaración Jurada"]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="20" y="0" width="811" height="1"/>
+				</line>
+				<line>
+					<reportElement x="1" y="9" width="830" height="1"/>
+				</line>
+				<line>
+					<reportElement x="19" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="1" y="0" width="1" height="9"/>
+				</line>
+				<textField>
+					<reportElement style="detalle" isPrintRepeatedValues="false" x="20" y="1" width="31" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Diferencia"]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="303" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="338" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="365" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="399" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="424" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="451" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="488" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="525" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="558" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="592" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="830" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="763" y="0" width="1" height="9"/>
+				</line>
+				<line>
+					<reportElement x="729" y="0" width="1" height="9"/>
+				</line>
+				<textField>
+					<reportElement style="detalle" x="304" y="1" width="31" height="8"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{val_un_dep_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="detalle" x="338" y="1" width="26" height="8"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{area_const_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="detalle" x="366" y="1" width="31" height="8"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{valo_areas_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="detalle" x="424" y="1" width="26" height="8"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{area_comu_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="detalle" mode="Transparent" x="453" y="1" width="32" height="8"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{dif_val_total_constru}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="detalle" x="489" y="1" width="34" height="8"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{dif_area_terreno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="detalle" x="527" y="1" width="30" height="8"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{dif_arancel}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="detalle" x="559" y="1" width="31" height="8"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{dif_val_total_terreno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="detalle" x="730" y="1" width="31" height="8"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{dif_val_total_instala}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="detalle" x="772" y="1" width="52" height="8"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{dif_total_autoavaluo}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="6" splitType="Stretch"/>
+	</title>
+	<detail>
+		<band height="9" splitType="Stretch">
+			<textField>
+				<reportElement style="detalle" x="489" y="1" width="34" height="8">
+					<printWhenExpression><![CDATA[($F{xrow}==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{area_terreno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" isPrintRepeatedValues="false" x="527" y="1" width="30" height="8">
+					<printWhenExpression><![CDATA[($F{xrow}==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{arancel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" isPrintRepeatedValues="false" x="772" y="1" width="52" height="8">
+					<printWhenExpression><![CDATA[($F{xrow}==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{total_autoavaluo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="730" y="1" width="31" height="8">
+					<printWhenExpression><![CDATA[($F{xrow}==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{val_total_instala}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="559" y="1" width="31" height="8">
+					<printWhenExpression><![CDATA[($F{xrow}==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{val_total_terreno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="453" y="1" width="32" height="8">
+					<printWhenExpression><![CDATA[($F{xrow}==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{val_total_constru}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement style="detalle" isPrintRepeatedValues="false" x="2" y="0" width="17" height="8" printWhenGroupChanges="grupo_hoja"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="52" y="1" width="17" height="8">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{niv_piso}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="20" y="0" width="810" height="1">
+					<printWhenExpression><![CDATA[($F{xrow}==1)]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="19" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="488" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="1" y="0" width="1" height="9"/>
+			</line>
+			<textField>
+				<reportElement style="detalle" isPrintRepeatedValues="false" x="20" y="1" width="31" height="8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{datos}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="830" y="0" width="1" height="9"/>
+			</line>
+			<textField>
+				<reportElement style="detalle" x="153" y="1" width="35" height="8">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{unitario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="114" y="1" width="18" height="8">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{id_clafica}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="70" y="1" width="19" height="8">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{id_materia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="94" y="1" width="18" height="8">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{id_estados}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="51" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="69" y="0" width="1" height="9">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="92" y="0" width="1" height="9">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="112" y="0" width="1" height="9">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="132" y="0" width="1" height="9">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="152" y="0" width="1" height="9">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement style="detalle" x="133" y="1" width="18" height="8">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{anio_antig}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="188" y="0" width="1" height="9">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="226" y="0" width="1" height="9">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="269" y="0" width="1" height="9">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="303" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="338" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="365" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="525" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="558" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="592" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="658" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="693" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="729" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="763" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="399" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="424" y="0" width="1" height="9"/>
+			</line>
+			<line>
+				<reportElement x="451" y="0" width="1" height="9"/>
+			</line>
+			<textField>
+				<reportElement style="detalle" x="251" y="1" width="18" height="8">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{por_deprec}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="189" y="1" width="35" height="8">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{val_unitar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="227" y="1" width="21" height="8">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{incremento}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="250" y="0" width="1" height="9">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement style="detalle" x="270" y="1" width="32" height="8">
+					<printWhenExpression><![CDATA[(!$F{datos}.equals('Diferencia'))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{val_deprec}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="303" y="1" width="33" height="8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{val_un_dep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="339" y="1" width="25" height="8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{area_const}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="365" y="1" width="33" height="8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{valo_areas}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="625" y="0" width="1" height="9"/>
+			</line>
+			<textField>
+				<reportElement style="detalle" x="424" y="1" width="26" height="8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{area_comu}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

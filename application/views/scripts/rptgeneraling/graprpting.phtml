@@ -1,0 +1,126 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+			
+			<style type="text/css">
+				${demo.css}
+			</style>
+			
+			<style type="text/css">
+				#cmbAnio{
+				border: 1px solid gray;
+				border-radius: 10px;
+				padding: 10px;
+				text-decoration:none;
+				float:left;
+				margin:4px;
+				text-align:center;
+				display: block;
+				color: black;
+				}
+				#texto{
+				font-size:12pt;
+				font-family:arial, "courier new", impact;
+				}
+
+			</style>
+		
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+			//on page load
+			var anio = '<?php echo $this->anio; ?>';
+			getAjaxData(anio);
+			
+            var options = {
+                chart: {
+                    renderTo: 'container',
+                    type: 'column',
+                    marginRight: 130,
+                    marginBottom: 25
+                },
+                title: {
+                    text: 'INGRESOS POR CONCEPTOS',
+                    x: -20 //center
+                },
+                subtitle: {
+                    text: 'Arbitrios',
+                    x: -20
+                },
+                xAxis: {
+                    categories: []
+                },
+                yAxis: {
+                    title: {
+                        text: 'Requests'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                tooltip: {
+                    formatter: function() {
+                            return '<b>'+ this.series.name +'</b><br/>'+
+                            this.x +': '+ this.y;
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -10,
+                    y: 100,
+                    borderWidth: 0
+                },
+                series: []
+            }
+            
+			function getAjaxData(anio){
+				$.getJSON("datagraphing?anio="+anio, function(json) {
+					options.xAxis.categories = json[0]['data'];
+					options.series[0] = json[1];
+					options.series[1] = json[2];
+					options.series[2] = json[3];
+					chart = new Highcharts.Chart(options);
+				});
+			}
+			
+			//on changing select option
+			$('#cmbAnio').change(function(){
+				var anio = $('#cmbAnio').val();
+				alert(anio);
+				getAjaxData(anio);
+			});
+			
+        });
+        </script>
+	
+	</head>
+	<body>
+
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/highcharts.js"></script>
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/modules/data.js"></script>
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/modules/exporting.js"></script>
+
+		<table border="0">
+		<tr>
+			<td>
+				<span class="texto">ANIO:</span>
+			</td>
+			<td>
+				<select id="cmbAnio"><?php echo $this->cmbAnio; ?></select>
+			</td>
+		</tr>
+		</table>
+		
+		<div id="container" style="min-width: 95%; max-width: 95%; height: 80%; margin: 0 auto"></div>
+
+		
+		
+	</body>
+</html>

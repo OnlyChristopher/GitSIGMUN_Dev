@@ -1,0 +1,1501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_rd" language="groovy" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10">
+	<style name="detalle" isDefault="false" fontName="SansSerif" fontSize="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<parameter name="tipoval" class="java.lang.String"/>
+	<parameter name="num_val" class="java.lang.String"/>
+	<parameter name="anioval" class="java.lang.String"/>
+	<parameter name="cidproc" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Exec Fiscalizacion.sp_ImprimeRQ @buscar=4,@tipoval=$P{tipoval},@num_val=$P{num_val},@anioval=$P{anioval},@cidproc=$P{cidproc}]]>
+	</queryString>
+	<field name="tipoval" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="num_val" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anioval" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numerRD" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cedulon" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_val" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecvaln" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidpers" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contrib" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nrodocu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="domfisc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cadenaUIT" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="verificado" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="declarado" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ftramo01" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ftramo02" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ftramo03" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rtramo01" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rtramo02" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rtramo03" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fis_anual" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ren_anual" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="diferenci" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="period01" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="period02" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="period03" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="period04" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_insol01" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_insol02" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_insol03" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_insol04" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_reaj01" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_reaj02" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_reaj03" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_reaj04" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_mora01" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_mora02" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_mora03" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_mora04" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_total01" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_total02" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_total03" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_total04" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_insol" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_reaj" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_mora" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_rej" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota_mor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cadenadj" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="referencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cadena_predios" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="imp_total_1" class="java.math.BigDecimal" resetType="Group" resetGroup="numero_rd" calculation="Sum">
+		<variableExpression><![CDATA[$F{imp_total}]]></variableExpression>
+	</variable>
+	<variable name="imp_insol_1" class="java.math.BigDecimal" resetType="Group" resetGroup="numero_rd" calculation="Sum">
+		<variableExpression><![CDATA[$F{imp_insol}]]></variableExpression>
+	</variable>
+	<variable name="imp_reaj_1" class="java.math.BigDecimal" resetType="Group" resetGroup="numero_rd" calculation="Sum">
+		<variableExpression><![CDATA[$F{imp_reaj}]]></variableExpression>
+	</variable>
+	<variable name="imp_mora_1" class="java.math.BigDecimal" resetType="Group" resetGroup="numero_rd" calculation="Sum">
+		<variableExpression><![CDATA[$F{imp_mora}]]></variableExpression>
+	</variable>
+	<variable name="imp_reaj_2" class="java.math.BigDecimal" resetType="Group" resetGroup="numero_rd" calculation="Sum">
+		<variableExpression><![CDATA[$F{imp_reaj}]]></variableExpression>
+	</variable>
+	<group name="numero_rd">
+		<groupExpression><![CDATA[$F{tipoval}+$F{num_val}+$F{anioval}]]></groupExpression>
+		<groupHeader>
+			<band height="221">
+				<staticText>
+					<reportElement x="0" y="114" width="575" height="16"/>
+					<textElement textAlignment="Justified">
+						<font fontName="SansSerif" size="6" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[La presente se emite por los tributos y periodos que se indican, cuyo monto se ha actualizado hasta la fecha de emisión de la presente, luego de esta fecha se actualizará con una tasa diaria de 0.04%, conforme a la Tasa de Interés Moratorio fijada.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="130" width="575" height="11"/>
+					<textElement textAlignment="Justified" markup="none">
+						<font fontName="SansSerif" size="5" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Referencia : "+$F{referencia}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="142" width="575" height="11"/>
+					<textElement textAlignment="Justified">
+						<font fontName="SansSerif" size="6" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Motivo de la Determinación; Conforme a la Inspección Ocular realizada al predio, se ha determinado el Valúo que le corresponde, según documento anexo.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="154" width="575" height="11"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="none">
+						<font fontName="SansSerif" size="6" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Declaración Jurada : "+$F{cadenadj}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="166" width="575" height="11"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="none">
+						<font fontName="SansSerif" size="5" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Ubicación del Predio : "+$F{cadena_predios}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="373" y="0" width="197" height="12"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{fecvaln}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="59" width="100" height="11"/>
+					<textElement markup="html">
+						<font size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>: </b>"+$F{cidpers}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="72" width="458" height="11"/>
+					<textElement markup="html">
+						<font size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>: </b>"+$F{contrib}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="85" width="181" height="11"/>
+					<textElement markup="html">
+						<font size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>: </b>"+$F{nrodocu}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="100" y="98" width="458" height="11"/>
+					<textElement markup="html">
+						<font size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>: </b>"+$F{domfisc}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="2" y="18" width="573" height="18"/>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="SansSerif" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{numerRD}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="41" width="267" height="15"/>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="9" isBold="true" isItalic="false" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[IDENTIFICACION DEL DEUDOR TRIBUTARIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="59" width="59" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Código]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="72" width="91" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Nombre ó Razón Social]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="85" width="100" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Documento de Identidad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="98" width="91" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Domicilio Fiscal]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="110" width="575" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="121" y="193" width="55" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Autoavalúo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="121" y="186" width="55" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Tramos de]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="172" y="193" width="35" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[cuota]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="172" y="183" width="35" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Ali-]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="205" y="185" width="91" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Impuesto Anual Desagregado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="205" y="206" width="45" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ (1)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="205" y="196" width="45" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VERIFICADO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="250" y="207" width="44" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ (2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="249" y="197" width="48" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[DECLARADO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="297" y="196" width="42" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Insoluta]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="297" y="189" width="42" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Diferencia]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="402" y="193" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Reajuste]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="402" y="200" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(4)x(**)=(5)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="484" y="193" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Moratorio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="484" y="186" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Interés]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="484" y="200" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[por Periodo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="525" y="189" width="40" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Total a Pagar]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="528" y="196" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[en S/.]]></text>
+				</staticText>
+				<line>
+					<reportElement x="9" y="183" width="1" height="38"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="9" y="220" width="560" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="27" y="183" width="1" height="37"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="72" y="196" width="1" height="25"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="118" y="183" width="1" height="38"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="27" y="195" width="91" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="177" y="183" width="1" height="38"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="203" y="183" width="1" height="37"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="295" y="182" width="1" height="38"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="204" y="195" width="91" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="250" y="196" width="1" height="24"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="340" y="183" width="1" height="37"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="477" y="183" width="1" height="38"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="522" y="183" width="1" height="37"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="569" y="182" width="1" height="39"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="73" y="196" width="44" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[DECLA-]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="73" y="206" width="44" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[RADO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="196" width="44" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[VERI-]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="29" y="183" width="88" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[BASE IMPONIBLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="206" width="44" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[FICADO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="192" width="18" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[A]]></text>
+				</staticText>
+				<line>
+					<reportElement x="9" y="182" width="560" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="121" y="200" width="55" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[en UIT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="297" y="210" width="42" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(1)-(2)=(3)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="484" y="207" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(6)x(***)=(7)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="528" y="203" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(6)+(7)=(8)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="199" width="18" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ñ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="206" width="18" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[o]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="121" y="207" width="55" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(*)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="297" y="203" width="42" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Omitida]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="442" y="192" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Reajustado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="442" y="185" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Tributo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="442" y="199" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(4)+(5)=(6)]]></text>
+				</staticText>
+				<line>
+					<reportElement x="439" y="183" width="1" height="38"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="354" y="183" width="1" height="38"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="341" y="205" width="13" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[do]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="341" y="191" width="13" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Pe]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="341" y="198" width="13" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[rio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="199" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(3)/4=(4)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="185" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Tributo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="192" width="34" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="6" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Omitido]]></text>
+				</staticText>
+				<line>
+					<reportElement x="397" y="183" width="1" height="38"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="369">
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="23" width="575" height="7"/>
+					<textElement markup="html">
+						<font size="5"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>(*) UIT </b>"+$F{cadenaUIT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="59" width="59" height="12"/>
+					<textElement>
+						<font size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Base Legal :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="99" width="355" height="32"/>
+					<textElement textAlignment="Justified">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[Sírvase cancelar la presente Resolución de Determinación en el plazo máximo de 20 días hábiles, de no hacerlos se iniciara el procedimiento de Ejecución Coactiva conforme a lo dispuesto en la Ley Nº 26979. En caso de no conformidad, podra efectuar reclamo en el plazo de 20 dias hábiles de notificada la presente, debidamente sustentado; suscrito por letrado hábil (nombre, firma y número de registro) y acreditando la cancelación de su totalidad - salvo sea evidente la improcendencia a los dispositivos vigentes.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="88" width="34" height="12"/>
+					<textElement>
+						<font size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Avisos:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="12" y="99" width="17" height="12"/>
+					<textElement textAlignment="Right">
+						<font size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[-]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="12" y="135" width="17" height="12"/>
+					<textElement textAlignment="Right">
+						<font size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[-]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="167" width="235" height="8"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font size="6" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Cargo de Notificación y/o Certificación de Negativa a la Recepción
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="351" width="46" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Observaciones:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="337" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Color fachada:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="292" y="337" width="246" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Suministro Eléctrico :
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="292" y="323" width="246" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Puerta (material) :
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="225" y="306" width="129" height="14"/>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="8" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[CARACTERISTICAS DEL INMUEBLE
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="287" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[DNI:…………………………………………. Firma: ………………………………………………………]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="276" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Nombre: ……………………………………………………………………………………….…………....….]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="243" width="257" height="17"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relación con el deudor:
+Titular (      ) Familiar (       ) Empl./Repres.:(      )							]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="232" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[(   ) SE NEGÓ A IDENTIFICARSE                 (     ) SE NEGÓ A FIRMAR
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="210" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[DNI: ………………………………..Fecha Notific.:…………../……………../……………………….....
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="199" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Recepcionado por: ………………………………………………………………………………………..
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="188" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Sr.(a) (es): ………………………………………………………………………………………………….
+
+]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="322" y="167" width="177" height="8"/>
+					<textElement verticalAlignment="Bottom" markup="none">
+						<font size="6" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{cedulon}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="290" y="176" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Siendo Las ……………………………horas del día…………………/.………………../...…………]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="290" y="187" width="205" height="20"/>
+					<textElement textAlignment="Justified" verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Domicilio fiscal del contribuyente, con el propósito de notificar la R.D. Adosada al presente, dejando expresa constancia que:
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="290" y="206" width="205" height="11"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[(     ) NO SE ENCONTRO PERSONA CAPAZ EN EL DOMICILIO
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="290" y="226" width="205" height="11"/>
+					<textElement textAlignment="Justified" verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Se dejó el (los) documento (s) bajo la puerta del domicilio fiscal.
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="290" y="236" width="257" height="28"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[De conformidad a los Art. 103° y 104° inc. f) del T.U.O. del Código Tributario, DS 135-99-EF, incorporado por el D. Leg. 981, se procede a dejar bajo la puerta principal del domicilio fiscal del contribuyente en sobre cerrado.
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="265" width="118" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font size="6" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[DATOS DEL NOTIFICADOR:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="290" y="277" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Nombre: ……………………………………………………………………………………….…………....….]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="290" y="288" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[DNI:…………………………………………. Firma: ………………………………………………………]]></text>
+				</staticText>
+				<line>
+					<reportElement x="23" y="367" width="526" height="1"/>
+				</line>
+				<line>
+					<reportElement x="23" y="162" width="1" height="205"/>
+				</line>
+				<line>
+					<reportElement x="548" y="162" width="1" height="205"/>
+				</line>
+				<line>
+					<reportElement x="23" y="162" width="525" height="1"/>
+				</line>
+				<line>
+					<reportElement x="287" y="162" width="1" height="142"/>
+				</line>
+				<line>
+					<reportElement x="23" y="304" width="525" height="1"/>
+				</line>
+				<line>
+					<reportElement x="23" y="349" width="525" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="23" y="335" width="525" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="45" width="575" height="7"/>
+					<textElement markup="html">
+						<font size="5"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>(***) Tasa TIM:</b> Cuota "+$F{cuota_mor}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="33" width="575" height="7"/>
+					<textElement markup="html">
+						<font size="5"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>(**) Factores de Reajuste:</b> Cuota "+$F{cuota_rej}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="28" y="221" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Firma del receptor: ………………………………………………………………………………………..
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="265" width="118" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font size="6" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[DATOS DEL NOTIFICADOR:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="290" y="216" width="205" height="11"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[(     ) EL DOMICILIO SE ENCUENTRA CERRADO.
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="323" width="257" height="12"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="6" isBold="false"/>
+					</textElement>
+					<text><![CDATA[N° de Pisos:
+]]></text>
+				</staticText>
+				<line>
+					<reportElement x="23" y="321" width="525" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement x="519" y="4" width="48" height="9"/>
+					<textElement textAlignment="Right">
+						<font size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{imp_total_1}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="522" y="0" width="1" height="14"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="569" y="0" width="1" height="15"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="118" y="3" width="74" height="11"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Total Deuda S/.]]></text>
+				</staticText>
+				<line>
+					<reportElement x="9" y="14" width="560" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="9" y="0" width="1" height="14"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="354" y="0" width="1" height="14"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="397" y="0" width="1" height="14"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="439" y="0" width="1" height="14"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="477" y="0" width="1" height="14"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement x="347" y="4" width="48" height="9"/>
+					<textElement textAlignment="Right">
+						<font size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{imp_insol_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="388" y="4" width="48" height="9"/>
+					<textElement textAlignment="Right">
+						<font size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{imp_reaj_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="470" y="4" width="48" height="9"/>
+					<textElement textAlignment="Right">
+						<font size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{imp_mora_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="425" y="4" width="48" height="9"/>
+					<textElement textAlignment="Right">
+						<font size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{imp_reaj_2}+$V{imp_insol_1}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="36" y="133" width="355" height="25"/>
+					<textElement textAlignment="Justified">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[Cualquier consulta adicional, esperamos a Ud.en  frontis de la Municipalidad de Independencia Av. Tupac Amaru Km. 4.5. en el horario de lunes a Viernes de 08:00 a.m. a 17:00 p.m. hrs. y sabado de 08:00 a.m. a 13:00 hrs. o llamar  al telefono 712 4100.
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="72" width="575" height="16"/>
+					<textElement textAlignment="Justified">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[Articulo 33°, 76°, 77° y 104° del TUO del Codigo Tributario, aprobado por D.S. 133-13-EF. Articulo 8° al 19°del TUO de la Ley de Tributación Municipal, aprobado por D.S. 156-2004-EF y su modificatorias. Ordenanza N° 156-C/MDI, aprueba TIM, para jurisdicción del Distrito de Independencia.Resolucion de Alcaldia Nº 1226-2010, que aprueba el formato estandarizado.]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="32" splitType="Stretch">
+			<image scaleImage="FillFrame" onErrorType="Blank">
+				<reportElement x="2" y="2" width="30" height="30"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\Resportes_Fiscalizacion\\logo-muni.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="34" y="16" width="235" height="13">
+					<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[GERENCIA DE  FISCALIZACIÓN  Y CONTROL MUNICIPAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="4" width="235" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DISTRITAL DE INDEPENDENCIA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement style="detalle" x="7" y="0" width="24" height="9"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="27" y="0" width="43" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{verificado}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="27" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="9" y="32" width="561" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="9" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="detalle" x="111" y="0" width="73" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Hasta 15 UIT"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="111" y="8" width="73" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Mas de 15 a 60 UIT"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="111" y="16" width="73" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Mas de 60 UIT"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="73" y="0" width="43" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{declarado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="172" y="0" width="37" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["0.20 %"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="172" y="16" width="37" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["1.00 %"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="172" y="8" width="37" height="9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["0.60 %"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="204" y="0" width="43" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{ftramo01}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="250" y="0" width="43" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{rtramo01}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="203" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="250" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="295" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="340" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="477" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="522" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="569" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="177" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="118" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="72" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="detalle" x="204" y="8" width="43" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{ftramo02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="204" y="16" width="43" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{ftramo03}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="250" y="8" width="43" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{rtramo02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="250" y="16" width="43" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{rtramo03}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="295" y="0" width="44" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{diferenci}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="439" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="354" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="397" y="0" width="1" height="32"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="detalle" x="357" y="0" width="39" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_insol01}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="398" y="0" width="39" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_reaj01}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="473" y="0" width="45" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_mora01}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="521" y="0" width="46" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_total01}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="337" y="0" width="24" height="9"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{period01}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="337" y="8" width="24" height="9"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{period02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="337" y="16" width="24" height="9"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{period03}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="337" y="24" width="24" height="9"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{period04}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="429" y="0" width="45" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_insol01}+$F{imp_reaj01}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="357" y="8" width="39" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_insol02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="429" y="8" width="45" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_insol02}+$F{imp_reaj02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="521" y="8" width="46" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_total02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="473" y="8" width="45" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_mora02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="398" y="8" width="39" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_reaj02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="357" y="16" width="39" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_insol03}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="429" y="16" width="45" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_insol03}+$F{imp_reaj03}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="521" y="16" width="46" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_total03}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="473" y="16" width="45" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_mora03}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="398" y="16" width="39" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_reaj02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="357" y="24" width="39" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_insol04}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="398" y="24" width="39" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_reaj02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="429" y="24" width="45" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_insol04}+$F{imp_reaj04}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="473" y="24" width="45" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_mora04}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detalle" x="521" y="24" width="46" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_total04}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

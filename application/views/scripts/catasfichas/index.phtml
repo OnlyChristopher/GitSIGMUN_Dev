@@ -1,0 +1,111 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Catasfichas.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Tipos de Búsqueda:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+			  		<table class="tableContent">
+					<tr>
+						<td><span>Periodo:</span></td>
+						<td>
+						<select id="cmbPeriodo" class="combo" style="width:100px">
+							<option value="2013">2013</option>
+						</select>
+						</td>
+					<tr>
+					<tr>
+						<td><span>Sector:</span></td>
+						<td><input type="text" id="txtSector" class="caja" style="width:100px; text-transform:uppercase" maxlength="2" /></td>
+					<tr>
+					<tr>
+						<td><span>Manzana:</span></td>
+						<td><input type="text" id="txtManzana" class="caja" style="width:100px; text-transform:uppercase" maxlength="3" /></td>
+					<tr>
+					<tr>
+						<td><span>Lote:</span></td>
+						<td><input type="text" id="txtLote" class="caja" style="width:100px; text-transform:uppercase" maxlength="3" /></td>
+					<tr>
+				  	</table>
+			  </td>
+			  <td valign="bottom" style="padding-left:50px">
+			  		<table class="tableContent">
+					<tr>
+						<td><span>Tipo Ficha:</span></td>
+                        <td><span>N° de Ficha:</span></td>
+					<tr>
+					<tr>
+                    	<td><select id="cmbTipo" class="combo" style="width:150px"></select></td>
+						<td><input type="text" id="txtNficha" class="caja" style="width:100px; text-transform:uppercase" maxlength="7" /></td>
+					<tr>
+					<tr>
+						<td colspan="2"><span>Titular:</span></td>
+					<tr>
+					<tr>
+						<td colspan="2"><input type="text" id="txtTitular" class="caja" style="width:260px; text-transform:uppercase" maxlength="100" /></td>
+					<tr>
+				  	</table>
+			  </td>
+			  <td valign="bottom" style="padding-left:50px">
+			  		<table class="tableContent">
+					<tr>
+						<td><span>Zona / Sector / Etapa:</span></td>
+					<tr>
+					<tr>
+						<td><input type="text" id="txtZse" class="caja" style="width:200px; text-transform:uppercase" maxlength="200" /></td>
+					<tr>
+					<tr>
+						<td><span>Nombre de Habilitación Urbana:</span></td>
+					<tr>
+					<tr>
+						<td><input type="text" id="txtHub" class="caja" style="width:200px; text-transform:uppercase" maxlength="200" /></td>
+					<tr>
+				  	</table>
+			  </td>
+			  <td valign="bottom" style="padding-left:50px">
+			  	<input type="button" id="btnSearchFic" class="boton" value="Buscar" style="width:100px; height:40px">
+			  </td>
+              </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="gridCMficha"></div>
+	    <br/>
+	    <div class="divButtons">
+		    <table class="tableContent">
+		    <tr>
+		    <td><input type="button" id="btnNewFicha" value="Adicionar Ficha" style="width:150px; height:40px" /></td>
+		    <td><input type="button" id="btnPrintFicha" value="Imprimir Ficha" style="width:150px; height:40px" /></td>			
+		    <td style="padding-left:40px">
+				<fieldset class="ui-widget ui-widget-content">
+		    	<legend style="margin-left:5px;">Tipos de Fichas:</legend>
+				<div class="contentForm">
+				<table class="tableContent">
+				<tr>
+					<td><label><input type="checkbox" id="chkFichInd" class="chkSubFich" value="1"> <b>Ficha Individual</b></label></td>
+					<td><div style="background-color: #fff; border:1px #333 solid; width:15px; height:15px"></div></td>
+					<td>&nbsp;</td>
+					<td><label><input type="checkbox" id="chkFichBco" class="chkSubFich" value="4"> <b>Ficha Bnes. Comunes</b></label></td>
+					<td><div style="background-color:#0C0; border:1px #333 solid; width:15px; height:15px"></div></td>
+					<td>&nbsp;</td>
+					<td><label><input type="checkbox" id="chkFichEco" class="chkSubFich" value="3"> <b>Ficha Económica</b></label></td>
+					<td><div style="background-color:#069; border:1px #333 solid; width:15px; height:15px"></div></td>
+					<td>&nbsp;</td>
+					<td><label><input type="checkbox" id="chkFichCot" class="chkSubFich" value="2"> <b>Ficha Cotitular</b></label></td>
+					<td><div style="background-color:#FF2F2F; border:1px #333 solid; width:15px; height:15px"></div></td>
+				</tr>    
+				</table>
+				</div>
+				</fieldset>
+			</td>
+		    </table>
+		</div>
+    </div>
+</div>

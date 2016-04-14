@@ -1,0 +1,82 @@
+<fieldset class="ui-widget ui-widget-content" style='padding:10px'>
+ <legend style="margin-left:1px">Instalaciones:</legend>
+ <input type="hidden" id="oldInsItems" name="oldInsItems">
+ <table class="tableContentc">
+<tr>
+  <td valign="top">
+  	<div id="gridFicIndInstal"></div>
+  </td>
+  <td valign="top">
+  	<div class="divButtons" style="margin:0 0 0 10px; width:110px">
+        <table>
+        <tr id="rowAddInstal">
+        <td style="padding:3px"><input type="button" id="btnAddInstal" name="btnAddInstal" value="Agregar" style="width:80px" /></td>
+        </tr>        
+        <tr id="rowSaveInstal">
+        <td style="padding:3px"><input type="button" id="btnSaveInstal" name="btnSaveInstal" value="Guardar" style="width:80px" /></td>
+        </tr>
+        <tr id="rowEditInstal">
+        <td style="padding:3px"><input type="button" id="btnEditInstal" name="btnEditInstal" value="Editar" style="width:80px" /></td>
+        </tr>
+        <tr id="rowCancelInstal">
+        <td style="padding:3px"><input type="button" id="btnCancelInstal" name="btnCancelInstal" value="Cancelar" style="width:80px" /></td>
+        </tr>
+        <tr>
+        <td style="padding:3px"><input type="button" id="btnDelInstal" name="btnDelInstal" value="Eliminar" style="width:80px"/></td>
+        </tr>
+        </table>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td valign="top" colspan="2">
+         <div id="divAddInstal" style="margin-top:10px;">
+			<table class="hovertable">
+			<tr>
+	        <th><center>Codigo</center></th>
+	        <th><center>Descripci&oacute;n de Instalaci&oacute;n</center></th>
+	        <th><center>U. Medida</center></th>
+	        <th><center>MEP</center></th>
+	        <th><center>ECS</center></th>
+	        <th><center>ECC</center></th>
+	        <th><center>Alto</center></th>
+	        <th><center>Largo</center></th>
+	        <th><center>Ancho</center></th>
+	        <th><center>Mes</center></th>
+	        <th><center>A&ntilde;o</center></th>
+	        <th><center>Cantidad</center></th>
+	        <th><center>Valor Total</center></th>
+			</tr>
+			<tr id='rowInstal'>
+			<td align="center"><input type='text' name='codigo_inst' id='codigo_inst' class='caja' size='1' maxlength='3' value='' /></td>
+			<td><select name='detalle_inst' id='detalle_inst' class='combo' style="width:200px" ></select></td>
+			<td><input type='text' name='uni_med' id='uni_med' class='caja' style="width:60px" maxlength='14' value='' /></td>
+			<td><select name='id_materia_i' id='id_materia_i' class='combo'  style="width:90px"></select></td>
+			<td><select name='id_estados_i' id='id_estados_i' class='combo'  style="width:90px"></select></td>
+			<td><select name='id_clafica_i' id='id_clafica_i' class='combo'  style="width:90px"></select></td>
+			<td><input type='text' name='alto' id='alto' class='caja' size='1' maxlength='14' value='' style="width:45px"/></td>
+			<td><input type='text' name='largo' id='largo' class='caja' maxlength='14' value='' style="width:45px"/></td>
+			<td><input type='text' name='ancho' id='ancho' class='caja' maxlength='14' value='' style="width:45px"/></td>
+			<td><input type='text' name='mes_cons' id='mes_cons' class='caja' style="width:30px" maxlength='2' value='' /></td>
+			<td><input type='text' name='ano_cons' id='ano_cons' class='caja' style="width:40px" maxlength='4' value='' /></td>
+			<td><input type='text' name='cantidad' id='cantidad' class='caja' style="width:45px" maxlength='14' value='' /></td>
+			<td><input type='text' name='val_instalac' id='val_instalac' style="width:68px"class='caja off' size='1' maxlength='14' value='' />
+			<input type='hidden' name='item_instalacion' id='item_instalacion'  value=''/>
+			<input type="hidden" name='id_reginstal' id='id_reginstal'value="">
+			<input type="hidden" name='actInstal' id='actInstal'value="">
+			</td>
+		<!--	<td><input type='text' name='referenciainst' id='referenciainst' class='caja' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"alpha")' onblur='this.value = this.value.toUpperCase()'/></td>-->
+			</tr>
+			<tr>
+			<th colspan="13"><center>Referencia</center></th>
+			</tr>
+			<tr>
+			<td colspan="13"><input type='text' name='referenciainst' id='referenciainst' class='caja' style='text-transform:uppercase;' onkeypress='return valoresUnitarios(event,"alpha")' onblur='this.value = this.value.toUpperCase()' size='207'/></td>
+			</tr>
+		   </table>
+        </div>
+  </td>
+</tr>
+</table>
+</fieldset>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><br><br><br>

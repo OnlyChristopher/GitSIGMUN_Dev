@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_hoja_liquidacion2013" language="groovy" pageWidth="595" pageHeight="421" orientation="Landscape" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10">
+	<parameter name="CODIGO" class="java.lang.String"/>
+	<parameter name="ANNO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[exec rentas.reporte 3,$P{CODIGO},$P{ANNO}]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cuota" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FEC_VENC" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IMP_INSOL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COSTO_EMIS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FACT_REAJ" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MORA" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOTAL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_impuesto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_emision" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_deuda" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_emision" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="codigo">
+		<groupExpression><![CDATA[$F{codigo}]]></groupExpression>
+		<groupHeader>
+			<band height="150">
+				<staticText>
+					<reportElement x="51" y="-38" width="97" height="30"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[MUNICIPALIDAD DE  INDEPENDENCIA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="1" width="129" height="30"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Contribuyente]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="33" width="128" height="26"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Código]]></text>
+				</staticText>
+				<rectangle radius="2">
+					<reportElement mode="Transparent" x="7" y="1" width="542" height="58"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<line>
+					<reportElement x="7" y="31" width="542" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="377" y="31" width="59" height="28"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Fecha de Emisión]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="61" width="79" height="58"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[PAGO AL CONTADO]]></text>
+				</staticText>
+				<rectangle radius="3">
+					<reportElement mode="Transparent" x="6" y="61" width="543" height="58"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<line>
+					<reportElement x="91" y="90" width="458" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="92" y="62" width="76" height="28"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="9"/>
+					</textElement>
+					<text><![CDATA[Impuesto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="439" y="61" width="93" height="31"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Fecha de
+Vencimiento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="333" y="62" width="49" height="28"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[TOTAL
+(S/.)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="195" y="62" width="99" height="28"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Derecho de Emisión]]></text>
+				</staticText>
+				<line>
+					<reportElement x="90" y="61" width="1" height="58"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="438" y="62" width="1" height="57"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="377" y="32" width="1" height="27"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="90" y="133" width="84" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cuota]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="174" y="124" width="52" height="25"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Fecha de
+Vencimiento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="250" y="133" width="59" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Impuesto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="498" y="126" width="52" height="22"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Total
+(S/.)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="429" y="133" width="48" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Interes(2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="369" y="133" width="48" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Reajuste(1)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="312" y="126" width="44" height="21"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Derecho de Emisión]]></text>
+				</staticText>
+				<line>
+					<reportElement x="436" y="32" width="1" height="27"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="141" y="1" width="1" height="58"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="9" y="126" width="81" height="22"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[PAGO
+FRACCIONADO]]></text>
+				</staticText>
+				<line>
+					<reportElement x="7" y="124" width="542" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="7" y="124" width="1" height="26"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="549" y="124" width="1" height="26"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="90" y="149" width="459" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="90" y="124" width="1" height="26"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement x="148" y="1" width="401" height="29"/>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="148" y="33" width="229" height="26"/>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{codigo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="194" y="97" width="100" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{total_emision}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="439" y="91" width="110" height="26"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{FEC_VENC}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="92" y="96" width="100" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{total_impuesto}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="321" y="96" width="100" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{total_deuda}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="443" y="37" width="100" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha_emision}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="81">
+				<line>
+					<reportElement x="8" y="0" width="541" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<rectangle>
+					<reportElement x="9" y="58" width="528" height="23"/>
+					<graphicElement>
+						<pen lineWidth="2.0"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="9" y="28" width="528" height="9"/>
+					<textElement>
+						<font size="7" isBold="false"/>
+					</textElement>
+					<text><![CDATA[2/. La segunda, tercera y cuarta cuota se ajustaran por la variación del Indice de Precios al por Mayor (IPM), de acuerdo a lo establecido en el art.15 inciso b) del TUO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="9" y="4" width="33" height="13"/>
+					<textElement>
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Notas:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="8" y="44" width="529" height="9"/>
+					<textElement>
+						<font size="7" isBold="false"/>
+					</textElement>
+					<text><![CDATA[3/. La deuda se actualizará con la Tasa de Interes Moratorio según el Art. 33 del TUO del Código Tributario y Ordenanza N° 156-MDI. ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="9" y="18" width="305" height="9"/>
+					<textElement>
+						<font size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1/. El Pago del Impuesto Predial se cancela hasta el último día habil del mes de febrero.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="111" y="58" width="270" height="23"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[LA MUNICIPALIDAD PREMIA TU PUNTUALIDAD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="19" y="36" width="518" height="9"/>
+					<textElement>
+						<font size="7" isBold="false"/>
+					</textElement>
+					<text><![CDATA[de la Ley de Tributación Municipal. DS 156-04-EF y se calcularán hata la fecha de pago.]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45">
+			<image>
+				<reportElement x="9" y="0" width="65" height="45"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.60:8080/img/logo_muni.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="459" y="7" width="62" height="20"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{anno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="7" width="296" height="19"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOJA DE LIQUIDACIÓN DEL IMPUESTO PREDIAL ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<line>
+				<reportElement x="7" y="0" width="1" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="90" y="0" width="1" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="549" y="-1" width="1" height="14"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="92" y="0" width="82" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Cuota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="0" width="55" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{FACT_REAJ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="0" width="48" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{MORA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="0" width="52" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{FEC_VENC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="502" y="0" width="48" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="48" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{IMP_INSOL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="309" y="0" width="44" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{COSTO_EMIS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

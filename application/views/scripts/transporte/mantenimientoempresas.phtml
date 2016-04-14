@@ -1,0 +1,214 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Transporte_manten_empresa.js"></script>
+<style type="text/css">
+	.text1{
+		font-family: tahoma;
+		font-size:11px;
+	}
+</style>
+
+<form id="frmEmpresa">
+<input type="hidden" name="actionHr" id="actionHr">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><span class="text1">EMPRESA :</span></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="60%" border="0" cellpadding="0">
+			    <tr>
+					<td><input type="hidden" name="txtid" id="txtid" value="0">
+						<span id="lblcodigo" class="text1">Nro de Solicitud :</span>
+					<td>
+						<input type="text" name="txtsolicitud" id="txtsolicitud" class="cajaoff" readonly>
+					<td>
+						<span id="lblinscripcion" class="text1">Año :</span>
+					<td>
+						<input type="text" name="txtanio" id="txtanio"  class="cajaoff" readonly>
+			    </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%" border="0" cellpadding="0">
+			    <tr>
+				    <td>
+						<span id="lblplaca" class="text1">C&oacute;digo </span>
+					<td>
+						<span id="lblpadron" class="text1">Raz&oacute;n Social </span>
+					<td>	
+						<span id="lblpadron" class="text1">RUC </span>
+					<td>	
+						&nbsp;
+			    </tr>
+				<tr>
+					<td>
+						<input type="text" name="txtcodigo" id="txtcodigo" class="caja"  style="width:60px;">
+					<td>	
+						<input type="text" name="txtnombre" id="txtnombre" class="caja"  style="width:520px;">
+					<td>	
+						<input type="text" name="txtruc" id="txtruc" class="caja"  style="width:80px;">
+					<td>	
+						<!--<input type="button" value="Buscar" id="btnbuscar" />-->
+				</tr>
+			</table>	
+			<table class="tableContent" width="100%" border="0" cellpadding="0">
+			    <tr>
+				    <td>
+						<span id="lblplaca" class="text1">Tipo </span>
+					<td>
+						<select  name="txttipo" id="txttipo" class="combo" style="width:225px">
+						</select>
+					<td>
+						<span id="lblpadron" class="text1">Ficha Registral </span>
+					<td>
+						<input type="text" name="txtficregis" id="txtficregis" class="caja" maxlength="7">
+			    </tr>
+			    <tr>
+				    <td>
+						<span id="lblplaca" class="text1">Expediente </span>
+					<td>
+						<span id="lblpadron" class="text1">Año </span>
+					<td>
+						<span id="lblclase" class="text1">Ingreso Tram. Doc </span>
+					<td>
+						<span id="lblmarca" class="text1">Ingreso SG/Transporte </span>
+			    </tr>
+			    <tr>
+					<td>
+						<input type="text" name="txtexpediente" id="txtexpediente" class="caja" maxlength="8">
+					<td>
+						<input type="text" name="txtanioexp" id="txtanioexp" class="caja" maxlength="4">
+					<td>
+						<input type="text" name="txtfecingreso" id="txtfecingreso" class="caja">
+					<td>
+						<input type="text" name="txtfecingresoarea" id="txtfecingresoarea" class="caja">
+			    </tr>
+			</table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><span class="text1">INFORME TECNICO :</span></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%" border="0" cellpadding="0">
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">Area </span>
+					<td>
+						<input type="text" name="txtarea" id="txtarea" class="caja" value="0.00" style="text-align:right;" >
+					<td>
+						<span id="lblinscripcion" class="text1">Espec. </span>
+					<td>
+						<select  name="txtespec" id="txtespec" class="combo" style="width:325px">
+						</select>
+			    </tr>
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">Interseccion </span>
+					<td Colspan="3">
+						<input type="text" name="txtinterseccion" id="txtinterseccion" class="caja" style="width:660px;">
+			    </tr>
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">Capac. Vehicular </span>
+					<td>
+						<input type="text" name="txtcapacvehi" id="txtcapacvehi" class="caja" value="0" style="text-align:right;">
+					<td>
+						<span id="lblcodigo" class="text1">Flota Reten </span>
+					<td>
+						<input type="text" name="txtflota" id="txtflota" class="caja"  value="0" style="text-align:right;">
+			    </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><span class="text1">VIA :</span></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%" border="0" cellpadding="0">
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">Nomenclatura </span>
+					<td Colspan="5">
+						<input type="text" name="txtnomenclatura" id="txtnomenclatura" class="caja" style="width:660px;">
+			    </tr>
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">Sec. Vial </span>
+					<td>
+						<select  name="txtsecvial" id="txtsecvial" class="combo" style="width:225px"></select>
+					<td>
+						<span id="lblcodigo" class="text1">Ancho Via </span>
+					<td>
+						<input type="text" name="txtanchovia" id="txtanchovia" class="caja" value="0.00" style="text-align:right;">
+					<td>
+						<span id="lblcodigo" class="text1">Longitud Via </span>
+					<td>
+						<input type="text" name="txtlongitudvia" id="txtlongitudvia" class="caja" value="0.00" style="text-align:right;">
+			    </tr>
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">Calzada </span>
+					<td>
+						<select  name="txtcalzada" id="txtcalzada" class="combo" style="width:225px"></select>
+					<td>
+						<span id="lblcodigo" class="text1">Tipo Via </span>
+					<td Colspan="3">
+						<select  name="txttipovia" id="txttipovia" class="combo" style="width:225px"></select>
+			    </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br style="clear:both">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><span class="text1">ACTO RESOLUTIVO :</span></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%" border="0" cellpadding="0">
+			    <tr>
+					<td>
+						<span id="lblcodigo" class="text1">Resoluci&oacute;n </span>
+					<td>
+						<input type="text" name="txtresolucion" id="txtresolucion" class="caja" maxlength="10">
+					<td>
+						<span id="lblcodigo" class="text1">Fec. Resol. </span>
+					<td>
+						<input type="text" name="txtfecresol" id="txtfecresol" class="caja" style="width:80px;">
+					<td>
+						<span id="lblcodigo" class="text1">Fec. Not. </span>
+					<td>
+						<input type="text" name="txtfecnot" id="txtfecnot" class="caja" style="width:80px;">
+					<td>
+						<span id="lblcodigo" class="text1">Valido hasta </span>
+					<td>
+						<input type="text" name="txtvalidohasta" id="txtvalidohasta" class="caja" style="width:80px;">
+					</td>
+			    </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br style="clear:both">
+<div class="divButtons">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td style="padding-left:5px">
+				<input type="button" value="Conductores" id="btnconductores" style="width:150px; height:40px" />
+				<input type="button" value="Grabar" id="btngrabar" style="width:150px; height:40px" />
+				<input type="button" value="Cerrar" id="btncierra" style="width:150px; height:40px" />
+			</td>
+			<td>
+			</td>
+		</tr>
+    </table>
+</div>
+</form>

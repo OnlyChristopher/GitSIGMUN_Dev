@@ -1,0 +1,55 @@
+<fieldset class="ui-widget ui-widget-content" style='padding:10px'>
+ <legend style="margin-left:1px">Otros Documentos:</legend>
+ <input type="hidden" name="oldDocItems" id="oldDocItems" value="">
+ <table class="tableContentc">
+<tr>
+  <td valign="top">
+  	<div id="gridFicIndDoc"></div>
+  </td>
+  <td valign="top">
+  	<div class="divButtons" style="margin:0 0 0 10px; width:110px">
+        <table>
+        <tr id="rowAddDoc">
+        <td style="padding:3px"><input type="hidden" id="btnAddDoc" name="btnAddDoc" value="Agregar" style="width:80px" /></td>
+        </tr>        
+        <tr id="rowSaveDoc">
+        <td style="padding:3px"><input type="hidden" id="btnSaveDoc" name="btnSaveDoc" value="Guardar" style="width:80px" /></td>
+        </tr>
+        <tr id="rowEditDoc">
+        <td style="padding:3px"><input type="hidden" id="btnEditDoc" name="btnEditDoc" value="Editar" style="width:80px" /></td>
+        </tr>
+        <tr id="rowCancelDoc">
+        <td style="padding:3px"><input type="hidden" id="btnCancelDoc" name="btnCancelDoc" value="Cancelar" style="width:80px" /></td>
+        </tr>
+        <tr>
+        <td style="padding:3px"><!--<input type="button" id="btnDelDoc" name="btvnDelDoc" value="Eliminar" style="width:80px"/>--></td>
+        </tr>
+        </table>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td valign="top" colspan="2">
+         <div id="divAddDoc" style="margin-top:10px;">
+			<table class="hovertable" style="width:100%">
+			<tr>
+	        <th><center>Tipo Doc.</center></th>
+	        <th><center>Detalle</center></th>
+			</tr>
+			<tr id='rowInstal'>
+			<td align="center" style="width:30%">
+				<input type="hidden" name="actDoc" id="actDoc" value="">
+				<input type="hidden" name="iddoc" id="iddoc" value="">
+				<input type="hidden" name="idreg" id="idreg" value="">
+				<label id="nom_documento" name="nom_documento"></label>
+			</td>
+			<td style="width:70%"><input type='text' name='detalle_documento' id='detalle_documento' class='caja' style="width:100%" value=''/></td>
+			</tr>
+		   </table>
+        </div>
+  </td>
+</tr>
+</table>
+</fieldset>
+<br><br><br><br><br>
+

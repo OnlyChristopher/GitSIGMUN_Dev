@@ -1,0 +1,66 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<style type="text/css">
+.invisible {display: none; }
+</style>
+
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandecostascontri.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+		<ul>
+			<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+		</ul>
+<form id="frmBusbajpre">
+<div style="padding:5px;margin:5px">
+    <div>
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+              <label>
+              <input name="rdCriteriobus" id="rdCriteriobus1" type="radio" value="Z" checked/><b> Código</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriteriobus" id="rdCriteriobus2" type="radio" value="X" /><b> Nombres</b>
+              </label>
+              </td>
+			   <td>
+              <label>
+              <input name="rdCriteriobus" id="rdCriteriobus4" type="radio" value="Y" /><b> Razón Social</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriteriobus" id="rdCriteriobus3" type="radio" value="V" /><b> Documento</b>
+              </label>
+              </td>              
+              </tr>
+			  </table>
+			  <table class="tableContent"> 
+			  <tr>
+				<td colspan="4">
+				<div style="float:left">
+					<div id="Z" class="visible"><input name="txtCriteriobus" id="txtCriteriobus" type="text" class="caja" size="20" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="X" class="invisible">Nombres <input name="txtCriterioNombrebus" id="txtCriterioNombrebus" type="text" class="caja" size="40" maxlength="100" style="text-transform: uppercase"/> 
+												  Apellido Paterno <input name="txtCriterioAPaternobus" id="txtCriterioAPaternobus" type="text" class="caja" size="30" maxlength="100" style="text-transform: uppercase"/>
+												  Apellido Materno <input name="txtCriterioAMaternobus" id="txtCriterioAMaternobus" type="text" class="caja" size="30" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="Y" class="invisible"><input name="txtCriterioRazonbus" id="txtCriterioRazonbus" type="text" class="caja" size="40" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="V" class="invisible"><input name="txtDocumentobus" id="txtDocumentobus" type="text" class="caja" size="20" maxlength="100" style="text-transform: uppercase"/></div>
+				</div>
+					<div style="float:right"><input type="button" id="btnSearchBaja" value="Buscar" /></div>
+				</td>
+			  </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="gridBajapred"></div>
+	    <br/>
+	   
+    </div>
+</div>
+</form>
+</div>

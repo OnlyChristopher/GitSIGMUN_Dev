@@ -1,0 +1,141 @@
+<h1>UBICACIÓN DEL PREDIO CATASTRAL</h1>
+<input type="hidden" id="oldUbiItems" name="oldUbiItems">
+<div style="margin-top:5px">
+<table class="tableContentc" width="100%">
+<tr>
+  <td valign="top">
+  <div id="gridFicIndUbica"></div>
+  </td>
+  <td valign="top">
+  	<div class="divButtons" style="width:125px; margin-top:0">
+        <table>
+        <tr id="rowAddUbica">
+        <td style="padding:3px"><input type="button" id="btnAddUbica" name="btnAddUbica" value="Agregar" style="width:100px" /></td>
+        </tr>        
+        <tr id="rowSaveUbica">
+        <td style="padding:3px"><input type="button" id="btnSaveUbica" name="btnSaveUbica" value="Guardar" style="width:100px" /></td>
+        </tr>
+        <tr id="rowEditUbica">
+        <td style="padding:3px"><input type="button" id="btnEditUbica" name="btnEditUbica" value="Editar" style="width:100px" /></td>
+        </tr>
+        <tr id="rowCancelUbica">
+        <td style="padding:3px"><input type="button" id="btnCancelUbica" name="btnCancelUbica" value="Cancelar" style="width:100px" /></td>
+        </tr>
+        <tr>
+        <td style="padding:3px"><input type="button" id="btnDelUbica" name="btnDelUbica" value="Eliminar" style="width:100px"/></td>
+        </tr>
+        </table>
+    </div>    
+  </td>
+</tr>
+<tr>
+  <td colspan="2">
+  <div id="divAddUbica" style="margin-top:2px;">
+    <table class="tableContentc">
+    <tr>
+    <td>
+    	<input type="hidden" id="actUbica" name="actUbica">
+        <input type="hidden" id="idcmdirec" name="idcmdirec">
+        <div class="lblCodField" style="width:25px">07</div>
+        <div class="lblTxtField" style="width:100px;">Código de Vía</div>
+        <div class="lblCodField" style="width:25px">08</div>
+        <div class="lblTxtField" style="width:80px;">Tipo de Vía</div>
+        <div class="lblCodField" style="width:25px">09</div>
+        <div class="lblTxtField" style="width:100px;">Nombre de Vía</div>
+        <div class="lblCodField" style="width:25px">10</div>
+        <div class="lblTxtField" style="width:100px;">Tipo de Puerta</div>
+        <div class="lblCodField" style="width:25px">11</div>
+        <div class="lblTxtField" style="width:100px;">N° Municipal</div>
+        <div class="lblCodField" style="width:25px">12</div>
+        <div class="lblTxtField" style="width:100px;">Cond. Número</div>
+        <div class="lblCodField" style="width:25px">13</div>
+        <div class="lblTxtField" style="width:192px;">Certificado de Numeración</div>
+        <div class="lblObjField" style="clear:left; border-top:0">
+        <input type="text" name="nom_via" id="nom_via" class="cajac" style="width:333px; float:left; display:none" maxlength="200" />
+		<select name="cid_via" id="cid_via" class="comboc" style="width:333px; float:left"></select>
+		<div id="btnVia" class="inserta">&nbsp;</div>
+		</div>
+        <div class="lblObjField" style="border-top:0; border-left:0">
+        <select name="cidpuer" id="cidpuer" class="comboc" style="width:124px"></select>
+		</div>
+        <div class="lblObjField" style="border-top:0; border-left:0">
+        <input name="nromuni" type="text" class="cajac" id="nromuni" style="width:124px" maxlength="5">
+        </div>
+        <div class="lblObjField" style="border-top:0; border-left:0">
+        <select name="cidcnum" id="cidcnum" class="comboc" style="width:124px"></select>
+		</div>
+        <div class="lblObjField" style="border-top:0; border-left:0">
+        <input name="nrcernu" type="text" class="cajac" id="nrcernu" style="width:216px" maxlength="10">
+        </div>
+    </td>
+    </tr>
+    </table>
+  </div>
+  </td>
+  </tr>
+</table>
+</div>
+<div style="margin-top:20px">
+	<table class="tableContentc">
+    <tr>
+    <td>
+    	<div class="lblCodField" style="width:25px">14</div>
+        <div class="lblTxtField" style="width:100px;">Nombre Edif.</div>
+        <div class="lblObjField" style="border-left:0">
+        <input name="nomedif" type="text" class="cajac" id="nomedif" style="width:230px" maxlength="200">
+        </div>
+        <div class="lblCodField" style="width:25px">15</div>
+        <div class="lblTxtField" style="width:100px;">Tipo Edif.</div>
+        <div class="lblObjField" style="border-left:0">
+        <select name="cidedif" id="cidedif" class="comboc" style="width:100px"></select>
+        </div>
+        <div class="lblCodField" style="width:25px">16</div>
+        <div class="lblTxtField" style="width:60px;">Tipo Int.</div>
+        <div class="lblObjField" style="border-left:0">
+        <select name="cidinte" id="cidinte" class="comboc" style="width:100px"></select>
+        </div>
+        <div class="lblCodField" style="width:25px">17</div>
+        <div class="lblTxtField" style="width:53px;">Nro Int.</div>
+        <div class="lblObjField" style="border-left:0">
+        <input name="nrointe" type="text" class="cajac" id="nrointe" style="width:100px" maxlength="10">
+        </div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    	<div class="lblCodField" style="width:25px; border-top:0">18</div>
+        <div class="lblTxtField" style="width:74px; border-top:0">Cod. H.U.</div>
+        <div class="lblCodField" style="width:25px; border-top:0">19</div>
+        <div class="lblTxtField" style="width:357px; border-top:0">Nombre de la Habilitación Urbana</div>
+        <div class="lblCodField" style="width:25px; border-top:0">20</div>
+        <div class="lblTxtField" style="width:161px; border-top:0">Zona / Sector / Etapa</div>
+        <div class="lblCodField" style="width:25px; border-top:0">21</div>
+        <div class="lblTxtField" style="width:76px; border-top:0">Mzna.</div>
+        <div class="lblCodField" style="width:25px; border-top:0">22</div>
+        <div class="lblTxtField" style="width:60px; border-top:0">Lote</div>
+        <div class="lblCodField" style="width:25px; border-top:0">23</div>
+        <div class="lblTxtField" style="width:69px; border-top:0">Sub Lote</div>
+        <div class="lblCodField" style="clear:left; width:25px; border-top:0">&nbsp;</div>
+        <div class="lblObjField" style="border-top:0">
+        <select name="cidhurb" id="cidhurb" class="comboc" style="width:454px"></select>
+		</div>
+        <div class="lblCodField" style="width:25px; border-top:0">&nbsp;</div>
+        <div class="lblObjField" style="border-top:0">
+        <input name="zosecet" type="text" class="cajac" id="zosecet" style="width:159px" maxlength="200" />
+        </div>
+        <div class="lblCodField" style="width:25px; border-top:0">&nbsp;</div>
+        <div class="lblObjField" style="border-top:0">
+        <input name="manzana" type="text" class="cajac" id="manzana" style="width:74px" maxlength="10">
+        </div>
+        <div class="lblCodField" style="width:25px; border-top:0">&nbsp;</div>
+        <div class="lblObjField" style="border-top:0">
+        <input name="cidlote" type="text" class="cajac" id="cidlote" style="width:58px" maxlength="10">
+        </div>
+        <div class="lblCodField" style="width:25px; border-top:0">&nbsp;</div>
+        <div class="lblObjField" style="border-top:0">
+          <input name="sublote" type="text" class="cajac" id="sublote" style="width:67px" maxlength="10" />
+        </div>
+    </td>
+    </tr>
+    </table>
+</div>

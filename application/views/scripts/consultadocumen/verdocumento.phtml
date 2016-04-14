@@ -1,0 +1,74 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandedocumen_verdocumento.js"></script>
+<form id="frmdocumento">
+<input type="hidden" name="txtValordocu" id="txtValordocu">   
+<input type="hidden" name="txtNumdocu" id="txtNumdocu">  
+<input type="hidden" name="txtAnodocu" id="txtAnodocu">  
+
+<div >
+    <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        	<div style="padding:0 0 0 0"> <!-- arriba derecha abajo izquierda -->
+        	    <table align="center">
+	 			 <tr>
+					<td colspan="4" style="padding-top: 10px">
+			     		<h1 id="lblVerdocu" class="title3"></h1>
+					</td>
+			     </tr>       
+			    </table> 
+        		<br>
+        		<table class="tableContent">
+			     <tr>
+			     	<td style="padding-right: 10px"><span id="lblCodi">Código:</span></td>
+			     	<td><h1 id="lblCodigodocu"></h1></td>
+					<td style="padding:0 10px 0 20px"><span id="lblContri">Contribuyente:</span></td>
+			     	<td><h1 id="lblContribuyentedocu"></h1></td>
+				 </tr>
+				 <!--  
+				 <tr>
+			     	<td style="padding-right: 10px"><span id="lblDireccion">Dirección:</span></td>
+			     	<td><h1 id="lblDirecciondocu"></h1></td>
+				 </tr>
+				 -->
+				</table>
+			</div>
+			
+			<div style="overflow:auto;height: 300px;padding:10px 0 0 0">
+				<table id="detallesDocumento" class="hovertable" width="100%">
+	              <tr>
+	              	  <th width="20px"><center></center></th>
+		              <th><center><b>Periodos</b></center></th>
+		              <th><center><b>Insoluto</b></center></th>
+		              <th><center><b>Reajuste</b></center></th>
+		              <th><center><b>Mora</b></center></th>
+		              <th><center><b>Costo Emisión</b></center></th>
+		              <th><center><b>Total</b></center></th>
+	              </tr>	              
+	            </table>
+			</div>
+			
+			
+			<div style="padding:10px 0 0 0">
+				<table class="tableContent" align="right">
+	              <tr>
+	              	  <td><span id="lblMonto">Monto Total:</span></td>
+		              <td><input name="txtMontototal" id="txtMontototal" type="text" class="cajaoff" size="8" readonly style="text-align:right;font-weight:bold"/></td>
+	              </tr>	              
+	            </table>	
+			</div>
+               
+       <div class="divButtons">
+	    <table class="tableContent">
+	     <tr>
+	      <td style="padding-left:5px">
+			<input type="button" name="btnReporteop" id="btnReporteop" value="Imprimir"/>
+		    <input type="button" name="btnSalidadocu" id="btnSalidadocu" value="Salir"/>
+		  </td>
+		 </tr>
+	    </table>
+	   </div>           
+   </div>   
+  </fieldset>
+</div>
+</form>

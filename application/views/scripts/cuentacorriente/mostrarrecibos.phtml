@@ -1,0 +1,29 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script>
+var codigo='<?php echo $this->codigo ?>';
+
+</script>
+
+<form id="frmcaja" >
+<div align="center" id=divp>
+		<table cellspacing="0" cellpadding="0" class="hovertable" width='100%'>
+			<tr>
+				<th width="57" align='center'>Estado</th>
+				<th width="57" align='center'>C&oacute;digo</th>
+				<th width="90" align="center">Nro. Recibo</th>
+				<th width="38" align='center'>A&ntilde;o</th>
+				<th width="38" align='center'>Periodo</th>
+				<th width="38" align='center'>Descrip.</th>
+				<th width="38" align='center'>Imp. Insol.</th>
+				<th width="38" align='center'>Imp. Reaj.</th>	
+				<th width="38" align='center'>Imp. Mora</th>	
+				<th width="38" align='center'>Tipo Doc.</th>
+				<th width="38" align='center'>Nro. Doc.</th>
+				<th width="100" align='center'>Fecha</th>
+				<th width="90" align='center'>Operador</th>
+			</tr>
+			<?php echo $this->datarows; ?>
+		</table>
+</div>
+</form>
+<div id="popup1"></div>

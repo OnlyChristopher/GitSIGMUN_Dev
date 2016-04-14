@@ -1,0 +1,75 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandedocumen_mostrarexigibilidad.js"></script>
+<form id="frmexigibilidad">
+
+<div >
+    <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+	    	<div class="contentBox" style="padding:0 0 0 0px">   <!-- arriba derecha abajo izquierda -->
+	    		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		    	 <legend style="margin-left:5px">Exigibilidad</legend>
+		    	 	<table class="tableContent">
+		    	 	  <tr>
+					   <td width="100"><span id="lblNro">Nro Exigibilidad:</span></td>
+					   <td><input name="txtNroexpe" id="txtNroexpe" type="text" class="cajaoff" readonly size="20" maxlength="7"/> -
+					   <input name="txtAniosexpe" id="txtAniosexpe" type="text" class="cajaoff" readonly size="20" maxlength="4" /></td>
+					  </tr>
+		    	 	  <tr>
+					   <td width="80"><span id="lblCodigo">Código:</span></td>
+					   <td><input name="txtCodigoexpe" id="txtCodigoexpe" type="text" class="cajaoff" readonly size="20" /></td>
+					  </tr>
+					  <tr>
+					   <td width="80"><span id="lblContribuyente">Contribuyente:</span></td>
+					   <td><input name="txtContribuyenteexpe" id="txtContribuyenteexpe" type="text" class="cajaoff" readonly size="40" /></td>
+					  </tr>
+					  <tr>
+					   <td width="80"><span id="lblFecha">Fecha:</span></td>
+					   <td><input name="txtFechaexpe" id="txtFechaexpe" type="text" class="cajaoff" size="12"readonly /></td>				  
+					  </tr>
+					  <tr>
+			    	   <td width="80"><span id="lblObservaciones">Observaciones:</span></td>
+			     	   <td><textarea name="txtObservaciones" id="txtObservaciones" cols="50" rows="3" class="cajaoff" readonly style="text-transform:uppercase;"></textarea></td>
+			    	  </tr>	
+				    </table> 
+				</fieldset>
+	    	</div> 
+	    	
+	    	<div style="padding:0 8px 0 8px">
+				<table id="detallesExpediente" class="hovertable" width="100%">
+	              <tr>
+		              <th><center><b>Documentos</b></center></th>
+		              <!--<th><center><b>Monto Total</b></center></th>-->
+	              </tr>	            
+	            </table>
+			</div>
+			
+			<!--
+			<div style="padding:10px 5px 0 0">
+				<table class="tableContent" align="right">
+	              <tr>
+	              	  <td><span id="lblMonto">Total:</span></td>
+		              <td><input name="txtTotal" id="txtTotal" type="text" class="cajaoff" readonly size="8" style="text-align:right;font-weight:bold"/></td>
+	              </tr>	              
+	            </table>	
+			</div>
+			-->
+			
+		    <div class="contentForm">           
+		       <div class="divButtons">
+			    <table class="tableContent">
+			     <tr>
+			      <td style="padding-left:5px">				    
+				    <input type="button" name="btnSalidaexpe" id="btnSalidaexpe" value="Salir" />
+					<input type="button" name="btnImprimirexi" id="btnImprimirexi" value="Imprimir" />
+				  </td>
+				 </tr>
+			    </table>
+			   </div>           
+		    </div>
+    
+     
+   </div>   
+  </fieldset>
+</div>
+</form>

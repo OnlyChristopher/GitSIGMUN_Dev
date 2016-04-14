@@ -1,0 +1,48 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Catasmantvia.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterio1" type="radio" value="C" checked/><b> Código</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterio2" type="radio" value="T" /><b> Tipo</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterio3" type="radio" value="N" /><b> Nombre</b>
+              </label>
+              </td>
+              <td><input name="txtCriterio" id="txtCriterio" style="text-transform: uppercase" type="text" class="caja" size="20" maxlength="100" /></td>
+              <td><input type="button" id="btnBusCatavia" value="Buscar" /></td>
+              </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="gridVia"></div>
+	    <br/>
+	    <div class="divButtons">
+		    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		    <tr>
+		    <td style="padding-left:5px">
+		    <input type="button" id="btnNuevocatavia" value="Nuevo" />
+		    <input type="button" id="btnSalircatavia" value="Salir" />
+		    </td>
+		    <td></td>
+		    </table>
+		</div>
+    </div>
+</div>

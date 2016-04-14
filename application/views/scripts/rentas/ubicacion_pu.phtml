@@ -1,0 +1,111 @@
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">Ubicaci&oacute;n del Predio:</legend>
+	 <div class="contentForm">
+	 <fieldset class="ui-widget ui-widget-content">
+	    <legend style="margin-left:5px">Ubicación:</legend>
+        <div class="contentForm">
+        	<div style="float:left">
+           	<table class="tableContent">
+			<tr>
+			    <td><span id="lblCp">CP:</span></td>
+			    <td colspan="3"><input name="txtCp" id="txtCp" type="text" class="cajaoff" size="100" maxlength="100" readonly value="<?php echo $this->nombre_via;?>" /></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblVia">V&iacute;a:</span></td>
+			    <td><input name="txtVia" id="txtVia" type="text" class="cajaoff" size="50" maxlength="100" readonly value="<?php echo $this->nombre_cp;?>"/></td>
+			    <td><span id="lblCvia">C&oacute;digo:</span></td>
+			    <td><input name="txtCvia" id="txtCvia" type="text" class="cajaoff" size="34" maxlength="100" readonly value="<?php echo $this->cod_via;?>" /></td>
+			    </tr>
+				<tr>
+			    <td><span id="lblDir">Sector:</span></td>
+			    <td colspan="3"><input name="txtSector" class="cajaoff" id="txtSector" type="text" class="caja" size="60" maxlength="100" value="<?php echo $this->sector_detalle;?>" style="text-transform:uppercase;"/></td>
+				</tr>
+			    <tr>
+			    <td><span id="lblDir">Dir:</span></td>
+			    <td colspan="3"><input name="txtDir" id="txtDir" type="text" class="caja" size="100" maxlength="100" value="<?php echo $this->direccion;?>" style="text-transform:uppercase;"/></td>
+			</tr>
+		    </table>
+            </div>
+            <!-- <div style="float:left">
+            	<input type="button" id="btnCopiar" value="Copiar Predio" />
+            </div>-->
+             <div style="float:left">
+				<input type="button" id="btnBusVia" name="btnBusVia" value="Buscar Via" />
+			</div>
+			 <div id="DbtnBus" style="float:left">
+				<input type="button" id="btnBuspred" name="btnBuspred" style="display: none" value="Busqueda Predio" />
+			</div>
+        	<div style="clear:both">
+            <table class="tableContent">
+              <tr>
+              <td><span id="lblNro">Nro:</span></td>
+              <td><input name="txtNro" id="txtNro" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->nro;?>" style="text-transform:uppercase;"/></td>
+              <td><span id="lblNro">Dpto:</span></td>
+              <td><input name="txtDpto" id="txtDpto" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->num_dpto;?>" style="text-transform:uppercase;"/></td>
+              <td><span id="lblNro">Mza:</span></td>
+              <td><input name="txtMza" id="txtMza" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->num_mza;?>" style="text-transform:uppercase;"/></td>
+              <td><span id="lblNro">Lte:</span></td>
+              <td><input name="txtLte" id="txtLte" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->num_lote;?>" style="text-transform:uppercase;"/></td>
+              <td><span id="lblNro">Sub Lte:</span></td>
+              <td><input name="txtSubLte" id="txtSubLte" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->num_sublote;?>" style="text-transform:uppercase;"/></td>
+              </tr>
+            </table>
+            </div>    
+			<!-- hecho por tu papi..Inicio -->
+			<div style="clear:both">
+            <table class="tableContent">
+              <tr>
+              <td><span id="lblNro2">Nro2:</span></td>
+              <td><input name="txtNro2" id="txtNro2" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->nro2;?>" style="text-transform:uppercase;"/></td>
+              <td><span id="lblLetra">Letra:</span></td>
+              <td><input name="txtLetra" id="txtLetra" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->letra;?>" style="text-transform:uppercase;"/></td>
+              <td><span id="lblLetra2">Letra2:</span></td>
+              <td><input name="txtLetra2" id="txtLetra2" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->letra2;?>" style="text-transform:uppercase;"/></td>
+              <td><span id="lblInterior">Tipo Edificio:</span></td>
+             <td><select name="cmbTipoEdificio" id="cmbTipoEdificio" class="combo" style="width: 200px;"></select></td>	 
+              </tr>
+			</table>
+			<table class="tableContent">
+			  <tr>
+			  <td><span id="lblInterior">Nombre Edificio:</span></td>
+			  <td colspan="2"><input name="txtNomEdificio" id="txtNomEdificio" type="text" class="caja" size="50" maxlength="50" value="<?php echo $this->nombre_edificio;?>" style="text-transform:uppercase;"/></td>
+			  <td><span id="lblInterior">Piso:</span></td>
+			  <td><input name="txtPiso" id="txtPiso" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->piso;?>" style="text-transform:uppercase;"/></td>
+			  <td><span id="lblInterior">Tipo Interior:</span></td>
+             <td><select name="cmbInterior" id="cmbInterior" class="combo" style="width: 200px;"></select></td>	 
+			  </tr>
+			  </table>
+		  <table class="tableContent">
+			  <tr>
+			   <td><span id="lblInterior">Num:</span></td>
+			  <td ><input name="txtNumeroInterno" id="txtNumeroInterno" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->numero_interno;?>" style="text-transform:uppercase;"/></td>
+			  <td><span id="lblInterior">Letra:</span></td>
+			  <td><input name="txtLetraInterno" id="txtLetraInterno" type="text" class="caja" size="10" maxlength="10" value="<?php echo $this->letra_interno;?>" style="text-transform:uppercase;"/></td>
+			  <td><span id="lblInterior">Tipo Ingreso:</span></td>
+             <td><select name="cmbTipoIngreso" id="cmbTipoIngreso" class="combo" style="width: 100px;"></select></td>	 
+			  <td><span id="lblInterior">Nombre Ingreso:</span></td>
+			  <td colspan="2"><input name="txtNomIngreso" id="txtNomIngreso" type="text" class="caja" size="50" maxlength="50" value="<?php echo $this->nombre_ingreso;?>" style="text-transform:uppercase;"/></td>
+			  </tr>
+            </table>
+			<table class="tableContent">
+			  <tr>
+			<td><span id="lblInterior">Tipo Agrupamiento:</span></td>
+			<td><select name="cmbTipoAgrupamiento" id="cmbTipoAgrupamiento" class="combo" style="width: 100px;"></select></td>	 
+			  <td><span id="lblInterior">Nombre Agrupamiento:</span></td>
+			  <td colspan="2"><input name="txtNomAgrupamiento" id="txtNomAgrupamiento" type="text" class="caja" size="50" maxlength="50" value="<?php echo $this->nombre_agrupamiento;?>" style="text-transform:uppercase;"/></td>
+			  </tr>
+            </table>
+            </div>  
+    	    <!-- Fin -->
+        </div>
+		</fieldset>
+		<div id="divCondominante" name="divCondominante" style="display: none">
+		<fieldset class="ui-widget ui-widget-content">
+	    <legend style="margin-left:5px">Notaria:</legend>
+			<select name="cb_notaria" id="cb_notaria" class="combo">
+			</select>
+		</fieldset>
+		</div>
+</fieldset>
+
+<br><br><br><br><br><br><br><br><br><br><br>

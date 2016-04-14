@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptEstCtaDetalladoPeriodos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true">
+	<parameter name="PCODIGO" class="java.lang.String"/>
+	<parameter name="PUSUARIO" class="java.lang.String"/>
+	<parameter name="PRESUMEN" class="java.lang.String"/>
+	<parameter name="PDETALLE" class="java.lang.String"/>
+	<parameter name="PAGRUPAR" class="java.lang.String"/>
+	<parameter name="PPERIODO" class="java.lang.String"/>
+	<parameter name="PANIOS" class="java.lang.String"/>
+	<parameter name="PCONCEPTOS" class="java.lang.String"/>
+	<parameter name="PARBITRIOS" class="java.lang.String"/>
+	<parameter name="PPREDIO" class="java.lang.String"/>
+	<parameter name="ESTADO" class="java.lang.String"/>
+	<parameter name="FECHA_PROY" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Exec Caja.sp_Imprime_EstCta_Detallado_02_proyect @buscar=1,@codigo=$P{PCODIGO},@resumen=$P{PRESUMEN},@detalle=$P{PDETALLE},@agrupar=$P{PAGRUPAR},@annos=$P{PANIOS},@tipos=$P{PCONCEPTOS},@tiporec=$P{PARBITRIOS},@perio=$P{PPERIODO},@predio=$P{PPREDIO},@estado=$P{ESTADO},@fecha_proyectada=$P{FECHA_PROY}]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipode1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="periodo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion_predial" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_pred" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub_anexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_insol" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="costo_emis" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_reaj" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mora" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pagado" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dcto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_venc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_emision" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hor_emision" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalletra" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="total_1" class="java.math.BigDecimal" resetType="Group" resetGroup="codigo" calculation="Sum">
+		<variableExpression><![CDATA[$F{total}]]></variableExpression>
+	</variable>
+	<variable name="total_2" class="java.math.BigDecimal" resetType="Group" resetGroup="codigo" calculation="Sum">
+		<variableExpression><![CDATA[$F{total}]]></variableExpression>
+	</variable>
+	<variable name="pagado_1" class="java.math.BigDecimal" resetType="Group" resetGroup="codigo" calculation="Sum">
+		<variableExpression><![CDATA[$F{pagado}]]></variableExpression>
+	</variable>
+	<variable name="dcto_1" class="java.lang.Integer" resetType="Group" resetGroup="codigo" calculation="Sum">
+		<variableExpression><![CDATA[$F{dcto}]]></variableExpression>
+	</variable>
+	<variable name="saldo_1" class="java.math.BigDecimal" resetType="Group" resetGroup="codigo" calculation="Sum">
+		<variableExpression><![CDATA[$F{saldo}]]></variableExpression>
+	</variable>
+	<group name="codigo">
+		<groupExpression><![CDATA[$F{codigo}+$F{tipo}+$F{cod_pred}+$F{anexo}+$F{sub_anexo}]]></groupExpression>
+		<groupHeader>
+			<band height="51">
+				<staticText>
+					<reportElement x="3" y="36" width="43" height="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Año]]></text>
+				</staticText>
+				<line>
+					<reportElement x="5" y="50" width="580" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="48" y="36" width="30" height="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Periodo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="144" y="36" width="49" height="13"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Insoluto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="194" y="36" width="49" height="13"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reajuste]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="244" y="36" width="49" height="13"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Interes]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="294" y="36" width="58" height="13"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Gasto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="354" y="36" width="59" height="13"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tot Deuda]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="5" y="11" width="583" height="21"/>
+					<textElement verticalAlignment="Top" markup="html">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<font color='blue'>CONCEPTO: "+$F{tipode1}+"</font>&nbsp"+"<font color='green'>"+$F{direccion_predial}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="79" y="36" width="61" height="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fecha]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="595" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DEUDA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="411" y="36" width="59" height="13"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tot Pago]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="470" y="36" width="59" height="13"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Dcto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="529" y="36" width="59" height="13"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Saldo]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="14">
+				<staticText>
+					<reportElement x="285" y="0" width="63" height="14"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total :]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="352" y="0" width="59" height="14"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total_2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="411" y="0" width="59" height="14"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{pagado_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="470" y="0" width="59" height="14"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$V{dcto_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="529" y="0" width="59" height="14"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{saldo_1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="79" y="0" width="61" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fec_venc}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="354" y="0" width="59" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="294" y="0" width="59" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{costo_emis}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="244" y="0" width="49" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{mora}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="194" y="0" width="49" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_reaj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="49" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{imp_insol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="0" width="30" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{periodo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="0" width="43" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{anno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="0" width="57" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{pagado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="529" y="0" width="59" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{saldo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="59" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{dcto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

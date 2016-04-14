@@ -1,0 +1,37 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<script>
+Ext.onReady(function(){
+    Ext.QuickTips.init();
+    
+	$("input[type='button']").button();	
+	
+});
+
+function exportarContriDetalle(){
+	
+	var showResult = function(btn){
+		if(btn=='yes'){
+			
+			
+			data = "?id_dist="+$('#txtId_dist').val()+"&anio="+$('#txtAnio').val();					
+			window.open(urljs+"rptgeneralcps/exportadetcontri"+data);
+		}
+	};
+	confirmMessage('Exportar','Desea exportar los datos?',showResult);	
+}
+</script>
+<div>	
+	<input type="hidden" id="txtId_dist" name="txtId_dist" />
+	<input type="hidden" id="txtAnio" name="txtAnio"/>
+
+	
+
+	<table class="tableContent">		
+		<tr>            
+			<td><input name="btnExpDetCPSExcel" id="btnExpDetCPSExcel" type="button" value="Exportar a Excel" /></td>
+		</tr>            
+	</table>
+</div>
+
+  

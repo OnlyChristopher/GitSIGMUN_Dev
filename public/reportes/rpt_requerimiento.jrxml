@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_requerimiento" language="groovy" columnCount="2" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="BlankPage" columnWidth="416" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5">
+	<parameter name="anio_rq" class="java.lang.String"/>
+	<parameter name="tipo_rq" class="java.lang.String"/>
+	<parameter name="nros_rq" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Exec Fiscalizacion.sp_ImprimeRQ @buscar='1',@anio_rq=$P{anio_rq},@tipo_rq=$P{tipo_rq},@nros_rq=$P{nros_rq}]]>
+	</queryString>
+	<field name="anio_rq" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_rq" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nros_rq" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidcont" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidmoti" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidpers" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contrib" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="domfisc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecharq" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vobserv" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vrecepc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dnirece" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechrec" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="parentesco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bfirmas" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidtecnico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nestado" class="java.lang.Short">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vhostnm" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vusernm" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ddatetm" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="48" y="8" width="183" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="6" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DISTRITAL DE INDEPENDENCIA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="15" y="33" width="377" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["REQUERIMIENTO Nº "+$F{nros_rq}+"-"+$F{anio_rq}+"-SGFT-GAT-MDI"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="48" y="18" width="183" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="6" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[GERENCIA DE  FISCALIZACIÓN Y CONTROL MUNICIPAL]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" onErrorType="Blank">
+				<reportElement x="19" y="1" width="30" height="30"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\Resportes_Fiscalizacion\\logo-muni.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="468" y="8" width="190" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="6" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DISTRITAL DE INDEPENDENCIA]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" onErrorType="Blank">
+				<reportElement x="439" y="1" width="30" height="30"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\Resportes_Fiscalizacion\\logo-muni.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="435" y="33" width="377" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["REQUERIMIENTO Nº "+$F{nros_rq}+"-"+$F{anio_rq}+"-SGFT-GAT-MDI"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="475" y="18" width="183" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="6" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[GERENCIA DE  FISCALIZACIÓN Y CONTROL MUNICIPAL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="526">
+			<staticText>
+				<reportElement x="15" y="9" width="84" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Señor (es)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="19" width="84" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Código de contribuyente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="29" width="84" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Domicilio Fiscal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="19" width="292" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{cidpers}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="9" width="292" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{contrib}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="29" width="292" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{domfisc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="49" width="84" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Predio a Fiscalizar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="49" width="292" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[: TODOS SUS PREDIOS DENTRO DE LA JURISDICCION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="69" width="100" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Estimado Contribuyente:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="82" width="377" height="87"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Times New Roman" size="8" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["               Mediante la presente hacemos de su conocimiento que la Municipalidad de Independencia viene realizando un <b>Programa de Fiscalización</b>  de sus Contribuyentes con el fin de controlar y verificar la información proporcionada y actualizar su declaraciones juradas respecto de su(s) predio(s) y del cumplimiento de sus obligaciones tributarias, conforme a lo previsto en el Art. 62º del Código Tributario"+
+"Por tal motivo, personal técnico de la Sub-Gerencia de Fiscalización Tributaria realizará la inspección in situ de su(s) predio(s) el <b>MIERCOLES, 14 de NOVIEMBRE entre las 8:30 A.M. y 4:00 P.M.</b> Por lo que requerimos que otorgue las facilidades del caso, a la vez que nos pueda proporcionar en el plazo de tres (3) días hábiles de recepcionada la presente una Carpeta con copias simple de documentos que permita una real valorización de su(s) predios, pudiendo ser:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="171" width="187" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Titulo de Propiedad (o el que haga a sus veces)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="213" y="171" width="168" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Autorización Municipal de Funcionamiento"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="213" y="181" width="168" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Declaratoria de Fabrica"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="181" width="187" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Lic. de Construcción o  Decla. De  Fabrica"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="191" width="187" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Documento de Identidad  titular o representante"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="213" y="191" width="168" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Certificado de Numeración"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="201" width="187" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) DD.JJ. Autoevaluó de Inscripción"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="213" y="201" width="168" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Licencia/Permiso de Avisos  Publicitarios"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="211" width="187" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Memoria descriptiva y Planos del predio"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="232" width="377" height="21"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Times New Roman" size="8" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["               El presente programa de fiscalización tributaria comprende el Levantamiento y verificación de"+
+"medidas, áreas y características de las edificaciones fijas, permanentes y complementarias del predio."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="259" width="377" height="39"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Times New Roman" size="8" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["               La documentación solicitada deberá remitirla a la Sub-Gerencia de Fiscalización Tributaria  a "+
+"través de la oficina de Tramite Documentario (mesa de partes) de la Municipalidad en el plazo señalado, de "+
+"no adjuntar la documentación solicitada la Administración Tributaria de acuerdo al artículo 64º numeral 3 "+
+"del TUO del Código Tributario realizara la determinación de los tributos sobre base presunta."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="304" width="100" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Atentamente:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="158" y="359" width="240" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Recepcionado por:..........................................................................."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="158" y="375" width="240" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DNI Nro:.........................................................................................."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="158" y="391" width="240" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Fecha y Hora de Recepción:............................................................"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="158" y="407" width="240" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Vinculo con el Contribuyente:........................................................."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="436" width="220" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["FIRMA                        ____________________________"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="5" y="459" width="409" height="12"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NOTIFICADO POR :......................................................................   DNI Nro: ........................................................."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="304" width="100" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Atentamente:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="633" y="201" width="168" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Licencia/Permiso de Avisos  Publicitarios"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="633" y="171" width="168" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Autorización Municipal de Funcionamiento"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="29" width="84" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Domicilio Fiscal]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="578" y="407" width="240" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Vinculo con el Contribuyente:........................................................."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="520" y="49" width="292" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[: TODOS SUS PREDIOS DENTRO DE LA JURISDICCION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="520" y="19" width="292" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{cidpers}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="201" width="187" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) DD.JJ. Autoevaluó de Inscripción"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="633" y="181" width="168" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Declaratoria de Fabrica"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="19" width="84" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Código de contribuyente]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="444" y="191" width="187" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Documento de Identidad  titular o representante"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="82" width="377" height="87"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Times New Roman" size="8" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["               Mediante la presente hacemos de su conocimiento que la Municipalidad de Independencia viene realizando un <b>Programa de Fiscalización</b>  de sus Contribuyentes con el fin de controlar y verificar la información proporcionada y actualizar su declaraciones juradas respecto de su(s) predio(s) y del cumplimiento de sus obligaciones tributarias, conforme a lo previsto en el Art. 62º del Código Tributario"+
+"Por tal motivo, personal técnico de la Sub-Gerencia de Fiscalización Tributaria realizará la inspección in situ de su(s) predio(s) el <b>MIERCOLES, 14 de NOVIEMBRE entre las 8:30 A.M. y 4:00 P.M.</b> Por lo que requerimos que otorgue las facilidades del caso, a la vez que nos pueda proporcionar en el plazo de tres (3) días hábiles de recepcionada la presente una Carpeta con copias simple de documentos que permita una real valorización de su(s) predios, pudiendo ser:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="181" width="187" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Lic. de Construcción o  Decla. De  Fabrica"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="69" width="100" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Estimado Contribuyente:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="578" y="359" width="240" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Recepcionado por:..........................................................................."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="9" width="84" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Señor (es)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="520" y="9" width="292" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{contrib}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="425" y="459" width="407" height="12"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NOTIFICADO POR :......................................................................   DNI Nro: ............................................................."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="598" y="436" width="220" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["FIRMA                        ____________________________"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="211" width="187" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Memoria descriptiva y Planos del predio"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="633" y="191" width="168" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Certificado de Numeración"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="29" width="292" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{domfisc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="171" width="187" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(    ) Titulo de Propiedad (o el que haga a sus veces)"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="49" width="84" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Predio a Fiscalizar]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="578" y="375" width="240" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DNI Nro:.........................................................................................."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="259" width="377" height="39"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Times New Roman" size="8" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["               La documentación solicitada deberá remitirla a la Sub-Gerencia de Fiscalización Tributaria  a "+
+"través de la oficina de Tramite Documentario (mesa de partes) de la Municipalidad en el plazo señalado, de "+
+"no adjuntar la documentación solicitada la Administración Tributaria de acuerdo al artículo 64º numeral 3 "+
+"del TUO del Código Tributario realizara la determinación de los tributos sobre base presunta."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="232" width="377" height="21"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Times New Roman" size="8" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["               El presente programa de fiscalización tributaria comprende el Levantamiento y verificación de"+
+"medidas, áreas y características de las edificaciones fijas, permanentes y complementarias del predio."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="578" y="391" width="240" height="10"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Fecha y Hora de Recepción:............................................................"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

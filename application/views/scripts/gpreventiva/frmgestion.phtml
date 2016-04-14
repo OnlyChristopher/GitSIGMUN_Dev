@@ -1,0 +1,116 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Gpreventiva_gestion.js"></script>
+<form id="frmgestion">
+
+<input type="hidden" name="idnotif" id="idnotif"/>
+<input type="hidden" name="annonotif" id="annonotif"/>
+<input type="hidden" name="tnotif" id="tnotif"/>
+<input type="hidden" name="codigo" id="codigo"/>
+
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos de la Preventiva</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%" border =0 >
+			    
+				<tr>
+			      <td width="15%"><span id="lblNpreventiva"><font color='#01A9DB'>N. Preventiva:</font></span></td>
+				  <td colspan="2"><?php echo $this->npreventiva;?></td>
+				  <td width="20%"><span id="lblAnnopreventiva"><font color='#01A9DB'>Anno :</font></span></td>
+				  <td colspan="2"><?php echo $this->anno;?></td>
+			    </tr>
+				
+				<tr>
+			      <td width="20%"><span id="lblCodigo"><font color='#01A9DB'>T. Preventiva:</font></span></td>
+				  <td colspan="5"><?php echo $this->tipo;?></td>
+			    </tr>
+				
+				<tr>
+			      <td width="20%"><span id="lblCodigo"><font color='#01A9DB'>C. Infractor:</font></span></td>
+				  <td colspan="5"><?php echo $this->codigo;?></td>
+			    </tr>
+			     		    
+			    <tr>
+			      <td><span id="lblInfractor"><font color='#01A9DB'>Infractor:</font></span></td>
+			      <td colspan="5"><?php echo $this->nombre;?></td>
+			    </tr>
+				
+				<tr>
+			      <td><span id="lblSancion"><font color='#01A9DB'>Infraccion:</font></span></td>
+			      <td colspan="5"><?php echo $this->sancion;?></td>
+			    </tr>
+				
+				<tr>
+			      <td><span id="lblFechaNotificacion"><font color='#01A9DB'>F. Notificacion:</font></span></td>
+			      <td width="25%"><?php echo $this->notificacion;?></td>
+				  <td width="10%"><span id="lblFactor"><font color='#01A9DB'>Factor:</font></span></td>
+			      <td width="20%"><?php echo $this->factor;?> %</td>
+				  <td width="10%"><span id="lblMonto"><font color='#01A9DB'>Monto:</font></span></td>
+			      <td width="20%">S/.<?php echo $this->monto;?></td>
+			    </tr>
+				
+			    
+			    
+			    
+		    </table>	    
+        </div>
+		
+		</fieldset>	
+		</br>
+		<div id="divresolucion">
+				<fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px">Datos de Subsanacion:</legend>
+					<div class="contentForm">
+					 <table class="tableContent" border="0" width="100%">
+					 
+					 <tr>
+					 <td width ="30%"><span><font color='#01A9DB'>Subsanado:</font></span></td>
+					 <td><input type="checkbox" name="chkResoluciones" id="chkResoluciones" value="1"/></td>
+					 <td width ="30%" rowspan="5"> <img src="<?php echo $this->ruta;?>img/subsanar.jpg">
+					 </td>
+					 </tr>
+					 
+					 
+					 <tr>
+						<td><span><font color='#01A9DB'>Fech. Sub.:</font></span></td>
+						<td><input type="text" name="txtFechResolucion"  class="caja" id="txtFechResolucion" style="text-transform:uppercase; width:100px" maxlength="10" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<font color='#01A9DB'>Fech. Carta:</font>&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="txtFechCarta"  class="caja" id="txtFechCarta" style="text-transform:uppercase; width:100px" maxlength="10" />
+						</td>
+						
+					 </tr>
+					 <tr>
+						<td><span><font color='#01A9DB'>Sustento:</font></span></td>
+						<td><input type="text" name="txtSustento"  class="caja" id="txtSustento" style="text-transform:uppercase; width:302px" /></td>
+					 </tr>
+					 <tr>
+						<td><span><font color='#01A9DB'>N. Carta:</font></span></td>
+						<td><input type="text" name="txtNCarta"  class="caja" id="txtNCarta" style="text-transform:uppercase; width:150px" /></td>
+					 </tr>
+					 
+					 <tr>
+						<td><span><font color='#01A9DB'>Observaciones: </font></span></td>
+						<td><textarea name="txaObservacion" rows="3"  class="caja" id="txaObservacion" style="width:302px;"></textarea></td>
+					 </tr>
+					 </table>
+					</div>
+				</fieldset>
+			</div>
+
+		
+		
+		<div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+           	          <input type="button" name="btnGrabaGestion" id="btnGrabaGestion" value="Generar Resolucion" />
+                      <input type="button" name="btnSalirGestion" id="btnSalirGestion" value="Salir" />
+                    </td>
+                    </tr>
+                    </table>
+        </div>
+		
+        
+</div>
+<div ID="MSG_ERROR"></div>
+</form>

@@ -1,0 +1,109 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Tesoreportemain.js"></script>
+
+<style>
+	a:link {
+		font-size: 18px; font-style: normal;color:#0000FF;
+	}    /* unvisited link */
+	a:visited {
+		color:#0000FF;
+	} /* visited link */
+	a:hover {
+		color:#DF0101;
+	}   /* mouse over link */
+	a:active {
+		font-size: 18px; font-style: normal;color:#0000FF;
+	}  /* selected link */
+</style>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td align="center"><a id="lnkopcion1" href="#" onclick="javascript:abrirventana(1);">1. Recibos Emitidos</a>
+		</td>
+	</tr>
+	<tr>
+
+		<td align="center"><a id="lnkopcion2" href="#" onclick="javascript:abrirventana(2);">2. Recibos Emitidos (detallado por conceptos)</a><br>
+			<br>
+		</td>
+
+	</tr>
+	<tr>
+		<td align="center">
+			<a id="lnkopcion3" href="#" onclick="javascript:abrirventana(3);">3. Resúmen de Conceptos (por año)</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center"><a id="lnkopcion4" href="#" onclick="javascript:abrirventana(4);">4. Resúmen de Conceptos</a>
+			<br>
+			<br>
+		</td>
+	</tr>
+	<tr>
+		<td align="center"><a id="lnkopcion5" href="#" onclick="javascript:abrirventana(5);">5. Estado de las Cajas</a><br>
+			<!--<a id="lnkopcion6" href="#">6. consulta de recibo</a>-->
+			<br>
+			<a id="lnkopcion7" href="#" onclick="javascript:abrirventana(7);">7. Consulta de recibo (detallado)</a>
+			<br>
+			<br>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+		</td>
+	</tr>
+	<tr>
+		<td align="center"><!--<a id="lnkopcion10" href="#">10. reporte partidas (por año)</a>-->
+		</td>
+	</tr>
+	<tr>
+		<td align="center"><a id="lnkopcion11" href="#" onclick="javascript:abrirventana(11);">11. Reporte Partidas</a>
+		<br>
+		<br>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<a id="lnkopcion12" href="#" onclick="javascript:abrirventana(12);">12. Reporte Notas Entrega y Salida de caja</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" style="height: 19px"><a id="lnkopcion13" href="#" onclick="javascript:abrirventana(13);">13. Recibos Emitidos Contribuyentes</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<a id="lnkopcion14" href="#" onclick="javascript:abrirventana(14);">14. Recaudación de las Cajas</a>
+			<br>
+			<!--<a id="lnkopcion15" href="#">15. reporte notas entrega y salida de caja (agrupado)</a>-->
+		</td>
+	</tr>
+	<tr>
+		<td align="center" style="height: 19px">
+			<a href ="#" onclick="javascript:abrirventana(16);">16. Reporte - TUPA - Entrada</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" >
+			<a href ="javascript:abrirventana(17);" >17. Reporte - Ingreso por Gerencia</a>
+		</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+			<a href ="javascript:abrirventana(18);" >18. Reporte - Vehiculos Menores</a>
+		</td>
+	</tr>	
+	<tr>
+		<td align="center" >
+			<!--<a href ="#">18. reporte - pagos de multas</a>-->
+		</td>
+	</tr>																	
+	<tr>
+		<td align="center" >
+			<!--<a href ="#">19. reporte - pagos con tarjeta de credito</a>-->
+		</td>
+	</tr>																																
+</table>

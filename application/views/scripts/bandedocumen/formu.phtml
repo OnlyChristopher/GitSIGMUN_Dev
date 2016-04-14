@@ -1,0 +1,97 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandedocumen_formu.js"></script>
+<form id="frmbandeja">
+<input type="hidden" name="txtValor" id="txtValor">   
+<input type="hidden" name="txtNum" id="txtNum">  
+<input type="hidden" name="txtAno" id="txtAno">
+
+<div >
+    <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        	<div style="padding:0 0 0 10px"> <!-- arriba derecha abajo izquierda -->
+        	    <table align="center">
+	 			 <tr>
+					<td colspan="4" style="padding-top: 10px">
+			     		<h1 id="lblDocumento" class="title3"></h1>
+					</td>
+			     </tr>       
+			    </table> 
+        		<br>
+        		<table>
+			     <tr>
+			     	<td style="padding-right: 10px"><span id="lblCodi">Código:</span></td>
+			     	<td><h1 id="lblCodigo"></h1></td>
+					<td style="padding:0 10px 0 20px"><span id="lblContri">Contribuyente:</span></td>
+			     	<td><h1 id="lblContribuyente"></h1></td>
+				</tr>
+				</table>
+			</div>
+
+	    	<div class="contentBox" style="padding:0 0 0 0px"> 
+	    		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		    	 <legend style="margin-left:5px">Area</legend>
+		    	 	<table class="tableContent" >
+					  <tr>
+					   <td width="80"><span id="lblArea">Area Destino:</span> </td>
+					   
+					   <td><input name="txtAreades" id="txtAreades" type="text" class="cajaoff" readonly size="10"/>
+					  <select name="cmbAreades" id="cmbAreades" class="combo"></select></td>
+					 
+					  </tr>
+				    </table> 
+				</fieldset>
+	    	</div> 
+
+	    	<div class="contentBox" style="padding:0 0 0 0px"> 
+	    		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		    	 <legend style="margin-left:5px">Usuario</legend>
+		    	 	<table class="tableContent" >
+					  <tr>
+					   <td width="80"><span id="lblUsuario">Usuario:</span></td>
+					   <td><input name="txtUsuario" id="txtUsuario" type="text" class="cajaoff" readonly size="10" />
+					   <select name="cmbUsuario" id="cmbUsuario" class="combo"><option>[Seleccione]</option></select></td>
+					  </tr>
+					  <tr>
+					   <td width="80"><span id="lblSalida">Salida:</span></td>
+					   <td><input name="txtSalida" id="txtSalida" type="text" class="cajaoff" readonly size="17" /></td>
+					   <td><span id="lblSalida">Situación:</span>
+					   <select name="cmbSituacion" id="cmbSituacion" class="combo"><option>[Seleccione]</option></select></td>
+					  
+					  </tr>
+				    </table> 
+				</fieldset>
+	    	</div> 
+
+	    	<div class="contentBox" style="padding:0 0 0 0px"> 
+	    		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		    	 <legend style="margin-left:5px">Observaciones</legend>
+			      <div>
+					<table class="tableContent" width="100%">
+			    	 <tr>
+			     		<td><textarea name="txtareas" id="txtareas" cols="98" rows="3" class="caja" style="text-transform:uppercase;"></textarea> </td>
+			    	 </tr>
+			    	</table>   
+			     </div>
+				</fieldset>
+	    	</div> 
+
+
+     <div class="contentForm">           
+       <div class="divButtons">
+	    <table class="tableContent">
+	     <tr>
+	      <td style="padding-left:5px">
+		    <input type="button" name="btnEnvia" id="btnEnvia" value="Enviar" />
+		    <input type="button" name="btnSalida" id="btnSalida" value="Salir" />
+		  </td>
+		 </tr>
+	    </table>
+	   </div>           
+     </div>
+    
+     
+   </div>   
+  </fieldset>
+</div>
+</form>

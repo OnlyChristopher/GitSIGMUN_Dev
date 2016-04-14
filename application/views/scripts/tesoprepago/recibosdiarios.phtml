@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="../css/estilos.css" rel="stylesheet" type="text/css">
+<link href="../css/style1.css" rel="stylesheet" type="text/css">
+<link href="../css/buttons.css" rel="stylesheet" type="text/css">
+<link href="../css/zice.style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.invisible {display: none; }
+</style>
+</head>
+
+<body>
+
+<form >
+<table width="100%" >
+      <tr>
+        <td width="100%" height="21" colspan="2" ><table align="center" cellspacing="1" cellpadding="2" border="0" width="100%" >
+          <tr>
+            <td colspan="16" height="54"  class="title4">&nbsp;&nbsp;Listado de Recibos</td>
+          </tr>
+          <tr bgcolor="#dddddd">
+            <td colspan="16" align="center" bgcolor="#F8F8F8"><div align="center" id="PNombre" class="invisible" > Buscar: &nbsp;
+              <input type="text" name="criterio" size="50" class="caja" value="<? echo $criterio; ?>" />
+              &nbsp;
+              &nbsp;&nbsp;
+              &nbsp;
+              <input type="submit" value="Mostrar" class="boton2" />
+            </div>
+              <div align="center" id="PCodigo" class="invisible" > Buscar: &nbsp;
+                <input type="text" name="Bcodigo" id='Bcodigo' size="25" class="caja" value="<? echo $Bcodigo; ?>" />
+                &nbsp;
+                &nbsp;&nbsp;
+                &nbsp;
+                <input type="submit" value="Mostrar" class="boton2" />
+              </div></td>
+          </tr>
+          <div align="center" id="BNC" class="invisible" >
+            <tr class=" style0" >
+              <td height="44" align="center" class="shoutcutBox">Nº Recibo</td>
+              <td width="8%" align="center" class="shoutcutBox">Caja</td>
+              <td width="41%" align="center" class="shoutcutBox">Usuario</td>
+              <td width="9%" align="center" class="shoutcutBox">Fecha</td>
+              <td width="10%" align="center" class="shoutcutBox">Total</td>
+              <td width="7%" align="center" class="shoutcutBox">Estado</td>
+              <td width="7%" align="center" class="shoutcutBox">Duplicado</td>
+            </tr>
+
+              		
+		      <td align="center"><?  echo $row["num_ingr"]; ?></td>
+              <td align="center"><? echo $row["caja"]; ?></td>
+              <td align="center"><? echo $row["operador"]; ?></td>
+              <td align="center"><? echo $row["fec_pago"]; ?></a></td>
+              <td align="center"><? echo $row["monto"]; ?></a></td>
+              <td align="center"><? echo $row["estado"]; ?></td>
+              <td colspan="2" align="center" >&nbsp;<a href="../tesoreria/imprimir_recibo_copia.php?idrecibo=<? echo $row["num_ingr"]; ?>"  target="_self"><img src="../images/icon/color_18/copy.png" width="18" height="18" /></a></td>
+            </tr>
+          </div>
+
+        </table></td>
+    </tr>
+  </table>
+
+</form>
+</body>
+</html>

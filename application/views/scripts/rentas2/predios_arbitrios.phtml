@@ -1,0 +1,64 @@
+<fieldset class="ui-widget ui-widget-content">
+    <div class="contentForm">
+    	<div style="float:left; margin-right:5px">
+        	<fieldset class="ui-widget ui-widget-content">
+            <legend style="margin-left:5px">Arbitrios:</legend>
+            <div class="contentForm">
+            <table class="tableContent">
+              <tr>
+              <td><span id="lblTipPredio">Afecto:</span></td>
+              <td><input name="txtArbAfecto" type="checkbox" id="txtArbAfecto" value="1"></td>
+              </tr>
+              <tr>
+              <td><span id="lblTipPredio">Afecto Desde:</span></td>
+              <td>
+                <select name="cbAfectMesDesde" id="cbAfectMesDesde" class="combo"><option>[mm]</option></select></td>
+              </tr>
+              <tr>
+                <td><span id="lblTipPredio">Afecto Hasta:</span></td>
+                <td><select name="cbAfectMesHasta" id="cbAfectMesHasta" class="combo">
+                  <option>[mm]</option>
+                </select>
+                  </td>
+              </tr>
+              <tr>
+                <td><span id="lblNro">Parque:</span></td>
+                <td><input name="txtUbiPar" id="txtUbiPar" type="text" class="caja" size="10" maxlength="100" /></td>
+              </tr>
+              <tr>
+                <td><span id="lblNro">Observaciones:</span></td>
+                <td><textarea name="txtArbObs" cols="45" rows="4" class="caja" id="txtArbObs"><?php echo $this->arbitrios_observa;?></textarea></td>
+              </tr>
+            </table>
+            </div>
+            </fieldset>
+        </div>
+        
+        <br style="clear:both"/>
+        <br/>
+        <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Uso de Arbitrios y Serenazgo:</legend>
+        <div class="contentForm">
+        <table class="tableContent">
+          <tr>
+          <td><span id="lblTipPredio">Limpieza P&uacute;blica:</span></td>
+          <td><select name="cb_limpieza" id="cb_limpieza" class="combo"><option>[Seleccione]</option></select></td>
+          </tr>
+          <tr>
+          <td><span id="lblTipPredio">Barrido de Calles:</span></td>
+          <td><select name="cb_barrido" id="cb_barrido" class="combo"><option>[Seleccione]</option></select></td>
+          </tr>
+          <tr>
+          <td><span id="lblTipPredio">Parques y Jardines:</span></td>
+          <td><select name="cb_parque" id="cb_parque" class="combo"><option>[Seleccione]</option></select></td>
+          </tr>
+          <tr>
+          <td><span id="lblTipPredio">Serenazgo:</span></td>
+          <td><select name="cb_serenazgo" id="cb_serenazgo" class="combo"><option>[Seleccione]</option></select></td>
+          </tr>
+        </table>
+        </div>
+        </fieldset>
+        <br/>
+    </div>
+</fieldset>

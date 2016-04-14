@@ -1,0 +1,102 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rptgeneral_ingrXsector.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+<div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px"><span>CRITERIOS DE SELECCION:</span></legend>
+	        <div class="contentForm">
+	   		<table class="tableContent" border="0">
+				<tr>
+
+                    <td>
+						<fieldset class="ui-widget ui-widget-content" style="padding: 6.5px;">
+						<legend style="margin-left:5px"><span>Anio Pago:</span></legend>
+							<select name="cb_anno" id="cb_anno" class="combo" style="width:70px"><?php echo $this->cb_anno;?></select>
+						</fieldset>
+					</td>
+					<td>
+						
+						<fieldset class="ui-widget ui-widget-content" style="padding: 6.5px;">
+							<legend style="margin-left:5px"><span>Obligacion:</span></legend>
+							<div class="contentBoxBrSup">
+							<label><input id="chkTotObligacion" type="checkbox"> <span>Todos/Ninguno</span></label></div>
+						  <div id="divObligacion" class="contentBoxBr" style="background-color:#E6FFFF; height:100px; width:120px; overflow:auto">
+
+							</div>
+						</fieldset>
+					</td>
+					<td>
+						
+						<fieldset class="ui-widget ui-widget-content" style="padding: 6.5px;">
+							<legend style="margin-left:5px"><span>Meses:</span></legend>
+							<div class="contentBoxBrSup">
+							<label><input id="chkTotMeses" type="checkbox"> <span>Todos/Ninguno</span></label></div>
+						  <div id="divMeses" class="contentBoxBr" style="background-color:#E6FFFF; height:100px; width:280px; overflow:auto">
+
+							</div>
+						</fieldset>
+					</td>
+					<td>
+						
+						<fieldset class="ui-widget ui-widget-content" style="padding: 6.5px;">
+							<legend style="margin-left:5px"><span>Sector:</span></legend>
+							<div class="contentBoxBrSup">
+							<label><input id="chkTotSector" type="checkbox"> <span>Todos/Ninguno</span></label></div>
+						  <div id="divSector" class="contentBoxBr" style="background-color:#E6FFFF; height:100px; width:280px; overflow:auto">
+
+							</div>
+						</fieldset>
+					</td>
+					<td>
+						<fieldset class="ui-widget ui-widget-content" style="padding: 6.5px;">
+							<legend style="margin-left:5px"><span>Arbitrio:</span></legend>
+							<div class="contentBoxBrSup">
+							<label><input id="chkTotArbitrio" name="chkTotArbitrio" type="checkbox"> <span>Todos/Ninguno</span></label></div>
+							<div class="contentBoxBr" style="background-color:#E6FFFF; height:100px; width:130px">
+							<table width="100%">                    
+								<tr>
+								<td><label><input type="checkbox" id="chkarbitrio[]" name="chkarbitrio[]" value="*11.02*"> Barrido Vias</label></td>
+								</tr>
+								<tr>
+								<td><label><input type="checkbox" id="chkarbitrio[]" name="chkarbitrio[]" value="*11.01*"> Recol. Res.</label></td>
+								</tr>
+								<tr>
+								<td><label><input type="checkbox" id="chkarbitrio[]" name="chkarbitrio[]" value="*11.03*"> Parq. Jard.</label></td>
+								</tr>
+								<tr>
+								<td><label><input type="checkbox" id="chkarbitrio[]" name="chkarbitrio[]" value="*11.04*"> Serenazgo.</label></td>                    
+								</tr>
+							</table>	    
+							</div>
+						</fieldset>
+					</td>
+					<td>
+						<table>
+							<tr>
+							<td><input type="button" id="btnProcesar_ingre_X_Sector" value="Procesar" style="width=250px; height=200px;"/></td>
+							<!--<td><input type="button" id="btnExportar_ingre_X_Sector" value="Exportar" style="width=250px; height=200px;"/></td>-->
+							</tr>
+							<tr>
+							<!--<td align="center" colspan="2"><input type="button" id="btnGrafica_ingre_X_Sector" value="Grafica" style="width=250px; height=200px;"/></td>-->
+							</tr>
+						
+						</table>
+					</td>
+                </tr>
+            </table>	    
+	    	</div>
+			
+			
+
+			
+	    </fieldset>
+
+    </div>
+	<div id="ReporteIngreXSector" align="center">	
+	   
+	    	
+			</div>
+</div>

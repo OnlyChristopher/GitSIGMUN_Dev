@@ -1,0 +1,16 @@
+<?php
+$url = new Zend_Session_Namespace('path');
+?>
+<input type="hidden" id="hdnAcceso" />
+<ul class="header-top">
+    <li style="width:200px; padding:5px 0 0 10px">
+    	<img src="<?php echo $url->data;?>img/logo.png" style="cursor:pointer;" onclick="location.href=urljs + 'main'">
+    </li>
+    <li>
+	    <div class="title1">SIGMUN</div>
+	    <div class="title2">Sistema Integral de Gestión Municipal</div>
+    </li>
+    <li style="padding:10px; float:right">
+	    <div id="toolbarMain"></div>
+	</li>
+</ul>

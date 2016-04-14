@@ -1,0 +1,54 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantrepresentante.js"></script>
+    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Datos Contribuyente:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+              <b>CODIGO:</b>
+              </td>
+              <td>
+              </td>
+              <td>
+              <label>
+             <div id="divCodigo"></div>
+              </label>
+              </td>
+              <td>
+              <b>NOMBRE:</b>
+              </td>
+              <td>
+              </td>
+              <td>
+              <label>
+             <div id="divNombre"></div>
+              </label>
+              </td>
+              <td>
+              <b>DIRECCION:</b>
+              </td>
+              <td>  
+              </td>
+              <td>            <label>
+             <div id="divDireccion"></div>
+              </label></td>
+              <td>              <label>
+              </label></td>
+              </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="gridRepre"></div>
+	    <br/>
+	    <div class="divButtons">
+		    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		    <tr>
+		    <td style="padding-left:5px">
+		    <input type="button" id="btnNuevoRepresentante" value="Nuevo" />
+		    <input type="button" id="btnSalirRepresentante" value="Cerrar" />
+		    </td>
+		    <td></td>
+		    </table>
+		</div>

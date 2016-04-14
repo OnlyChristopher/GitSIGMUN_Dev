@@ -1,0 +1,78 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rentasmantpredios.js"></script>
+<form id="frmpredios">
+    <div class="contentBoxMain">
+    	<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+    		<legend style="margin-left:5px">Datos del Contribuyente:</legend>    		
+    		<div style="float:left; padding-right:40px">
+    			<table class="tableContent" width="100%">
+			    <tr>
+			    <td><span id="lblCodigo">Código:</span></td>
+			    <td><div id="divCodigo">0001</div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblAnexo">Anexo:</span></td>
+			    <td><div id="divAnexo">0001</div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblSAnexo">S. Anexo:</span></td>
+			    <td><div id="divSAnexo">0001</div></td>
+			    </tr>		    
+			    </table>
+    		</div>
+    		<div style="float:left">
+    			<table class="tableContent" width="100%">
+			    <tr>
+			    <td><span id="lblContri">Contribuyente:</span></td>
+			    <td colspan="4"><div id="divContri">GONZALES LAZO</div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblArancel">Arancel:</span></td>
+			    <td><span id="lblTerreno">V.Terreno:</span></td>
+			    <td><span id="lblContruccion">V.Construcción:</span></td>
+			    <td><span id="lblInstalaciones">V.Instalaciones:</span></td>
+			    <td><span id="lblAutovaluo">Autovalúo:</span></td>
+			    </tr>
+			    <tr>
+			    <td><input name="txtArancel" id="txtArancel" type="text" class="cajaoff" size="20" maxlength="10" readonly /></td>
+			    <td><input name="txtTerreno" id="txtTerreno" type="text" class="cajaoff" size="20" maxlength="10" readonly /></td>
+			    <td><input name="txtConstruccion" id="txtConstruccion" type="text" class="cajaoff" size="20" maxlength="10" readonly /></td>
+			    <td><input name="txtInstalaciones" id="txtInstalaciones" type="text" class="cajaoff" size="20" maxlength="10" readonly /></td>
+			    <td><input name="txtAutovaluo" id="txtAutovaluo" type="text" class="cajaoff" size="20" maxlength="10" readonly /></td>
+			    </tr>	    
+			    </table>
+    		</div>
+    		<br style="clear:both">
+		</fieldset>
+		<br/>
+		<div id="contentTabsLeft" class="ui-tabs-left">
+	        <ul>
+	            <li style="width:63px" id="tab1">
+                    <a href="#tabs-1">
+                    <img src="<?php echo $this->ruta;?>img/icon_predios.png"><div>Caract.</div>
+                    </a>
+                </li>
+	            <li style="width:63px" id="tab2">
+                	<a href="#tabs-2">
+                    <img src="<?php echo $this->ruta;?>img/icon_pisos.png"><div>Pisos</div>
+                    </a>
+                </li>
+                <li style="width:63px" id="tab3">
+                	<a href="#tabs-3">
+                    <img src="<?php echo $this->ruta;?>img/icon_instal.png"><div>Instal.</div>
+                    </a>
+                </li>               
+                <li style="width:63px" id="tab4">
+                	<a href="#tabs-4">
+                    <img src="<?php echo $this->ruta;?>img/icon_arbserv.png"><div>Arb.Serv.</div>
+                    </a>
+                </li>
+	        </ul>
+	        <div id="tabs-1"><?php include("predios_pu.phtml"); ?></div>
+	        <div id="tabs-2"><?php include("predios_pisos.phtml"); ?></div>
+	        <div id="tabs-3"><?php include("predios_instal.phtml"); ?></div>
+	        <div id="tabs-4"><?php include("predios_arbitrios.phtml"); ?></div>	        	        
+		</div>
+		
+    </div>
+</form>

@@ -1,0 +1,62 @@
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Tesomenuemitidos.js"></script>
+<table id="table3" cellspacing="1" cellpadding="1" width="500" border="0" align="center">
+	<tr>
+	<td style="height: 18px" nowrap>Caja:</td>
+		<td colspan="2">
+			<select name="cmbcajas" id="cmbcajas" class="combo">
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 18px" nowrap>Fecha (D/M/A):</td>
+		<td style="height: 18px">Desde:
+			<input name="tesodesde" type="text" value="15/10/2013" id="tesodesde" class="caja"/>
+		</td>
+		<td style="height: 18px">Hasta:
+			<input name="tesohasta" type="text" value="15/10/2013" id="tesohasta" class="caja"/>
+		</td>
+	</tr>
+ 	<tr>
+		<td nowrap style="height: 23px">Tipo Operaci&oacute;n:</td>
+		<td colspan="2" style="height: 23px">
+			<select name="tipooperacion" id="tipooperacion" class="combo">
+				<option value="--">TODOS</option>
+				<option value="1">Sismuni</option>
+				<option value="2">Tupa</option>
+				<option value="4">Entrada</option>
+			</select>
+		</td>
+	</tr>
+	<!--<tr>
+		<td>
+			<p>Tipo E/S:</p>
+		</td>
+		<td colspan="2">
+		<select name="ddltipoes" id="ddltipoes" class="combo">
+			<option value="-">-</option>
+			<option value="3">Otros</option>
+			<option value="4">Policl&#237;nico</option>
+		</select></td>
+	</tr>-->
+	<tr>
+	<td nowrap>Nivel:</td>
+	<td colspan="2">
+		<select name="cmbnivel" id="cmbnivel" class="combo">
+			<option value="0">6 - TODOS</option>
+			<option value="1">5 - xx.xx.x.xx.xxx</option>
+			<option value="2">4 - xx.xx.x.xx.000</option>
+			<option value="3">3 - xx.xx.x.00.000</option>
+			<option value="4">2 - xx.xx.0.00.000</option>
+			<option value="5">1 - xx.00.0.00.000</option>
+		</select>
+	</td>
+	</tr>
+	<tr>
+		<td colspan="3" align="center">
+			<br>
+			<br>
+			<input type="button" name="btnaceptar" value="Aceptar" id="btnaceptar"/>
+			<input type="button" name="btnvolver" value="Volver" id="btnvolver" />
+		</td>
+	</tr>
+</table>

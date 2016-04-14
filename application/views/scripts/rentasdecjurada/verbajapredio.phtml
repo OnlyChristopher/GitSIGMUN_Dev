@@ -1,0 +1,124 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_bajapredio.js"></script>
+
+<form id="frmverbajapredio">
+<input type="hidden" name="actionHr" id="actionHr">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos Generales del Predio:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			    <td width="114"><span id="lblCodigo">C&oacute;digo:</span></td>
+			    <td><div id="divECodigo"></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblAnexo">Contribuyente:</span></td>
+			    <td><div id="divENombre"></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblSAnexo">C&oacute;digo Pred.</span></td>
+			    <td><div id="divCodPred"></div></td>
+			    </tr>
+                <tr>
+			    <td><span id="lblAnexo">Anexo:</span></td>
+			    <td><div id="divSAnexo"></div></td>
+			    </tr>
+                <tr>
+			    <td><span id="lblSAnexo">Direcci&oacute;n Pred.:</span></td>
+			    <td><div id="divDireccion"></div></td>
+			    </tr>
+                <tr>
+			    <td><span id="lblSAnexo">A&ntilde;o</span></td>
+			    <td><div id="divAnno"></div></td>
+			    </tr>
+
+            </table>
+            <input type="hidden" id="hd_ECodigo" name="hd_ECodigo" />
+            <input type="hidden" id="hd_CodPred" name="hd_CodPred" />
+            <input type="hidden" id="hd_SAnexo" name="hd_SAnexo" />
+            <input type="hidden" id="hd_anno" name="hd_anno" />
+			<input type="hidden" id="hd_direccion" name="hd_direccion" />
+
+            
+        </div>
+    </fieldset>	    
+</div>
+<!--<br style="clear:both"><br/>-->
+</br>
+
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos del Descargo:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			    <td><span id="lblMotivo">Motivo Descargo:</span></td>
+			    <td width="316"><select name="cmbDescargo" id="cmbDescargo" class="combo"></select></td>
+				<td><span id="lblFecha">Fecha Transferencia:</span></td>
+			    <td><input name="txtfecha" id="txtfecha" type="text" size="30" class="caja"/></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblAnexo">Porc. Propiedad:</span></td>
+			    <td colspan="3"><input name="txtPropiedad" id="txtPropiedad" type="text" class="caja"/> (%)</td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblGlosa">Glosa:</span></td>
+			    <td colspan="3"><textarea name="txtGlosa" id="txtGlosa" cols="86" rows="3" class="caja" style="text-transform:uppercase;"></textarea></td>
+			    </tr>
+            </table>
+        </div>
+    </fieldset>	    
+</div>
+
+</br>
+
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos del(los) Adquiriente(s):</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			    <td><span id="lblAdquiriente">Adquiriente:</span></td>
+			    <td><input name="txtAdquiriente" id="txtAdquiriente" type="text" class="cajaoff" readonly/>  <input type="button" value="..." id="btnBusBajaPre" /></td>
+				
+			    </tr>
+			    <tr>
+			    <td><span id="lblPersona">Tipo Persona:</span></td>
+			    <td><input name="txtPersona" id="txtPersona" type="text" class="cajaoff" size="30" readonly/></td>
+				<td><span id="lblPersona">Sub Tipo Persona:</span></td>
+			    <td><input name="txtSub" id="txtSub" type="text" class="cajaoff" size="30" readonly/></td>
+			    </tr>
+				<tr>
+			    <td><span id="lblDocumento">Tipo Documento:</span></td>
+			    <td><input name="txtTipoDocumento" id="txtTipoDocumento" type="text" class="cajaoff" size="30" readonly/></td>
+				<td><span id="lblPersona">Nro Documento:</span></td>
+			    <td><input name="txtNro" id="txtNro" type="text" class="cajaoff" size="30" readonly/></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblRazon">Raz&oacute;n Social</span></td>
+			    <td colspan="3"><input name="txtRazon" id="txtRazon" type="text" class="cajaoff" size="128" readonly/></td>
+			    </tr>
+				<tr>
+			    <td><span id="lblNotaria">Notaria:</span></td>
+			    <td><select name="cmbNotaria" id="cmbNotaria" class="combo"></select></td>
+			    </tr>
+            </table>
+        </div>
+    </fieldset>	    
+</div>
+
+</br>
+
+<div class="divButtons">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+    <td style="padding-left:5px">
+    <input type="button" value="Grabar" id="btnGrabar" />
+	<input type="button" value="Cerrar" id="btnCerrar" />
+    </td>
+    <td></td>
+    </table>
+</div>
+
+</form>

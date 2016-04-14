@@ -1,0 +1,55 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rptgeneral_contrixsector.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+			   <tr>
+                    <td><b>Codigo:</b></td>
+                    <td><b>Año:</b></td>
+					<td><b>Distrito:</b></td>
+                    <td><b>Sector:</b></td>
+               </tr>
+				<tr>
+                    <td>
+						<input name="txtCodigo" id="txtCodigo" type="text" class="caja" size="15" maxlength="7" />
+					</td>
+                    <td>
+						<select name="cb_anno" id="cb_anno" class="combo" style="width:70px"><?php echo $this->cb_anno;?></select>
+					</td>
+					<td>
+						<select id="cb_distrito" name="cb_distrito" class="combo" style="width:280px"><?php echo $this->cb_distrito;?></select>
+					</td>
+                    <td>
+						<select id="cb_Sector" name="cb_Sector" class="combo" style="width:200px"><option value=''>[seleccione]</option></select>
+					</td>
+					<td>
+						<input type="button" id="btnProcesarContri" value="Procesar" />
+					</td>
+					
+					<td>
+						<input type="button" id="btnExportContribuyentesXSector" value="Exportar" />
+					</td>
+					<!--<td>
+						<input type="button" id="btnGrapContribuyentesXSector" value="Grafica" />
+					</td>-->
+                </tr>
+            </table>	    
+	    	</div>
+			
+			
+
+			
+	    </fieldset>
+
+    </div>
+	<div id="ReporteContriXSector" align="center">	
+	   
+	    	
+			</div>
+</div>

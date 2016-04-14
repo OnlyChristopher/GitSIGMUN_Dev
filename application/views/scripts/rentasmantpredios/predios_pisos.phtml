@@ -1,0 +1,81 @@
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">Pisos:</legend>
+    <div class="contentForm">
+    	<div style="float:left; padding-right:5px">
+            <table id="detallePisos" class="hovertable">
+            <tr>
+              <th><center>Nivel</center></th>
+              <th><center>C</center></th>
+              <th><center>M</center></th>
+              <th><center>E</center></th>
+              <th><center>Mes</center></th>
+              <th><center>Año</center></th>
+              <th><center>(1)</center></th>
+              <th><center>(2)</center></th>
+              <th><center>(3)</center></th>
+              <th><center>(4)</center></th>
+              <th><center>(5)</center></th>
+              <th><center>(6)</center></th>
+              <th><center>(7)</center></th>
+              <th><center>Area Const.</center></th>
+              <th><center>Val.ACom</center></th>
+              <th>
+              <center>
+              <input type="hidden" id="cDetPisos" value="0"/>
+              <input type="button" id="btnAddDetPisos" value=" Agregar " class="boton" style="margin:0;"/>
+              </center>
+              </th>
+            </tr>        
+            </table>
+            <br/>
+            <fieldset class="ui-widget ui-widget-content">
+                <legend style="margin-left:5px">Valor del piso:</legend>
+                <div class="contentForm">
+	           	<table class="tableContent">
+				<tr>
+				    <td><span id="lblCp">Valor Unitario:</span></td>
+				    <td><input name="txtCp" id="txtCp" type="text" class="cajaoff" size="30" maxlength="100" readonly /></td>
+				    <td><span id="lblCp">Valor Area Construida:</span></td>
+				    <td><input name="txtCp" id="txtCp" type="text" class="cajaoff" size="30" maxlength="100" readonly="readonly" /></td>
+				    </tr>
+				    <tr>
+				    <td><span id="lblVia">Incremento:</span></td>
+				    <td><input name="txtVia" id="txtVia" type="text" class="cajaoff" size="30" maxlength="100" readonly /></td>
+				    <td><span id="lblVia">Valor Area Común:</span></td>
+				    <td><input name="txtVia" id="txtVia" type="text" class="cajaoff" size="30" maxlength="100" readonly /></td>
+				    </tr>
+				    <tr>
+				    <td><span id="lblDir">Depreciación:</span></td>
+				    <td><input name="txtDir" id="txtDir" type="text" class="cajaoff" size="30" maxlength="100" readonly /></td>
+				    <td><span id="lblDir">Valor del Piso:</span></td>
+				    <td><input name="txtDir" id="txtDir" type="text" class="cajaoff" size="30" maxlength="100" readonly /></td>
+			      </tr>
+				    <tr>
+				      <td><span id="lblDir">Valor Unit. Depreciación:</span></td>
+				      <td><input name="txtDir" id="txtDir" type="text" class="cajaoff" size="30" maxlength="100" readonly /></td>
+				      <td>&nbsp;</td>
+				      <td>&nbsp;</td>
+			      </tr>
+			    </table>
+                </div>
+            </fieldset>
+        </div>
+        <div style="float:left; padding-left:5px">
+        <fieldset class="ui-widget ui-widget-content">
+	    	<legend style="margin-left:5px">Valores Unitarios:</legend>
+        	<div class="contentBox">
+            	<table class="tableContent">
+				<tr><td>(1) - Muros</td></tr>
+                <tr><td>(2) - Techo</td></tr>
+                <tr><td>(3) - Pisos</td></tr>
+                <tr><td>(4) - Puertas</td></tr>
+                <tr><td>(5) - Revestimiento</td></tr>
+                <tr><td>(6) - Baños</td></tr>
+                <tr><td>(7) - Instalaciones</td></tr>
+                </table>
+            </div>
+        </fieldset>
+        </div>
+        <br style="clear:both">
+    </div>
+</fieldset>

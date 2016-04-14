@@ -1,0 +1,144 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandecostas_formu.js"></script>
+<form id="frmcostass">
+<div>
+	
+	<div>
+		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+    		<div style="float:left; padding-right:40px">
+    			<table class="tableContent" width="100%">
+			    <tr>
+			    <td><span id="lblCodigo">Código:</span></td>
+			    <td><div id="divCodigo"><?php echo $this->varcodigo;?></div>
+				<div><input type="hidden" id="txtcodigo" name="txtcodigo"></div>
+				</td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblNombre">Contribuyente:</span></td>
+			    <td><div id="divNombre"><?php echo $this->varnombre;?></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblDocumen">Nro. Documento:</span></td>
+			    <td><div id="divDocumen"><?php echo $this->vardocumen;?></div></td>
+			    </tr>			
+			    <tr>
+			    <td><span id="lblDomicilio">Domicilio Fiscal:</span></td>
+			    <td><div id="divDomicilio" style="width:380px"><?php echo $this->vardomicilio;?></div></td>
+			    </tr>
+				 <tr>
+			    <td><span id="lblDomicilio">Expediente:</span></td>
+			    <td><div id="divExpediente" style="width:380px"><?php echo $this->varexpediente;?></div>
+				<div><input type="hidden" id="txtexpediente" name="txtexpediente"></div></td>
+			    </tr>
+			    </table>
+    		</div>    	
+    	</fieldset>
+	</div>
+	</br>
+	<div>
+	<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+    <legend style="margin-left:5px">Detalle de Pago:</legend>
+	<div><input type="hidden" id="actTupa" name="actTupa"></div>
+	
+	<div>
+		<div id="gridCostas" style="float:left;padding-right:10px"></div>
+		<div>
+			<table class="tableContent">
+					<tr id="rowAddTupa">
+					  <td style="padding:3px"><input type="button" id="btnAddTupa" name="btnAddTupa" value="Agregar" style="width:80px" /></td>
+					</tr>
+					<tr id="rowSaveTupa">
+					  <td style="padding:3px"><input type="button" id="btnSaveTupa" name="btnSaveTupa" value="Guardar" style="width:80px" /></td>
+					</tr>
+					<tr id="rowEditTupa">
+					  <td style="padding:3px"><input type="button" id="btnEditTupa" name="btnEditTupa" value="Editar" style="width:80px" /></td>
+					</tr>
+					<tr id="rowCancelTupa">
+					  <td style="padding:3px"><input type="button" id="btnCancelTupa" name="btnCancelTupa" value="Cancelar" style="width:80px" /></td>
+					</tr>
+					<tr>
+					  <td style="padding:3px"><input type="button" id="btnDelTupa" name="btnDelTupa" value="Eliminar" style="width:80px"/></td>
+					</tr>
+			 </table>
+		</div>
+	</div>
+	<br style="clear:both"/>
+	</br>
+	<div id="divCalculo">
+		<table width="100%" class="hovertable">
+		  <tr>
+			<th style="display: none;"><span>Idrecibo</span></th>
+			<th><span>Tipo</span></th>
+			<th><span>Subtipo</span></th>
+			<th><span>Concepto</span></th>
+			<th><span>Monto</span></th>
+			<th><span>Cantidad</span></th>
+			<th><span>Total</span></th>
+		  </tr>
+		  <tr>
+			<td style="display: none;"><div>
+			  <input name="txtidrecibo" type="text" class="cajaoff" id="txtidrecibo" style="width:50px" readonly >
+			</div></td>
+			<td><div>
+			  <input name="txttipo" type="text" class="cajaoff" id="txttipo" style="width:50px" readonly>
+			</div></td>
+			<td><div>
+			  <input name="txtsubtipo" type="text" class="cajaoff" id="txtsubtipo" style="width:50px" readonly>
+			</div></td>
+			<td>
+			<input type="text" name="nom_pago_diver" id="nom_pago_diver" class="caja" style="text-transform:uppercase; width:700px" >
+			</td>
+			<td><input name="txtprecio" type="text" class="caja" id="txtprecio" style="width:80px;text-align:right" maxlength="5" value="0.00"></td>
+			<td><input name="txtcantidad" type="text" class="caja" id="txtcantidad" style="width:80px;text-align:right" maxlength="5" ></td>
+			<td><input name="txttotal" type="text" class="cajaoff" id="txttotal" style="width:80px;text-align:right" maxlength="12" value="0.00" readonly ></td>
+		  </tr>
+        </table>
+	</div>
+	
+	<div>
+		  <table align="right">
+                    <tr>
+                      <td><b>Total:</b></td>
+                      <td style="padding:5px"><input name="txtTotPag" id="txtTotPag" type="text" class="cajaoff" style="width:60px;text-align:right"  readonly /></td>
+                     
+                    </tr>
+           </table>
+	
+	</div>
+	
+	</fieldset>
+	</div>
+	<div class="divButtons">
+                <!--  <input type="button" name="btnImpPag" id="btnImpPag" value="Guardar" />-->
+                  <input type="button" name="btnSalir" id="btnSalir" value="Salir" />
+    </div>
+	<!--	
+		<div>
+			<table class="tableContent">
+			
+				<tr>
+			    <td><span id="lblCodigo">Monto de la deuda:</span></td>
+			    <td><input name="txtUit" id="txtUit" type="text" class="caja" size="20" /></td>
+			    </tr>
+				
+				<tr>
+			    <td><span id="lblCodigo">Gastos:</span></td>
+			    <td><input name="txtUit" id="txtUit" type="text" class="caja" size="20" /></td>
+			    </tr>
+				
+				<tr>
+			    <td><span id="lblCodigo">Código:</span></td>
+			    <td><input name="txtUit" id="txtUit" type="text" class="caja" size="20" /></td>
+			    </tr>
+				
+				<tr>
+			    <td><span id="lblCodigo">Código:</span></td>
+			    <td><input name="txtUit" id="txtUit" type="text" class="caja" size="20" /></td>
+			    </tr>
+				
+			
+			</table>
+		</div>
+	-->
+</div>
+</form>

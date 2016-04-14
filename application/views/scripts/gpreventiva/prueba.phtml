@@ -1,0 +1,50 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/s_Prueba.js"></script>
+<form id="frmlicendecjurada">
+<input  type="hidden" name="accion" id="accion" value="<?php echo $this->accion ;?>" />
+<input  type="hidden" name="idSolLice" id="idSolLice" value="<?php echo $this->idSolLice ;?>" />
+    <div class="contentBoxMain">
+    	<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+    		<legend style="margin-left:5px">Expediente:</legend>    		
+    		<div>
+    			<table class="tableContent" width="100%">
+			    <tr>
+			    <td width="100"><span id="lblContri">N&deg; Expediente:</span></td>
+			    <td><input name="txtExp" id="txtExp" type="text" class="cajaoff" readonly="readonly" <?php echo $this->readonly;?> size="15" maxlength="6"  /></td>
+                  <td><span id="lblArancel">N&deg; Licencia:</span></td>
+			    <td><input name="txtNroLi" id="txtNroLi" onFocus=""  type="text" class="caja" size="20" maxlength="7" /></td>
+                <td width="100"><span id="lblArancel">&nbsp; Resoluci&oacute;n:</span></td>
+			    <td width="100"><span id="lblArancel"><input name="txtResol" id="txtResol"  type="text" class="cajaoff" size="20" maxlength="7"  readonly="readonly"/></span></td>
+			   
+			    </tr>
+			    </table>
+    		</div>
+        </fieldset>
+		<br/>
+    	<div id="contentTabsLeft" class="ui-tabs-left">
+	        <ul>
+	            <li style="width:62px" id="tab1">
+                    <a href="#tabs-1">
+                    <img src="<?php echo $this->ruta;?>img/icon_licencias.png"><div>S.DJ-I</div>
+                    </a>
+                </li>
+	                         
+                <li style="width:62px" id="tab5">
+                	<a href="#tabs-5">
+                    <img src="<?php echo $this->ruta;?>img/icon_licencias.png"><div>S.DJ-II</div>
+                    </a>
+                </li>
+              	<div style="position:absolute; bottom:0;">
+                    <div style="padding-bottom:15px">
+                    <input type="button" id="btnSaveSol" value="Grabar" style="width:57px; height:40px; margin:5px 0 5px 0"/>
+                    <input type="button" id="btnSalirSol" value="Cerrar" style="width:57px; height:40px; margin:5px 0 5px 0"/>
+                    </div>
+                </div>
+              
+	        </ul>            
+	        <div id="tabs-1"><?php include("notificacion.phtml"); ?></div>
+	                
+		</div>
+		
+    </div>
+</form>

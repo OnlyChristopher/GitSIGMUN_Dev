@@ -1,0 +1,79 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandedocumen_recepcion.js"></script>
+<form id="frmrecepcion">
+<input type="hidden" name="txtValorrecep" id="txtValorrecep">   
+<input type="hidden" name="txtNumrecep" id="txtNumrecep">  
+<input type="hidden" name="txtAnorecep" id="txtAnorecep">  
+<div >
+    <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        	<div style="padding:0 0 0 10px"> <!-- arriba derecha abajo izquierda -->
+        	    <table align="center">
+	 			 <tr>
+					<td colspan="4" style="padding-top: 10px">
+			     		<h1 id="lblDocumentorecep" class="title3"></h1>
+					</td>
+			     </tr>       
+			    </table> 
+			</div>
+
+	    	<div class="contentBox" style="padding:0 0 0 0px"> 
+	    		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		    	 <legend style="margin-left:5px">Recepción</legend>
+		    	 	<table class="tableContent" >
+		    	 	  <tr>
+					   <td width="80"><span id="lblNotificador">Notificador:</span></td>
+					   <td><input name="txtNotificador" id="txtNotificador" type="text" class="caja" size="60" style="text-transform:uppercase;"/></td>
+					  </tr>	
+		    	 	  <tr>
+					   <td width="80"><span id="lblRecepcionista">Recepcionista:</span></td>
+					   <td><input name="txtRecepcionista" id="txtRecepcionista" type="text" class="caja" size="60" style="text-transform:uppercase;"/></td>
+					  </tr>
+					  <tr>
+					   <td width="80"><span id="lblUsuario">Tipo Doc.:</span></td>
+					   <td><select name="cmbDocumento" id="cmbDocumento" class="combo"><option>[Seleccione]</option></select>
+					       <input name="txtDocumento" id="txtDocumento" type="text" class="caja" size="27" /></td>
+					  </tr>
+		    	 	  <tr>
+					   <td width="80"><span id="lblParentesco">Parentesco:</span></td>
+					   <td><input name="txtParentesco" id="txtParentesco" type="text" class="caja" size="60" style="text-transform:uppercase;"/></td>
+					  </tr>	
+					  <tr>
+					   <td width="120"><span id="lblFecha">Fecha de Recepción:</span></td>
+					   <td><input name="txtFecharecep" id="txtFecharecep" type="text" class="caja" size="12" maxlength="10" /></td>				  
+					  </tr>	
+		    	 	  <tr>
+					   <td width="80"><span id="lblSuministro">Suministro:</span></td>
+					   <td><input name="txtSuministro" id="txtSuministro" type="text" class="caja" size="60" style="text-transform:uppercase;" /></td>
+					  </tr>	
+			    	  <tr>
+			    	   <td width="80"><span id="lblObservaciones">Observaciones:</span></td>
+			     	   <td><textarea name="txtObservaciones" id="txtObservaciones" cols="50" rows="3" class="caja" style="text-transform:uppercase;"></textarea></td>
+			    	  </tr>	
+	 				  <tr>
+					   <td width="80"><span id="lblFirmo">Firmó Recepción:</span></td>
+					   <td><input type="checkbox" name="chbFirmo" id="chbFirmo" value="0"/></td>
+					  </tr>	
+				    </table> 
+				</fieldset>
+	    	</div> 
+
+     <div class="contentForm">           
+       <div class="divButtons">
+	    <table class="tableContent">
+	     <tr>
+	      <td style="padding-left:5px">
+		    <input type="button" name="btnGrabarecep" id="btnGrabarecep" value="Grabar" />
+		    <input type="button" name="btnSalidarecep" id="btnSalidarecep" value="Salir" />
+		  </td>
+		 </tr>
+	    </table>
+	   </div>           
+     </div>
+    
+     
+   </div>   
+  </fieldset>
+</div>
+</form>

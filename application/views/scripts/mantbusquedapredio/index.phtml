@@ -1,0 +1,106 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script>
+
+</script>
+<style type="text/css">
+.invisible {display: none; }
+</style>
+
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Mantbusquedapredio.js"></script>
+
+<form id="frmPredio">
+<div>	
+    <div>
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+			  <!--
+				  <td>
+				  <label>
+				  <input name="rdCriterio" id="rdCriterio1" type="radio" value="C" checked/><b> Código</b>
+				  </label>
+				  </td>
+				  <td>
+				  <label>
+				  <input name="rdCriterio" id="rdCriterio2" type="radio" value="N" /><b> Nombres</b>
+				  </label>
+				  </td>
+				   <td>
+				  <label>
+				  <input name="rdCriterio" id="rdCriterio4" type="radio" value="R" /><b> Razón Social</b>
+				  </label>
+				  </td>
+				  <td>
+				  <label>
+				  <input name="rdCriterio" id="rdCriterio3" type="radio" value="D" /><b> Documento</b>
+				  </label>
+				  </td>
+			  -->
+			  <td>
+              <label>
+              <input name="rdCriterio" id="rdCriterio5" type="radio" value="P" checked/><b> Direccion Predio</b>
+              </label>
+              </td>              
+              </tr>
+			  </table>
+			 <!--
+			 <table id="BusquedaContri" class="tableContent"> 
+			  <tr>
+				<td colspan="4">
+				<div style="float:left">
+					<div id="C" class="visible"><input name="txtCriterio" id="txtCriterio" type="text" class="caja" size="20" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="N" class="invisible">Nombres <input name="txtCriterioNombre" id="txtCriterioNombre" type="text" class="caja" size="40" maxlength="100" style="text-transform: uppercase"/> 
+												  Apellido Paterno <input name="txtCriterioAPaterno" id="txtCriterioAPaterno" type="text" class="caja" size="30" maxlength="100" style="text-transform: uppercase"/>
+												  Apellido Materno <input name="txtCriterioAMaterno" id="txtCriterioAMaterno" type="text" class="caja" size="30" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="R" class="invisible"><input name="txtCriterio" id="txtCriterioRazon" type="text" class="caja" size="40" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="D" class="invisible"><input name="txtDocumento" id="txtDocumento" type="text" class="caja" size="20" maxlength="100" style="text-transform: uppercase"/></div>
+				</div>
+					<div style="float:right"><input type="button" id="btnSearchContri" value="Buscar" /></div>
+				</td>
+			  </tr>
+            </table>
+			-->
+			
+			<table id="Busquedapredio"  class="tableContent"> 
+			  <tr>
+				<td colspan="4">
+				<div style="float:left">
+					
+					<div id="P"> 
+							Año <select name="cb_annobus" id="cb_annobus" class="combo"><?php echo $this->cb_anno;?></select>	
+							Via <input name="txt_viabus" id="txt_viabus" type="text" class="caja" size="10" maxlength="100" style="text-transform: uppercase"/> <input type="button" name='btn_Busvia' id="btn_Busvia">
+							Nro <input name="txt_busnro" id="txt_busnro" type="text" class="caja" size="10" maxlength="100" style="text-transform: uppercase"/>
+							Dpto <input name="txt_busdpto" id="txt_busdpto" type="text" class="caja" size="10" maxlength="100" style="text-transform: uppercase"/>
+							Mza. <input name="txt_busmaza" id="txt_busmaza" type="text" class="caja" size="10" maxlength="100" style="text-transform: uppercase"/>
+							Lte. <input name="txt_buslte" id="txt_buslte" type="text" class="caja" size="10" maxlength="100" style="text-transform: uppercase"/>
+							Sub Lte. <input name="txt_sublte" id="txt_sublte" type="text" class="caja" size="10" maxlength="100" style="text-transform: uppercase"/>
+					</div>
+				</div>
+					<div style="float:right"><input type="button" id="btnSearchPredio" value="Buscar" /></div>
+				</td>
+			  </tr>
+            </table>
+			
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="gridBuspredio"></div>
+	    <br/>
+	    <!--
+		<div class="divButtons">
+		    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		    <tr>
+		    <td style="padding-left:5px">
+		    <input type="button" id="btnNewContri" value="Nuevo" />
+		    <input type="button" id="btnRefreshContri" value="Actualizar" />
+			
+		    </td>
+		    <td></td>
+		    </table>
+		</div>
+		-->
+    </div>
+</div>
+</form>

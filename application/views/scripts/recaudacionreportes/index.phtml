@@ -1,0 +1,56 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_recaudacionreportes.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Reporte Tesoreria:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+              <label><b>A&nacute;o : </b>
+                <select id="cmbanno" class="combo" >
+	            </select>
+              </label>
+              </td>
+			  <td>
+              <label><b>Uso: </b>
+                <select id="cmbuso" class="combo" style="width:250px;">
+	            </select>
+              </label>
+              </td>
+              <!--<td>
+				<label><b>Desde: </b>
+					<input name="tesodesde" id="tesodesde" type="text" value="<?php //echo $this->tesodesde;?>" class="caja" size="20" maxlength="100" />
+				</label>
+			  </td>
+              <td>
+				<label><b>Hasta: </b>
+					<input name="tesohasta" id="tesohasta" type="text" value="<?php //echo $this->tesohasta;?>" class="caja" size="20" maxlength="100" />
+				</label>
+			  </td>
+			  <td>
+              <label><b>Cajeros: </b>
+                <select id="cmbcajas" class="combo" style="width:100px;">
+				</select>
+              </label>
+              </td>-->
+              <td>
+              <td><input type="button" id="btnbuscar" value="Buscar" /></td>
+              </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="gridDeclaracion"></div>
+	    <br/>
+	    <input type="button" id="btnReporteinafecto" value="Exportar a Excel" />
+    </div>
+
+	
+	
+</div>

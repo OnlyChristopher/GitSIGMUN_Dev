@@ -1,0 +1,51 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantpoblado_frmarancel.js"></script>
+<form id="frmpoblado">
+<input type="hidden" name="actionPoblado" id="actionPoblado" size="30">
+<input name="txtCodVia" id="txtCodVia" type="hidden" class="caja" size="20" maxlength="13" /></br>
+<input name="txtcod_arancel" id="txtcod_arancel" type="hidden" class="caja" size="20" maxlength="13" />
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    
+				<tr>
+				  <td><span>Año:</span></td>
+				  <td colspan="2">
+					  <select name="cmbAnno" id="cmbAnno" class="combo" style="width:80px;">
+					  <?php echo $this->cb_anno;?>
+					  </select>
+				  </td>
+				</tr>
+				<tr>
+			      <td width="19%"><span id="lblCodigo">Arancel:</span></td>
+			      <td colspan="2"><input name="txtArancel" id="txtArancel" type="text" class="caja" size="11" maxlength="5" /></td>
+			    </tr>
+				<tr>
+			      <td width="19%"><span id="lblCodigo">Estado:</span></td>
+			      <td colspan="2"><input name="chbxTuestado" id="chbxTuestado" type="checkbox" value="1" /></td>
+			    </tr>
+				
+	
+			    <tr>
+			      <td colspan="8">
+                  <div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+           	          <input type="button" name="btnGrabaPoblado" id="btnGrabaPoblado" value="Grabar" />
+                      <input type="button" name="btnSalirPoblados" id="btnSalirPoblados" value="Salir" />
+                    </td>
+                    </tr>
+                    </table>
+                  </div>
+                  </td>
+		      </tr>
+			    
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<div ID="MSG_ERROR"></div>
+</form>

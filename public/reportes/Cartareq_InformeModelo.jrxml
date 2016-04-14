@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cartareq_Informe" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<queryString>
+		<![CDATA[Select 1 a]]>
+	</queryString>
+	<field name="a" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="790" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="555" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://172.16.4.15:8082/reportes/img/logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="50" width="555" height="13"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DISTRITAL DE CARABAYLLO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="63" width="555" height="13"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA["Distrito Histórico y Ecológico"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="76" width="555" height="13"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GERENCIA DE ADMINISTRACIÓN TRIBUTARIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="89" width="555" height="13"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBGERENCIA DE FISCALIZACIÓN TRIBUTARIA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="109" width="555" height="14"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["INFORME N°                    - 2015-                     -SFT-GAT/MDC"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="137" width="93" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="137" width="17" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="149" width="206" height="13"/>
+				<textElement/>
+				<text><![CDATA[Subgerente de Fiscalización Tributaria]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="153" y="136" width="267" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Juan Yataco Loyola"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="167" width="93" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASUNTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="167" width="17" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="167" width="206" height="13"/>
+				<textElement/>
+				<text><![CDATA[Inspección Ocular]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="359" y="167" width="39" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(          )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="180" width="39" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(          )"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="153" y="180" width="206" height="13"/>
+				<textElement/>
+				<text><![CDATA[Verificación del Uso]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="359" y="206" width="39" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(          )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="193" width="39" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(          )"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="153" y="206" width="206" height="13"/>
+				<textElement/>
+				<text><![CDATA[Inafectación Pago Impuesto Predial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="193" width="206" height="13"/>
+				<textElement/>
+				<text><![CDATA[Verificación del Domicilio Fiscal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="224" width="93" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[REF.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="224" width="17" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="255" width="93" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="255" width="17" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="153" y="255" width="245" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Carabayllo, "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="24" y="291" width="501" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="23" y="303" width="502" height="47"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Cumplo con informar a Usted, que el día  ......................... se ha realizado la inspección ocular en el predio ubicado en (Av.)(Calle)(Pasaj) .................................................................................................................................. .............................................................................................................. "
++" Código Catastral N° .............................  Código de Contribuyente N°  .......................... Propietario ........................................................................................"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="24" y="352" width="186" height="13"/>
+				<textElement/>
+				<text><![CDATA[Habiéndose  constatado lo siguiente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="24" y="370" width="186" height="13"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Descripción del predio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="24" y="393" width="129" height="13"/>
+				<textElement/>
+				<text><![CDATA[Predio Independiente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="24" y="408" width="129" height="13"/>
+				<textElement/>
+				<text><![CDATA[Predio de Edificio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="24" y="429" width="129" height="13"/>
+				<textElement/>
+				<text><![CDATA[Terreno sin Construir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="24" y="444" width="129" height="13"/>
+				<textElement/>
+				<text><![CDATA[En proceso de Construcción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="299" y="393" width="91" height="13"/>
+				<textElement/>
+				<text><![CDATA[Número de Pisos: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="299" y="408" width="136" height="13"/>
+				<textElement/>
+				<text><![CDATA[Número de Pisos del Edificio: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="22" y="485" width="186" height="13"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Uso del predio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="24" y="502" width="91" height="13"/>
+				<textElement/>
+				<text><![CDATA[Casa Habitación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="206" y="502" width="51" height="13"/>
+				<textElement/>
+				<text><![CDATA[Comercio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="339" y="502" width="22" height="13"/>
+				<textElement/>
+				<text><![CDATA[Otro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="22" y="525" width="186" height="13"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Ocupado por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="22" y="545" width="62" height="13"/>
+				<textElement/>
+				<text><![CDATA[Propietario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="22" y="560" width="62" height="13"/>
+				<textElement/>
+				<text><![CDATA[Inquilino]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="22" y="575" width="93" height="13"/>
+				<textElement/>
+				<text><![CDATA[Número de Licencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="24" y="685" width="77" height="13"/>
+				<textElement/>
+				<text><![CDATA[Atentamente,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="318" y="713" width="121" height="13"/>
+				<textElement/>
+				<text><![CDATA[Firma del Fiscalizador]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="318" y="726" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["DNI: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="318" y="739" width="132" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["APELLIDOS Y NOMBRES:"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="314" y="707" width="201" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="299" y="429" width="129" height="13"/>
+				<textElement/>
+				<text><![CDATA[En Proceso de Demolición]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="299" y="444" width="26" height="13"/>
+				<textElement/>
+				<text><![CDATA[Otro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="299" y="459" width="91" height="13"/>
+				<textElement/>
+				<text><![CDATA[Predio Terminado]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="163" y="393" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="163" y="408" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="163" y="429" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="163" y="444" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="393" y="393" width="107" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[".................................. "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="435" y="408" width="65" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["................. "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="459" y="429" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="325" y="444" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="356" y="444" width="144" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["................................................."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="459" y="459" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="115" y="502" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="263" y="502" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="365" y="502" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="398" y="502" width="102" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[".................................."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="88" y="545" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="88" y="560" width="30" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["(       )"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="123" y="560" width="109" height="13"/>
+				<textElement/>
+				<text><![CDATA[Nombre o Razón Social]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="123" y="545" width="402" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["............................................................................................................................................"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="232" y="560" width="293" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["....................................................................................................."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="118" y="575" width="95" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[".............................."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="245" y="575" width="132" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["........................................."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="218" y="575" width="25" height="13"/>
+				<textElement/>
+				<text><![CDATA[Giro]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="404" y="575" width="119" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["........................................."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="377" y="575" width="25" height="13"/>
+				<textElement/>
+				<text><![CDATA[Área]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="24" y="612" width="499" height="71"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="22" y="595" width="100" height="13"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Observaciones:]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

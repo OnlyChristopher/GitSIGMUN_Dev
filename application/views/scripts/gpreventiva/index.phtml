@@ -1,0 +1,102 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script>
+var mod = '<?php echo $this->mod; ?>';
+</script>
+<style type="text/css">
+.invisible {display: none; }
+</style>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Gpreventiva.js"></script>
+<input type="hidden" name="txtmod" id="txtmod"/>
+<form id="frmContri">
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div id="contenidoForm" class="contentBox">
+		<fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+                <tr>
+                    <td><b>N° Prev.:</b></td>                    
+                    <td><b>Año:</b></td>                    
+                    <td><b>Tipo:</b></td>
+                    <td><b>Infraccion:</b></td>
+                    <td><b>Concepto :</b></td>
+                    <td><b>Supconcepto:</b></td>
+					<td><b>F. Inicial:</b></td>
+					<td><b>F. Fin:</b></td>
+                    <td>
+					<input type="hidden" id="hdnEst" name="hdnEst">
+					<input type="hidden" id="hdnFlag" name="hdnFlag">					</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="txtNro" name="txtNro" class="caja" maxlength="5" style="width:80px" /></td>                    
+                    <td><select id="cmbAnio" name="cmbAnio" class="combo" style="width:85px" ><?php echo $this->cb_anno;?> </select></td>                    
+                    <td><select id="cmbTipo" name="cmbTipo" class="combo" style="width:95px">
+							<option value="">-Seleccione-</option>
+							<option value="A">Acta</option>
+							<option value="N">Notificacion</option>
+						</select></td>   
+                    <td><select id="cmbInfraccion" name="cmbInfraccion" class="combo" style="width:250px"><?php echo $this->cb_area;?></select></td>
+                    <td><select id="cmbConcepto" name="cmbConcepto" class="combo" style="width:250px"><option value="">-seleccione-</option></select></td>
+                    <td><select id="cmbSubConcepto" name="cmbSubConcepto" class="combo" style="width:250px"><option value="">-seleccione-</option></select></td>
+					<td><input type="text" id="txtFini" name="txtFini" class="caja" style="width:80px" /></td>
+					<td><input type="text" id="txtFfin" name="txtFfin" class="caja" style="width:80px" /></td>
+                    <td><input type="button" id="btnBuscPreventiva" value="Buscar" /></td>
+                </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+	
+
+	    <br/>
+	    <div id="gridGpreventiva"></div>
+	    <br/>
+
+		<div class="divButtons">
+		    <table class="tableContent" style="width:100%">
+            <tr>
+				<td style="border:1px #7EADD9 solid; width:80px; text-align:center; padding:6px; cursor:pointer" onclick="selectEst('');">
+				<label style="cursor:pointer">
+				<b>Ver Todos</b>
+				</label>
+				</td>
+				<td style="width:10px">&nbsp;</td>
+            	<td style="background-color:#D9FFD9; border:1px #7EADD9 solid; width:80px; text-align:center; padding:6px; cursor:pointer" onclick="selectEst('E');">
+				<label style="cursor:pointer">
+				<b>Aprobados</b>
+				</label>
+				</td>
+				<td style="width:10px">&nbsp;</td>
+				<td style="background-color:#FFD2D2; border:1px #7EADD9 solid; width:80px; text-align:center; padding:6px; cursor:pointer" onclick="selectEst('V');">
+				<label style="cursor:pointer">
+				<b>Subsanados</b>
+				</label>
+				</td>
+				<td>
+				&nbsp;&nbsp;&nbsp;<input type="button" id="btnCargo" name="btnCargo" value="Cargo de Recepcion" />
+				</td>
+                <td align="right" valign="top">
+                	
+                </td>
+            </tr>            
+		    </table>
+		</div>
+		
+		
+		
+		
+	    <!--<div class="divButtons">
+		    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		    <tr>
+		    <td style="padding-left:5px">
+		    <input type="button" id="btnNewContri" value="Nuevo" />
+		    			
+		    </td>
+		    <td></td>
+		    </table>
+		</div>-->
+    </div>
+</div>
+</form>

@@ -1,0 +1,82 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<style>
+	.txtdates{
+		background-image:url(img/date.png);
+		background-repeat:no-repeat;
+		background-position:right 1px;
+		/*font-weight:bold;
+		font-family: Tahoma,Verdana,Segoe,sans-serif;*/
+	}
+		
+	.txtnumbers{
+		background-image:url(img/numberinput.png);
+		background-repeat:no-repeat;
+		background-position:2px;
+		font-weight:bold;
+		padding-left:20px !important;
+	}	
+</style>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Fiscalizacion_Index.js"></script>
+<!--<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">-->
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px"><b>Criterios:</b></legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+					<table class="tableContent">
+					<tr>
+						<td colspan="2"><span>Tipos de Búsqueda:</span></td>
+					<tr>
+					<tr>
+						<td colspan="2">
+							<select id="cmbTipos" class="combo" style="width:270px">
+								<option value="4">Nro. Documento</option>
+								<option value="5">Nombre o Raz&oacute;n Social</option>
+								<option value="6">C&oacute;digo</option>
+								<option value="1">Todos</option>
+							</select>
+						</td>
+					<tr>
+					</table>
+			  </td>
+			  <td valign="bottom" style="padding-left:50px">
+			  		<table class="tableContent">
+						<tr>
+							<td colspan="2"><span>Datos:</span></td>
+						<tr>
+						<tr>
+							<td colspan="2"><input type="text" id="txtDatos" name="txtDatos" class="caja" style="width:360px; text-transform:uppercase" maxlength="100" /></td>
+						<tr>
+				  	</table>
+			  </td>
+			  <td valign="bottom" style="padding-left:50px">
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnBuscar">Buscar</button>
+			  </td>
+              </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="divGridRequerimiento"></div>
+	    <br/>
+	    <div class="divButtons">
+		    <table class="tableContent">
+		    <tr>
+			<td align="left" style="padding-right:43px;padding-top:6px;padding-bottom:4px;">
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnNuevoRequerimiento">Nuevo</button>
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnEditaRequerimiento">Editar</button>
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnVerActas">Ver Actas</button>
+			</td>
+		    <td>
+
+			</td>
+			<td style="padding-left:40px"></td>
+		    </table>
+		</div>
+    <!--</div>
+</div>-->

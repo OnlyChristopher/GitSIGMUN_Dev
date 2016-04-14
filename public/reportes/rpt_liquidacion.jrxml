@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_liquidacion" language="groovy" pageWidth="595" pageHeight="300" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="codigo" class="java.lang.String"/>
+	<parameter name="num_docu" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[exec Coactivo.sp_MCostas @msquery=13,@codigo=$P{codigo},@num_docu=$P{num_docu}]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombres" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="num_docu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Dir_Fisca" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deuda" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gastos" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="costas" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LETRA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="costas_1" class="java.math.BigDecimal" resetType="Group" resetGroup="liquidacion" calculation="Sum">
+		<variableExpression><![CDATA[$F{costas}]]></variableExpression>
+	</variable>
+	<variable name="costas_2" class="java.math.BigDecimal" resetType="Group" resetGroup="liquidacion" calculation="Sum">
+		<variableExpression><![CDATA[$F{costas}]]></variableExpression>
+	</variable>
+	<variable name="deuda_1" class="java.math.BigDecimal" resetType="Group" resetGroup="liquidacion" calculation="Sum">
+		<variableExpression><![CDATA[$F{deuda}]]></variableExpression>
+	</variable>
+	<group name="liquidacion">
+		<groupExpression><![CDATA[$V{PAGE_NUMBER}]]></groupExpression>
+		<groupHeader>
+			<band height="220">
+				<staticText>
+					<reportElement x="0" y="2" width="555" height="14"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[LIQUIDACION DEUDA DE COBRANZA COACTIVA]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="80" y="56" width="476" height="11"/>
+					<textElement>
+						<font size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{nombres}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="81" y="37" width="182" height="11"/>
+					<textElement>
+						<font size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{codigo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="10" y="37" width="71" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[CODIGO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="56" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[CONTRIBUYENTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="384" y="37" width="54" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[EXPEDIENTE]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="437" y="37" width="118" height="11"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{num_docu}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="210" y="116" width="71" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[DEUDA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="210" y="135" width="71" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[GASTOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="210" y="154" width="71" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[COSTAS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="210" y="172" width="71" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="282" y="116" width="60" height="11"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{deuda}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="282" y="135" width="60" height="11"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{gastos}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="282" y="154" width="60" height="11"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{costas}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="280" y="154" width="3" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="280" y="135" width="3" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="280" y="116" width="3" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="280" y="172" width="3" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="283" y="174" width="60" height="11"/>
+					<textElement textAlignment="Right">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{deuda}+$F{gastos}+$F{costas}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="293" y="169" width="49" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="343" y="116" width="12" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="11" y="76" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[DIRECCION]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="81" y="76" width="428" height="23"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[":" +$F{Dir_Fisca}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="29" y="201" width="498" height="11"/>
+					<textElement textAlignment="Center">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{LETRA}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="46" y="15" width="159" height="13">
+					<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Sub-Gerencia de Ejecutoria Coactiva]]></text>
+			</staticText>
+			<image>
+				<reportElement x="3" y="1" width="38" height="39"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.60:8080/img/logo_muni.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="46" y="3" width="159" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DE INDEPENDENCIA]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

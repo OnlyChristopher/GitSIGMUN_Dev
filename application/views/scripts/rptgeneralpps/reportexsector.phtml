@@ -1,0 +1,38 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<script>
+Ext.onReady(function(){
+    Ext.QuickTips.init();
+    
+	$("input[type='button']").button();	
+	
+});
+
+function exportarPredioDetalleSector(){
+	
+	var showResult = function(btn){
+		if(btn=='yes'){
+			
+			
+			data ="?anio="+$('#txtAnio').val()+"&id_sector="+$('#txtSector').val()+"&flag="+$('#txtFlag').val();					
+			window.open(urljs+"rptgeneralpps/exportadetprepps"+data);
+		}
+	};
+	confirmMessage('Exportar','Desea exportar los datos?',showResult);	
+}
+
+</script>
+<div>	
+	<input type="hidden" id="txtAnio" name="txtAnio"/>
+	<input type="hidden" id="txtSector" name="txtUso"/>
+	<input type="hidden" id="txtFlag" name="txtFlag"/>
+	
+
+	<table class="tableContent">		
+		<tr>            
+			<td><input name="btnExpDetPPSExcel" id="btnExpDetPPSExcel" type="button" value="Exportar a Excel" /></td>
+		</tr>            
+	</table>
+</div>
+
+  

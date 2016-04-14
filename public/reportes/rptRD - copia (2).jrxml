@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptRD" language="groovy" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10">
+	<parameter name="id_valor" class="java.lang.String"/>
+	<parameter name="num_val" class="java.lang.String"/>
+	<parameter name="ano_val" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[exec Rentas.sp_ImprimeRD @buscar=2,@id_valor=$P{id_valor},@num_val=$P{num_val},@ano_val=$P{ano_val}]]>
+	</queryString>
+	<field name="id_valor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="num_val" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ano_val" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numerRD" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_val" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecvaln" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="num_doc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dirfiscal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="baselegal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tuo1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tuo2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="moratorio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_insol" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mora" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imp_total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solidos" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="barrido" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="parques" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="serenazgo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_pred" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub_anexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="base_recoleccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="base_barrido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="base_parques" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="base_serenazgo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="uso_predio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="condicion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="area_terreno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cond_bc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cond_serenazgo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="area_contruida" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cond_pj" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="frontis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RRS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BC" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PJ" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="distrito" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fech_proyectado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="solidos_1" class="java.math.BigDecimal" resetType="Group" resetGroup="RD" calculation="Sum">
+		<variableExpression><![CDATA[$F{solidos}]]></variableExpression>
+	</variable>
+	<variable name="barrido_1" class="java.math.BigDecimal" resetType="Group" resetGroup="RD" calculation="Sum">
+		<variableExpression><![CDATA[$F{barrido}]]></variableExpression>
+	</variable>
+	<variable name="parques_1" class="java.math.BigDecimal" resetType="Group" resetGroup="RD" calculation="Sum">
+		<variableExpression><![CDATA[$F{parques}]]></variableExpression>
+	</variable>
+	<variable name="serenazgo_1" class="java.math.BigDecimal" resetType="Group" resetGroup="RD" calculation="Sum">
+		<variableExpression><![CDATA[$F{serenazgo}]]></variableExpression>
+	</variable>
+	<variable name="imp_insol_1" class="java.math.BigDecimal" resetType="Group" resetGroup="RD" calculation="Sum">
+		<variableExpression><![CDATA[$F{imp_insol}]]></variableExpression>
+	</variable>
+	<variable name="mora_1" class="java.math.BigDecimal" resetType="Group" resetGroup="RD" calculation="Sum">
+		<variableExpression><![CDATA[$F{mora}]]></variableExpression>
+	</variable>
+	<variable name="imp_total_1" class="java.math.BigDecimal" resetType="Group" resetGroup="RD" calculation="Sum">
+		<variableExpression><![CDATA[$F{imp_total}]]></variableExpression>
+	</variable>
+	<group name="RD">
+		<groupExpression><![CDATA[$F{id_valor}+$F{num_val}+$F{ano_val}]]></groupExpression>
+		<groupHeader>
+			<band height="304">
+				<staticText>
+					<reportElement x="1" y="30" width="159" height="13">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
+					<textElement>
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Datos del Contribuyente]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="45" width="57" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Codigo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="57" width="21" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Zona]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="69" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Domicilio Fiscal]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="81" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Direcc. del Predio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="187" y="45" width="32" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Nombre]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="346" y="57" width="69" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Codigo de Predio]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="94" width="555" height="2"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="1" y="98" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Uso Predio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="110" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Area Terreno]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="122" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Cond. BC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="134" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Cond. Serenazgo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="243" y="98" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Condicion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="243" y="110" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Area Construida]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="243" y="122" width="70" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Cond. P.J.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="432" y="98" width="34" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Anexo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="432" y="110" width="34" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Frontis]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="146" width="555" height="2"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="1" y="149" width="120" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[MOTIVO DE LA OBSERVACION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="161" width="120" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[BASE LEGAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="207" width="120" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Interes Moratorio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="239" width="120" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Base Imponible]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="253" width="208" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Costo total del Servicio de Recolección de Residuos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="265" width="208" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Costo total del Servicio de Barrido de Calles]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="277" width="208" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Costo total del Servicio de Parques y Jardines]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="290" width="208" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Costo total del Servicio de Serenazgo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="325" y="276" width="43" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Zonas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="325" y="290" width="20" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[RRS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="382" y="290" width="20" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[BC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="498" y="290" width="20" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[SER]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="437" y="290" width="20" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[PJ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="-384" y="176" width="24" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[AÑO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="-75" y="175" width="38" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[INSOLUTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="-358" y="185" width="44" height="11"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[IMPONIBLE]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="57" y="45" width="89" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{codigo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="218" y="45" width="350" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="70" y="69" width="498" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{dirfiscal}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="414" y="57" width="89" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{cod_pred}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="4" width="568" height="20"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{numerRD}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="70" y="98" width="89" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{uso_predio}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="70" y="110" width="89" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{area_terreno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="70" y="122" width="89" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{cond_bc}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="70" y="134" width="89" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{cond_serenazgo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="312" y="98" width="89" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{condicion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="312" y="110" width="89" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{area_contruida}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="312" y="122" width="144" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{cond_pj}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="465" y="98" width="103" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{anexo} + "-" + $F{sub_anexo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="465" y="110" width="103" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{frontis}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="220" y="253" width="54" height="11"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{base_recoleccion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="220" y="265" width="54" height="11"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{base_barrido}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="220" y="277" width="54" height="11"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{base_parques}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="220" y="290" width="54" height="11"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{base_serenazgo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="184" y="134" width="223" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["- "+ $F{uso_predio}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="120" y="149" width="451" height="11"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{observacion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="120" y="161" width="451" height="11"/>
+					<textElement>
+						<font size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{baselegal}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="120" y="207" width="455" height="11"/>
+					<textElement>
+						<font size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{moratorio}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="181" width="402" height="11"/>
+					<textElement>
+						<font size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{tuo1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="191" width="402" height="11"/>
+					<textElement>
+						<font size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{tuo2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="70" y="81" width="498" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{direccion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="344" y="290" width="24" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{RRS}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="401" y="290" width="24" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{BC}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="456" y="290" width="24" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{PJ}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="517" y="290" width="24" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{SER}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="219" width="574" height="18"/>
+					<textElement>
+						<font size="7" isBold="false"/>
+					</textElement>
+					<text><![CDATA[0.05% TIM Diario, 1.5% TIM Mensual (07/02/2013 - 29/02/2010) RS. Nº 032-2003/SUNAT
+0.04% TIM Diario, 1,2% TIM Mensual desde 01/03/2010 RS. RS. Nº 053-2010/SUNAT/Ordenanza Nº 156-MDI]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="58" y="57" width="31" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Distrito]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="88" y="57" width="89" height="11"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{distrito}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="208" y="253" width="13" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[S/.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="208" y="265" width="13" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[S/.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="208" y="277" width="13" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[S/.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="208" y="290" width="13" height="11"/>
+					<textElement textAlignment="Left">
+						<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[S/.]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="179">
+				<staticText>
+					<reportElement x="10" y="20" width="68" height="12"/>
+					<textElement>
+						<font size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NOTA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="72" width="546" height="29"/>
+					<textElement>
+						<font size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Transcurrido 20 días habiles de notificada la presente, de no cancelar su deuda, la Resolución de Determinación, valor exigible, pasara a Ejecutoria
+Coactiva para su cobranza. Los Recursos Impugnativo podran ser presentados hasta 20 días habiles de recibida la presente. Todo pago es en la
+Tesoreria de la Municipalidad pudiendo hacer uso de las Tarjetas VISA MATRCARD, AMER XPRESS, RIPLEY, SAGA FALABELLA, METRO, DINNERS CLUB.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="37" width="10" height="12"/>
+					<textElement textAlignment="Right">
+						<font size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="58" width="379" height="13"/>
+					<textElement>
+						<font size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Si a la recepción de esta, Ud. ya realizó el pago de tales conceptos, le rogamos no prestar atención a la presente.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="59" width="10" height="12"/>
+					<textElement textAlignment="Right">
+						<font size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="72" width="10" height="12"/>
+					<textElement textAlignment="Right">
+						<font size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="101" width="10" height="12"/>
+					<textElement textAlignment="Right">
+						<font size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="101" width="546" height="29"/>
+					<textElement>
+						<font size="7" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Lugar de Pago: Sub Gerencia de Tesorería Ubicada en la Av. Túpac Amaru Km 4.5 Independencia Horario de Atención: Lunes Viernes de
+8:00 am a 5:00 pm y sábados de 9:00 am a 1:00 pm. -Para cualquier consulta comuniquese al telefono 7124118. -Usted podra cancelar la presente con tarjetas : VISA, MASTERCARD, AMERICAN XPRES, RIPLEY, SAGA, SAGA FALABELLA, DINER CLUB.]]></text>
+				</staticText>
+				<image>
+					<reportElement x="407" y="3" width="161" height="64"/>
+					<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.19:8080/img/recaudacion.png"]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement x="22" y="37" width="379" height="20"/>
+					<textElement>
+						<font size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["La deuda fue calculada al "+ $F{fech_proyectado}+" a partiir de esa fecha la deuda se actualizara con un interes diario de 0.04% del TIM Vigente al dia de cancelacion"]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="3" width="159" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DE INDEPENDENCIA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="6" y="3" width="38" height="39"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.19:8080/img/logo_muni.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="50" y="28" width="159" height="13">
+					<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Sub-Gerencia de Recaudación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="15" width="159" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[GERENCIA DE RENTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="487" y="7" width="28" height="11"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="514" y="7" width="57" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[": "+ $F{fec_val}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="60">
+			<subreport>
+				<reportElement x="1" y="0" width="574" height="60"/>
+				<subreportParameter name="id_valor">
+					<subreportParameterExpression><![CDATA[$P{id_valor}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="num_val">
+					<subreportParameterExpression><![CDATA[$P{num_val}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ano_val">
+					<subreportParameterExpression><![CDATA[$P{ano_val}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "rptDetalleRD.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

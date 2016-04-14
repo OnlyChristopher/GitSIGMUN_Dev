@@ -1,0 +1,31 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Semanal.js"></script>
+
+<style>
+	a:link {
+		font-size: 18px; font-style: normal;color:#0000FF;
+	}    /* unvisited link */
+	a:visited {
+		color:#0000FF;
+	} /* visited link */
+	a:hover {
+		color:#DF0101;
+	}   /* mouse over link */
+	a:active {
+		font-size: 18px; font-style: normal;color:#0000FF;
+	}  /* selected link */
+</style>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td align="left"><a id="lnkopcion1" href="#" >1. Reporte de Saldos</a></td>
+
+	</tr>
+	<tr>
+		<td align="left"><a id="lnkopcion2" href="#" onclick="javascript:abrirventana(2);">2. Reporte de Ingresos</a>
+		</td>
+	</tr>	
+	<tr>
+		<td align="left"><a id="lnkopcion3" href="#" onclick="javascript:abrirventana(3);">3. Situacion Fraccionamientos</a>
+		</td>
+	</tr>																																
+</table>

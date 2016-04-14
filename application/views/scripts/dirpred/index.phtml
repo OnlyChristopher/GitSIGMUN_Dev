@@ -1,0 +1,53 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_buscpredio.js"></script>
+
+<form id="frmbuscpredio">
+
+  <div class="contentForm">
+	<!--t_contri:--><input type="hidden" name="tipocontri" id="tipocontri" size="5" readonly class="cajaoff"/>
+	<table class="tableContent" border="0" width="750px">
+		
+		<tr>
+			<td><span>Listado de Anos:</span></td>
+			<td colspan=4>
+				<select id="cmbAnno" name="cmbAnno" class="caja" style="width:100px;"><?php echo $this->Listado_annos;?></select>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%"><input type="radio" name="cbxopcion" id="cbxTipoVia" value="V" checked /><span> Tipo Via: </span></td>
+			<td>
+				<select id="cmbvias" name="cmbvias" class="caja" style="width:150px;"><option>[Seleccione]</option></select>
+			</td>
+			<td width="20%"><span> Nombre Via:</span></td>
+			<td width="20%"><input type="text" name="txtnomvia" id="txtnomvia" class="caja" /></td>
+			<td rowspan="3" ><input type="button" name="btnBuscaDireccion" id="btnBuscaDireccion" value="Buscar" /></td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="cbxopcion" id="cbxTipoDeno" value="D" /><span> Tipo Deno. Urbana: </span></td>
+			<td>
+				<select id="cmbdeno" name="cmbdeno" class="caja" style="width:150px;"> <option>[Seleccione]</option></select>
+			</td>
+			<td><span>Nombre Deno. Urbana: </span></td>
+			<td> <input type="text" name="txtnomden" id="txtnomden" class="caja" /></td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="cbxopcion" id="cbxTipoCalle" value="N" /> <span>Direccion Completa: <span></td>
+			<td colspan="3"> <input type="text" name="txtnomcalle" id="txtnomcalle" class="caja" size="60px"/></td>
+		</tr>
+	</table>
+  </div>
+  
+	<div style="padding:5px; background-color:#5296C9; font-weight:bold; color:#FFFFFF"><?php echo $this->title;?></div>  
+	    <div id="gridBuscPredio"></div>
+	    <br/>
+	    <div class="divButtons">
+		    <table class='tableContent'>
+		    <tr>
+            	<td colspan="6" align="center"><input name="btnSalir" id='btnSalir' type="button" value="Salir" /></td>               
+           </tr>
+		    </table>
+		</div>
+
+
+</form>
+

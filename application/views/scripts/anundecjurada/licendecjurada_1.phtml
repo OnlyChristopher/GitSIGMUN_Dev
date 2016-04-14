@@ -1,0 +1,200 @@
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">&nbsp;I. Tipo de Autorizaci&oacute;n Municipal o Tr&aacute;mite</legend>
+    <div class="contentForm">
+        <table class="tableContent">
+          <tr>
+          <td><span id="lblTipAuto">Tipo:</span></td>
+          <td><select name="cmbTipLicencia" id="cmbTipLicencia" class="combo">
+            
+          </select></td>
+         
+          
+          <td><span id="lblFecPresenta">Fecha Presentaci&oacute;n:</span></td>
+          <td><input name="txtFechaPre" id="txtFechaPre" type="text" class="caja" size="12" maxlength="100" /></td>
+          </tr>
+          <tr>
+           <td><span id="lblTipAuto">Concepto:</span></td>
+          <td colspan="2"><select name="cmbCptoLicencia" id="cmbCptoLicencia" style="width:500px;" class="combo"><option>[Seleccione]</option>
+            
+          </select></td>
+          </tr>
+        </table>
+    </div>
+</fieldset>
+<br/>
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">&nbsp;Tipo de Persona</legend>
+    <div class="contentForm">
+        <table class="tableContent">
+          <tr>
+          <td><span id="lblTipAuto"  >Persona Natural:</span></td>
+          <td><input type="radio" name="persona" id="personaN" value="N" checked="checked" /></td>
+          <td><span id="lblTipAuto" >Persona J&uacute;ridica:</span></td>
+          <td><input type="radio" name="persona" id="personaJ" value="J"  /></td>      
+          </tr>
+        </table>
+    </div>
+</fieldset>
+<br />
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">&nbsp;II. Identificaci&oacute;n del Solicitante</legend>
+    <div class="contentForm">
+        <table class="tableContent">
+          <tr>
+          <td style="visibility:hidden; display:none;"><span id="lblTipAuto" >C&oacute;digo:</span></td>
+          <td colspan="2"><span id="lblFecPresenta">Apellidos y Nombres / Raz&oacute;n Social:</span></td>
+          <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="visibility:hidden;display:none;"><input name="txtCodPer" id="txtCodPer" type="text" class="cajaoff" size="10" maxlength="100" readonly /></td>
+            <td colspan="3">
+            <input name="txtNomPer" id="txtNomPer" type="text" class="cajaoff" size="60" maxlength="100" readonly />
+            &nbsp; <input type="button" id="btnBusPerSol" value="Buscar" />
+            </td>
+          </tr>
+         
+          <tr>
+          <td>
+           
+            <table class="tableContent">
+            <tr>
+            <td><span id="lblTipAuto">Nro DNI:</span></td>
+            </tr> 
+             <tr>
+            <td><span id="lblTipAuto"><input name="txtNroDoc" id="txtNroDoc" type="text" class="caja" size="20" maxlength="10" /></span></td>
+            </tr> 
+            </table> 
+         
+           
+          </td>
+          <td>
+           
+            <table class="tableContent">
+            <tr>
+            <td><span id="lblTipAuto">Nro RUC:</span></td>
+            </tr> 
+             <tr>
+            <td><span id="lblTipAuto"><input name="txtNroRuc" id="txtNroRuc" type="text" class="caja" size="20" maxlength="10" /></span></td>
+            </tr> 
+            </table> 
+         
+           
+          </td>
+          <td >
+            <fieldset class="ui-widget ui-widget-content">
+            <legend style="margin-left:5px">&nbsp;Regimen Tributario</legend>
+            <div class="contentForm">
+            <table class="tableContent">
+            <tr>
+            <td><span id="lblTipAuto">RUS</span></td>
+            <td><input type="checkbox" id="RU"/></td>
+            <td><span id="lblTipAuto">R.General</span></td>
+            <td><input type="checkbox" id="RU"/></td>
+            <td><span id="lblTipAuto">RES</span></td>
+            <td><input type="checkbox" id="RU"/></td>
+            </tr> 
+            </table> 
+            </div>
+            </fieldset>
+          </td>
+          
+          </tr>
+          
+         
+           <tr>
+            <td style="visibility:hidden; display:none;"><span id="lblTipAuto"  >Tipo de Doc.:</span></td>
+            
+            <td><span id="lblTipAuto">Tel&eacute;fono:</span></td>
+            <td><span id="lblTipAuto">Correo Electr&eacute;nico:</span></td>
+          </tr>
+          <tr>
+            <td style="visibility:hidden; display:none;"><input name="txtTipDoc" id="txtTipDoc" type="text" class="cajaoff" size="10" maxlength="100" readonly /></td>
+            
+            <td><input name="txtNroTe" id="txtNroTe" type="text" class="cajaoff" size="20" maxlength="100" /></td>
+            
+            <td><input name="txtCorreo" type="email" id="txtCorreo"  class="cajaoff" size="30" maxlength="100" /></td>
+          </tr>
+           <tr>
+            <td colspan="4"><span id="lblTipAuto">Domicilio Fiscal:</span></td>
+          </tr>
+          <tr>
+            <td colspan="4"><input name="txtDirPer" id="txtDirPer" type="text" class="cajaoff" maxlength="100" readonly style="width:100%" /></td>
+          </tr>
+        </table>
+    </div>
+</fieldset>
+<br/>
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">&nbsp;III. Representante Legal</legend>
+    <div class="contentForm">
+        <table class="tableContent">
+          <tr>
+          <td colspan="2"><span id="lblTipAuto">Apellidos y Nombres / Raz&oacute;n Social:</span></td>
+         <!-- <td><label><input id="chkCarSol" type="checkbox"> <span id="lblCarSol">Carga Solicitante</span></label></td>-->
+          </tr>
+          <tr>
+            <td colspan="3"><input name="txtApeNom" id="txtApeNom" type="text" class="cajaoff" maxlength="100" readonly="readonly" style="width:100%" /></td>
+          </tr>
+          <tr>
+            <td><span id="lblTipPredio">Doc. de Identidad:</span></td>
+            <td><span id="lblNro">Nro. Documento:</span></td>
+            <td><span id="lblNro">Tel&eacute;fono:</span></td>
+          </tr>
+          <tr>
+          <td><select disabled="disabled"  name="cmbTipPredio2" id="cmbTipPredio2" class="combo">
+            <option>[Seleccione]</option>
+          </select></td>
+          <td><input name="txtNroDocRe" id="txtNroDocRe" type="text" readonly="readonly" class="cajaoff" size="20" maxlength="11"/></td>
+          <td><input name="txtPhone" id="txtPhone" readonly="readonly" type="text" class="cajaoff" size="20" maxlength="9" /></td>
+          </tr>
+          <tr>
+          <td colspan="3"><span id="lblTipPredio">Partida Regitral (SUNARP):</span></td>
+                
+          </tr>
+          <tr>
+          <td colspan="3"><input name="txtSUNARP" readonly="readonly" id="txtSUNARP" type="text" class="cajaoff" maxlength="50" />&nbsp;<input hidden name="txtpredio" id="txtpredio" type="text" class="caja" maxlength="50" /></td>
+                
+          </tr>
+        </table>
+    </div>
+</fieldset>
+<br/>
+
+
+    
+
+
+<!--
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">&nbsp;IV. Datos del Predio</legend>
+    <div class="contentForm">
+        <table class="tableContent">
+          <tr>
+          <td><span id="lblTipAuto">Direcci&oacute;n del Predio:</span></td>
+         
+          <td><label><input id="chkCarSol" type="checkbox" onclick="document.getElementById('txtDirePre').disabled=this.checked;document.getElementById('txtUsoPre').disabled=this.checked;document.getElementById('txtCodPre').disabled=this.checked;document.getElementById('btnPredio').disabled=this.checked"> 
+          Sin Predio</span></label></td>
+          <!--<td><span id="lblNro">Tipo de Inscripci�n:</span></td>
+          <td><select name="cmbTipPredio3" id="cmbTipPredio3" class="combo">
+            <option>[Seleccione]</option>
+          </select></td>
+          </tr>
+          <tr>
+            <td colspan="3">
+            <input name="txtDirePre" id="txtDirePre" type="text" class="cajaoff" size="70" maxlength="100" readonly />
+            &nbsp; <input id="btnPredio" type="button" value="Predio" />
+            </td>
+          </tr>
+          <tr>
+            <td><span id="lblTipAuto">Uso de Predio:</span></td>
+            <td colspan="2"><span id="lblNro">C&oacute;digo de Predio:</span></td>
+          </tr>
+          <tr>
+            <td><input name="txtUsoPre" id="txtUsoPre" type="text" class="cajaoff" size="20" maxlength="20" readonly /></td>
+            <td colspan="2"><input name="txtCodPre" id="txtCodPre" type="text" class="cajaoff" size="15" maxlength="100" readonly /></td>
+          </tr>
+        </table>
+    </div>
+</fieldset>
+-->
+  

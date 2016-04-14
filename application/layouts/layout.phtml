@@ -1,0 +1,108 @@
+<?php echo $this->doctype();?>
+<html lang="es">
+<head>
+	<?php
+    echo $this->headMeta();
+    echo $this->headTitle();
+    
+    $ip[] = '10.0.1.60';
+    $ip[] = '127.0.0.1';	
+    $ip[] = 'localhost';
+    
+    $prot = 'http://';
+    $public = ':8080/';
+    
+    foreach($ip as $key => $value){
+        $pos = strpos($_SERVER["SERVER_NAME"], $value);
+        if($pos !== false){
+            $path = $prot.$value.$public;
+            break;
+        }
+    }
+    
+    $url = new Zend_Session_Namespace('path');
+    $url->data = $path;
+	$url->datarpt = 'http://10.0.1.60:8090/sigmunreportes/index.jsp?';
+    $publicfolder = $path;
+	
+    $login = new Zend_Session_Namespace('login');
+    
+    ?>	
+    
+    <script type='text/javascript'> 
+        var urljs = "<?php echo $url->data; ?>";
+        var urlrpt = "<?php echo $url->datarpt; ?>";
+		var cargando = '<div><img src="<?php echo $path; ?>img/loading.gif" /></div>';
+		var userjs = "<?php echo $login->user; ?>";	
+    </script>
+    
+    <script type="text/javascript" src="<?php echo $publicfolder;?>js/jquery.min.js"></script>        
+    <link type="text/css" rel="stylesheet" href="<?php echo $publicfolder;?>css/style.css">
+    
+    <link type="text/css" rel="stylesheet" href="<?php echo $publicfolder;?>js/ext/resources/css/ext-all.css" />
+    <script type="text/javascript" src="<?php echo $publicfolder;?>js/ext/ext-all.js"></script>
+    <link type="text/css" rel="stylesheet" href="<?php echo $publicfolder;?>css/extIcon.css" />
+    
+    <link rel="stylesheet" type="text/css" href="<?php echo $publicfolder;?>css/uiCustom.css"/>
+	<script type="text/javascript" src="<?php echo $publicfolder;?>js/jquery.uiCustom.js"></script>
+	
+    <script type="text/javascript" src="<?php echo $publicfolder;?>js/jquery.autoTab.js" language="javascript"></script>
+    <script type="text/javascript" src="<?php echo $publicfolder;?>js/jquery.validate.js"></script>
+    <script type="text/javascript" src="<?php echo $publicfolder;?>js/autoNumeric-1.6.2.js"></script>
+    
+    <?php
+    if($this->showRenderer)
+	{
+		?>
+		<script type="text/javascript" src="<?php echo $publicfolder;?>js/js_main.js"></script>
+		<script type="text/javascript" src="<?php echo $publicfolder;?>js/js_general.js"></script>
+		<?php
+	}
+	else 
+	{		
+		?>	    
+	    <link rel="stylesheet" type="text/css" href="<?php echo $publicfolder;?>css/loginDialog.css" />
+		<script type="text/javascript" src="<?php echo $publicfolder;?>js/loginDialog.js"></script>
+		<?php
+	}
+	?>
+ 	   
+</head>
+<body>
+	<?php
+    if($this->showRenderer)
+	{
+		?>
+	    <div id="headlayout" class="x-hide-display">
+	    <?php echo $this->render('_header.phtml'); ?>
+	    </div>
+	    <?php 
+	}
+	
+    if($this->showRenderer)
+	{
+		?>
+    	<div id="contentlayout" class="x-hide-display">    	
+    	<?php 
+		echo $this->layout()->content;
+		?>
+    	</div>
+    <?php
+	}
+	else
+	{
+		echo $this->layout()->content;
+	}
+	
+    if($this->showRenderer)
+	{
+		?>  
+	    <div id="footlayout" class="x-hide-display">
+	    <?php echo $this->render('_footer.phtml'); ?>
+	    </div>
+	    <?php 
+	}
+    ?>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantusuario_formu.js"></script>
+<form id="frm_mantenimiento">
+<input type="hidden" name="actionUsuario" id="actionUsuario">
+<input type="hidden" name="txtContraUsuario" id="txtContraUsuario" value="<?php echo $this->pass;?>" />
+<div>
+	<fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos Trabajador:</legend>
+        <div class="contentForm">
+            <table class="tableContent" width="100%">
+            <tr>
+                <td><span>Código:</span>  </td>
+                <td colspan="3"><input name="txtUsuUsuario" id="txtUsuUsuario" type="text" class="cajaoff" size="15" maxlength="100"  readonly value="<?php echo $this->cod;?>"/></td>
+              </tr>
+            <tr>
+                <td><span>Nombres:</span></td>
+                <td colspan="3"><input name="txtNomUsuario" id="txtNomUsuario" type="text" class="caja" maxlength="100" value="<?php echo $this->nombre;?>" style="width:340px"/></td>
+              </tr>
+            <tr>
+              <td><span>Apellidos:</span></td>
+              <td colspan="3"><input name="txtApeUsuario" id="txtApeUsuario" type="text" class="caja" maxlength="50" value="<?php echo $this->apellido;?>" style="width:340px"/></td>
+            </tr>
+            <tr>
+              <td><span>Área:</span></td>
+              <td colspan="3">
+              <select name="cmbArea" id="cmbArea" class="combo" style="width:340px"></select>              
+			  </td>
+              </tr>
+            <tr>
+              <td><span>Tip. Doc.:</span></td>
+              <td><select name="cmbDoc" id="cmbDoc" class="combo" style="width:150px" ></select></td>
+              <td><span>N° Doc.:</span></td>
+              <td><input name="txtdocUsuario" id="txtdocUsuario" type="text" class="caja" size="20" maxlength="100" value="<?php echo $this->documento;?>"/></td>
+              </tr>
+            </table>
+     	</div>
+    </fieldset>
+    <br />
+<fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos Usuario:</legend>
+        <div class="contentForm">
+            <table class="tableContent" width="100%">
+            <tr>
+                <td><span id="lblCodigo">Usuario:</span></td>
+              <td>
+                <input type="hidden" name="txtVlogOld" id="txtVlogOld" value="<?php echo $this->login;?>" />
+                <input type="text"  name="txtVlogUsuario" id="txtVlogUsuario" class="caja" maxlength="100" value="<?php echo $this->login;?>" style="width:250px; text-transform:none"/>
+              </td>
+                <td><input type="button" name="btnClaveUsuarios" id="btnClaveUsuarios" value="Generar Clave" /></td>
+            </tr>
+            <tr>
+              <td><span>Perfil:</span></td>
+              <td colspan="2"><select id="cmbPerfil" name="cmbPerfil" class="combo"></select></td>
+            </tr>
+            <tr>
+              <td>
+              	<span>Cargo:</span></td>
+              <td colspan="2"><input name="txtaCargo" type="text" class="caja" id="txtaCargo" value="<?php echo $this->cargo;?> " style="width:340px" /></td>
+            </tr>            
+            <tr>
+              <td colspan="2" style="padding-top:5px">
+			  <fieldset class="ui-widget ui-widget-content">
+              	<legend style="margin-left:5px"><label><input type="checkbox" id="chkUsuCaj" name="chkUsuCaj" value="1" /> Cajero:</label></legend>
+                <div class="contentForm">
+                <table class="tableContent" width="100%">
+            	  <tr>
+            	    <td width="80"><span id="lblTipPredio">N° Caja:</span></td>
+            	    <td valign="top"><select name="cmbCajero" id="cmbCajero" class="combo" ></select></td>
+          	    </tr>
+                </table>
+                </div>
+              </fieldset>
+			  </td>
+              <td style="padding-top:5px">
+			  <table class="tableContent" width="100%">
+            	<tr>
+            	    <td><span>Estado usuario:</span></td>
+          	    </tr>
+				<tr>
+            	    <td><label>Activado <input type="radio" id="rdEstado1" name="rdEstado" value="1" /></label></td>
+          	    </tr>
+				<tr>
+            	    <td><label>Desactivado <input type="radio" id="rdEstado2" name="rdEstado" value="0" /></label></td>
+          	    </tr>
+              </table>
+			  </td>
+            </tr>
+            </table>
+     	</div>
+    </fieldset>
+</div>
+</form>
+<div class="divButtons">
+	<table class="tableContent">
+	<tr>
+	<td><input type="button" name="btnGrabaUsuarios" id="btnGrabaUsuarios" value="Guardar Datos" /></td>
+	<td><input type="button" name="btnSalirUsuarios" id="btnSalirUsuarios" value="Cerrar Formulario" /></td>
+	</tr>
+	</table>
+</div>

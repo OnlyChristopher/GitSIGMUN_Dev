@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptEstCtaMaestro" language="groovy" pageWidth="595" pageHeight="842" columnWidth="585" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5">
+	<parameter name="PCODIGO" class="java.lang.String"/>
+	<parameter name="PUSUARIO" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PRESUMEN" class="java.lang.String"/>
+	<parameter name="PDETALLE" class="java.lang.String"/>
+	<parameter name="PAGRUPAR" class="java.lang.String"/>
+	<parameter name="PPERIODO" class="java.lang.String"/>
+	<parameter name="PANIOS" class="java.lang.String"/>
+	<parameter name="PCONCEPTOS" class="java.lang.String"/>
+	<parameter name="PARBITRIOS" class="java.lang.String"/>
+	<parameter name="PPREDIO" class="java.lang.String"/>
+	<parameter name="ESTADO" class="java.lang.String"/>
+	<parameter name="FECHA_PROY" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Exec Caja.sp_Imprime_EstCta_proyec @buscar=1,@codigo=$P{PCODIGO},@resumen=$P{PRESUMEN},@detalle=$P{PDETALLE},@agrupar=$P{PAGRUPAR},@annos=$P{PANIOS},@tipos=$P{PCONCEPTOS},@tiporec=$P{PARBITRIOS},@perio=$P{PPERIODO},@predio=$P{PPREDIO},@estado=$P{ESTADO},@fecha_proyectada=$P{FECHA_PROY}]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_emision" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hor_emision" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_proyeccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="codigo">
+		<groupExpression><![CDATA[$F{codigo}]]></groupExpression>
+		<groupHeader>
+			<band height="78">
+				<textField>
+					<reportElement x="49" y="1" width="87" height="16"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{codigo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="1" width="48" height="16"/>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Código]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="18" width="48" height="13"/>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nombre]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="35" width="48" height="17"/>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Domicilio]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="49" y="19" width="536" height="16"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="49" y="36" width="536" height="25"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[": "+$F{direccion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="12" y="65" width="456" height="11"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Fecha de Proyeccion de la  Deuda : "+$F{fecha_proyeccion}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="77" width="585" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="19">
+				<textField>
+					<reportElement x="1" y="6" width="390" height="11"/>
+					<textElement>
+						<font fontName="Arial" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Atendido por "+$P{PUSUARIO}+" impreso el "+$F{fec_emision}+" "+$F{hor_emision}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement x="184" y="0" width="164" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Consulta cuenta corriente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="157" height="11"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Municipalidad Distrital de Independencia]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="544" y="0" width="41" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" de "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="0" width="66" height="9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Página "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="585" height="17"/>
+				<subreportParameter name="PCODIGO">
+					<subreportParameterExpression><![CDATA[$P{PCODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PPERIODO">
+					<subreportParameterExpression><![CDATA[$P{PPERIODO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PDETALLE">
+					<subreportParameterExpression><![CDATA[$P{PDETALLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ESTADO">
+					<subreportParameterExpression><![CDATA[$P{ESTADO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PUSUARIO">
+					<subreportParameterExpression><![CDATA[$P{PUSUARIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PRESUMEN">
+					<subreportParameterExpression><![CDATA[$P{PRESUMEN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARBITRIOS">
+					<subreportParameterExpression><![CDATA[$P{PARBITRIOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PAGRUPAR">
+					<subreportParameterExpression><![CDATA[$P{PAGRUPAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PANIOS">
+					<subreportParameterExpression><![CDATA[$P{PANIOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PPREDIO">
+					<subreportParameterExpression><![CDATA[$P{PPREDIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHA_PROY">
+					<subreportParameterExpression><![CDATA[$P{FECHA_PROY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PCONCEPTOS">
+					<subreportParameterExpression><![CDATA[$P{PCONCEPTOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "rptEstCtaResumenContrib_proy.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="15">
+			<subreport>
+				<reportElement x="0" y="0" width="585" height="15"/>
+				<subreportParameter name="PCODIGO">
+					<subreportParameterExpression><![CDATA[$P{PCODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PPERIODO">
+					<subreportParameterExpression><![CDATA[$P{PPERIODO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PDETALLE">
+					<subreportParameterExpression><![CDATA[$P{PDETALLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ESTADO">
+					<subreportParameterExpression><![CDATA[$P{ESTADO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PUSUARIO">
+					<subreportParameterExpression><![CDATA[$P{PUSUARIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PRESUMEN">
+					<subreportParameterExpression><![CDATA[$P{PRESUMEN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARBITRIOS">
+					<subreportParameterExpression><![CDATA[$P{PARBITRIOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PAGRUPAR">
+					<subreportParameterExpression><![CDATA[$P{PAGRUPAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PANIOS">
+					<subreportParameterExpression><![CDATA[$P{PANIOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PPREDIO">
+					<subreportParameterExpression><![CDATA[$P{PPREDIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHA_PROY">
+					<subreportParameterExpression><![CDATA[$P{FECHA_PROY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PCONCEPTOS">
+					<subreportParameterExpression><![CDATA[$P{PCONCEPTOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "rptEstCtaDetalladoContrib_proy.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="16">
+			<subreport>
+				<reportElement x="0" y="0" width="585" height="16"/>
+				<subreportParameter name="PCODIGO">
+					<subreportParameterExpression><![CDATA[$P{PCODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PPERIODO">
+					<subreportParameterExpression><![CDATA[$P{PPERIODO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PDETALLE">
+					<subreportParameterExpression><![CDATA[$P{PDETALLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ESTADO">
+					<subreportParameterExpression><![CDATA[$P{ESTADO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PUSUARIO">
+					<subreportParameterExpression><![CDATA[$P{PUSUARIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PRESUMEN">
+					<subreportParameterExpression><![CDATA[$P{PRESUMEN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARBITRIOS">
+					<subreportParameterExpression><![CDATA[$P{PARBITRIOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PAGRUPAR">
+					<subreportParameterExpression><![CDATA[$P{PAGRUPAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PANIOS">
+					<subreportParameterExpression><![CDATA[$P{PANIOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PPREDIO">
+					<subreportParameterExpression><![CDATA[$P{PPREDIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHA_PROY">
+					<subreportParameterExpression><![CDATA[$P{FECHA_PROY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PCONCEPTOS">
+					<subreportParameterExpression><![CDATA[$P{PCONCEPTOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "rptEstCtaDetalladoPeriodosContrib_proy.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

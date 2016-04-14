@@ -1,0 +1,132 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantcontri_formu.js"></script>
+<form id="frmcontri">
+<input type="hidden" name="id_pers" id="id_pers">
+<input type="hidden" name="nestado" id="nestado">
+<input type="hidden" name="operador" id="operador">
+<input type="hidden" name="estacion" id="estacion">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos personales:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			      <td><span id="lblCodContri">Código:</span></td>
+			      <td><span id="lblNomContri">Nombres:</span></td>
+			      <td><span id="lblApePatContri">Ape. Paterno:</span></td>
+			      <td><span id="lblApeMatContri">Ape. Materno:</span></td>
+		      </tr>
+			    <tr>
+			    <td><input style="text-transform:uppercase" name="txtCodContri" id="txtCodContri" type="text" class="cajaoff" size="10" maxlength="100" readonly /></td>
+			    <td><input style="text-transform:uppercase" name="txtNomContri" id="txtNomContri" type="text" class="caja" size="20" maxlength="200" /></td>
+			    <td><input style="text-transform:uppercase" name="txtApePatContri" id="txtApePatContri" type="text" class="caja" size="20" maxlength="50" /></td>
+			    <td><input style="text-transform:uppercase" name="txtApeMatContri" id="txtApeMatContri" type="text" class="caja" size="20" maxlength="50" /></td>
+			    </tr>
+			    <tr>
+			      <td><span id="lblCodigo">Documento:</span></td>
+			      <td>
+                  <select name="cmbDocContri" id="cmbDocContri" class="combo"></select>
+                  </td>
+			      <td><span id="lblCodigo">Número:</span></td>
+			      <td><input name="txtNumDoc" id="txtNumDoc" type="text" class="caja" size="20" maxlength="11" /></td>
+		      </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Domicilio fiscal:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			      <td><span id="lblDisContri">Distrito:</span></td>
+			      <td colspan="4">
+                  <select name="cmbDisContri" id="cmbDisContri" class="combo">
+			        <option>[Seleccione]</option>
+		          </select>
+                  </td>
+		        </tr>
+			    <tr id="rowUrbOtherDis">
+			      <td><span id="lblCodigo">Tipo Urb.:</span></td>
+			      <td>
+                  <select name="cmbTipUrb" id="cmbTipUrb" class="combo">
+			        <option>[Seleccione]</option>
+			      </select>
+                  </td>
+			      <td><span id="lblDesUrb">Descripci&oacute;n Urb.:</span></td>
+			      <td colspan="2"><input style="text-transform:uppercase" name="txtDesUrb" id="txtDesUrb" type="text" class="caja" size="40" maxlength="150" /></td>
+		       </tr>
+			   <tr id="rowViaOtherDis">
+			      <td><span id="lblTipVia">Tipo Vía:</span></td>
+			      <td><select name="cmbTipVia" id="cmbTipVia" class="combo">
+			        <option>[Seleccione]</option>
+			        </select></td>
+			      <td><span id="lblDesVia">Descripción Vía:</span></td>
+			      <td colspan="2"><input style="text-transform:uppercase" name="txtDesVia" id="txtDesVia" type="text" class="caja" size="40" maxlength="150" /></td>
+		      </tr>
+			  <tr id="rowZonaDis">
+			    <td><span id="lblZona">Zona:</span></td>
+			    <td colspan="4">
+                  <select name="cmbZona" id="cmbZona" class="combo">
+			      <option>[Seleccione]</option>
+			      </select></td>
+		      </tr>
+			  <tr id="rowUrbDis">
+			      <td><span id="lblUrb">Urbanización:</span></td>
+			      <td colspan="4">
+                  <select name="cmbUrb" id="cmbUrb" class="combo">
+			        <option>[Seleccione]</option>
+			      </select>
+                  </td>
+		      </tr>
+			  <tr id="rowViaDis">
+			      <td><span id="lblVia">Vía:</span></td>
+			      <td colspan="4">
+                  <select name="cmbVia" id="cmbVia" class="combo">
+			        <option>[Seleccione]</option>
+			      </select>
+                  </td>
+		      </tr>
+			    <tr>
+			      <td colspan="5"><span id="lblRef">Referencia:</span></td>
+		      </tr>
+			    <tr>
+			      <td colspan="5">
+                  <input name="txtRef" type="text" class="caja" id="txtRef" maxlength="240" style="width:100%;text-transform:uppercase" />
+                  </td>
+		      </tr>
+			    <tr>
+			      <td><span id="lblMz">Mz:</span></td>
+			      <td><span id="lblLt">Lote:</span></td>
+			      <td><span id="lblSublt">Sub Lote:</span></td>
+			      <td><span id="lblNum">Número:</span></td>
+			      <td><span id="lblDpto">Dpto:</span></td>
+		      </tr>
+			    <tr>
+			    <td><input style="text-transform:uppercase" name="txtMz" id="txtMz" type="text" class="caja" size="10" maxlength="10" /></td>
+			    <td><input style="text-transform:uppercase" name="txtLt" id="txtLt" type="text" class="caja" size="10" maxlength="14" /></td>
+			    <td><input style="text-transform:uppercase" name="txtSubLt" id="txtSubLt" type="text" class="caja" size="10" maxlength="10" /></td>
+			    <td><input style="text-transform:uppercase" name="txtNum" id="txtNum" type="text" class="caja" size="10" maxlength="10" /></td>
+			    <td><input style="text-transform:uppercase" name="txtDpto" id="txtDpto" type="text" class="caja" size="10" maxlength="10" /></td>
+		      </tr>
+			    <tr>
+			      <td colspan="5">
+                  <div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+                    <input type="button" name="btnGrabaContri" id="btnGrabaContri" value="Grabar Datos" />
+                    <input type="button" name="btnSalirContri" id="btnSalirContri" value="Cerrar Formulario" />
+                    </td>
+                    <td></td>
+                    </table>
+                  </div>
+                  </td>
+		      </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+</form>

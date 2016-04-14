@@ -1,0 +1,52 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_tesocaja_tupa.js"></script>
+<form id="frmContri">
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div id="contenidoForm" class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+				<tr>
+				<td><span>Nro. Partida: </span></td>
+				<td><input type="text" id="txtpartidas" class="caja" style="width:200px"  /></td>
+				<td>FORMATO: 00.00.0.00.000</td>
+				</tr>
+				<tr>
+				<td><span>Área: </span></td>
+				<td colspan="2"><select class="combo" style="width:400px" id="cmbCC" name="cmbCC"></select></td>
+				</tr>
+				<tr>
+				<td><span>Palabras a Buscar: </span></td>
+				<td colspan="2"><input type="text" id="txtpalabra" class="caja" style="width:400px" /></td>
+				</tr>
+			</table>			  
+	    	</div>
+	    </fieldset>
+		<br/>
+		<div class="divButtons">
+		    <table class="tableContent">
+		    <tr>
+		    <td><input id="btnBuscar" type="button" value="Buscar" /></td>
+		    <td><input type="button" value="Ver Principales" /></td>
+			<td><input type="button" value="Ver Todos" /></td>
+			<td><input type="button" value="Borrar" /></td>
+			</tr>
+		    </table>
+		</div>
+	    <br/>
+	    <div id="gridTesoTupa"></div>
+		<br/><!--
+		<div class="divButtons">
+		    <table class="tableContent">
+		    <tr>
+		    <td><input type="button" id="btnSelecciona" value="Seleccionar" /></td>
+			</tr>
+		    </table>
+		</div>-->
+    </div>
+</div>
+</form>

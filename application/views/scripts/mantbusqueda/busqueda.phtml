@@ -1,0 +1,50 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Busqueda.js"></script>
+<form id="frmbusqueda">
+<div>
+	 <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td><span id="lblNombre">Ingrese Nombre:</span></td>
+              <!-- 
+              <td>
+              <label>
+              <input name="rdbCriterios" id="rdCriterio1" type="radio" value="1" checked/><b> Zona</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdbCriterios" id="rdCriterio2" type="radio" value="2" /><b> Urbanización</b>
+              </label>
+              </td>  
+              <td>
+              <label>
+              <input name="rdbCriterios" id="rdCriterio3" type="radio" value="3" /><b> Vía</b>
+              </label>
+              </td>
+               -->
+              <td><input name="txtBusqueda" id="txtBusqueda" style="text-transform: uppercase" type="text" class="caja" size="20" maxlength="100" /></td>
+              <td><input type="button" id="btnBusquedacri" value="Buscar" /></td>
+              </tr>
+            </table>
+<input type="hidden" id="hd_opcion"     value="<?php echo $this->tipo;?>" />
+	    	</div>
+	  </fieldset>   
+	  <br/>
+  	   <div style="overflow:auto;height: 200px;padding:10px 0 0 0">
+			<table id="detallesBusqueda" class="hovertable" width="100%">
+              <tr>
+	              <th><center><b>Codigo</b></center></th>
+	              <th style="display: none;"><center><b>CodZona</b></center></th>
+	              <th><center><b>Zona</b></center></th>
+	              <th style="display: none;"><center><b>CodUrba</b></center></th>
+	              <th><center><b>Urbanización</b></center></th>
+	              <th><center><b>Vía</b></center></th>
+	              <th><center><b></b></center></th>
+              </tr>	              
+            </table>
+	  </div> 
+</div>
+</form>

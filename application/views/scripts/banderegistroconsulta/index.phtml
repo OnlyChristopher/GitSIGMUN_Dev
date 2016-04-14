@@ -1,0 +1,79 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_banderegistroconsulta.js"></script>
+<div class="contentBoxBr">
+	<div style="padding:5px; background-color:#5296C9; font-weight:bold; color:#FFFFFF"><?php echo $this->title;?></div>
+    <div class="contentBox">    
+	 	<fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios de Búsqueda:</legend>
+	        <div class="contentForm">
+            <form id="frmBandeconsulta">
+	   		<table class="tableContent">
+			  <tr>
+              <td><span>Numero Archivador: </span></td>
+              <td>
+              <input name="num_archi" id="num_archi" type="text" class="caja" maxlength="10" style="width:100px; text-transform: uppercase"/>
+              </td>
+              <td>&nbsp;</td>
+              <td colspan="3">&nbsp;</td>              
+              </tr>			
+              <tr>
+              <td><span>Codigo Contribuyente: </span></td>
+              <td>
+              <input name="cod_contri" id="cod_contri" type="text" class="caja" maxlength="10" style="width:100px; text-transform: uppercase"/>
+              </td>
+              <td>&nbsp;</td>
+              <td colspan="3">&nbsp;</td>              
+              </tr>
+              <tr>
+              <td><span>Nombre Contribuyente: </span></td>
+              <td colspan="2">
+              <input name="nom_contri" id="nom_contri" type="text" class="caja" maxlength="200" style="width:300px; text-transform: uppercase"/>
+              </td>
+              <td colspan="3">&nbsp;</td>              
+              </tr>
+			 			  
+              <tr>
+              <td><span>Expediente: </span></td>
+              <td>
+              <input name="num_expe" id="num_expe" type="text" class="caja" maxlength="10" style="width:90px; text-transform: uppercase"/>
+              </td>
+              <td><input name="ano_expe" id="ano_expe" type="text" class="caja" maxlength="10" style="width:90px; text-transform: uppercase"/></td>
+              <td colspan="3">&nbsp;</td>              
+              </tr>
+			  
+              <tr>
+                <td>&nbsp;</td>
+                <td>Desde:</td>
+                <td>Hasta:</td>
+                <td colspan="3">&nbsp;</td>
+              </tr>
+              <tr>
+              <td><span>Fecha de Ingreso: </span></td>
+              <td>
+              <input name="fec_desde" id="fec_desde" type="text" class="caja" maxlength="10" value="<?php echo $this->fec_desde;?>" />
+              </td>
+              <td><input name="fec_hasta" id="fec_hasta" type="text" class="caja" maxlength="10" value="<?php echo $this->fec_hasta;?>" /></td>
+              <td colspan="3">&nbsp;</td>              
+              </tr>
+              <tr>
+                <td><span>Estado: </span></td>
+                <td colspan="2"><select name="registro_estado" id="registro_estado" class="combo" style="width:200px"></select></td>
+              </tr>
+              <tr>
+                <td><span>Usuario: </span></td>
+                <td colspan="2"><select name="usuario_cod" id="usuario_cod" class="combo" style="width:200px"></select></td>
+              </tr>              
+              </table>	
+              </form>    
+	    	</div>
+	    </fieldset>
+	    <div class="divButtons">
+		    <table class="tableContent">		
+            <tr>
+            	<td><input name="btnBusarRegistro" id="btnBusarRegistro" type="button" value="Realizar Búsqueda" /></td>
+                <td><input name="btnCancelRegistro" id="btnCancelRegistro" type="button" value="Cancelar Búsqueda" /></td>
+            </tr>            
+		    </table>
+		</div>
+    </div>
+</div>

@@ -1,0 +1,195 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rentasdecjurada_hr.js"></script>
+<form id="frmhr">
+<input type="hidden" name="actionHr" id="actionHr">
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Datos del contribuyente:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="100%">
+			    <tr>
+			    <td width="1"><span id="lblCodigo">C&oacute;digo:</span></td>
+			    <td><div id="divCodigo"><?php echo $this->varcodigo;?></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblAnexo">Contribuyente:</span>
+			    </td>
+			    <td><div id="divAnexo"><?php echo $this->varnombre;?></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblSAnexo">Direcci&oacute;n:</span></td>
+			    <td><div id="divSAnexo"><?php echo $this->vardirecc;?></div></td>
+			    </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"> Las modificaciones de esta declaraci&oacute;n entra en vigencia a partir del a&ntilde;o:</legend>
+        <div class="contentForm">
+        	<table class="tableContent" width="90%">
+			    <tr>
+				    <td>
+					    <input name="txthrdesde" id="txthrdesde" type="text" class="caja" size="4" value="<?php echo $this->txthrdesde;?>" maxlength="4" />
+					    <span id="lblCp"> A </span>
+		   			    <input name="txthrhasta" id="txthrhasta" type="text" class="caja" size="4" value="<?php echo $this->txthrhasta;?>" maxlength="4" />
+	   			    </td>
+			    </tr>
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+<br/>
+<div>
+	<div style="float:left; margin-right:5px">
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px">Declaraci&oacute;n Jurada:</legend>
+        <div class="contentForm">
+        <table class="tableContent">
+          <tr>
+          <td><span id="lblTipPredio">N&uacute;mero:</span></td>
+          <td><input name="txtnrodecla" id="txtnrodecla" type="text" class="caja" size="20" value="<?php echo $this->txtnrodecla;?>" readonly="readonly"/></td>
+          </tr>
+          <tr>
+          <td><span id="lblTipPredio">Fecha:</span></td>
+          <td><input name="txtfecdecla" id="txtfecdecla" type="text" class="caja" size="12" value="<?php echo $this->txtfecdecla;?>" maxlength="10" /></td>
+          </tr>
+          <tr>
+          <td><span id="lblTipPredio">Motivo:</span></td>
+          <td>
+	          <select name="cmbMotivo" id="cmbMotivo" class="combo">
+	          </select>
+          </td>
+          </tr>
+          <tr>
+            <td><span id="lblTipPredio">Observaci&oacute;n:</span></td>
+            <td><textarea name="txtobserva" cols="25" rows="5" class="caja" id="txtobserva"><?php echo $this->txtobserva;?></textarea></td>
+          </tr>
+        </table>
+      	</div>
+    </fieldset>
+    </div>
+    <div style="float:left; margin-left:5px">
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"><input id="chkemision" name="chkemision" type="checkbox" value="0" > Bloquear Emisi&oacute;n:</legend>
+        <div class="contentForm">
+        <table class="tableContent">
+        	<tr>
+	            <td><span id="lblCp">Nro. Predios:</span></td>
+	            <td><input name="txtpredios" id="txtpredios" type="text" class="cajaoff" size="20" maxlength="100" value="<?php echo $this->txtpredios;?>" readonly /></td>
+          	</tr>
+            <tr>
+	            <td><span id="lblVia">Total Autovaluo:</span></td>
+	            <td><input name="txtautovaluo" id="txtautovaluo" type="text" class="cajaoff" size="20" maxlength="100" value="<?php echo $this->txtautovaluo;?>" readonly /></td>
+            </tr>
+            <tr>
+	            <td><span id="lblVia">Base Imponible:</span></td>
+	            <td><input name="txtbaseimpo" id="txtbaseimpo" type="text" class="cajaoff" size="20" maxlength="100" value="<?php echo $this->txtbaseimpo;?>" readonly /></td>
+            </tr>
+            <tr>
+	            <td><span id="lblDir">Imp. Anual:</span></td>
+	            <td><input name="txtimpanual" id="txtimpanual" type="text" class="cajaoff" size="20" maxlength="100" value="<?php echo $this->txtimpanual;?>" readonly="readonly" /></td>
+        	</tr>
+            <tr>
+              <td><span id="lblDir3">Imp. Trimestral:</span></td>
+	              <td><input name="txttrimestre" id="txttrimestre" type="text" class="cajaoff" size="20" maxlength="100" value="<?php echo $this->txttrimestre;?>" readonly="readonly" /></td>
+            </tr>
+            <tr>
+              <td><span id="lblDir2">Costo de Emisi&oacute;n:</span></td>
+              <td><input name="txtgastos" id="txtgastos" type="text" class="cajaoff" size="20" maxlength="100" value="<?php echo $this->txtgastos;?>" readonly="readonly" /></td>
+            </tr>
+		</table>
+      	</div>
+    </fieldset>
+    </div>
+</div>
+<br style="clear:both"><br/>
+<div>
+	<div style="float:left; margin-right:5px">
+    <fieldset class="ui-widget ui-widget-content">
+        <div class="contentForm">
+        <table class="tableContent">
+        <tr>
+            <td><span id="lblCp">Nro. Resoluci&oacute;n:</span></td>
+            <td><input name="txtnroresol" id="txtnroresol" type="text" value="<?php echo $this->txtnroresol;?>" class="caja" size="20" maxlength="100" /></td>
+          </tr>
+            <tr>
+            <td><span id="lblVia">Fecha Resoluci&oacute;n:</span></td>
+            <td><input name="txtfecresol" id="txtfecresol" type="text" value="<?php echo $this->txtfecresol;?>" class="caja" size="20" maxlength="100" /></td>
+            </tr>
+            <tr>
+            <td><span id="lblDir">Nro. Expediente:</span></td>
+            <td><input name="txtnroexp" id="txtnroexp" type="text" value="<?php echo $this->txtnroexp;?>" class="caja" size="20" maxlength="100" /></td>
+        	</tr>
+            <tr>
+              <td><span id="lblDir2">Base Legal:</span></td>
+              <td><input name="txtbaseleg" id="txtbaseleg" type="text" value="<?php echo $this->txtbaseleg;?>" class="caja" size="20" maxlength="100" /></td>
+            </tr>
+            <tr>
+              <td><span id="lblDir3">Vigente desde:</span></td>
+              <td><input name="txtdesde" id="txtdesde" type="text" value="<?php echo $this->txtdesde;?>" class="caja" size="20" maxlength="100" /></td>
+            </tr>
+            <tr>
+              <td><span id="lblDir3">Vigente hasta:</span></td>
+              <td><input name="txthasta" id="txthasta" type="text" value="<?php echo $this->txthasta;?>" class="caja" size="20" maxlength="100" /></td>
+            </tr>
+		</table>
+      	</div>
+    </fieldset>
+    </div>
+    <div style="float:left; margin-left:5px">
+    	<fieldset class="ui-widget ui-widget-content">
+        <div class="contentForm">
+        <table class="tableContent">
+        <tr>
+          <td><span id="lblCp">R&eacute;gimen:</span></td>
+        </tr>
+        <tr>
+        <td>
+        <select name="cmbRegimen" id="cmbRegimen" class="combo">
+        </select>
+        </td>
+        </tr>
+        <tr>
+          <td><!--<label><input type="checkbox"> Afecto Emisión</label>--></td>
+        </tr>
+        </table>
+        </div>
+    	</fieldset>
+        <br/>
+        <fieldset class="ui-widget ui-widget-content">
+        	<legend style="margin-left:5px">Datos de Registro de DDJJ:</legend>
+        <div class="contentForm">
+        <table class="tableContent" width="270">
+        <tr>
+          <td width="1"><span id="lblCp">Usuario:</span></td>
+          <td><?php echo $this->txtusuario;?></td>
+        </tr>
+        <tr>
+          <td><span id="lblCp">Fecha:</span></td>
+          <td><?php echo $this->txtfecha;?></td>
+        </tr>
+        <tr>
+          <td><span id="lblCp">Estaci&oacute;n:</span></td>
+          <td><?php echo $this->txtestacion;?></td>
+        </tr>
+        </table>
+        </div>
+    	</fieldset>
+    </div>
+</div>
+<br style="clear:both">
+<div class="divButtons">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+    <td style="padding-left:5px">
+    <input type="button" value="Grabar" id="btnEditaHr" />
+	<input type="button" value="Cerrar" id="btnCierraHr" />
+    </td>
+    <td></td>
+    </table>
+</div>
+
+</form>

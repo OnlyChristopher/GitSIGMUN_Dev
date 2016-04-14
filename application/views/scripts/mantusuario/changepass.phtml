@@ -1,0 +1,41 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantusuario_changepass.js"></script>
+<div class="contentBoxBr">
+	<div style="padding:5px; background-color:#5296C9; font-weight:bold; color:#FFFFFF"><?php echo $this->title;?></div>
+    <div class="contentBox">
+    	<form id="frmusupass">   
+	 	<fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Datos Usuario:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td><b>Usuario: </b></td>
+              <td><input type="text" name="usu_cod" id="usu_cod" class="cajaoff" style="width:200px" readonly /></td>
+              </tr>
+              <tr>
+              <td><b>Contraseña Anterior: </b></td>
+              <td><input name="old_pass" type="password" class="caja" id="old_pass" style="width:200px" maxlength="50"/></td>
+              </tr>
+              <tr>
+              <td><b>Nueva Contraseña: </b></td>
+              <td><input name="new_pass" type="password" class="caja" id="new_pass" style="width:200px" maxlength="50"/></td>
+              </tr>
+              <tr>
+              <td><b>Repita Nueva Contraseña: </b></td>
+              <td><input name="rep_pass" type="password" class="caja" id="rep_pass" style="width:200px" maxlength="50"/></td>
+              </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+        </form>
+	    <br/>
+	    <div class="divButtons">
+		    <table class="tableContent">
+            <tr>
+            	<td><input name="btnAceptar" id='btnAceptar' type="button" value="Aceptar" /></td>
+                <td><input name="btnCancelar" id='btnCancelar' type="button" value="Cancelar" /></td>
+            </tr>
+		    </table>
+		</div>
+    </div>
+</div>

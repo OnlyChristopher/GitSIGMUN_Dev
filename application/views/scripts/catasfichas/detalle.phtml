@@ -1,0 +1,49 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+	<?php 
+	switch($this->tipo){
+		case '04':
+		?>
+		<table class="tableContent" width="100%">
+		<tr>
+			<td><label><input type="checkbox" id="chkFichInd" class="chkSubFich" value="1"> <b>Ficha Individual</b></label></td>
+			<td><div style="background-color: #fff; border:1px #333 solid; width:15px; height:15px"></div></td>
+		</tr>
+		<tr>
+			<td><label><input type="checkbox" id="chkFichBco" class="chkSubFich" value="4"> <b>Ficha Bnes. Comunes</b></label></td>
+			<td><div style="background-color:#0C0; border:1px #333 solid; width:15px; height:15px"></div></td>
+		</tr>    
+		</table>
+        <?php
+        break;
+		case '01':
+		?>
+        <table width="100%" class="tableContent">
+        <tr>
+            <td><label><input type="checkbox" id="chkFichCot" class="chkSubFich" value="2"> <b>Ficha Cotitular</b></label></td>
+          <td><div style="background-color:#FF2F2F; border:1px #333 solid; width:15px; height:15px"></div></td>
+        </tr>
+        <tr>
+            <td><label><input type="checkbox" id="chkFichEco" class="chkSubFich" value="3"> <b>Ficha Económica</b></label></td>
+            <td><div style="background-color:#069; border:1px #333 solid; width:15px; height:15px"></div></td>
+        </tr>    
+        </table>
+    	<?php
+		break;
+		default:
+		?>
+        <table class="tableContent" width="100%">
+		<tr>
+			<td><label><input type="checkbox" id="chkFichInd" class="chkSubFich" value="1"> <b>Ficha Individual</b></label></td>
+			<td><div style="background-color: #fff; border:1px #333 solid; width:15px; height:15px"></div></td>
+		</tr>
+		<tr>
+			<td><label><input type="checkbox" id="chkFichBco" class="chkSubFich" value="4"> <b>Ficha Bnes. Comunes</b></label></td>
+			<td><div style="background-color:#0C0; border:1px #333 solid; width:15px; height:15px"></div></td>
+		</tr>    
+		</table>
+    	<?php
+		break;
+	} 
+	?>
+</fieldset>

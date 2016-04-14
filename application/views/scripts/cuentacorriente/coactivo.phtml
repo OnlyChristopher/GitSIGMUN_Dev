@@ -1,0 +1,241 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script>
+var codigocaja='<?php echo $this->codigocaja ?>';
+var data1='<?php echo $this->data; ?>';
+</script>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_cuentacorrientecoac.js"></script>
+<form id="frmctacte" >
+	<div class="contentBoxMain">
+    	<div>
+        <fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+   		  <legend style="margin-left:5px">Datos del Contribuyente:</legend>
+            <table class="tableContent">
+			    <tr>
+			    <td><span>Código:<input style='display:none;' type="text" name="txtcod" id="txtcod" value='<?php echo $this->codigocaja ?>' /></span></td>
+			    <td><div id="divCodigo">...........</div></td>
+			    <td style='padding-left:30px'><span>Documento:</span></td>
+			    <td><div id="divDocu">...........</div></td>
+			    <td style='padding-left:30px'><span>Contribuyente:</span></td>
+			    <td><div id="divContri">...........</div></td>
+			    </tr>
+			    <tr>
+			    <td><span>Dirección:</span></td>
+			    <td colspan="5"><div id="divDirec">...........</div></td>
+			    </tr>		    
+			</table>
+        </fieldset>
+        </div>
+<br>
+		<div>
+		<fieldset class="ui-widget ui-widget-content" style="padding: 4px;">
+		<div style="float:left; padding-right:5px">
+			<table style="width:100%">
+				<tr>
+					<td colspan="20" style="padding:5px">
+						<table width="300" style="float:left">
+						<td width="92" style="padding-left:5px">
+						<label>
+						<input name="rdformaPago" id="rdformaPago0" type="radio" value="0" checked/><b>Pendiente</b>
+						</label>	
+						</td>
+						<td width="92" style="width:25px;">
+						<label>
+						<input name="rdformaPago" id="rdformaPago1" type="radio" value="1" /><b>Cancelado</b>			
+						</label>	
+						</td>
+						<td width="63">
+						<label>&nbsp;
+						<input name="rdformaPago" id="rdformaPago2" type="radio" value="%" /><b>Todo</b>				
+						</label>				
+						</td>
+					  </table>
+						
+						<table width="600" style="float:right">
+						<tr>
+						<td width="47" style='padding-right:5px'><div style="background-color:#FFFFFF; border:1px #333 solid; width:15px; height:15px"></div></td><td width="104" style='font-size:10px'>Ordinario&nbsp;</td>
+					  <td width="47" style='padding-right:5px'><div style="background-color:red; border:1px #333 solid; width:15px; height:15px"></div></td><td width="95" style='font-size:10px'>Cancelado&nbsp;</td>
+					  <td width="47" style='padding-right:5px'><div style="background-color:#2E9AFE; border:1px #333 solid; width:15px; height:15px"></div></td><td width="141" style='font-size:10px'>Valor Tributario&nbsp;</td>
+					  <td width="47" style='padding-right:5px'><div style="background-color:#8017C6; border:1px #333 solid; width:15px; height:15px"></div></td><td width="39" style='font-size:10px'>Coactivo&nbsp;</td>
+					  <td width="47" style='padding-right:5px'><div style="background-color:#4EC617; border:1px #333 solid; width:15px; height:15px"></div></td><td width="51" style='font-size:10px'>Fraccionado&nbsp;</td>
+					  <td width="47" style='padding-right:5px'><div style="background-color:#FF8000; border:1px #333 solid; width:15px; height:15px"></div></td><td width="48" style='font-size:10px'>Fiscalizado&nbsp;</td>
+					  	</tr>
+					  </table>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="20" style="padding:5px">
+					<table style="float:right">
+						<tr>
+						<td style='padding-right:5px'></td><td style='font-size:10px'><input id="chkresumen" name="chkresumen" type="checkbox" checked> Ver Resumen Ctas.&nbsp;</td>
+						<td style='padding-right:5px'></td><td style='font-size:10px'><input id="chkdetalle" name="chkdetalle" type="checkbox" checked> Ver Detalle Ctas.&nbsp;</td>
+						<td style='padding-right:5px'></td><td style='font-size:10px'><input id="chkagrupar" name="chkagrupar" type="checkbox" > Agrupar detalle por concepto&nbsp;</td>		
+						</tr>
+					</table>
+					
+					<table style="float:left">
+					<tr>
+						<td style="padding-right:5px">Nro. Doc.</td>
+						<td><input name="nro_doc_sustento"  type="text" class="caja" id="nro_doc_sustento" size="15"></td>
+						<td style="padding-right:5px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Doc. Sustento</td>
+						<td><input name="doc_sustento" id="doc_sustento" class="caja" style="width:100px"></td>
+					    <td style="padding-right:5px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tipo Doc.</td>
+					    <td><select name="tipo_doc_sustento" id="tipo_doc_sustento" class="combo" style="width:100px">
+					      </select></td>
+					</tr>
+					</table>	
+					</td>
+				</tr>
+			</table>	
+		</div>
+	</fieldset>
+		<br style="clear:both; margin-bottom: 5px"></div>
+		
+		<div>
+		<fieldset class="ui-widget ui-widget-content" style="padding: 4px;">
+		<div style="float:left; padding-right:5px">
+			<table style="width:100%">
+				<tr>
+					<td colspan="20" style="padding:5px">
+						<table width="500" style="float:left">
+						<td width="180" style="padding-left:5px">
+						<label>
+							<b>Total a ajustar:</b>
+						</label>	
+						</td>
+						<td width="92" style="width:25px;">
+						<label>
+						 <input type="text" id="txtMontoajustar" name="txtMontoajustar" value="0.00" class="caja" style="text-align:right">
+						</label>	
+						</td>
+						<td width="63">
+						<label>&nbsp;
+							<input type="button" id="btnBaja" value="Dar de Baja"  />
+						</label>				
+						</td>
+						<td width="63">
+						<label>&nbsp;
+							<input type="button" id="btnImputar" value="Imputar Deuda" />
+						</label>				
+						</td>
+					  </table>
+					</td>
+				</tr>
+			</table>	
+		</div>
+	</fieldset>
+		<br style="clear:both; margin-bottom: 5px"></div>
+		
+       <div style="float:left; padding-right:5px">
+		<fieldset class="ui-widget ui-widget-content" style="padding: 6.5px;">
+	    		<legend style="margin-left:5px">Concepto:</legend>
+	    		<div class="contentBoxBrSup">
+                <label><input type="checkbox" id="chkTotConceptos" > <span>Todos/Ninguno</span></label>
+                </div>
+                <div class="contentBoxBr" style="background-color:#E6FFFF; height:100px; width:130px; overflow:auto">
+                <table width="100%">
+					<tr>
+                    <td><label><input type="checkbox" id="conceptos[]" name="conceptos[]" value="*90.00*">Costas</label></td>
+                    </tr>
+					<tr>
+                    <td><label><input type="checkbox" id="conceptos[]" name="conceptos[]" value="*90.09*">Gastos</label></td>
+                    </tr>
+                </table>	    
+                </div>
+            </fieldset>
+        </div>
+        <div style="float:left; padding-right:5px">
+        	<fieldset class="ui-widget ui-widget-content" style="padding: 6.5px;">
+	    		<legend style="margin-left:5px">Periodo:</legend>
+	    		<div class="contentBoxBrSup">
+	    		<label><input id="chkTotPeriodos" type="checkbox"> <span>Todos/Ninguno</span></label></div>
+                <div id="boxCajaPeriodo" class="contentBoxBr" style="background-color:#E6FFFF; height:100px; width:130px; overflow:auto">
+                 
+                </div>
+            </fieldset>
+        </div>
+        <div style="float:left; padding-right:5px">
+        	<fieldset class="ui-widget ui-widget-content" style="padding: 6.5px;">
+	    		<legend style="margin-left:5px">Arbitrio:</legend>
+	    		<div class="contentBoxBrSup">
+	    		<label><input id="chkTotArbitrio" type="checkbox"> <span>Todos/Ninguno</span></label></div>
+                <div class="contentBoxBr" style="background-color:#E6FFFF; height:100px; width:130px">
+                <table width="100%">                    
+                    <tr>
+                    <td><label><input type="checkbox" id="chkarbitrio[]" name="chkarbitrio[]" value="*11.02*"> Barrido Vías</label></td>
+                    </tr>
+                    <tr>
+                    <td><label><input type="checkbox" id="chkarbitrio[]" name="chkarbitrio[]" value="*11.01*"> Recol. Res.</label></td>
+                    </tr>
+                    <tr>
+                    <td><label><input type="checkbox" id="chkarbitrio[]" name="chkarbitrio[]" value="*11.03*"> Parq. Jard.</label></td>
+                    </tr>
+                    <tr>
+					<td><label><input type="checkbox" id="chkarbitrio[]" name="chkarbitrio[]" value="*11.04*"> Serenazgo.</label></td>                    
+                    </tr>
+                </table>	    
+                </div>
+            </fieldset>
+        </div>
+        <div style="float:left; padding-right:5px">
+        	<fieldset class="ui-widget ui-widget-content" style="padding: 6.5px;">
+	    		<legend style="margin-left:5px">Año:</legend>
+	    		<div class="contentBoxBrSup">
+	    		<label><input id="chkTotAnios" type="checkbox"> <span>Todos/Ninguno</span></label></div>
+                <div  id="divAnios" class="contentBoxBr" style="background-color:#E6FFFF; height:100px; width:130px; overflow:auto">
+                   
+                </div>
+            </fieldset>
+        </div>        
+        <div style="float:left;">
+        	<fieldset class="ui-widget ui-widget-content" style="padding: 6.5px;">
+	    		<legend style="margin-left:5px">Predio:</legend>
+	    		<div class="contentBoxBrSup">
+	    		<label><input id="chkTotPreddd" type="checkbox"> <span>Todos/Ninguno</span></label></div>
+              <div id="divPredios" class="contentBoxBr" style="background-color:#E6FFFF; height:100px; width:355px; overflow:auto">
+
+            </div>
+            </fieldset>
+        </div>        
+      <br style="clear:both"/>
+	  </br>
+   	  <div id="gridCuentacte"></div>
+      <div style="margin:5px 0 0 0">
+		  <table style='float:left'>
+		  <tr>
+		  <!--
+			<td style='padding-right:5px'><div style="background-color:#FFFFFF; border:1px #333 solid; width:15px; height:15px"></div></td><td style='font-size:10px'>Ordinario&nbsp;</td>
+			<td style='padding-right:5px'><div style="background-color:#2E9AFE; border:1px #333 solid; width:15px; height:15px"></div></td><td style='font-size:10px'>Valor Tributario&nbsp;</td>
+			<td style='padding-right:5px'><div style="background-color:#8017C6; border:1px #333 solid; width:15px; height:15px"></div></td><td style='font-size:10px'>Coactivo&nbsp;</td>
+			<td style='padding-right:5px'><div style="background-color:#4EC617; border:1px #333 solid; width:15px; height:15px"></div></td><td style='font-size:10px'>Fraccionado&nbsp;</td>
+			<td style='padding-right:5px'><div style="background-color:#FF8000; border:1px #333 solid; width:15px; height:15px"></div></td><td style='font-size:10px'>Fiscalizado&nbsp;</td>
+		  -->
+		  </tr>
+		  </table>
+		  <table style='float:right'>
+		  <tr>
+			<td style="padding-right:5px"><input name="txtinso" type="text" id="txtinso" value="0.00" size="15" class="cajaoff" style="text-align:right" readonly></td>
+			<td style="padding-right:5px"><input name="txtreaj" type="text" id="txtreaj" value="0.00" size="15" class="cajaoff" style="text-align:right" readonly></td>
+			<td style="padding-right:5px"><input name="txtmora" type="text" id="txtmora" value="0.00" size="15" class="cajaoff" style="text-align:right" readonly></td>
+			<td style="padding-right:5px"><input name="txtemis" type="text" id="txtemis" value="0.00" size="15" class="cajaoff" style="text-align:right" readonly></td>
+			<td style="padding-right:5px"><input name="txt_total" type="text" id="txt_total" value="0.00" size="15" class="cajaoff" style="text-align:right" readonly></td>
+			<td style="padding:0 20px 0 20px">&nbsp;</td>
+		  </tr>
+		  </table>
+      </div>
+	  <input name="compensar_o_baja" id='compensar_o_baja' type="hidden" />
+	  <br style="clear:both"/>
+	  <div class="divButtons" style="margin:10px 0 0 0">
+      <table>
+      <tr>
+		<td style="padding-right:5px"><input type="button" id="btnMostrar" value="Mostrar" /></td>
+		<td style="padding-right:5px"><input type="button" id="btnSinInteres" value="Mostrar Sin Interes" /></td>
+		<!--<td style="padding-right:5px"><input type="button" id="btnAjustecuenta" value="Ajustar Recibos" /></td>-->
+	<!--	<td style="padding-right:5px"><input type="button" id="btnImputar" value="Imputar Deuda" style="width:110px;"/></td>
+		<td style="padding-right:5px"><input type="button" id="btnBaja" value="Dar de Baja" style="width:100px;"/></td>-->
+		<td style="padding-right:5px"><input type="button" id="btnMostrarAnulado" value="Recibos Anulados" style="width:120px;"/></td>
+        <td style="padding-right:5px"><input type="button" id="btnCerrar" value="Cerrar Ventana" /></td>
+      </tr>
+      </table>
+      </div>
+  </div>
+</form>

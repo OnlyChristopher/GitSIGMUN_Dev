@@ -1,0 +1,29 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_tesocuadrecaja.js"></script>
+<div id="tabla001" align="center" style="display: block;">
+<table width="100%" height="263" border="2">
+  <tr>
+    <td colspan="2"><p>NOTA IMPORTANTE: El objetivo del cuadre de caja es comparar:</p>
+    <p><strong>Los montos  fisicos de dinero vs. el monto calculado por e sistema desde la apertura de caja ( suma de todas las operaciones ) . </strong></p>
+    <p>Si la caja no esta cuadrada no puede cerrarse . </p></td>
+  </tr>
+  <tr>
+    <td width="290">Motivo del Cuadre </td>
+    <td width="416">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="50"><strong>INGRESE EL MONTO QUE TIENE EN EFECTIVO</strong> </td>
+    <td><input name="txtefectivo" id="txtefectivo" type="text" value="" class="caja" size="20" maxlength="100"  style="text-align:right"/> Nuevos Soles</td>
+  </tr>
+  <tr>
+    <td height="50"><strong>INGRESE EL MONTO QUE TIENE EN CHEQUE</strong> </td>
+    <td><input name="txtcheque" id="txtcheque" type="text" value="" class="caja" size="20" maxlength="100"  style="text-align:right"/>
+		<input name="txtfechas" id="txtfechas" type="hidden" value="" />	Nuevos Soles</td>
+  </tr>
+  <tr>
+    <td colspan="2"><label>
+      <div align="center"><input type="button" id="btnapertura" value="PROBAR CUADRE" /></div>
+    </label></td>
+  </tr>
+</table>
+</div>

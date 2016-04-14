@@ -1,0 +1,131 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantcontriajuste2_avanzado.js"></script>
+<form id="frmavanzado">
+<input type="hidden" id="txtidrecibo" name="txtidrecibo">
+<input type="hidden" id="txtcodigo" name="txtcodigo">
+<input type="hidden" id="txtopcion"  name="txtopcion">
+	<div id="datos" style="margin-left:50px; margin-right:50px;">
+		<table border="1" class="tableContent" width="100%">
+			<tr>
+				<td width="20%" bgcolor="#D8D8D8"><span>&nbsp;&nbsp;Cod, DNI, Nombre:</span></td>
+				<td><?php echo $this->data1; ?></td>
+			</tr>
+			<tr>
+				<td bgcolor="#D8D8D8"> <span>&nbsp;&nbsp;Cpto, Sub, Ref:</span></td>
+				<td><?php echo $this->data2; ?></td>
+			</tr>
+			<tr>
+				<td bgcolor="#D8D8D8"><span>&nbsp;&nbsp;Año, Periodo, FV. FI:</span></td>
+				<td><?php echo $this->data3; ?></td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<div id="montos" style="margin-left:20px; margin-right:20px;">
+		<table border="1" class="tableContent">
+			<tr>
+				<td align="center" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;RUBRO</SPAN></td>
+				<td align="center" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;DEBITO Valor inicial</SPAN></td>
+				<td align="center" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;DEBITO Nuevo valor</SPAN></td>
+				<td align="center" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;CREDITO Valor inicial</SPAN></td>
+				<td align="center" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;CREDITO Nuevo valor</SPAN></td>
+				<td align="center" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;SALDO ANTIGUO</SPAN></td>
+				<td align="center" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;SALDO NUEVO</SPAN></td>
+			</tr>
+			
+			<tr>
+				<td align="left" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;Insoluto</SPAN></td>
+				<td align="center"><input type="text" size="10" name="in_deb_inicial" id="in_deb_inicial" value="<?php echo $this->in_deb_inicial; ?>"  class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="in_deb_nuevo" id="in_deb_nuevo"   value="<?php echo $this->in_deb_inicial; ?>" class="caja"></td>
+				<td align="center"><input type="text" size="10" name="in_cre_inicial" id="in_cre_inicial"  value="<?php echo $this->in_cre_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="in_cre_nuevo" id="in_cre_nuevo"  value="<?php echo $this->in_cre_inicial; ?>" class="caja"></td>
+				<td align="center"><input type="text" size="10" name="in_sal_inicial" id="in_sal_inicial"  value="<?php echo $this->in_sal_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="in_sal_nuevo"  id="in_sal_nuevo"  class="caja" readonly></td>
+			</tr>
+			
+			<tr>
+				<td align="left" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;Der. Emision</SPAN></td>
+				<td align="center"><input type="text" size="10" name="de_deb_inicial" id="de_deb_inicial" value="<?php echo $this->de_deb_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="de_deb_nuevo" id="de_deb_nuevo"  value="<?php echo $this->de_deb_inicial; ?>" class="caja"></td>
+				<td align="center"><input type="text" size="10" name="de_cre_inicial" id="de_cre_inicial" value="<?php echo $this->de_cre_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="de_cre_nuevo" id="de_cre_nuevo"  value="<?php echo $this->de_cre_inicial; ?>" class="caja"></td>
+				<td align="center"><input type="text" size="10" name="de_sal_inicial" id="de_sal_inicial" value="<?php echo $this->de_deb_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="de_sal_nuevo" id="de_sal_nuevo" class="caja" readonly></td>
+			</tr>
+			
+			<tr>
+				<td align="left" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;Reajuste:</SPAN></td>
+				<td align="center"><input type="text" size="10" name="re_deb_inicial" id="re_deb_inicial" value="<?php echo $this->re_deb_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="re_deb_nuevo" id="re_deb_nuevo"  value="<?php echo $this->re_deb_inicial; ?>" class="caja"></td>
+				<td align="center"><input type="text" size="10" name="re_cre_inicial" id="re_cre_inicial" value="<?php echo $this->re_cre_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="re_cre_nuevo" id="re_cre_nuevo"  value="<?php echo $this->re_cre_inicial; ?>" class="caja"></td>
+				<td align="center"><input type="text" size="10" name="re_sal_inicial" id="re_sal_inicial" value="<?php echo $this->re_deb_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="re_sal_nuevo" id="re_sal_nuevo" class="caja" readonly></td>
+			</tr>
+			
+			<tr>
+				<td align="left" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;Mora:</SPAN></td>
+				<td align="center"><input type="text" size="10" name="mo_deb_inicial" id="mo_deb_inicial" value="<?php echo $this->mo_deb_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="mo_deb_nuevo" id="mo_deb_nuevo"  value="<?php echo $this->mo_deb_inicial; ?>" class="caja"></td>
+				<td align="center"><input type="text" size="10" name="mo_cre_inicial" id="mo_cre_inicial" value="<?php echo $this->mo_cre_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="mo_cre_nuevo" id="mo_cre_nuevo"  value="<?php echo $this->mo_cre_inicial; ?>" class="caja"></td>
+				<td align="center"><input type="text" size="10" name="mo_sal_inicial" id="mo_sal_inicial" value="<?php echo $this->mo_deb_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="mo_sal_nuevo" id="mo_sal_nuevo" class="caja" readonly></td>
+			</tr>
+			
+			<tr>
+				<td align="left" bgcolor="#D8D8D8"><SPAN>&nbsp;&nbsp;TOTALES:</SPAN></td>
+				<td align="center"><input type="text" size="10" name="to_deb_inicial" id="to_deb_inicial" value="<?php echo $this->to_deb_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"></td>
+				<td align="center"><input type="text" size="10" name="to_cre_inicial" id="to_cre_inicial" value="<?php echo $this->to_cre_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="button" name="btnCalcular" id="btnCalcular" value="Calcular" style="width:100px;"></td>
+				<td align="center"><input type="text" size="10" name="to_sal_inicial" id="to_sal_inicial" value="<?php echo $this->to_sal_inicial; ?>" class="cajaoff" readonly></td>
+				<td align="center"><input type="text" size="10" name="to_sal_nuevo" id="to_sal_nuevo" class="caja" readonly></td>
+			</tr>
+			
+		</table>
+	</div> 
+	<br>
+	<div style="margin-left:70px; margin-right:120px;">
+		<table border="1" class="tableContent" align="center">
+			<tr>
+				<td colspan="2" align="center" bgcolor="#D8D8D8"><span>Documento de Sustento</span></td>
+			</tr>
+			
+			<tr>
+				<td bgcolor="#D8D8D8"><span>Tipo:</span></td>
+				<td><select name="cmb_tipo" id="cmb_tipo" class="combo" style="width:170px;"></select></td>
+			</tr>
+			<tr>
+				<td bgcolor="#D8D8D8"><span>Numero:</span></td>
+				<td><input type="text" name="txtnumero" id="txtnumero" class="caja"></td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<div style="margin-left:70px; margin-right:120px;">
+		<table border="1" class="tableContent" align="center">
+			<tr>
+				<td><input type="button" name="btnProcesar" id="btnProcesar" value="Procesar" style="width:100px;"></td>
+				<td><input type="button" name="btnClose" id="btnClose" value="Cerrar" style="width:100px;"></td>
+			</tr>
+			<!--
+			<tr>
+				<td colspan="2" align="center"><input type="button" name="btnBajaP" id="btnBajaP" value="Dar de Baja" style="width:100px;"></td>
+			</tr>
+			-->
+		</table>
+	</div>
+	
+
+	
+
+<input type="hidden" name="id_pers" id="id_pers">
+<input type="hidden" name="nestado" id="nestado">
+<input type="hidden" name="operador" id="operador">
+<input type="hidden" name="estacion" id="estacion">
+
+
+
+
+</form>

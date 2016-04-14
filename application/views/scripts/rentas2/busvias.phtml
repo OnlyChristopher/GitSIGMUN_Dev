@@ -1,0 +1,48 @@
+ <?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+ <script type="text/javascript" src="<?php echo $this->ruta;?>js/js_rentas.js"></script>
+ <fieldset class="ui-widget ui-widget-content">
+ <form id="frm_busvia">
+				            <legend style="margin-left:5px">Códigos Alternos:</legend>
+				            <div class="contentForm">
+				            <table class="tableContent">
+				              <tr>
+				              <td><span id="lblFecAdqui">Nom. Via:</span></td>
+				              <td><input name="txtnomvia" id="txtnomvia" type="text" class="caja" size="20" maxlength="10" /></td>
+				              <td><div style="float:left"><input name="btn_Buscar" id="btn_Buscar" type="button" value="Buscar"/></div>
+				              		<input type="hidden" id=hd_anito" value=""></input>
+				              </td>
+				              </tr>
+				            </table>
+				            </div>
+<div id="resultado"> 
+</div>
+</form>
+</fieldset>
+<script> 
+$("#btn_Buscar").click(function(){
+		var valor=$("#txtnomvia").val();
+		if(valor==""){
+			alert('Debe Ingresar Una via a Buscar');
+		}
+		else{
+			txtnomvia=$("#txtnomvia").val();
+			ano=$("#hd_anno").val();
+			$.ajax({     
+				type: "POST",     
+				url: "/rentas/busvias",
+				data: 'txtnomvia='+txtnomvia+'&ano='+ano,     
+				success: function(data) { 
+					$("#resultado").html(data);
+				},     
+				error: function() {
+				} 
+			}); 
+		}
+	});
+function selectVia(nombre,cod,arancel){
+	$("#txtVia").val(nombre);
+	$("#txtCvia").val(cod);
+	$("#txtArancel").val(arancel);	
+	$('#popup5').dialog('close');
+}
+</script>

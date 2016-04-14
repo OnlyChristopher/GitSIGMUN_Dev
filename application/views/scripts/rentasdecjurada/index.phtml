@@ -1,0 +1,203 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rentasdecjurada.js"></script>
+<div style="padding:8px 0 0 0">
+	<div style="float:left">
+		<div id="treeAnios"></div>
+	</div>
+	<div style="float:left; margin-left:20px;">
+		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+    		<div style="float:left; padding-right:40px">
+    			<table class="tableContent" width="100%">
+			    <tr>
+			    <td><span id="lblCodigo">Código:</span></td>
+			    <td><div id="divCodigo"><?php echo $this->varcodigo;?></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblNombre">Contribuyente:</span></td>
+			    <td><div id="divNombre"><?php echo $this->varnombre;?></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblDocumen">Nro. Documento:</span></td>
+			    <td><div id="divDocumen"><?php echo $this->vardocumen;?></div></td>
+			    </tr>
+				<tr>
+			    <td><span id="lblDocumen">Regimen:</span></td>
+			    <td><div id="divRegimen"></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblDomicilio">Domicilio Fiscal:</span></td>
+			    <td><div id="divDomicilio" style="width:380px"><?php echo $this->vardomicilio;?></div></td>
+			    </tr>
+			    </table>
+    		</div>
+    		<div style="float:left;">
+    			<table class="tableContent" width="100%">
+			    <tr>
+			    <td><span id="lblAnno">Periodo:</span></td>
+			    <td><div id="divanno"></div></td>
+			    </tr>
+			    </table>
+    		</div>
+    	</fieldset>
+    	<br/>
+    	<div id="gridPredios"></div>		
+	</div>
+	<br style="clear:both;" />
+	<br/>
+		<div id="gridCargabajapre"></div>
+	<br/>
+	<div class="contentBoxBr">
+		<!--<div style="float:left; margin-right:10px">
+		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+			<table class="tableContent" width="100%">
+		    <tr>
+		    <td><span id="lblCodigo">Predio Urbano</span></td>
+		    <td><div style="background-color: #fff; border:1px #333 solid; width:15px; height:15px"></div></td>
+		    </tr>
+		    <tr>
+		    <td><span id="lblAnexo">Predio Rústico:</span></td>
+		    <td><div style="background-color: #09c; border:1px #333 solid; width:15px; height:15px"></div></td>
+		    </tr>
+		    <tr>
+		    <td><span id="lblSAnexo">Predio Vendido:</span></td>
+		    <td><div style="background-color: #ff0; border:1px #333 solid; width:15px; height:15px"></div></td>
+		    </tr>
+		    </table>
+		</fieldset>
+		</div>-->
+		<div style="float:left; margin-right:10px">
+		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+			<table class="tableContent" width="100%">
+		    <tr>
+		    <td><input type="button" id="btnNuevoHr" value="Nuevo HR" /></td>
+		    <td><input type="button" id="btnNuevoPu" value="1ra. Inscripción" /></td>
+			<td><input type="button" id="btnDeterminacion" value="Determinacion" /></td>
+		    </tr>
+		    <tr>
+		    <td><input type="button" id="btnEditarHr" value="Editar HR" /></td>
+		    <td><input type="button" id="btnInscripcion" value="Inscripción" /></td>
+			<td><input type="button" id="btnVenta" value="VENTA PREDIO" /></td>
+			
+		    </tr>
+		    <tr>
+		      <td>&nbsp;</td>
+		      <td><input type="button" id="btnEliminarPu" value="Baja de Predio" size="27"/></td>
+		      </tr>
+		    <tr>
+		      <td><label></label></td>
+		      <td><input type="button" id="btnCargabaja" value="Ver Baja de Predio" /></td>
+			  <td></td>
+		      </tr>
+		    <tr>
+		      <td style='padding-right:5px'><div style="background-color:#FFFFFF; border:1px #333 solid; width:15px; height:15px"></div>Predio Adquirido&nbsp;</td>
+		      <td style='padding-right:5px'><div style="background-color:red; border:1px #333 solid; width:15px; height:15px"></div>Predio Vendido&nbsp;</td>
+		      </tr>		    
+		    </table>
+		</fieldset>
+		</div>
+		<div style="float:left; margin-right:10px">
+		<!--<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+			<table class="tableContent" width="100%">
+		    <tr>
+			<td style='padding-right:5px'><div style="background-color:#FFFFFF; border:1px #333 solid; width:15px; height:15px"></div></td><td style='font-size:10px'>Ordinario&nbsp;</td>
+					<td style='padding-right:5px'><div style="background-color:red; border:1px #333 solid; width:15px; height:15px"></div></td><td style='font-size:10px'>Cancelado&nbsp;</td>
+		      <td><span>DD.JJ:</span></td>
+		      </tr>
+		    <tr>
+		    <td><label><input type="checkbox" /> Hoja Resumen</label></td>
+		    </tr>
+		    <tr>
+		      <td><label><input type="checkbox" /> P. Rústico</label></td>
+		      </tr>
+		    <tr>
+		      <td><label>
+		        <input type="checkbox" />
+		        P. Urbano</label></td>
+		      </tr>
+		    <tr>
+		      <td><label>
+		        <input type="checkbox" />
+		        Vista Previa</label></td>
+		      </tr>
+		    <tr>
+		      <td><input type="button" id="btnPrintDj" value="Imprimir" /></td>
+		      </tr>		    
+		    </table>
+		</fieldset>-->
+		</div>
+        <div style="float:left; margin-right:10px">
+		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+			<table class="tableContent" width="100%">
+		    <tr>
+		      <td><span>Cuponera:</span></td>
+		      <td>&nbsp;</td>
+		      </tr>
+		    <tr>
+		    <td><label><input type="checkbox" id="chHR" class="chcuponera"  value="1"/> HR</label></td>
+		    <td><label>
+		      <input type="checkbox" id="chHLP" class="chcuponera"  />
+		      HLP</label></td>
+		    </tr>
+		    <tr>
+		      <td><label><input type="checkbox" id="chPU" class="chcuponera" value="2"/> PU</label></td>
+		      <td><label>
+		        <input type="checkbox" id="chHLA" class="chcuponera"/>
+		        HLA</label></td>
+		      </tr>
+		    <tr>
+		      <td><label>
+		        <input type="checkbox" id="chOI" class="chcuponera" value="3"/> OI</label></td>
+		      <td><label>
+		        <input type="checkbox" id="chCARA" class="chcuponera" value="3"/> Caratula</label></td>
+		      </tr>
+		    <tr>
+		      <td><label>
+		        <input type="checkbox" id="chCARGO" class="chcuponera" value="3"/> Cargo</label></td>
+		      <td></td>
+		    <tr>
+		    <tr>
+		      <td><input type="button" id="btnPrintCup" value="Imprimir"  value="4"/></td>
+		      <td>&nbsp;</td>
+		      </tr>
+		    <tr>
+		      <td>&nbsp;</td>
+		      <td>&nbsp;</td>
+		      </tr>		    
+		    </table>
+		</fieldset>
+		</div>
+        <div style="float:left; margin-right:10px">
+		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+			<table class="tableContent" width="100%">
+		    <tr>
+		      <td><span>Nro. de Predios:</span></td>
+		      <td id="tblpredios">0</td>
+		      </tr>
+		    <tr>
+		    <td><span>Total Autoavaluo:</span></td>
+		    <td id="tbltotaautova">0.00</td>
+		    </tr>
+		    <tr>
+		    <td><span>Base imponible:</span></td>
+		    <td id="tblbaseimp">0.00</td>
+		    </tr>
+		    <tr>
+		      <td><span>Impuesto Anual:</span></td>
+		      <td id="tblanual">0.00</td>
+		      </tr>
+		    <tr>
+		      <td><span>Impuesto Trim:</span></td>
+		      <td id='tbltrimestre'>0.00</td>
+		      </tr>
+		    <tr>
+		      <td><span>Costo Emisión:</span></td>
+		      <td id='tblemision'>0.00</td>
+		      </tr>		    
+		    </table>
+		</fieldset>
+        <br/>
+        <input type="button" id="btnCerrarDj" value="Cerrar Ventana" />        
+		</div>        
+		<br style="clear:both;" />		
+	</div>
+</div>

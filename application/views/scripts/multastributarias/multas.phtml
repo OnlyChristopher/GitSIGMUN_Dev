@@ -1,0 +1,41 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_vertributarias.js"></script>
+
+	<table class="tableContent" >
+		<tr>
+		  <td><input style="text-transform:uppercase" name="codigoContri" id="codigoContri" type="hidden" class="cajaoff" size="10" readonly/></td>
+		  </tr>
+	</table>
+
+<div>
+		<div class="divButtons">
+ <table class='tableContent'>
+		    <tr>
+					<td style='padding-right:5px'><div style="background-color:red; border:1px #333 solid; width:15px; height:15px"></div></td><td style='font-size:10px'>Imputado&nbsp;</td>
+					<td style='padding-right:5px'><div style="background-color:#2E9AFE; border:1px #333 solid; width:15px; height:15px"></div></td><td style='font-size:10px'>Fuera del rango de Imputacion&nbsp;</td>
+					
+					<td style='padding-right:5px'><div style="background-color:#4EC617; border:1px #333 solid; width:15px; height:15px"></div></td><td style='font-size:10px'>Dentro del rango de imputacion&nbsp;</td>
+            </tr>
+</table>
+		</div>
+</div>
+
+
+
+<div>
+		<div id="gridMultasTributarias"></div>
+</div>
+
+<div>
+		<div class="divButtons">
+		    <table class='tableContent'>
+		    <tr>
+				
+            	<td colspan="6" align=right><input name="btnSalirListado" id='btnSalirListado' type="button" value="Salir" /></td>               
+				
+            </tr>
+		    </table>
+		</div>
+</div>
+

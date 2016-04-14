@@ -1,0 +1,21 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script>
+var codigo='<?php echo $this->codigo ?>';
+
+</script>
+
+<form id="frmcaja" >
+<div align="center" id=divp>
+		<table cellspacing="0" cellpadding="0" class="hovertable">
+			<tr>
+				<th width="57" align='center'>Tipo</th>
+				<th width="57" align='center'>C&oacute;digo</th>
+				<th width="90" align="center">Nro. Recibo</th>
+				<th width="38" align='center'>A&ntilde;o</th>
+				<th width="100" align='center'>Fecha</th>
+			</tr>
+			<?php echo $this->datarows; ?>
+		</table>
+</div>
+</form>
+<div id="popup1"></div>

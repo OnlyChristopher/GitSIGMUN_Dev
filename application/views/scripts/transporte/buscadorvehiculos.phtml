@@ -1,0 +1,60 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Transporte_buscavehiculo.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+					<table class="tableContent">
+					<tr>
+						<td colspan="2"><span>Tipos de Búsqueda:</span></td>
+					<tr>
+					<tr>
+						<td colspan="2">
+							<select id="cmbTipos" class="combo" style="width:270px">
+								<option value="1">Placa</option>
+								<option value="3">Propietario</option>
+								<option value="4">Empresa</option>
+								<option value="5">Todos</option>
+							</select>
+						</td>
+					<tr>
+					</table>
+			  </td>
+			  <td valign="bottom" style="padding-left:50px">
+			  		<table class="tableContent">
+						<tr>
+							<td colspan="2"><span>Datos:</span></td>
+						<tr>
+						<tr>
+							<td colspan="2"><input type="text" id="txtDatos" name="txtDatos" class="caja" style="width:360px; text-transform:uppercase" maxlength="100" /></td>
+						<tr>
+				  	</table>
+			  </td>
+			  <td valign="bottom" style="padding-left:50px">
+			  	<input type="button" id="btnSearchVehiculo" class="boton" value="Buscar" style="width:100px; height:40px">
+			  </td>
+              </tr>
+            </table>	    
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="divgridVehiculos"></div>
+	    <br/>
+	    <div class="divButtons">
+		    <table class="tableContent">
+		    <tr>
+		    <td><input type="button" id="btnNewVehiculo" value="Nuevo Vehiculo" style="width:150px; height:40px" /></td>
+		    <td><!--<input type="button" id="btnPrintVehiculo" value="Imprimir Vehiculo" style="width:150px; height:40px" />--></td>
+		    <td style="padding-left:40px">
+			</td>
+		    </table>
+		</div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantperfil_formu.js"></script>
+<form id="frmperfil">
+<div>
+	<fieldset class="ui-widget ui-widget-content" style="float:left; margin-right:15px">
+        <legend style="margin-left:5px">Datos Perfil:</legend>
+        <div class="contentForm">
+            <table class="tableContent" width="100%">
+            <tr>
+                <td><span>Código:</span>  </td>
+                <td><input name="txtIdPerfil" id="txtIdPerfil" type="text" class="cajaoff" style="width:100px" readonly /></td>
+                <td style="padding-left:20px"><span>Descripci&oacute;n:</span></td>
+              <td><input name="txtNomPerfil" id="txtNomPerfil" type="text" class="caja" maxlength="50" style="width:340px"/></td>
+              <td style="padding-left:20px"><span>Estado:</span></td>
+              <td><input name="chkEstPerfil" id="chkEstPerfil" type="checkbox" value="1"/></td>
+              </tr>
+            </table>
+     	</div>
+    </fieldset>
+</div>
+<br style="clear:both"/>
+<br/>
+<div>
+	<fieldset class="ui-widget ui-widget-content">
+    	<legend style="margin-left:5px">Listado de Modulos:</legend>
+    	<div style="float:left; width:425px;">     
+            <div class="contentForm">        
+                <div id="gridPerfilMod"></div>
+            </div>   
+	    </div>
+        <div style="float:left; width:425px;">
+            <div class="contentForm">  
+                <div id="gridPerfilAcc"></div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+</form>
+<br style="clear:both">
+<div class="divButtons">
+	<table class="tableContent">
+	<tr>
+	<td><input type="button" name="btnGrabaPerfil" id="btnGrabaPerfil" value="Guardar Datos" /></td>
+	<td><input type="button" name="btnSalirPerfil" id="btnSalirPerfil" value="Cerrar Formulario" /></td>
+	</tr>
+	</table>
+</div>

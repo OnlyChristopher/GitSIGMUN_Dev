@@ -1,0 +1,99 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Catasconrentas.js"></script>
+<fieldset class="ui-widget ui-widget-content">
+	<legend style="margin-left:5px">Búsqueda:</legend>
+	<div class="contentForm">
+	<table cellspacing="8">
+	  <tr>
+	  <td width="20" style="padding:0 5px 0 10px"><input id="rdCritec1" name="rdCritec" type="radio" value="C" checked/></td>
+	  <td><label for="rdCritec1"><span>Código Contribuyente</span></label></td>
+  	  <td width="20" style="padding:0 5px 0 10px"><input id="rdCritec2" name="rdCritec" type="radio" value="N" /></td>
+	  <td><label for="rdCritec2"><span>Nombres y/o Apellidos</span></label></td>
+	  <td width="20" style="padding:0 5px 0 10px"><input id="rdCritec3" name="rdCritec" type="radio" value="R" /></td>
+	  <td><label for="rdCritec3"><span>Razón Social</span></label></td>
+	  <td width="20" style="padding:0 5px 0 10px"><input id="rdCritec4" name="rdCritec" type="radio" value="D" /></td>
+	  <td><label for="rdCritec4"><span>N° Documento de Identidad</span></label></td>
+	  <td width="20" style="padding:0 5px 0 10px"><input id="rdCritec5" name="rdCritec" type="radio" value="F" /></td>
+	  <td><label for="rdCritec5"><span>Domicilio Fiscal</span></label></td>
+	  </tr>
+	  <tr>
+	  	<td colspan="12" style="padding-top:10px">
+		<table id="C" class="tableContent" style="display:none">
+			<tr>
+				<td>Código</td>
+				<td><input name="txtCodigo" id="txtCodigo" type="text" class="caja" size="30" maxlength="100" style="text-transform:uppercase" /></td>
+				<td><input type="button" id="btnBuscar" value="Buscar" /></td>
+			</tr>
+		</table>
+		<table id="N" class="tableContent" style="display:none">
+			<tr>
+				<td>Nombre</td>
+				<td><input name="txtNombre" id="txtNombre" type="text" class="caja" size="30" maxlength="100" style="text-transform:uppercase" /></td>
+				<td>Apellido Paterno</td>
+				<td><input name="txtApePat" id="txtApePat" type="text" class="caja" size="30" maxlength="100" style="text-transform:uppercase" /></td>
+				<td>Apellido Materno</td>
+				<td><input name="txtApeMat" id="txtApeMat" type="text" class="caja" size="30" maxlength="100" style="text-transform:uppercase" /></td>
+				<td><input type="button" id="btnBuscar" value="Buscar" /></td>
+			</tr>
+		</table>
+		<table id="R" class="tableContent" style="display:none">
+			<tr>
+				<td>Razón Social</td>
+				<td><input name="txtRazSoc" id="txtRazSoc" type="text" class="caja" size="30" maxlength="100" style="text-transform:uppercase" /></td>
+				<td><input type="button" id="btnBuscar" value="Buscar" /></td>
+			</tr>
+		</table>
+		<table id="D" class="tableContent" style="display:none">
+			<tr>
+				<td>N° de Documento</td>
+				<td><input name="txtNumDoc" id="txtNumDoc" type="text" class="caja" size="30" maxlength="100" style="text-transform:uppercase" /></td>
+				<td><input type="button" id="btnBuscar" value="Buscar" /></td>
+			</tr>
+		</table>
+		<table id="F" class="tableContent" style="display:none">
+			<tr>
+				<td>Distrito</td>
+				<td><select name="selDistrito" id="selDistrito" class="combo" style="width:200px"></select></td>
+				<td>Urbanización</td>
+				<td colspan="7"><input name="txtUrb" id="txtUrb" type="text" class="caja" size="20" maxlength="100" style="text-transform:uppercase; width:230px" /></td>
+			</tr>
+			<tr>
+				<td>Vía</td>
+				<td><input name="txtVia" id="txtVia" type="text" class="caja" size="20" maxlength="100" style="text-transform:uppercase; width:200px" /></td>
+				<td align="right">Mz.</td>
+				<td><input name="txtMz" id="txtMz" type="text" class="caja" size="5" maxlength="100" style="text-transform:uppercase" /></td>
+				<td>Lte.</td>
+				<td><input name="txtLte" id="txtLte" type="text" class="caja" size="5" maxlength="100" style="text-transform:uppercase" /></td>
+				<td>Sub Lte.</td>
+				<td><input name="txtSLte" id="txtSLte" type="text" class="caja" size="5" maxlength="100" style="text-transform:uppercase" /></td>
+				<td>Número</td>
+				<td><input name="txtNumero" id="txtNumero" type="text" class="caja" size="5" maxlength="100" style="text-transform:uppercase" /></td>
+				<td><input type="button" id="btnBuscar" value="Buscar" /></td>
+			</tr>
+		</table>
+		<table id="P" class="tableContent" style="display:none">
+			<tr>
+				<td>Vía</td>
+				<td colspan="10"><input name="txtVia" id="txtVia" type="text" class="caja" size="20" maxlength="100" style="text-transform:uppercase; width:230px" /></td>				
+			</tr>
+			<tr>
+				<td align="right">Nro.</td>
+				<td><input name="txtNro" id="txtNro" type="text" class="caja" size="5" maxlength="100" style="text-transform:uppercase" /></td>
+				<td align="right">Dpto.</td>
+				<td><input name="txtDpto" id="txtDpto" type="text" class="caja" size="5" maxlength="100" style="text-transform:uppercase" /></td>
+				<td align="right">Mz.</td>
+				<td><input name="txtMz" id="txtMz" type="text" class="caja" size="5" maxlength="100" style="text-transform:uppercase" /></td>
+				<td>Lte.</td>
+				<td><input name="txtLte" id="txtLte" type="text" class="caja" size="5" maxlength="100" style="text-transform:uppercase" /></td>
+				<td>Sub Lte.</td>
+				<td><input name="txtSLte" id="txtSLte" type="text" class="caja" size="5" maxlength="100" style="text-transform:uppercase" /></td>				
+				<td><input type="button" id="btnBuscar" value="Buscar" /></td>
+			</tr>
+		</table>
+		</td>
+	  </tr>
+	</table>
+	</div>
+</fieldset>
+<br/>
+<div id="gridCRentas"></div>

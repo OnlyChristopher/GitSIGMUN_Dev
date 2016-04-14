@@ -1,0 +1,38 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script>
+var codvia='<?php echo $this->codvia;?>';
+</script>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantvias.js"></script>
+<input style='display:none;' name="zona" id="zona" type="text" class="cajaoff" size="20" maxlength="10"/>
+<input style='display:none;'name="cp" id="cp" type="text" class="cajaoff" size="20" maxlength="10"/>
+<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+    <legend style="margin-left:5px">Vías:</legend>    		
+    
+    <div style="float:left">
+        <table class="tableContent" width="100%">
+        
+        <tr>
+        <td><span>Codigo:</span></td>
+        <td><span>Nombre de Urbanizacion:</span></td>
+                
+        </tr>
+        <tr>
+        <td><input name="codigo" id="codigo" type="text" class="cajaoff"  size="8" maxlength="4" readonly /></td>
+        <td><input name="nom_urb" id="nom_urb" type="text" class="cajaoff" size="70" maxlength="40" readonly /></td>
+        </tr>	    
+        </table>
+    </div>
+    <br style="clear:both">
+</fieldset>
+<br/>
+<div id="gridVias"></div>
+<br/>
+<div class="divButtons">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+    <td style="padding-left:5px">
+    <input type="button" id="btn_nuevaVia" name='btn_nuevaVia' value="Nueva Via" />
+    <input type="button" id="btn_cerrarVia" name='btn_cerrarVia' value="Cerrar" />
+    </td>
+    </table>
+</div>

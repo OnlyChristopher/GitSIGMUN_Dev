@@ -1,0 +1,27 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandecostasdeuda.js"></script>
+<form id="frmdeuda">
+<input type="text" id="txtdeudacodigo" name="txtdeudacodigo" >
+<input type="text" id="txtdeudaconcep" name="txtdeudaconcep" value="Deuda calculada a la fecha" >
+<input type="text" id="txtdeudacant" name="txtdeudacant" value="0">
+<input type="text" id="txtdeudauit" name="txtdeudauit" value="0.00">
+<input type="text" id="txtdeudatipo" name="txtdeudatipo" value="25.31">
+<input type="text" id="txtdeudasubtipo" name="txtdeudasubtipo" value="25.31">
+<input type="text" id="txtdeudaidrecibo" name="txtdeudaidrecibo">
+<div>
+	<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+	<div>    	
+	<table class="tableContent" >
+		  <tr>
+            <td><span id="lblDeuda">Deuda calculada a la fecha:</span ></td>
+            <td><input type="text" id="txtdeudacalc" name="txtdeudacalc" class="caja" style="width:100px" /></td>
+		  </tr>
+	</table>
+	</div>
+    </fieldset>	
+	<div class="divButtons">
+    <input type="button" id="btnGrabardeuda" name="btnGrabardeuda" value="Grabar" />
+    <input type="button" id="btnCerrardeuda" name="btnCerrardeuda" value="Cerrar" />
+    </div>	
+</div>
+</form>

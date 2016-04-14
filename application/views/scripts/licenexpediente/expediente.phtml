@@ -1,0 +1,74 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Licenexpediente_genera.js"></script>
+<form id="frmlicengeneraexpediente">
+<input type="hidden" name="idSolLice" id="idSolLice" value="<?php echo $this->idSolLice ;?>">   
+<input type="hidden" name="ColSol" id="ColSol" value="<?php echo $this->ColSol ;?>">
+  <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        <table class="tableContent">
+        <tr>
+            				<td><span id="lblCodi">Fecha:</span></td>
+                            	<td><h1 id="txtfechL"></h1></td>
+                                <td>&nbsp;</td>
+                                
+                                <td colspan="2"><span id="lblCodi">Nombre o Raz&oacute;n Social:</span></td>
+                                <td colspan="2">
+                                <h1 id="txtrazonL"></h1></td>
+
+            </tr>
+        </table>
+        
+          <table class="tableContent" style="margin-top:5px;">   
+            <tr>
+				<td><span id="lblCodi">Vigencia:</span></td>
+                <td><h1 id="txtvigenL"></h1></td>
+                 <td>&nbsp;</td>
+                 <td><span id="lblContri">Zonificacion:</span></td>
+                 <td><h1 id="txtzonif"></h1></td>
+			 <td>&nbsp;</td>
+               
+                <td><span id="lblContri">Ordenanza:</span></td>
+                <td><h1 id="txtordeL"></h1></td>
+                
+			</tr>
+            </table>
+              <table class="tableContent" style="margin-top:5px;">
+           
+            <tr>
+				
+				<td><span id="lblContri">Ubicaci&oacute;n:</span></td>
+                <td><h1 id="txtubiL"></h1></td>
+                 <td>&nbsp;</td>
+                <td><span id="lblContri">Giro:</span></td>
+                <td><h1 id="txtgiroL"></h1></td>
+			</tr>
+            </table>
+              <table class="tableContent" style="margin-top:5px;">
+           
+            <tr>
+				 <td><span id="lblContri">R.U.C:</span></td>
+                 <td><h1 id="txtrucL"></h1></td>
+                  <td>&nbsp;</td>
+                <td><span id="lblCodi">Area:</span></td>
+                <td><h1 id="txtareaL"></h1></td>
+			</tr>
+           
+            
+		</table>
+	   </div> 
+       <div class="contentForm">           
+       <div class="divButtons">
+	    <table class="tableContent">
+	     <tr>
+	      <td style="padding-left:5px">
+		    <input type="button" name="btnGenerarExpiente" id="btnGenerarExpiente" value="Generar Expediente" />
+		    <input type="button" name="btnSalirExp" id="btnSalirExp" value="Salir" />
+		  </td>
+		 </tr>
+	    </table>
+	   </div>           
+    </div>
+  </fieldset>
+</div>
+</form>

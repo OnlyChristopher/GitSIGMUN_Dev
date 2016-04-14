@@ -1,0 +1,78 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_multasadmin_editar.js"></script>
+<form id="frmultedit">
+<input type="hidden" name="codigo" id='codigo' size="10" class="caja"/>
+<input type="hidden" name="numeroMulta" id='numeroMulta' size="10" class="caja"/>
+
+<fieldset class="ui-widget ui-widget-content">
+	<legend style="margin-left:5px">Multas Administrativas</legend>
+	<div class="contentForm">
+	<table class="tableContent" width="100%">
+	  <tr>
+		  <td><span>Autoridad Municipal: </span></td>
+		  <td><select name="codigo_autoridad_municipal" id='codigo_autoridad_municipal' class="combo" style="width:300px"></select></td>
+	  <tr>
+		<td><span>Fecha de Imposicion: </span></td>
+		<td>
+        <input type="hidden" id="anno_multa" name="anno_multa">
+        <input name="fecha_multa" type="text" class="caja" id="fecha_multa" style="text-transform:uppercase; width:100px" maxlength="10" />
+        <span>&nbsp;&nbsp;&nbsp;dd/mm/aaaa </span></td>
+	  </tr>
+      <tr>
+		<td><span>Fecha de Notificacion: </span></td>
+		<td><input name="fecha_notificacion" type="text" class="caja" id="fecha_notificacion" style="text-transform:uppercase; width:100px" maxlength="10" />
+        <span>&nbsp;&nbsp;&nbsp;dd/mm/aaaa </span></td>
+	  </tr>
+	  <tr>
+		<td><span>Antecedente: </span></td>
+		<td><input name="antecedente" type="text" class="caja" id="antecedente" style="text-transform:uppercase; width:300px" maxlength="50" /></td>
+	  </tr>
+	  <tr>
+		<td><span>Preimpreso: </span></td>
+		<td><input name="preimpreso" type="text" class="caja" id="preimpreso" maxlength='5' style="text-transform:uppercase; width:100px"/></td>
+	  </tr>
+      <tr>
+		  <td><span>Infraccion: </span></td>
+		  <td><select name="codigo_area" id='codigo_area' class="combo" style="width:300px"></select></td>
+	  <tr>
+      <tr>
+      	  <td><span>&nbsp;&nbsp;&nbsp; </span></td>
+		  <td><select name="tipo_infraccion" id='tipo_infraccion' class="combo" style="width:300px"></select></td>
+	  <tr>
+      <tr>
+          <td><span>&nbsp;&nbsp;&nbsp; </span></td>
+		  <td><select name="codigo_infraccion" id='codigo_infraccion' class="combo" style="width:300px"></select></td>
+	  <tr>
+      <tr>
+		<td><span>Cantidad: </span></td>
+		<td><input name="cantidad" id="cantidad" type="text" class="caja"  style="text-transform:uppercase; width:100px"  /><span>&nbsp;&nbsp;&nbsp;unidades(mayor a cero) </span></td>
+	  </tr>
+      <tr>
+		<td><span>Base de Calculo: </span></td>
+		<td><input name="base" id="base" type="text" class="cajaoff"  style="text-transform:uppercase; width:100px" readonly /><span>&nbsp;&nbsp;&nbsp;(mayor a cero) </span></td>
+	  </tr>
+      <tr>
+		<td><span>Factor: </span></td>
+		<td><input name="factor" id="factor" type="text" class="cajaoff"  style="text-transform:uppercase; width:100px" readonly /><span>&nbsp;&nbsp;&nbsp;(0%-100%) </span></td>
+	  </tr>
+      <tr>
+		<td><span>Monto de la Multa: </span></td>
+		<td><input name="montoTotal" id="montoTotal" type="text" class="cajaoff"  style="text-transform:uppercase; width:100px" readonly /><span>&nbsp;&nbsp;&nbsp;Nuevos Soles </span></td>
+	  </tr>
+      <tr>
+		<td><span>Estado: </span></td>
+		<td><select name="estado" id="estado" class="combo"  style="width:150px"/></td>
+	  </tr>
+	</table>	
+	</div>                
+</fieldset>
+</form>
+<br/>
+<div class="divButtons">
+	<table class="tableContent">
+	<tr>
+		<td><input name="btnSaveForm" id='btnSaveForm' value='Grabar' type="button"></td>
+		<td><input name="btnCloseForm" id='btnCloseForm' value='Salir' type="button"></td>
+	</tr>            
+	</table>
+</div>

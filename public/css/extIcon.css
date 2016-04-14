@@ -1,0 +1,19 @@
+.user {
+    background-image:url(img_extIcon/user.png) !important;
+}
+
+.arrow {
+    background-image:url(img_extIcon/bullet_go.png) !important;
+}
+
+.print {
+    background-image:url(img_extIcon/print.png) !important;
+}
+
+.export {
+    background-image:url(img_extIcon/export.gif) !important;
+}
+
+.close {
+    background-image:url(img_extIcon/close.png) !important;
+}

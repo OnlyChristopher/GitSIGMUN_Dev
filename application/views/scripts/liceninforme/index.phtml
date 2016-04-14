@@ -1,0 +1,137 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Liceninforme.js"></script>
+<form id="frmliceninforme">
+
+<input type="hidden" name="idSolLice2" id="idSolLice2" value="<?php echo $this->idSolLice2 ;?>">   
+<input type="hidden" name="ColSol2" id="ColSol2" value="<?php echo $this->ColSol2 ;?>">
+<input type="hidden" name="TipoLice2" id="TipoLice2">
+<input type="hidden" name="TipoCpto2" id="TipoCpto2">
+<input type="hidden" name="TipoPers2" id="TipoPers2">
+
+<input type="hidden" name="defensas" id="defensas" value="<?php echo $this->defensas ;?>">
+
+<input type="hidden" name="informe" id="informe" value="<?php echo $this->informeid ;?>">
+
+
+  <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        <table class="tableContent">
+         <tr>
+            <td><span id="lblCodi">Area:</span></td>
+            <td><h1 id="txtArea"></h1></td>
+            <td>&nbsp;</td>
+            <td><span id="lblCodi">Gerente:</span></td>
+            <td><h1 id="txtEncargado"></h1></td>
+        </tr>
+        </table>
+          <table class="tableContent" style="margin-top:5px;">
+        <tr>
+          <td><span id="lblCodi">T&eacute;cnico:</span></td>
+            <td><h1 id="txtTecnico"></h1></td> 
+                        <td>&nbsp;</td>
+
+              <td><span id="lblCodi">Informe:</span></td>
+            <td><input style="text-transform:uppercase;" autofocus="autofocus" name="txtinfor" id="txtinfor" type="text" class="caja" size="20" maxlength="100" /></td> 
+             <td>&nbsp;</td>  
+             <td><span id="lblCodi">Fecha:</span></td>
+            <td><input name="txtfechinf" readonly="readonly" id="txtfechinf" type="text" class="caja" size="15" maxlength="100" /></td>
+              
+            </tr>
+        </table>
+          <table class="tableContent" style="margin-top:5px;">
+        <tr>
+           
+            <td><span id="lblCodi">Nombre o Raz&oacute;n Social:</span></td>
+			<td><div id="sexo"><select name="cmbSexo" id="cmbSexo" class="combo" style="width:100px"></select></div></td>
+            <td><h1 id="txtrazonL"></h1></td>       
+			
+			<td><div id="cargo"><span id="lblCargo">Cargo:</span>
+            <select name="cmbCargo" id="cmbCargo" class="combo" style="width:150px">          
+          </select></div></td>
+			
+        </tr>
+        </table>
+        <table class="tableContent" style="margin-top:5px;">
+			
+            <tr id="hidecondefensa">
+				<td><span id="lblContri">Memorando:</span></td>
+                <td><input style="text-transform:uppercase;" name="txtmemo" id="txtmemo" type="text" class="caja" size="20" maxlength="100" /></td>
+               
+               
+                <td><span id="lblContri">Fecha:</span></td>
+                 <td><input name="txtfechmemo"  readonly="readonly" id="txtfechmemo" type="text" class="caja" size="15" maxlength="10" /></td>
+                 
+               <!-- <td><h1 id="txtexpL"></h1></td>-->
+			</tr>
+			
+			<tr id="hidesindefensa">
+				<td colspan="3"><span id="lblContri">Declaración Jurada de Observación de Condiciones de Seguridad :</span></td>
+                <td><input style="text-transform:uppercase;" name="txtdj" id="txtdj" type="text" class="caja" size="20" maxlength="100" /></td>
+                              
+               
+			</tr>
+			
+			<tr id="hideconcertificado">
+				<td colspan="3"><span id="lblContri">Certificado de Inspección Técnica de Seguridad en Defensa Civil Básica :</span></td>
+                <td><input style="text-transform:uppercase;" name="txtcertificado" id="txtcertificado" type="text" class="caja" size="20" maxlength="100" /></td>
+                              
+               
+			</tr>
+			
+            </table>
+          <table class="tableContent" style="margin-top:5px;">   
+            <tr>
+				<td><span id="lblCodi">Vigencia:</span></td>
+                <td><h1 id="txtvigenL"></h1></td>
+                 <td>&nbsp;</td>
+                 <td><span id="lblContri">Zonificacion:</span></td>
+                 <td><h1 id="txtzonif"></h1></td>
+			 <td>&nbsp;</td>
+               
+                <td><span id="lblContri">Ordenanza:</span></td>
+                <td><h1 id="txtordeL"></h1></td>
+                
+			</tr>
+            </table>
+              <table class="tableContent" style="margin-top:5px;">
+           
+            <tr>
+				
+				<td><span id="lblContri">Ubicaci&oacute;n:</span></td>
+                <td><h1 id="txtubiL"></h1></td>
+                 <td>&nbsp;</td>
+                <td><span id="lblContri">Giro:</span></td>
+                <td><h1 id="txtgiroL"></h1></td>
+			</tr>
+            </table>
+              <table class="tableContent" style="margin-top:5px;">
+           
+            <tr>
+				 <td><span id="lblContri">R.U.C:</span></td>
+                 <td><h1 id="txtrucL"></h1></td>
+                  <td>&nbsp;</td>
+                <td><span id="lblCodi">Area:</span></td>
+                <td><h1 id="txtareaL"></h1></td>
+			</tr>
+            </table>
+			
+			
+           
+	   </div> 
+       <div class="contentForm">           
+       <div class="divButtons">
+	    <table class="tableContent">
+	     <tr>
+	      <td style="padding-left:5px">
+		    <input type="button" name="btnGenerarInf3" id="btnGenerarInf3" value="Generar Licencia" />
+		    <input type="button" name="btnSalirInf2" id="btnSalirInf2" value="Salir" />
+			<input type="button" name="btnImprimir" id="btnImprimir" value="Imprimir" />
+		  </td>
+		 </tr>
+	    </table>
+	   </div>           
+    </div>
+  </fieldset>
+</div>
+</form>

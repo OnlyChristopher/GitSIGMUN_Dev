@@ -1,0 +1,69 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Cataspersona_personx.js"></script>
+<form id="frmcpersonx">
+<input type="hidden" name="idsigmaxx" id="idsigmaxx" />
+<div>
+    <table class="tableContentc">
+        <tr>
+          <td width="326">
+          <div class="lblCodField" style="width:25px; border-bottom:0;">26</div>
+          <div class="lblTxtField" style="width:150px; border-bottom:0; border-left:0">
+          Tipo Doc. Identidad
+          </div>
+          <div class="lblObjField" style="border-bottom:0; border-left:0">
+          <select name="ciddocuxx" id="ciddocuxx" class="comboc" style="width:150px"></select>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <div class="lblCodField" style="width:25px;">27</div>
+          <div class="lblTxtField" style="width:150px; border-bottom:0; border-left:0">
+          Nro. Documento
+          </div>
+          <div class="lblObjField" style="border-bottom:0; border-left:0">
+          <input name="numedocxx" type="text" class="cajac" id="numedocxx" maxlength="17" style="text-transform:uppercase; width:150px" />
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <div class="lblCodField" style="width:25px;">28</div>
+          <div class="lblTxtField" style="width:150px; border-bottom:0; border-left:0">
+          Nombres
+          </div>
+          <div class="lblObjField" style="border-bottom:0; border-left:0">
+            <input name="nombresxx" type="text" class="cajac" id="nombresxx" maxlength="50" style="text-transform:uppercase; width:150px" />
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <div class="lblCodField" style="width:25px;">29</div>
+          <div class="lblTxtField" style="width:150px; border-bottom:0; border-left:0">
+          Apellido Paterno
+          </div>
+          <div class="lblObjField" style="border-bottom:0; border-left:0">
+          <input name="apaternxx" type="text" class="cajac" id="apaternxx" maxlength="50" style="text-transform:uppercase; width:150px" />
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <div class="lblCodField" style="width:25px;">30</div>
+          <div class="lblTxtField" style="width:150px; border-left:0">
+          Apellido Materno
+          </div>
+          <div class="lblObjField" style="border-left:0">
+          <input name="amaternxx" type="text" class="cajac" id="amaternxx" maxlength="50" style="text-transform:uppercase; width:150px" />
+          </div>
+          </td>
+        </tr>
+    </table>
+</div>                
+</form>
+
+<div class="divButtons">
+    <input type="button" name="btnGrabaPersonxx" id="btnGrabaPersonxx" value=" Grabar " />
+    <input type="button" name="btnSalirPersonxx" id="btnSalirPersonxx" value=" Cancelar " />
+</div>

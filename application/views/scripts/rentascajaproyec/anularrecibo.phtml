@@ -1,0 +1,49 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<form id="frmanular">
+<input type="hidden" name="actionAnular" id="actionAnular">
+
+<div>
+    <fieldset class="ui-widget ui-widget-content">
+        <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+        	<table class="tableContent">
+			    
+		
+			    
+			   	<tr>
+			      <td><span id="lblRecibo">Nº de Recibo a Anular :</span></td>
+			      <td><input name="txtRecibo" id="txtRecibo" type="text" class="caja" size="20" maxlength="9"/>  <input type="button" id="btnRecibo" value="..." /></td>
+			      
+			    </tr>
+			    
+			    <tr>
+			      <td><span id="lblFecha">Fecha de Cancelación:</span></td>
+			      <td><input name="txtFecha" id="txtFecha" type="text" class="cajaoff" size="20" readonly /></td>
+			    </tr>
+			    
+			    <tr>
+			      <td><span id="lblContribuyente">Contribuyente:</span></td>
+			      <td><input name="txtContribuyente" id="txtContribuyente" type="text" class="cajaoff" size="60" readonly /></td>
+			    </tr>
+			    
+			    <tr>
+			      <td colspan="7">
+                  <div class="divButtons">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td style="padding-left:5px">
+           	          <input type="button" name="btnAceptar" id="btnAceptar" value="Aceptar" />
+                      <input type="button" name="btnSalir" id="btnSalir" value="Salir" />
+                    </td>
+                    </tr>
+                    </table>
+                  </div>
+                  </td>
+		      </tr>
+			    
+		    </table>	    
+        </div>
+    </fieldset>	    
+</div>
+</form>

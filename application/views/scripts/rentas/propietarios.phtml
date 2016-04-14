@@ -1,0 +1,15 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_propietario.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBoxMain">
+	<div style="float:left;">Propietarios del Predio :</div> <b><div id="divCodpred" style="float:left;"><?php echo $this->cod_pred;?></div></b>
+	<form id="frmpropietario" >
+		<div id="gridPropietario"></div>
+		<br>
+		<input type="button" id="btnClose" value="Cerrar" />
+	</form>
+    </div>
+</div>

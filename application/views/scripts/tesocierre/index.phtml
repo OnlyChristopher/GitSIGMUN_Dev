@@ -1,0 +1,92 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<style type="text/css">
+	.text0{
+		font-family: tahoma;
+		font-size:11px;
+		letter-spacing:1px;
+	}
+</style>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_tesocierre.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Apertura y Cierre Caja</legend>
+	        <div class="contentForm">
+
+			<table class="tableContent"  width="70%">
+				<tr>
+					<td align="right" class="text0">
+						<label><b>Fecha (D/M/A): </b></label>
+					</td>
+					<td>
+						<input name="txtfechas" id="txtfechas" type="text" value="" class="cajaoff" size="20" maxlength="100" readonly />
+					</td>
+				</tr>
+				<tr>
+					<td align="right" class="text0">
+						<label><b>Agencia: </b></label>
+					</td>
+					<td>
+						<input name="txtagencia" id="txtagencia" type="text" value="01" class="cajaoff" size="20" maxlength="100" readonly />
+					</td>
+				</tr>
+				<tr>
+					<td align="right" class="text0">
+						<label><b>Usuario: </b></label>
+					</td>
+					<td>
+						<input name="txtusuario" id="txtusuario" type="text" value="" class="cajaoff" size="20" maxlength="100" readonly />
+						<input name="txtcajero" id="txtcajero" type="hidden" value="" />
+					</td>
+				</tr>
+				<tr>
+					<td align="right" class="text0">
+						<label><b>Estado de la Caja: </b></label>
+					</td>
+					<td>
+						<input name="txtestado" id="txtestado" type="text" value="" class="cajaoff" size="100" maxlength="200" readonly />
+						<input name="txtidestado" id="txtidestado" type="hidden" value="" />
+						<input name="txtcuadre" id="txtcuadre" type="hidden" value="" />
+					</td>
+				</tr>
+			</table>
+			</div>
+		</fieldset>
+		
+		<div class="divButtons">
+			<table width="50%">
+				<tr>
+					<td align="right">
+						<input type="button" id="btnapertura" value="Apertura Caja" />&nbsp;&nbsp;&nbsp;
+					</td>
+					<td align="left">
+						&nbsp;&nbsp;&nbsp;<input type="button" id="btncierre" value="Cierre Caja"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"  align="center" class="text0">
+						&nbsp;&nbsp;&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"  align="center" class="text0">
+						&nbsp;&nbsp;&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"  align="center" class="text0">
+						&nbsp;&nbsp;&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"  align="center" class="text0">
+						<a href="#" onclick="javascript:abrecuadre();" ><b>Ir a Cuadre de Caja</b></a>
+					</td>
+				</tr>
+			</table>
+		</div>
+    </div>
+</div>

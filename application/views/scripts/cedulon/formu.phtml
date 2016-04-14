@@ -1,0 +1,220 @@
+   <?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Cedulon_formu.js"></script>
+
+	<script>
+	$(function() {
+		$( "#dpFechaC" ).datepicker();
+		$( "#dpFechaV1" ).datepicker();
+		$( "#dpFechaV2" ).datepicker();
+	});
+	</script>
+    
+    
+<form id="formCedulon" name="formCedulon">
+<div>
+    <div id="contentBox5" class="ui-content-tabs"  style="float:left;width:100%">					
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px">NOTIFICACION POR CEDULON</li>
+    </ul>
+       		
+        	 <table class="tableContent"  style="width:100%">
+  <tr>
+   <td valign="top">
+    <fieldset class="ui-widget ui-widget-content"  style="margin-left:5px" >
+            <legend style="margin-left:5px">Datos:</legend>
+            <table class="tableContent"  style="width:100%">
+            <tr>
+              <td width="23%">
+              <input type="hidden" name="hcodCartaReq" id="hcodCartaReq" />
+              <input type="hidden" name="hcodCedulon" id="hcodCedulon" />
+              <label for="txtNroCedulon">Nro :</label>
+              </td>
+              <td width="21%">
+              <span> <?php echo $this->nroCedulon; ?></span></td>
+              <td width="10%">&nbsp;</td>
+              <td width="46%">&nbsp;</td>
+            </tr>
+            
+            <tr>
+              <td><label for="txtCodigoContribuyenteC">Codigo de Contribuyente:</label></td>
+              <td>
+              <span> <?php echo $this->codContrib; ?></span></td>
+              <td><label for="txtContribuyenteC">Contribuyente:</label></td>
+              <td>
+              <span> <?php echo $this->contribuyente; ?></span></td>
+            </tr>
+            <tr>
+              <td align="left">
+                <label for="dpFechaC">Fecha: </label></td>
+              <td align="left"><input name="dpFechaC" type="text" class="caja" id="dpFechaC" readonly="readonly" /></td>
+              <td align="left"><label for="txtHoraC">Hora: </label></td>
+              <td align="left"><input type="text" name="txtHoraC" id="txtHoraC" class="caja"/></td>           
+              
+            </tr>      
+            <tr>
+              <td colspan="4"><br />
+	<div id="tabsCedulon">
+		        <ul >
+                	  
+					<li id="tabDetalle">
+	                    <a href="#tabDetalleCedulon">
+	                    <div>Detalle de Cedulon</div>
+	                    </a>
+	                </li>
+		             <li  id="tabVisita">
+	                    <a href="#tabVisitas">
+	                    <div>Visitas Efectuadas</div>
+	                    </a>
+	                </li>                
+		        </ul>
+                <div id="tabDetalleCedulon">
+                <table width="100%">
+                <tr>
+                  <td width="18%" valign="top">Motivo de no acuse de recibo:</td>
+                  <td colspan="4">
+                  	<input type="checkbox" name="chkDomicilioCerrado" id="chkDomicilioCerrado" class="caja" />
+                    <label for="chkDomicilioCerrado">El domicilio se encontro cerrado</label></td>
+                  </tr>
+                   <tr>
+                  <td>&nbsp;</td>
+                  <td colspan="4"> 
+                  <input type="checkbox" name="chkPersonaIncapaz" id="chkPersonaIncapaz"  class="caja"/>
+                   <label for="chkPersonaIncapaz">   No se ha encontrado persona capaz en el domicilio <br />
+                     <br />
+                   </label></td>
+                  </tr>
+                <tr>
+                  <td>Documentos dejados:</td>
+                  <td width="13%"> <label for="cbTipoDoc1">Tipo Doc.</label></td>
+                  <td width="15%">
+                    <select name="cbTipoDoc1" id="cbTipoDoc1" class="combo">
+                    </select></td>
+                  <td width="16%" align="right"><label for="txtNroDoc1">Nro Doc.</label></td>
+                  <td width="38%">
+                    <input name="txtNroDoc1" type="text" class="caja" id="txtNroDoc1" readonly="readonly" /></td>
+                  </tr>
+                <tr>
+                  <td>
+                  <input type="hidden" name="tempNroActaVisita" id="tempNroActaVisita"  />
+                  <input type="hidden" name="tempNroCargoNotifica" id="tempNroCargoNotifica"  />
+                  <input type="hidden" name="tempNroCarta" id="tempNroCarta"  />
+                  </td>
+                  <td><label for="cbTipoDoc2">Tipo Doc.</label></td>
+                  <td><select name="cbTipoDoc2" id="cbTipoDoc2" class="combo">
+                  </select></td>
+                  <td align="right"><label for="txtNroDoc2">Nro Doc.</label></td>
+                  <td><input name="txtNroDoc2" type="text" class="caja" id="txtNroDoc2" readonly="readonly" /></td>
+                  </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><label for="cbTipoDoc3">Tipo Doc.</label></td>
+                  <td><select name="cbTipoDoc3" id="cbTipoDoc3" class="combo">
+                  </select></td>
+                  <td align="right"><label for="txtNroDoc3">Nro Doc.</label></td>
+                  <td><input name="txtNroDoc3" type="text" class="caja" id="txtNroDoc3" readonly="readonly" /></td>
+                  </tr>
+               
+                </table>
+                </div>
+		        <div id="tabVisitas"><br />
+
+                <table width="100%">
+                  <tr>
+                    <td width="50%"> 
+                    <fieldset class="ui-widget ui-widget-content"  style="margin-left:5px" >
+                     <legend style="margin-left:5px">1era. Visita</legend><br />
+
+                     
+                     <table>
+                       <tr>
+                         <td><label for="dpFechaV1">Fecha:</label></td>
+                         <td>
+                           <input name="dpFechaV1" type="text" class="caja" id="dpFechaV1" readonly="readonly" /></td>
+                       </tr>
+                       <tr>
+                         <td><label for="cbFiscalizadorV1">Firma:</label></td>
+                         <td>
+                         <div id="radioFirmaV1" >
+                            <input name="rdFirmaV1" type="radio" id="rdFirmaV1Si" value="1" />
+                            <label for="rdFirmaV1Si">Si</label>
+                            <input name="rdFirmaV1" type="radio" id="rdFirmaV1No"  value="0"  checked="checked"/>
+                            <label for="rdFirmaV1No">No</label>
+                         </div> 
+                         </td>
+                       </tr>
+                       <tr>
+                         <td>&nbsp;</td>
+                         <td>&nbsp;</td>
+                       </tr>
+                     </table>
+                    </fieldset>
+                    </td>
+                    <td width="50%">
+                     <fieldset class="ui-widget ui-widget-content"  style="margin-left:5px" >
+                     <legend style="margin-left:5px">2da. Visita</legend><br />
+
+                     <table>
+                       <tr>
+                         <td><label for="dpFechaV2">Fecha:</label></td>
+                         <td>
+                           <input name="dpFechaV2" type="text"  class="caja" id="dpFechaV2" readonly="readonly" /></td>
+                       </tr>
+                       <tr>
+                         <td><label for="cbFiscalizadorV2">Firma:</label></td>
+                         <td> 
+                         <div id="radioFirmaV2" >
+                            <input name="rdFirmaV2" type="radio" id="rdFirmaV2Si" value="1" />
+                            <label for="rdFirmaV2Si">Si</label>
+                            <input name="rdFirmaV2" type="radio" id="rdFirmaV2No"  value="0"  checked="checked"/>
+                            <label for="rdFirmaV2No">No</label>
+                         </div>                           
+                        </td>
+                       </tr>
+                       <tr>
+                         <td>&nbsp;</td>
+                         <td>&nbsp;</td>
+                       </tr>
+                     </table>
+                     </fieldset>
+                    
+                    
+                    </td>
+                  </tr>
+                </table>                
+<br />
+</div>				
+		</div>
+              </td>           
+
+            </tr>                      
+               <tr>
+              <td colspan="4" align="center">
+			 <div class="divButtons" >
+                	<input type="button" id="btnSaveCedulon" name="btnSaveCedulon" value="Guardar" />
+      	             <input type="button" id="btnImprimirCedulon" name="btnImprimirCedulon" value="Imprimir" />
+                    <input type="button" id="btnCancelCedulon" name="btnCancelCedulon" value="Cancelar" />
+                </div>
+	
+               </td>           
+
+            </tr>
+               
+            </table>	
+        </fieldset>   
+        </td>
+  </tr>
+  <tr>
+    <td valign="bottom">
+    
+ </td>
+    </tr>
+</table> 
+             
+    	 	
+ 
+	 	
+    </div>
+</div>
+
+
+</form>

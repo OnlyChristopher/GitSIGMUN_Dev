@@ -1,0 +1,23 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script>
+var codigocaja='<?php echo $this->codigocaja ?>';
+
+</script>
+
+<form id="frmcaja" >
+<div align="center" id=divp>
+		<table width="550" cellspacing="0" cellpadding="0" class="hovertable">
+			<tr>
+				<th width="87" class="">Nro. Recibo</th>
+				<th width="40" class="">Cajero</th>
+				<th width="78" class="">Usuario</th>
+				<th width="150" class="">Fecha</th>
+				<th width="100" class="">Total</th>
+				<th width="70" class="">Estado</th>
+				<th width="52" class="">Detalle</th>
+			</tr>
+			<?php echo $this->datarows; ?>
+		</table>
+</div>
+</form>
+<div id="popup1"></div>

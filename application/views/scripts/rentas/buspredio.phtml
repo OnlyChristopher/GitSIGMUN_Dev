@@ -1,0 +1,76 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script>
+var mod = '<?php echo $this->mod; ?>';
+</script>
+<style type="text/css">
+.invisible {display: none; }
+</style>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Buspredio.js"></script>
+<form id="frmBusPred">
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div id="contenidoForm" class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+              <td>
+              <label>
+              <input name="rdCriterioPred" id="rdCriterioPred1" type="radio" value="C" checked/><b> Código</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriterioPred" id="rdCriterioPred2" type="radio" value="N" /><b> Nombres</b>
+              </label>
+              </td>
+			   <td>
+              <label>
+              <input name="rdCriterioPred" id="rdCriterioPred3" type="radio" value="R" /><b> Razón Social</b>
+              </label>
+              </td>
+              <td>
+              <label>
+              <input name="rdCriterioPred" id="rdCriterioPred4" type="radio" value="D" /><b> Documento</b>
+              </label>
+              </td>              
+              </tr>
+			  </table>
+			  <table class="tableContent"> 
+			  <tr>
+				<td colspan="4">
+				<div style="float:left">
+					<div id="CPred" class="visible"><input name="txtCriterioPredio" id="txtCriterioPredio" type="text" class="caja" size="20" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="NPred" class="invisible">Nombres <input name="txtCriterioNombrePredio" id="txtCriterioNombrePredio" type="text" class="caja" size="40" maxlength="100" style="text-transform: uppercase"/> 
+												  Apellido Paterno <input name="txtCriterioAPaternoPredio" id="txtCriterioAPaternoPredio" type="text" class="caja" size="30" maxlength="100" style="text-transform: uppercase"/>
+												  Apellido Materno <input name="txtCriterioAMaternoPredio" id="txtCriterioAMaternoPredio" type="text" class="caja" size="30" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="RPred" class="invisible"><input name="txtCriterio" id="txtCriterioRazonPredio" type="text" class="caja" size="40" maxlength="100" style="text-transform: uppercase"/></div>
+					<div id="DPred" class="invisible"><input name="txtDocumento" id="txtDocumentoPredio" type="text" class="caja" size="20" maxlength="100" style="text-transform: uppercase"/></div>
+				</div>
+					<div style="float:right"><input type="button" id="btnBuscarPredio" value="Buscar" /></div>
+				</td>
+			  </tr>
+            </table>	    
+	    	</div>
+			<div class="contentForm">
+				<b>Año :</b><input name="txtAnnoBus" id="txtAnnoBus" type="text" class="caja" size="7" maxlength="4" style="text-transform: uppercase"/> 
+			</div>
+	    </fieldset>
+	    <br/>
+	    <div id="gridPrediosbuscado"></div>
+	    <br/>
+	    <div class="divButtons">
+		    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		    <tr>
+		    <td style="padding-left:5px">
+		   
+		    </td>
+		    <td></td>
+		    </table>
+		</div>
+    </div>
+</div>
+</form>

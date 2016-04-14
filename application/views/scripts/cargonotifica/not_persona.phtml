@@ -1,0 +1,147 @@
+<table width="100%">
+                <tr>
+                  <td width="24%" valign="top"><label for="txtNomApeRecepciona">Apellidos y Nombres:</label></td>
+                  <td colspan="3">
+                  <input type="text" name="txtNomApeRecepciona" id="txtNomApeRecepciona" class="caja" style="width:100%" /></td>
+                  <td width="22%" rowspan="7" valign="top">
+                  <fieldset class="ui-widget ui-widget-content"  style="padding:5px" >
+           			 <legend style="margin-left:5px"><span>Vinculo</span></legend><br />
+                  <table width="100%">
+                    <tr>
+                      <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="chkTitular" id="chkTitular" />
+                      </td>
+                      <td><label for="chkTitular">Titular</label></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="chkFamiliar" id="chkFamiliar" />
+                     </td>
+                      <td><label for="chkFamiliar">Familiar </label></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="chkVigilante" id="chkVigilante" />
+                      </td>
+                      <td><label for="chkVigilante">Vigilante</label></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="chkEmpleado" id="chkEmpleado" />
+                      </td>
+                      <td><label for="chkEmpleado">Empleado(a)</label></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="chkRepresentante" id="chkRepresentante" />
+                      </td>
+                      <td><label for="chkRepresentante">Representante</label></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"><br />
+
+                      <input type="checkbox" name="chkVinculoOtros" id="chkVinculoOtros" />
+                      <label for="chkVinculoOtros">Otros </label>                        
+                      <input name="txtVinculoOtros" type="text" class="cajaoff" id="txtVinculoOtros" readonly="readonly"  /></td>
+                    </tr>
+                  </table>
+                  </fieldset>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><label for="txtNroDocIdent">Tipo de Documento:</label></td>
+                  <td colspan="3">
+                  <table style="width:100%">
+                    <tr>
+                      <td>
+                      <input type="hidden" name="hmaxDni" id="hmaxDni"/>
+                      <input type="checkbox" name="chkDni" id="chkDni" />
+                      <label for="chkDni">L.E./DNI</label></td>
+                      <td>
+                      <input type="hidden" name="hmaxIdentidad" id="hmaxIdentidad"/>
+                      <input type="checkbox" name="chkIdentidad" id="chkIdentidad" />
+                      <label for="chkIdentidad">CARNET DE IDENTIDAD</label></td>
+                      <td>
+                      <input type="hidden" name="hmaxExtranjeria" id="hmaxExtranjeria" />
+                      <input type="checkbox" name="chkExtranjeria" id="chkExtranjeria"/>
+                      <label for="chkExtranjeria">CARNET DE EXTRANJER&Iacute;A</label>
+                      </td>
+                    </tr>
+                  </table></td>
+                  </tr>
+                   <tr>
+                  <td><label for="txtNroDocIdent">Nro de Documento de Identidad:</label></td>
+                  <td>
+                    <input name="txtNroDocIdent" type="text"  class="caja" id="txtNroDocIdent"  />
+                  
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  </tr>
+                <tr>
+                  <td><label for="dpFechaNotifica">Fecha de Notificacion:</label></td>
+                  <td width="16%">                    
+                    <input name="dpFechaNotifica" type="text"  class="caja" id="dpFechaNotifica" readonly="readonly"  />
+				  </td>
+                  <td width="16%"><label for="txtHoraNotifica">Hora:</label></td>
+                  <td width="22%">
+                  <input type="text" name="txtHoraNotifica" id="txtHoraNotifica"  class="caja"  /></td>
+                  </tr>
+                <tr>
+                  <td colspan="4">
+                  
+                  <table style="width:100%">
+                    <tr>
+                      <td width="23%" align="right">
+                      <input type="checkbox" name="chkNegoIdentificar" id="chkNegoIdentificar" />
+                      </td>
+                      <td width="20%">
+                      <label for="chkNegoIdentificar">Se neg&oacute; a identificar</label>
+                      </td>
+                      <td width="5%">
+                      <input type="checkbox" name="chkNegoFirmar" id="chkNegoFirmar" />
+                      </td>
+                      <td width="19%">
+                      <label for="chkNegoFirmar">Se neg&oacute; a firmar </label>
+                      </td>
+                      <td width="4%">
+                      <input type="checkbox" name="chkNegoRecibir" id="chkNegoRecibir" />
+                      </td>
+                      <td width="29%">
+                      <label for="chkNegoRecibir">Se neg&oacute; a recibir</label>
+                      </td>
+                    </tr>
+                  </table>
+                  
+                  </td>
+  </tr>
+                <tr>
+                  <td>Firma: </td>
+                  <td>
+                  <div id="radioFirmaRecep" >
+                            <input name="rdFirmaRecepciona" type="radio" id="rdFirmaRecepcionaSi" value="1" />
+                            <label for="rdFirmaRecepcionaSi">Si</label>
+                            <input name="rdFirmaRecepciona" type="radio" id="rdFirmaRecepcionaNo"  value="0"  checked="checked"/>
+                            <label for="rdFirmaRecepcionaNo">No</label>
+                  </div> 
+                  </td>
+                  <td>&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                  </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                </tr>
+               
+                </table>

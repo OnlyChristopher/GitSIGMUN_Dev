@@ -1,0 +1,36 @@
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Tesomenuemitidos.js"></script>
+
+<table id="table3" cellspacing="1" cellpadding="1" width="500" border="0" align="center">
+	<tr>
+		<td style="height: 18px" nowrap>Tipo Operacion:</td>
+		<td colspan="2">
+			<select name="cmbOperacion" id="cmbOperacion" class="combo">
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 18px" nowrap>Tipo Operacion Detalle:</td>
+		<td colspan="2">
+			<select name="cmbOperacionDetalle" id="cmbOperacionDetalle" class="combo" style="width:450px;">
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 18px" nowrap>Fecha (D/M/A):</td>
+		<td style="height: 18px">Desde:
+			<input name="tesodesde" type="text" value="15/10/2013" id="tesodesde" class="caja" />
+		</td>
+		<td style="height: 18px">Hasta:
+			<input name="tesohasta" type="text" value="15/10/2013" id="tesohasta" class="caja" />
+		</td>
+	</tr>
+	<tr>
+		<td align="center" colspan="3">
+			<br>
+			<br>
+			<br>
+			<input type="button" name="btnaceptar" value="Aceptar" id="btnaceptar" />
+			<input type="button" name="btnvolver" value="Volver" id="btnvolver" />
+		</td>
+	</tr>
+</table>

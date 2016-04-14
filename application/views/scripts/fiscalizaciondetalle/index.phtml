@@ -1,0 +1,38 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Fiscalizaciondetalle_index.js"></script>
+<style>
+	.iconImage{
+		background-image: url(img/date.png) !important;
+	}
+</style>
+<input type="hidden" id="txtidrq" name="txtidrq" />
+<div id="IdPanelRequerimiento"></div>
+<div class="divButtons">
+	<table class="tableContent">
+		<tr>
+			<td align="left" style="padding-right:43px;padding-top:6px;padding-bottom:4px;">
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnNuevoHR">Nuevo HR</button>
+				<button type="button" style="width:116px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnEditaHR">Modificar HR</button>
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnEliminarHR">Eliminar HR</button>
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnGeneraRD">Generar RD</button>
+			<td style="padding-left:300px">
+					<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnCerraIndex">Cerrar</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button type="button" style="width:116px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnGeneraMT">Generar MT</button>
+				<select id="comboMT" class="caja">
+				  <option value="001" selected >001-NATURAL-POR OMISION</option>
+				  <option value="002">002-NATURAL-POR RECTIFICACION</option>
+				  <option value="003">003-NATURAL-POR DESCARGO</option>
+				  <option value="004">004-JURIDICA-POR OMISION</option>
+				  <option value="005">005-JURIDICA-POR RECTIFICACION</option>
+				  <option value="006">006-JURIDICA-POR DESCARGO</option>
+				</select>
+			</td>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</div>

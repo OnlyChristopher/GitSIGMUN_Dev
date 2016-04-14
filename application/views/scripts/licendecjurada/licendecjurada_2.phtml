@@ -1,0 +1,179 @@
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">&nbsp;V. Datos del Establecimiento</legend>
+    <div class="contentForm">
+      <table class="tableContent" width="100%">
+    
+          <tr>
+            <td colspan="8"><span id="lblFecPresenta2">Nombre Comercial:</span></td>
+          </tr>
+          <tr>
+            <td colspan="8"><input name="txtNomEs" id="txtNomEs" type="text" class="caja" maxlength="100" size="100"  /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><span id="lblFecPresenta2">Ubicaci&oacute;n:</span></td>
+            <td width="10"><span id="lblFecPresenta2">Nro:</span></td>
+            <td><span id="lblFecPresenta2">Dpto:</span></td>
+            <td><span id="lblFecPresenta2">Interior:</span></td>
+            <td><span id="lblFecPresenta2">Mz:</span></td>
+            <td><span id="lblFecPresenta2">Lt:</span></td>
+            <td><span id="lblFecPresenta2">Modulo:</span></td>
+            <td><span id="lblFecPresenta2"></span></td>
+          </tr>
+          <tr>
+           <td>
+            <select name="cmbTipU" id="cmbTipU" class="combo">
+      <option>[Seleccione]</option>
+    </select>
+            </td>
+            <td><input name="txtUbiEs" id="txtUbiEs" type="text" class="caja" maxlength="100" size="30"  /></td>
+            <td><input name="txtNroEs" id="txtNroEs" type="text" class="caja" maxlength="15" size="10" /></td>
+            <td><input name="txtDptoEs" id="txtDptoEs" type="text" class="caja" maxlength="5" size="4" /></td>
+            <td><input name="txtInEs" id="txtInEs" type="text" class="caja" maxlength="5"  size="4" /></td>
+            <td><input name="txtLtEs" id="txtLtEs" type="text" class="caja" maxlength="5" size="4" /></td>
+            <td><input name="txtMzEs" id="txtMzEs" type="text" class="caja" maxlength="5" size="4" /></td>
+            
+            <td>
+            <select name="cmbTipUbi" id="cmbTipUbi" class="combo">
+      <option>[Seleccione]</option>
+    		</select>
+            </td>
+              <td>
+          <input name="txtMod" id="txtMod" type="text" class="caja" maxlength="8" size="10" />
+            </td>
+          </tr>
+          <tr>
+        <td>
+            <select name="cmbTipUr" id="cmbTipUr" class="combo">
+            <option>[Seleccione]</option>
+            </select>
+        </td>
+        <td colspan="10">
+        	<input name="txtUrb" id="txtUrb" type="text" class="caja" maxlength="100" size="100"  />
+        </td>
+        </tr>
+         </table> 
+        <table class="tableContent" width="100%">
+        
+		  <tr>
+     		<!--<td><span id="lblTipAuto2">Area del Local:</span></td>
+ 			<td><span id="lblTipAuto2">Area Almacen:</span></td>-->
+		    <td colspan="2"><span id="lblTipAuto2">Estacionamiento:</span></td>
+            <td><span id="lblTipAuto2">Area Total:</span></td>
+		    <td><span id="lblTipAuto2">Tipo de Empresa:</span></td>
+		    <td colspan="2" rowspan="2">
+            <fieldset class="ui-widget ui-widget-content">
+    		<legend style="margin-left:5px">Nro Trabajadores</legend>
+            <div class="contentForm">
+            <table class="tableContent">
+            <tr>
+            	<td><span id="lblTrabH">H</span></td>
+                <td><input name="txtnh" id="txtnh" type="text" class="caja" size="5" maxlength="3" /></td>
+                <td><span id="lblTrabM">M</span></td>
+                <td><input name="txtnm" id="txtnm" type="text" class="caja" size="5" maxlength="3" /></td>
+            </tr>
+            </table>
+            </div>
+            </fieldset>
+            </td>
+   
+  </tr>
+  <tr>
+   <!--<td><input name="txtAreaL" type="text" class="cajaoff" id="txtAreaL" readonly="readonly" size="10" maxlength="10"/></td>
+    <td><input name="txtAreaAl" type="text" class="cajaoff" id="txtAreaAl" readonly="readonly" size="10" maxlength="10"/></td>-->
+    <td colspan="2"><input name="txtEst" type="text" class="caja"  id="txtEst" size="10" maxlength="10"/></td>
+    <td><input name="txtAreaTo" type="text" class="caja"  id="txtAreaTo" size="10" maxlength="10"/></td>
+    <td><select name="cmbTipEmpresa" id="cmbTipEmpresa" class="combo">
+      <option>[Seleccione]</option>
+    </select></td>
+  </tr>
+  <tr>
+  <td colspan="2" rowspan="2">
+            <fieldset class="ui-widget ui-widget-content">
+            <legend style="margin-left:5px">Predio Independizado</legend>
+            <div class="contentForm">
+            <table class="tableContent">
+            <tr>
+            <td><span id="lblTrabH">Si</span></td>
+            <td><input name="rbpredio" value="1" type="radio"/></td>
+            <td><span id="lblTrabM">No</span></td>
+            <td><input name="rbpredio" value="0" type="radio"/></td>
+            </tr>
+            </table>
+            </div>
+            </fieldset>
+            
+ </td>
+ <td colspan="2">
+ <table>
+ <tr><td><span id="lblTipAuto2">Sector Econ&oacute;mico:</span></td></tr>
+ <tr><td>
+ <select name="cmbTipSector" id="cmbTipSector" class="combo">
+      <option>[Seleccione]</option>
+ </select>
+ </td></tr>
+ </table>
+ </td>
+ <td>
+ <table>
+ <tr><td><span id="lblTipAuto2">Tipo Inscripci&oacute;n:</span></td></tr>
+ <tr><td>
+ <select name="cmbTipInscrip" id="cmbTipInscrip" class="combo">
+      <option>[Seleccione]</option>
+ </select>
+ </td></tr>
+ </table>
+ </td>
+ </tr>
+  </table>
+  
+      
+    </div>
+</fieldset>
+<br/>
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">&nbsp;VI. Clasificaci&oacute;n de Giro</legend>
+  	<div class="contentForm">
+        <table id="detallePago" class="hovertable" width="100%">
+        <tr>
+			<th width="1"><center>C&oacute;digo</center></th>
+        	<th><center>Descripci&oacute;n</center></th>
+            <th width="1">
+            <center>
+            <input type="hidden" id="cDetPagos" value="0"/>
+            <input type="button" id="btnAddDetPago" value="Agregar"/>
+            </center>
+            </th>
+        </tr>        
+   	  </table>
+        <br/>
+      <table width="100%" class="tableContent">
+       <!-- <tr>
+          <td colspan="3"><span id="lblTipAuto">Giro:</span></td>
+        </tr>
+        <tr>
+            <td colspan="3"><input name="txtNro9" id="txtNro10" type="text" class="caja" maxlength="100" style="width:100%" /></td>
+        </tr> -->
+        <tr>
+          <td><span id="lblTipAuto">Zonificaci&oacute;n:</span></td>
+          <!--<td><span id="lblTipAuto">Clasificaci�n del Neg.:</span></td>-->
+          <!--<td>&nbsp;</td>-->
+        </tr>
+        <tr>
+          <td><select name="cmbzonificacion" id="cmbzonificacion" class="combo">
+            <option>[Seleccione]</option>
+          </select></td>
+         <!-- <td><select name="cmbTipPredio2" id="cmbTipPredio2" class="combo">
+            <option>[Seleccione]</option>
+         </select></td>-->
+          <!--<td><label><input id="chkCarSol" type="checkbox"> <span id="lblCarSol">Compatibilidad de Uso</span></label></td>-->
+        </tr>
+      </table>
+    </div>
+</fieldset>
+<br/>
+<fieldset class="ui-widget ui-widget-content">
+    <legend style="margin-left:5px">&nbsp;VI. Observaci&oacute;n</legend>
+  	<div class="contentForm">
+      <textarea name="txtobs" rows="3" class="caja" id="txtobs" style="width:100%"></textarea>
+    </div>
+</fieldset>

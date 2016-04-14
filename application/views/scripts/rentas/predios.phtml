@@ -1,0 +1,128 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_rentas.js"></script>
+<form id="frmpredios">
+<input type="hidden" name="hd_tipomov" id="hd_tipomov" value=<?php echo $this->tipo_mov;?> readonly></input>
+    <div class="contentBoxMain">
+    	<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+    		<legend style="margin-left:5px">Datos del Contribuyente:</legend>    		
+    		<div style="float:left; padding-right:30px">
+    			<table class="tableContent" width="50%">
+			    <tr>
+			    <td width="72%"><span id="lblCodigo">Código:</span></td>
+			    <td width="28%"><div id="divCodigo"><?php echo $this->codcontrib;?></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblAnexo">Anexo:</span></td>
+			    <td><div id="divAnexo"><?php echo $this->anexo."-".$this->subanexo;?></div></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblSAnexo">Cod. Predio:</span></td>
+			    <td><div id="divSAnexo"><?php echo $this->cod_pred;?></div></td>
+			    </tr>	
+                <tr>
+			    <td><span id="lblSAnexo">A&ntilde;o:</span></td>
+			    <td><div id="divAnno"><?php echo $this->anno;?></div></td>
+			    </tr>	    
+			    </table>
+				<div>
+					<span id="lblAnexo">Calcular:</span>
+					<span id="lblAnexo">
+					<input type="checkbox" name="chCalPredial" id ="chCalPredial" value="1" /> Predial
+					<input type="checkbox" name="chCalArbitrio" id ="chCalArbitrio" value="1" /> Arbitrios
+					</span>		
+				</div>
+			    <input type="hidden" name="hd_idanexo" id="hd_idanexo" value="<?php echo $this->cod_pred;?>">
+                <input type="hidden" name="hd_codigo" id="hd_codigo" value="<?php echo $this->codigo;?>">
+			    <input type="hidden" name="hd_anexo" id="hd_anexo" value="<?php echo $this->anexo;?>">
+			    <input type="hidden" name="hd_subanexo" id="hd_subanexo" value="<?php echo $this->subanexo;?>">
+				
+				<input type="hidden" name="hd_codigo2" id="hd_codigo2" value="<?php echo $this->codigo2;?>">
+				<input type="hidden" name="hd_idanexo2" id="hd_idanexo2" value="<?php echo $this->cod_pred2;?>">
+				<input type="hidden" name="hd_anexo2" id="hd_anexo2" value="<?php echo $this->anexo2;?>">
+				<input type="hidden" name="hd_subanexo2" id="hd_subanexo2" value="<?php echo $this->subanexo2;?>">
+    		</div>
+    		<input type="hidden" name="hd_anno" id="hd_anno" value="<?php echo $this->anno;?>"></input>
+    		<div style="float:left">
+    			<table class="tableContent" width="100%">
+			    <tr>
+			    <td><span id="lblContri">Contribuyente:</span></td>
+			    <td colspan="4"><div id="divContri"><?php echo $this->contrib;?></div></td>
+			    </tr>
+                <tr>
+			    <td>&nbsp;</td>
+			    <td><span id="lblTerreno"></span></td>
+			    <td><span id="lblContruccion"></span></td>
+			    <td><span id="lblInstalaciones"></span></td>
+			    <td><span id="lblAutovaluo"></span></td>
+			    </tr>
+			    <tr>
+			    <td><span id="lblArancel">Arancel:</span></td>
+			    <td><span id="lblTerreno">V.Terreno:</span></td>
+			    <td><span id="lblContruccion">V.Construcción:</span></td>
+			    <td><span id="lblInstalaciones">V.Instalaciones:</span></td>
+			    <td><span id="lblAutovaluo">Autovalúo:</span></td>
+			    </tr>
+			    <tr>
+			    <td><input name="txtArancel" id="txtArancel" type="text" class="cajaoff" size="20" readonly value="<?php echo $this->arancel;?>" /></td>
+			    <td><input name="txtTerreno" id="txtTerreno" type="text" class="cajaoff" size="20" readonly value="<?php echo $this->vterreno;?>"/></td>
+			    <td><input name="txtConstruccion" id="txtConstruccion" type="text" class="cajaoff" size="20" readonly value="<?php echo $this->vconstruccion;?>" /></td>
+			    <td><input name="txtInstalaciones" id="txtInstalaciones" type="text" class="cajaoff" size="20" readonly value="<?php echo $this->vinstalaciones;?>"/></td>
+			    <td><input name="txtAutovaluo" id="txtAutovaluo" type="text" class="cajaoff" size="20" readonly value="<?php echo $this->autoavaluo;?>"/></td>
+			    </tr>	    
+			    </table>
+				
+    		</div>
+    		<br style="clear:both">
+		</fieldset>
+		<br/>
+		<div id="contentTabsLeft" class="ui-tabs-left">
+	        <ul style="height:430x">
+				<li style="width:63px" id="tab1">
+                    <a href="#tabs-1">
+                    <img src="<?php echo $this->ruta;?>img/icon_predios.png"><div>Ubica.</div>
+                    </a>
+                </li>
+	            <li style="width:63px" id="tab2">
+                    <a href="#tabs-2">
+                    <img src="<?php echo $this->ruta;?>img/icon_predios.png"><div>Caract.</div>
+                    </a>
+                </li>
+	            <li style="width:63px" id="tab3">
+                	<a href="#tabs-3">
+                    <img src="<?php echo $this->ruta;?>img/icon_pisos.png"><div>Pisos</div>
+                    </a>
+                </li>
+                <li style="width:63px" id="tab4">
+                	<a href="#tabs-4">
+                    <img src="<?php echo $this->ruta;?>img/icon_instal.png"><div>Instal.</div>
+                    </a>
+                </li>               
+                <li style="width:63px" id="tab5">
+                	<a href="#tabs-5">
+                    <img src="<?php echo $this->ruta;?>img/icon_arbserv.png"><div>Arb.Serv.</div>
+                    </a>
+                </li>
+				<li style="width:63px" id="tab6">
+                	<a href="#tabs-6">
+                    <img src="<?php echo $this->ruta;?>img/icon_arbserv.png"><div>Otros Doc.</div>
+                    </a>
+                </li>
+                <div style="position:absolute; bottom:0;">
+                    <div style="padding-bottom:20px">
+					<input type="button" id="btnEdtPu" name="btnEdtPu" value="Editar" style="width:57px; height:40px; margin:5px 0 5px 0"/>
+                    <input type="button" id="btnSavePu" name="btnSavePu" value="Grabar" style="width:57px; height:40px; margin:5px 0 5px 0"/>
+                    <input type="button" id="btnClosePu" name="btnClosePu" value="Cerrar" style="width:57px; height:40px; margin:5px 0 5px 0"/>
+                    </div>
+                </div>
+	        </ul>
+			<div id="tabs-1"><?php include("ubicacion_pu.phtml"); ?></div>
+	        <div id="tabs-2"><?php include("predios_pu.phtml"); ?></div>
+	        <div id="tabs-3"><?php include('predios_pisos.phtml'); ?></div>
+	        <div id="tabs-4"><?php include("predios_instalac.phtml"); ?></div>
+	        <div id="tabs-5"><?php include("predios_arbitrios.phtml"); ?></div>	        	        
+			<div id="tabs-6"><?php include("predios_docnexo.phtml"); ?></div>	
+		</div>
+		
+    </div>
+    <div id="MSG_ERROR"></div>
+</form>

@@ -1,0 +1,87 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Tesocaja_entrada.js"></script>
+<form id="frmContri">
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?><?php //echo $this->login?></li>
+    </ul>
+    <div id="contenidoForm" class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Datos del Pago:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+				<tr>
+				<td><span>Nombre: </span></td>
+				<td><input id="contribuyente" type="text" class="caja" style="width:600px" /></td>
+				</tr>
+				<tr>
+                  <td><span>Referencia: </span></td>
+				  <td><input id="referencia" type="text" class="caja" style="width:600px" /></td>
+				</tr>
+				<tr>
+				<td><span>Observaciones: </span></td>
+				<td>
+					<input id="observaciones"  type="text" class="caja" style="width:600px"  />
+				</td>
+				</tr>
+				<tr>
+                  <td><span>Tipo de Tarjeta: </span></td>
+				  <td><select name="cmbtarjeta" id="cmbtarjeta" class="combo" style="width:200px"></select></td>
+				</tr>
+			</table>
+	    	</div>
+	    </fieldset>		
+		  <div class="divButtons" align="center">
+			<table class="hovertable">
+			  <tr>
+				<td>
+					<table width="100%">
+					  <tr>
+						<th><span>Concepto</span></th>
+						<th><span>Cantidad</span></th>
+						<th><span>Monto Unitario</span></th>
+						<th><span>Total</span></th>
+					  </tr>
+					  <tr>
+						<td><select name="cmbtipopagos" id="cmbtipopagos" class="combo" style="width:100%"></select></td>
+						<td><input name="txtcantidad" type="text" class="caja" id="txtcantidad" style="width:80px;text-align:right" maxlength="12" value="1"></td>
+						<td><input name="txtprecio" type="text" class="caja" id="txtprecio" style="width:80px;text-align:right" maxlength="12" value="0.00"></td>
+						<td><input name="txttotal" type="text" class="cajaoff" id="txttotal" style="width:80px;text-align:right" maxlength="12" value="0.00" readonly ></td>
+					  </tr>
+				  </table>
+				 </td>
+			  </tr>
+			</table>
+			<br/>
+			<br/>
+			<table border="0" cellpadding="0" cellspacing="0" width="25%">
+			<tr>
+			<td style="padding-left:5px">
+			  <label>
+			  <input name="rdformaPago" id="rdformaPago1" type="radio" value="E" checked/><b>Efectivo</b>
+			  </label>
+			  </td>
+			  <td>
+			  <label>
+			  <input name="rdformaPago" id="rdformaPago2" type="radio" value="C" /><b>Cheque</b>
+			  </label>
+			  </td>
+			  <td>
+			  <label>
+			  <input name="rdformaPago" id="rdformaPago3" type="radio" value="T" /><b>Tarjeta</b>
+			  </label>
+			</td>
+			</tr>
+			</table>
+		  </div>
+		<div class="divButtons" style="padding:0px 0 2px 700px">
+		    <table class="tableContent">
+		    <tr>
+		    <td ><input type="button" id="btnPagar" value="Pagar" /></td>
+			</tr>
+		    </table>
+		</div>
+		<div id="div_pintaboton"></div>
+    </div>
+</div>
+</form>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpto_subreport1" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true">
+	<parameter name="CODIGO" class="java.lang.String"/>
+	<parameter name="ANNO" class="java.lang.String"/>
+	<parameter name="COD_PRED" class="java.lang.String"/>
+	<parameter name="ANEXO" class="java.lang.String"/>
+	<parameter name="SUB_ANEXO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[exec Rentas.Reporte @busc=12,@codigo=$P{CODIGO},@anno=$P{ANNO},@cod_pred=$P{COD_PRED},@anexo=$P{ANEXO},@sub_anexo=$P{SUB_ANEXO}]]>
+	</queryString>
+	<field name="docu_sustento_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DESCRIPCION_DOC" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="38">
+			<staticText>
+				<reportElement x="5" y="6" width="290" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTOS ANEXOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="21" width="223" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Tipo Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="21" width="327" height="17"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Referencia]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="6" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="19" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="228" y="0" width="327" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DESCRIPCION_DOC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="0" width="223" height="17"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

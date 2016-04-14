@@ -1,0 +1,44 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Municipalidad Distrital de Independencia</title>
+	<script type="text/javascript" src="<?php echo $this->ruta;?>js/jquery.min.js"></script>
+	<script>
+	var altoTotal=0;
+	var altoAnt=0;
+	var altoFinal=0;
+			function imprime(){
+				window.print();
+				window.close();
+			}
+	</script>
+	<style type="text/css">
+		BODY{
+			padding: 0px;
+			margin: 0px;
+			font-family: tahoma;
+			font-style: normal;
+			page-break-after: avoid;
+			page-break-before: avoid;
+			page-break-inside: avoid;
+		}
+		.text1{
+			font-family: tahoma;
+			font-size:11px;
+			}
+		.text2{
+			font-family: tahoma;
+			font-size:10px;
+				}
+		.NEGRITA{
+			font-family: tahoma;
+			font-size:10px;
+			font-weight: bolder;
+
+		}			
+	</style>
+</head>
+<body onkeydown="onKeyDown();" onLoad="imprime()">
+<?php echo $this->varhtml; ?>
+</body>
+</html>

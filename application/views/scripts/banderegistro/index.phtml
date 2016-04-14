@@ -1,0 +1,123 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<style type="text/css">
+.invisible {display: none; }
+</style>
+
+
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Banderegistro.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+              <tr>
+			  
+				  <td><span>A&ntilde;o:</span></td>
+				  <td><select name="cmbanno" id="cmbanno" class="combo"></select></td>
+				  
+				  <td><span>Valor:</span></td>
+				  <td><select name="cmbvalortribu" id="cmbvalortribu" class="combo"></select></td>
+			  
+				  <td colspan="2">
+				  <input name="rdCriterio" id="rdCriterio1" type="radio" value="C" checked/><b> Código</b>
+				  </td>
+				  
+				  <td colspan="2">
+				  <input name="rdCriterio" id="rdCriterio2" type="radio" value="N" /><b> Nombre o Razon Social</b>
+				  </td>
+				  
+				  <td colspan="2">				
+				  <input name="rdCriterio" id="rdCriterio3" type="radio" value="D" /><b> Domicilio Fiscal</b>			
+				  </td>
+			  
+				  <td colspan="2">				 
+				  <input name="rdCriterio" id="rdCriterio4" type="radio" value="P" /><b> Domicilio Predial</b>
+				  </td>
+			  
+				  <td colspan="2">				  
+				  <input name="rdCriterio" id="rdCriterio5" type="radio" value="Z" /><b> Zona</b>
+				  </td>
+				  
+				  <td colspan="2">				  
+				  <input name="rdCriterio" id="rdCriterio6" type="radio" value="E" /><b> Expediente</b>
+				  </td>
+				  
+				  
+				 <td>
+				<label><b>Desde: </b>
+					<input name="tesodesde" id="tesodesde" type="text" value="<?php echo $this->tesodesde;?>" class="caja" size="20" maxlength="100" />
+				</label>
+			  </td>
+              <td>
+				<label><b>Hasta: </b>
+					<input name="tesohasta" id="tesohasta" type="text" value="<?php echo $this->tesohasta;?>" class="caja" size="20" maxlength="100" />
+				</label>
+			  </td>
+			  
+			   <td>
+              <label><b>Usuarios: </b>
+                <select id="cmbUsuario" name="cmbUsuario" style="width:100px;" class="combo">
+				</select>
+              </label>
+              </td>
+				  
+				  
+			  </tr>
+			  <!--
+			  <tr>
+              <td colspan="9"><div id="criterio" class="visible">
+			  <input name="txtCriterio" id="txtCriterio" style="text-transform: uppercase" type="text" class="caja" size="100"  />  <input type="button" id="btnBuscRegistro" value="Buscar" />
+			  </div></td>             
+              </tr>
+			  -->
+            </table>	    
+			
+			<table class="tableContent"> 
+			  <tr>
+				<td colspan="4">
+				<div style="float:left">					
+					
+					<div id="criterio" class="visible">
+			  <input name="txtCriterio" id="txtCriterio" style="text-transform: uppercase" type="text" class="caja" size="100"  /> 
+			  </div>
+				
+					<div id="E" class="invisible"><input name="txtCriterioExpediente" id="txtCriterioExpediente" type="text" class="caja" size="10" maxlength="100" style="text-transform: uppercase"/>  -
+												 <input name="txtCriterioNumexpediente" id="txtCriterioNumexpediente" type="text" class="caja" size="10" maxlength="100" style="text-transform: uppercase"/>
+												 </div>								
+				</div>
+					<div style="float:right"><input type="button" id="btnBuscRegistro" value="Buscar" /></div>  
+				</td>
+			  </tr>
+            </table>	
+			
+			
+	    	</div>
+	    </fieldset>
+	    <br/>
+	    <div id="gridRegistro"></div>
+	    <br/>
+		<div class="divButtons">
+		    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		    <tr>
+		    <td style="padding-left:5px">		    
+		    <input type="button" id="btnNuevoRegistro" value="Nuevo" />
+		    </td>
+		    <td></td>
+		    </table>
+		</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

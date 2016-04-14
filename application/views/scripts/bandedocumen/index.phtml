@@ -1,0 +1,171 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandedocumen.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+		<ul>
+			<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+		</ul>
+    <div style="padding:5px;margin:5px" class="contentBox">
+	
+		 <div style="float:left;padding-right:5px"> <!-- Primera Parte -->
+	    	
+	    		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		    	 <legend style="margin-left:5px">Estados:</legend>
+		    		<table class="tableContent" > <!--  tableContent me permite separar-->
+					    <tr>
+						    <td style="padding-left:5px">
+							    <input type="button" id="btnRecibidos" value="Recibidos" />
+						    </td>
+					    </tr>
+					    
+					    <tr>
+						    <td style="padding-left:5px">
+							     <input type="button" id="btnEspera" value="En Espera" />
+						    </td>
+					    </tr>
+					    <!--
+					    <tr>
+					    	<td style="padding-left:5px">
+						  	  <input type="button" id="btnEmitidos" value="Emitidos" />
+					    	</td>
+				  		</tr>
+					    -->
+					</table>
+				</fieldset>
+				
+				</br>
+				<!--
+				<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		    	 <legend style="margin-left:5px">Exigibilidad:</legend>
+		    		<table class="tableContent" > 
+					    <tr>
+						    <td style="padding-left:5px">
+							    <IMG SRC='img/flagblue.png'> <span>Exigibilidad Generada</span>
+						    </td>
+					    </tr>
+					    
+					    <tr>
+						    <td style="padding-left:5px">
+							     <IMG SRC='img/flaggreen.png'> <span>Exigibilidad No Generada</span>
+						    </td>
+					    </tr>
+					</table>
+				</fieldset>
+				-->
+				</br>
+				
+				<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		    	 <legend style="margin-left:5px">Expediente:</legend>
+		    		<table class="tableContent" > <!--  tableContent me permite separar-->
+					    <tr>
+						    <td style="padding-left:5px">
+							    <IMG SRC='img/ball_blue.png'> <span>Expediente Generado</span>
+						    </td>
+					    </tr>
+					    
+					    <tr>
+						    <td style="padding-left:5px">
+							     <IMG SRC='img/ball_green.png'> <span>Expediente No Generado</span>
+						    </td>
+					    </tr>
+					    <!--
+					    <tr>
+					    	<td style="padding-left:5px">
+						  	  <input type="button" id="btnEmitidos" value="Emitidos" />
+					    	</td>
+				  		</tr>
+					    -->
+					</table>
+				</fieldset>
+	    	
+	    </div> <!-- Fin de la Primera Parte -->
+	    
+	    <div style="float:left;padding-left:5px">        <!-- Segunda Parte -->
+	    	
+	    	<div>		
+				<fieldset class="ui-widget ui-widget-content">
+				    <legend style="margin-left:5px">Criterios:</legend>
+			        <div class="contentForm">
+			   		<table class="tableContent">
+		              <tr>
+		              <td>
+		              <label>
+		              <input name="rdCriterio" id="rdCriterio1" type="radio" value="C" checked/><b> Codigo</b>
+		              </label>
+		              </td>
+		              <td>
+		              <label>
+		              <input name="rdCriterio" id="rdCriterio2" type="radio" value="T" /><b> Contribuyente</b>
+		              </label>
+		              </td>
+		              <td>
+		              <label>
+		              <input name="rdCriterio" id="rdCriterio3" type="radio" value="D" /><b> Documento</b>
+		              </label>
+		              </td>
+		              <td><input name="txtCriterio" id="txtCriterio" style="text-transform: uppercase" type="text" class="caja" size="83" maxlength="100" /></td>				
+		              <td><input type="button" id="btnBusBandeja" value="Buscar" /></td>
+					  <td><input name="txtEstado" id="txtEstado" style="text-transform: uppercase" type="hidden" class="caja" size="8"/></td>
+		              </tr>
+		            </table>	    
+			    	</div>
+		       </fieldset>
+			</div>
+			
+	    	<br/>
+	    	
+	    	<div>
+	    		<div id="gridBandeja"></div>
+	    	</div>
+	    	
+	    	<br/>
+	    	
+	    	<!--  
+	    	<div>
+	    		<div id="contaDocumento" style="font-weight: bold">Se encontraron  Documento(s) Recibido(s)</div>  
+	    	</div>
+	        -->
+	        
+	    	<div>
+		    	<div class="divButtons">
+				    <table class="tableContent">
+					    <tr>
+						    <td style="padding-left:5px">
+							    <input type="button" id="btnVerdocumento" value="Ver Documento" />
+							  <!--  <input type="button" id="btnDuplicado" value="Duplicado" /> 
+							    <input type="button" id="btnExigibilidad" value="Individual" />
+								 <input type="button" id="btnAgrupamiento" value="Agrupamiento" /> -->
+							    <input type="button" id="btnEnviar" value="Enviar" />
+							    <input type="button" id="btnVer" value="Ver Ruta" />
+								<input type="button" id="btnRecep" value="Recepción" />
+							    <input type="button" id="btnRecepcion" value="Notificación" />
+							    <input type="button" id="btnExpendiente" value="Expediente" />
+							<!--	<input type="button" id="btnMostrar" value="Mostrar" /> -->
+							   
+						    </td>
+					    </tr>
+				    </table>
+				</div>
+	    	</div>
+			
+			<!--
+			<div>
+		    	<fieldset class="ui-widget ui-widget-content">
+					<legend style="margin-left:5px">Generación de Exigibilidad:</legend>
+					<div class="contentForm">
+				    <table class="tableContent">
+					    <tr>
+							<td><label><input type="checkbox" id="chIndividual" class="chcuponera"  value="1"/> Individual</label></td>
+							<td><label><input type="checkbox" id="chAgrupado" class="chcuponera"   value="2"/> Agrupado</label></td>
+							<td><input type="button" id="btnGenerarexigibilidad" value="Generar" /></td>
+						</tr>
+				    </table>
+					</div>
+				</fieldset>
+	    	</div>
+			-->
+	    </div> <!-- Fin de la Segunda Parte -->
+		<br style="clear:both"> <!-- para que no se ajuste a la pantalla -->
+	
+	   
+	</div>    
+</div>

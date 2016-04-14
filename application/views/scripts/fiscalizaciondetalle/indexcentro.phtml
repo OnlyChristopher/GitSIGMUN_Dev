@@ -1,0 +1,126 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Fiscalizaciondetalle_indexcentro.js"></script>
+<style>
+	.x-column-header-inner .x-column-header-text {
+		white-space: normal;
+	}
+
+	.x-column-header-inner {
+		line-height: normal;
+		/*padding-top: 3px !important;
+		padding-bottom: 3px !important;*/
+		text-align: center;
+		top: 3%;
+	}
+	
+	.x-grid-cell-topic b {
+		display: block;
+	}
+	.x-grid-cell-topic .x-grid-cell-inner {
+		white-space: normal;
+	}
+	.x-grid-cell-topic a {
+		color: #385F95;
+		text-decoration: none;
+	}
+	.x-grid-cell-topic a:hover {
+		text-decoration:underline;
+	}
+	.x-grid-cell-topic .x-grid-cell-innerf {
+		padding: 5px;
+	}
+	.x-grid-rowbody {
+		padding: 0 5px 5px 5px;
+	}
+</style>
+
+
+<div style="margin-top:5px; padding: 5px 5px 5px 5px">
+	<table class="tableContent" border=1 width='100%'>
+		<tr>
+			<td>Codigo</td>
+			<td>Contribuyente</td>
+			<td>Documento</td>
+			<td rowspan="3">
+				<input type="hidden" id="txtidre" name="txtidre" value='' readonly />
+				<input style="text-transform:uppercase" class="cajaoff" type="text" id="txtaniohr" name="txtaniohr" size="5" maxlength=4 readonly />
+			</td>
+		</tr>
+		<tr>
+			<td><input style="text-transform:uppercase" name="txtmcodigo" id="txtmcodigo" type="text" class="cajaoff" maxlength=7 size="7" value="9999999" /></td>
+			<td><input style="text-transform:uppercase" name="txtmnombre" id="txtmnombre" type="text" class="cajaoff" maxlength=250 size="100" value="2000" /></td>
+			<td><input style="text-transform:uppercase" name="txtmdoc" id="txtmdoc" type="text" class="cajaoff" maxlength=12 size="8" value="9999999" /></td>
+		</tr>
+		<tr>
+			<td>Direccion Fiscal</td>
+			<td colspan='2'><input style="text-transform:uppercase" name="txtmdirecc" id="txtmdirecc" type="text" class="cajaoff" maxlength=450 size="115" value="2000" /></td>
+		</tr>	
+	</table>
+</div>
+<div style="margin-top:2px; padding: 5px 5px 5px 5px" id="divGridConstrucciones"></div>
+
+<div style="float:left; padding: 0px 0px 0px 5px">
+	<table class="tableContent">
+	<tr>
+		<td align="left" style="padding-right:43px;padding-top:6px;padding-bottom:4px;">
+			<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btncrearPredio">Crear PU</button>
+			<!--<button type="button" style="width:116px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btneditaPredio">Modificar PU</button>-->
+			<button type="button" style="width:116px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnbajarPredio">Bajar PU</button>
+		</td>
+	</tr>
+	<td style="padding-left:40px"></td>
+	</table>
+</div>
+
+<div style="float:right; padding: 0px 5px 0px 0px">
+	<table class="tableContentc">
+	<tr>
+		<td>
+		<table class="tableContentc">
+			<tr>
+				<td><div class="lblTxtField" style="width:150px; border-bottom:0; border-left:1">Autovaluo&nbsp;:</div></td>
+				<td><div class="lblObjField" style="width:130px; border-bottom:0; border-left:0">
+					<input name="txtautova" type="text" class="cajacoff" id="txtautova" style="width:129px; text-align:right; padding-right:10px" maxlength="3" value="99'999,999.99" readonly ></div>
+				</td>
+			</tr>
+			<tr>
+				<td><div class="lblTxtField" style="width:150px; border-bottom:0; border-left:1">Base Imponible&nbsp;:</div></td>
+				<td><div class="lblObjField" style="width:130px; border-bottom:0; border-left:0">
+					<input name="txtbaseimp" type="text" class="cajacoff" id="txtbaseimp" style="width:129px; text-align:right; padding-right:10px" maxlength="3" value="99'999,999.99" readonly ></div>
+				</td>
+			</tr>
+			<tr>
+				<td><div class="lblTxtField" style="width:150px; border-bottom:1; border-left:1">Impuesto Predial&nbsp;:</div></td>
+				<td><div class="lblObjField" style="width:130px; border-bottom:1; border-left:0">
+					<input name="txtimppred" type="text" class="cajacoff" id="txtimppred" style="width:129px; text-align:right; padding-right:10px" maxlength="3" readonly ></div>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	</table>
+</div>
+<div style="float:left; padding: 0px 5px 0px 5px">
+	<div class="divButtons" style="float:left; padding: 0px 5px 0px 5px">
+		<table class="tableContent">
+		<tr>
+			<td align="center" style="padding-left: 5px; padding-right:5px; padding-top:6px; padding-bottom:6px;">
+				<b>Origen :</b>&nbsp;
+				<input type="number" name="txtorigen" id="txtorigen" class="cajaoff" min="<?php echo $this->txtdesde;?>" max="<?php echo $this->txtdesde;?>" step="1" value="<?php echo $this->txthasta;?>" readonly >
+				<b>&nbsp;&nbsp;Rango :</b>
+				<input type="number" name="txtdesde" id="txtdesde" class="caja" min="<?php echo $this->txtdesde;?>" max="<?php echo $this->txthasta;?>" step="1" value="<?php echo $this->txtdesde;?>">&nbsp;
+				<input type="number" name="txthasta" id="txthasta" class="caja" min="<?php echo $this->txtdesde;?>" max="<?php echo $this->txthasta;?>" step="1" value="<?php echo $this->txthasta;?>">&nbsp;&nbsp;&nbsp;
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnCopiaPredio">Copiar</button>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" style="padding-left: 5px; padding-right:5px; padding-top:6px; padding-bottom:6px;">
+				<b>Copiar Predios Declarados :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="number" name="txtaniodecla" id="txtaniodecla" class="cajaoff" min="<?php echo $this->txtdesde;?>" max="<?php echo $this->txtdesde;?>" step="1" value="<?php echo $this->txthasta;?>" readonly >
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnCopiaRentas">Copiar</button>
+			</td>
+		</tr>
+	</div>	
+</div>

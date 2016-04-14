@@ -1,0 +1,37 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Fiscalizacionpredio_index.js"></script>
+<form id="formCrearPredio">
+	<table class="tableContent" width='100%'>
+		<tr>
+			<td>
+				<div><input type="hidden" id="txtidrq01" name="txtidrq01" />
+					<fieldset class="ui-widget ui-widget-content">
+						<legend style="margin-left:5px"><b>Crear predio para el a&ntilde;o :</b></legend>
+						<div class="contentForm">
+							<table class="tableContent">
+								<tr>
+								<td>
+								<input style="text-transform:uppercase" name="txtAnio" id="txtAnio" type="text" class="cajaoff" maxlength=4 size="3" value="2000" readonly />
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="lblNrocargo">&nbsp;&nbsp;Tipo:&nbsp;</span>
+								<select id="cbPredio" name="cbPredio" style="width:174px;padding:2px;" ></select>
+								</td>
+								</tr>
+							</table>
+						</div>
+					</fieldset>	    
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="divButtons">
+		<table class="tableContent">
+		<tr>
+			<td style="padding-right:43px;padding-top:6px;padding-bottom:4px;">
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnGrabarPredio">Grabar</button>
+				<button type="button" style="width:116px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnCerrarPredio">Cerrar</button>
+			</td>
+		</tr>
+		<td style="padding-left:40px"></td>
+		</table>
+	</div>
+</form>

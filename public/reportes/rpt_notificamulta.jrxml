@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_notificamulta" language="groovy" pageWidth="595" pageHeight="842" columnWidth="445" leftMargin="75" rightMargin="75" topMargin="30" bottomMargin="20">
+	<parameter name="CODIGO" class="java.lang.String"/>
+	<parameter name="ANNO" class="java.lang.String"/>
+	<parameter name="ID_NOTIF" class="java.lang.String"/>
+	<parameter name="T_NOTIF" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[exec Mpreventiva.Notificacion @busc=7,@codigo=$P{CODIGO}, @id_notif=$P{ID_NOTIF},  @anno_notif=$P{ANNO},@t_notif=$P{T_NOTIF}]]>
+	</queryString>
+	<field name="id_notif" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="t_notif" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno_notif" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="n_notif" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_notif" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Infractor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Dir_Fisca" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DNI" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="infraccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="d_Infraccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="n_informe" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inspector" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_imposicion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Dir_Local" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="est_subsa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descargo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_subsa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_carta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sustento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="n_carta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="obs_subsa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="base_cal" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FACTOR" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="f_impreso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_notif2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="resolucion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="medida_comple" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement x="69" y="10" width="196" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DISTRITAL DE INDEPENDENCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="21" width="216" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[GERENCIA DE FISCALIZACION Y CONTROL MUNICIPAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="201" y="44" width="244" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["RESOLUCION DE SANCIÓN N° "+$F{resolucion}+"-GFCM/MDI"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="66" width="127" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Independencia,"+$F{f_impreso}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="1" y="13" width="60" height="68"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.60:8080/img/logo_muni.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="702" splitType="Stretch">
+			<rectangle>
+				<reportElement x="142" y="317" width="303" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="72" width="445" height="31"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Que, mediante Ordenanza N° 247-2011-MDI, se aprueba el Régimen de Aplicacion de Sanciones Administrativas - RAS, y el Cuadro Único de Infracciones y Sanciones - CUIS, en concordancia con la ley de Procedimiento Administrativo General Ley N° 27444.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="53" width="90" height="12"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[CONSIDERANDO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="111" width="445" height="35"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Que, acuerdo a la ley N° 27972 - Ley Orgánica de Municipalidades en su articulo  46° referente a SANCIONES,... "Las Sanciones que apliquen la Municipalidad podrán ser las de multa, suspensión de autorizaciones a Licencias, CLAUSURA, decomiso... retiro de elementos antirreglamentarios, paralizacion de obras... otros". ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="153" width="445" height="36"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Que, mediante Informe N° "+$F{n_informe}+" de fecha "+$F{fec_notif}+", el inspector municipal informa que se ha detectado la infraccion, por lo que se procedió a emitir "+(($F{t_notif}=='A')? "el acta de Constatacion N° ":"la notificacion preventiva N° ")+$F{n_notif}+" de fecha "+$F{fec_notif}+", en concordancia con la Ordenanza N° 247-2011-MDI."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="196" width="445" height="22"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Que se ha detectado al administrado, la comision de infracción a los dispositivos legales vigentes, de acuerdo al concepto siguiente:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="227" width="143" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="142" y="227" width="303" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="19" y="227" width="123" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NOTIFICACION PREVENTIVA]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="242" width="142" height="15"/>
+			</rectangle>
+			<textField>
+				<reportElement x="154" y="227" width="291" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["N° "+$F{n_notif}+" de fecha "+$F{fec_notif}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="142" y="242" width="303" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="19" y="243" width="123" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[INSPECTOR MUNICIPAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="242" width="291" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{inspector}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="257" width="142" height="25"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="19" y="258" width="123" height="25"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[UBICACIÓN DEL LUGAR DE LA INFRACCION]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="142" y="257" width="303" height="25"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="282" width="142" height="35"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="142" y="282" width="303" height="35"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="19" y="282" width="123" height="35"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[INFRACCION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="317" width="291" height="15"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{infraccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="282" width="291" height="35"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{d_Infraccion}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="317" width="142" height="15"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="445" height="46"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="styled">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>VISTO: </style>"+(($F{t_notif}=='A')? "El Acta de Constatacion N° ":"La Notificacion Preventiva N° ")+$F{n_notif}+" de fecha "+$F{fec_notif}+", Impuesta a Señor(a) "+"<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{Infractor}+"</style>"+" con "+$F{DNI}+", con domicilio fiscal en "+$F{Dir_Fisca}+", por "+"<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{d_Infraccion}+"</style>"+"."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="317" width="123" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="332" width="142" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="142" y="332" width="303" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="19" y="332" width="123" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[INFRACTOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="332" width="291" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Infractor}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="347" width="142" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="362" width="142" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="377" width="142" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="407" width="142" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="392" width="142" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="142" y="347" width="303" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="142" y="362" width="303" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="142" y="377" width="303" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="142" y="392" width="303" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="142" y="407" width="303" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="19" y="347" width="123" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[¿PRESENTÓ DESCARGO?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="362" width="123" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[N° EXPEDIENTE DE DESCARGO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="377" width="123" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SANCION (% UIT)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="392" width="123" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[MONTO MULTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="407" width="123" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[MEDIDA COMPLEMENTARIA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="377" width="291" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{FACTOR}+"%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="347" width="291" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{est_subsa}=='1')?"SI":"NO"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="362" width="291" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{est_subsa}=='1')?$F{n_carta}+" de fecha "+$F{fec_carta}:"-"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="432" width="446" height="42"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Que se ha cumplido con el procedimiento establecido en el RAS que el infractor no ha presentado pruebas que desvirtúen la infraccion constatada al momento de la intervencion del Inspector Municipal, quedando firme la infraccion y notificacion aplicada, siendo pertinente proseguir con la imposicion de la sancion, al amparo del Art. 13°, 15° y 16° de la Ordenanza N° 247-2011-MDI, concordando con la Ley N° 27972 Ley Organica de Municipalidades y Ordenanza N° 266-2012-MDI.             ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="478" width="70" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SE RESUELVE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="392" width="291" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["S/."+$F{monto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="496" width="446" height="52"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>ARTICULO PRIMERO.- SANCIONAR</style>"+" con el monto de multa de S/."+$F{monto}+" al Señor(a) "+"<style isBold='true' pdfFontName='Helvetica-Bold'>"+$F{Infractor}+"</style>"+", por infraccion a la Ordenanza 247-2011-MDI, de conformidad con"+(($F{t_notif}=='A')? "el Acta de Constatacion N° ":"la Notificacion Preventiva N° ")+$F{n_notif}+" de fecha "+$F{fec_notif}+" y; de manera simultanea XXXXX, por un plazo no mayor de treinta (30) dias habiles de acuerdo al Articulo 21° en aplicacion a lo dispuesto en la referida Norma."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="552" width="446" height="34"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>ARTICULO SEGUNDO.-</style> Poner en conocimiento del infractor que al amparo del Art. 42º de la Ordenanza 247-2011-MDI, tiene un plazo de 10 dia hàbiles para el descuento del 50% de su importe, y en aplicacion a la ley de Procedimiento Administrativo General Nº 27444 Art. 207º y 208º, tiene un plazo de 15 dias habiles perentorios para la interposicion de lo Recursos Administrativos."]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="594" width="446" height="25"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>ARTICULO TERCERO.-</style>  Poner en conocimiento de la Gerencia de Rentas, para que de cumplimiento al proceso de cobranza."]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="649" width="176" height="12"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[REGÌSTRESE, COMUNÌQUESE Y CÙMPLASE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="258" width="291" height="23"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Dir_Local}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="407" width="291" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{medida_comple}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

@@ -1,0 +1,50 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Rptgeneral_ingrXsector.js"></script>
+<div id="contentBox" class="ui-content-tabs">
+	<ul>
+    	<li class="contentBoxHead" style="padding:0 0 2px 5px"><?php echo $this->title;?></li>
+    </ul>
+    <div class="contentBox">
+	    <fieldset class="ui-widget ui-widget-content">
+		    <legend style="margin-left:5px">Criterios:</legend>
+	        <div class="contentForm">
+	   		<table class="tableContent">
+			   <tr>
+                    <td><b>Año:</b></td>
+					<td><b>F. Inicio:</b></td>
+					<td><b>F. Fin:</b></td>
+					<td><b>Sector:</b></td>
+
+               </tr>
+				<tr>
+
+                    <td>
+						<select name="cb_anno" id="cb_anno" class="combo" style="width:70px"><?php echo $this->cb_anno;?></select>
+					</td>
+					<td>
+						<input type="text" id="txtfini" name="txtfini" class="caja" size="15px" />
+					</td>
+					<td>
+						<input type="text" id="txtffin" name="txtffin" class="caja" size="15px" />
+					</td>
+					<td>
+						<select id="cb_Sector" name="cb_Sector" class="combo" style="width:200px"><?php echo $this->cb_sector;?></select>
+					</td>
+					<td>
+						<input type="button" id="btnProcesar_ingre_X_Sector" value="Procesar" />
+					</td>
+                </tr>
+            </table>	    
+	    	</div>
+			
+			
+
+			
+	    </fieldset>
+
+    </div>
+	<div id="ReporteIngreXSector">	
+	   
+	    	
+			</div>
+</div>

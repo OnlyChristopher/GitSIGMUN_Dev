@@ -1,0 +1,24 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Mantperfil_object.js"></script>
+<input type="hidden" id="hdnPerfAccess" />
+<input type="hidden" id="hdnPantAccess" />
+<fieldset class="ui-widget ui-widget-content">
+<div class="contentForm">
+	<table>
+    	<tr>
+        	<td style="width:60px"><span>Pantalla:</span></td>
+            <td><div style="border:1px #006699 solid; padding:2px"><?php echo $this->pantalla; ?></div></td>
+        </tr>
+    </table>
+</div>
+</fieldset>
+<br />
+<div id="gridPerfilObj"></div>
+<br />
+<div class="divButtons">
+	<table class="tableContent">
+	<tr>
+	<td><input type="button" name="btnSalirPerfilAccess" id="btnSalirPerfilAccess" value="Cerrar Formulario" /></td>
+	</tr>
+	</table>
+</div>

@@ -1,0 +1,73 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Bandedocumen_exigibilidad.js"></script>
+<form id="frmexpediente">
+<input type="text" name="txtValorexpe" id="txtValorexpe">   
+<input type="text" name="txtNumexpe" id="txtNumexpe">  
+<input type="text" name="txtAnoexpe" id="txtAnoexpe">  
+
+<input type="text" name="txtNumeroexpe" id="txtNumeroexpe">  
+<input type="text" name="txtAnioexpe" id="txtAnioexpe"> 
+<input type="text" name="txtCodigoex" id="txtCodigoex"> 
+<div >
+    <fieldset class="ui-widget ui-widget-content">
+      <legend style="margin-left:5px"></legend>
+        <div class="contentForm">
+	    	<div class="contentBox" style="padding:0 0 0 0px">   <!-- arriba derecha abajo izquierda -->
+	    		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		    	 <legend style="margin-left:5px">Expedientes</legend>
+		    	 	<table class="tableContent">
+		    	 	  <tr>
+					   <td width="100"><span id="lblNro">Nro Expediente:</span></td>
+					   <td><input name="txtNroexpe" id="txtNroexpe" type="text" class="caja" size="20" maxlength="7"/></td>
+					   <td><input name="txtAniosexpe" id="txtAniosexpe" type="text" class="caja" size="20" maxlength="4" /></td>
+					  </tr>
+		    	 	  <tr>
+					   <td width="80"><span id="lblCodigo">Código:</span></td>
+					   <td><input name="txtCodigoexpe" id="txtCodigoexpe" type="text" class="cajaoff" readonly size="20" /></td>
+					  </tr>
+					  <tr>
+					   <td width="80"><span id="lblContribuyente">Contribuyente:</span></td>
+					   <td><input name="txtContribuyenteexpe" id="txtContribuyenteexpe" type="text" class="cajaoff" readonly size="40" /></td>
+					  </tr>
+					  <tr>
+					   <td width="80"><span id="lblUsuario">Ejecutivo:</span></td>
+					   <td><input name="txtEjecutivo" id="txtEjecutivo" type="text" class="cajaoff" readonly size="20" />
+					   <select name="cmbEjecutivo" id="cmbEjecutivo" class="combo"><option>[Seleccione]</option></select></td>
+					  </tr>
+					  <tr>
+					   <td width="80"><span id="lblUsuario">Auxiliar:</span></td>
+					   <td><input name="txtAuxiliar" id="txtAuxiliar" type="text" class="cajaoff" readonly size="20" />
+					   <select name="cmbAuxiliar" id="cmbAuxiliar" class="combo"><option>[Seleccione]</option></select></td>
+					  </tr>
+					  <tr>
+					   <td width="80"><span id="lblFecha">Fecha:</span></td>
+					   <td><input name="txtFechaexpe" id="txtFechaexpe" type="text" class="caja" size="12"/></td>				  
+					  </tr>
+					  <tr>
+			    	   <td width="80"><span id="lblObservaciones">Observaciones:</span></td>
+			     	   <td><textarea name="txtObservaciones" id="txtObservaciones" cols="50" rows="3" class="caja" style="text-transform:uppercase;"></textarea></td>
+			    	  </tr>	
+				    </table> 
+				</fieldset>
+	    	</div> 
+	    	
+			
+
+		    <div class="contentForm">           
+		       <div class="divButtons">
+			    <table class="tableContent">
+			     <tr>
+			      <td style="padding-left:5px">
+				    <input type="button" name="btnGrabaexpe" id="btnGrabaexpe" value="Grabar" />
+				    <input type="button" name="btnSalidaexpe" id="btnSalidaexpe" value="Salir" />
+				  </td>
+				 </tr>
+			    </table>
+			   </div>           
+		    </div>
+    
+     
+   </div>   
+  </fieldset>
+</div>
+</form>

@@ -1,0 +1,362 @@
+h1{
+	color:#C30;
+}
+
+.xrow-total{
+	font-size:12px;
+	font-weight:bold;
+}
+
+.messageGuardar{
+		background-image: url(../img/icons/download.gif);
+		background-repeat: no-repeat;
+	}
+	
+.xrow-hidden-button{
+	display:none;
+}
+
+.xrow-valortrib {
+ 	color:#2E9AFE;
+	font-weight:bold !important;
+}
+
+.xrow-coactivo {
+ 	color:#8017C6;
+}
+.xrow-fraccionamiento {
+ 	color:#4EC617;
+}
+.xrow-fraccionamiento .x-grid-row-checker {
+	display:none;
+}
+.xrow-fiscalizacion {
+ 	color:#FF8000;
+}
+.xrow-cancelado {
+ 	color:#F00;
+}
+.xrow-cancelado .x-grid-row-checker {
+	display:none;
+}
+.xrow-compensado {
+	color:#F00;
+}
+.xrow-compensado  .x-grid-row-checker {
+	display:none;
+}
+
+/* Licencia de Funcionaniemto */
+tr.xrow-obs td{
+    color: #ffffff;
+    background: #5C9CCC !important;
+    font-weight: bold !important;
+}
+tr.x-grid-row-selected, .xrow-obs, .x-grid-row-selected, .x-grid-rowwrap-div{
+    /*color: #ffffff;*/
+    background: #5C9CCC !important;
+}
+tr.xrow-obs td .x-grid-row-checker {
+	display:none;
+}
+
+tr.xrow-liceR td{
+    /*color: #ffffff;*/
+    background: #CCFF99 !important;
+    /*font-weight: bold !important;*/
+}
+tr.xrow-liceE td{
+    /*color: #ffffff;*/
+    background: #D5F4FF !important;
+    /*font-weight: bold !important;*/
+}
+tr.xrow-liceP td{
+    /*color: #ffffff;*/
+    background: #FF6666 !important;
+    /*font-weight: bold !important;*/
+}
+
+
+/* THE END Licencia de Funcionamiento*/
+
+.xrow-orange {
+ 	color:#C60;
+}
+
+.xrow-blue {
+ 	color: blue;
+}
+
+.xrow-red { 
+ 	color: red;
+}
+
+.xrow-green {
+ 	color: green;
+}
+
+.title1{
+    color: #596F8F;
+    font-size: 22px;
+    font-weight: 200;
+    padding: 8px 15px;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.title2{
+    color:#04408C;
+    font-size: 12px;
+    font-weight: 200;
+    padding-left: 15px;
+}
+
+.title3{
+    color:#596F8F;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 10px 0 10px 0;
+    text-shadow: 0 10px 0 #fff;
+}
+
+.title4{
+    color:#596F8F;
+    font-size: 15px;
+    font-weight: 200;
+    padding: 10px 0 10px 0;
+    text-shadow: 0 10px 0 #fff;
+}
+
+.text1{
+	color:#004080;
+	font-weight:bold;
+}
+
+.header-top li{
+	float:left;
+}
+
+.settings {
+    background-image:url(../js/ext/examples/shared/icons/fam/folder_wrench.png);
+}
+
+.nav {
+    background-image:url(../js/ext/examples/shared/icons/fam/folder_go.png);
+}
+
+.info {
+    background-image:url(../js/ext/examples/shared/icons/fam/information.png);
+}
+
+.ui-content-tabs .contentBoxHead{
+	font-size: 11px;
+}
+
+.ui-content-tabs .contentBoxMain{
+	padding:5px;
+}
+
+.contentForm{
+	padding: 8px;
+}
+
+.contentBox{
+	padding: 8px;
+	margin:8px;
+}
+
+.contentBoxBr{
+	padding: 8px;
+	border:1px #9EC2E2 solid;
+}
+
+.contentBoxBrSup{
+	padding: 8px;
+	border-top:1px #9EC2E2 solid;
+	border-left:1px #9EC2E2 solid;
+	border-right:1px #9EC2E2 solid;
+}
+
+.contentBoxBg{
+	padding: 8px;
+	margin:8px;
+	background-color:#E2E2E2;
+	border:1px #CCC solid;
+}
+
+.tableContent td{
+	padding:3px;	
+}
+
+fieldset ui-widget ui-widget-content{
+	padding: 8px;
+}
+
+legend{
+	font-weight: none;
+	color:#06C;
+	margin-left:5px
+}
+
+span{
+	font-weight: bold;
+}
+
+div.error{
+	color:#F00;
+	padding:5px;
+	margin-top:2px;
+	background-color:white;	
+	background-position:top;
+	background-repeat: no-repeat;
+	border:1px #C2E0E0 solid;	
+	position:absolute;
+	z-index:10000;
+}
+
+.valid{
+	color:#000;
+}
+
+.caja{
+	padding:3px;
+	border:1px #7eadd9 solid;
+	text-transform:uppercase;
+}
+
+.cajaoff{	
+	padding:3px;
+	background-color:#dfe9f6;
+	border:1px #7eadd9 solid;
+}
+
+.combo{
+	padding:3px;
+	border:1px #7eadd9 solid;
+}
+
+.combo:focus {
+	background-color:#D2FFD2;
+}
+
+.divButtons{
+	clear:both;
+	margin:10px 0 10px 0;
+	padding:8px;
+	border:1px #9EC2E2 solid;
+}
+
+/************ GRID TABLE ****************/
+table.hovertable {
+	color:#333333;
+	border-width: 1px;
+	border-color: #ccc;
+	border-collapse: collapse;
+}
+table.hovertable th {
+	background-color:#D5E3F7;
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #ccc;
+}
+table.hovertable tr {
+	background-color:#fff;
+}
+table.hovertable tr:hover {
+	background-color:#D9EBF5;
+}
+table.hovertable td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #ccc;
+}
+
+/********************* CATASTRO **********************/
+.tableContentc{	
+	padding:0px;
+	margin:0px;
+}
+.lblCodField{
+	border:1px #6EA7D1 solid;
+	background-color:#6EA7D1;
+	color:#FFF;
+	font-weight:bold;
+	font-size:11px;
+	padding:3px;
+	float:left;
+}
+.lblTxtField{
+	border:1px #6EA7D1 solid;
+	padding:3px;
+	float:left;
+	font-weight:bold;
+	font-size:11px;
+}
+.lblObjField{
+	border:1px #6EA7D1 solid;
+	float:left;
+}
+.cajac{
+	border:0px;
+	padding:3px;
+	text-transform:uppercase;
+}
+.cajacoff{
+	border:0px;
+	padding:3px;
+	background-color:#dfe9f6;
+}
+.comboc{
+	border:0px;
+	padding:0px;
+	height:18px;
+}
+.comboc:focus {
+	background-color:#D2FFD2;
+}
+.mayuscula {
+	text-transform: uppercase;
+}
+.tree_title{
+	padding:4px;
+	border:1px #EAEAEA solid;
+}
+.tree_node_blank{
+	border:1px #EAEAEA solid;
+	width:20px;
+}
+.tree_node_mas{
+	border:1px #EAEAEA solid;
+	width:20px;
+	background-image:url(../img/mas.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.tree_node_menos{
+	border:1px #EAEAEA solid;
+	width:20px;
+	background-image:url(../img/menos.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.inserta{
+	float:left;
+	background-image:url(../img/inserta.png);
+	background-repeat:no-repeat;
+	height:17px;
+	width:20px;
+	border-left:1px #6EA7D1 solid;
+	cursor:pointer;
+}
+
+.selecciona{
+	float:left;
+	background-image:url(../img/selecciona.png);
+	background-repeat:no-repeat;
+	height:17px;
+	width:20px;
+	border-left:1px #6EA7D1 solid;
+	cursor:pointer;
+}

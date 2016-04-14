@@ -1,0 +1,118 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Fiscalizaciondetalle_hresumen.js"></script>
+<script>
+</script>
+<form id="formHojaResumen">
+<input name="txtaction" id="txtaction" type="hidden" value="0" readonly />
+<input name="txtIdrq" id="txtIdrq" type="hidden" value="0" readonly />
+<input name="txtIdhr" id="txtIdrh" type="hidden" value="0" readonly />
+<table class="tableContent" width='100%'>
+<tr>
+	<td>
+		<div>
+			<fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px"><b>Fiscalizaci&oacute;n del a&ntilde;o :</b></legend>
+				<div class="contentForm">
+					<table class="tableContent">
+						<tr>
+						<td>
+						<input style="text-transform:uppercase" name="txtAnio" id="txtAnio" type="text" class="cajaoff" maxlength=4 size="5" value="2000" />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="lblNrocargo">&nbsp;&nbsp;R&eacute;gimen:&nbsp;</span>
+						<select id="cbRegimen" name="cbRegimen" style="width:174px;padding:2px;" ></select>
+						</td>
+						</tr>
+					</table>
+				</div>
+			</fieldset>	    
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div>
+			<fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px"><b>Valores del Impuesto Predial :</b></legend>
+				<div class="contentForm">
+					<table class="tableContent" border=0>
+						<tr>
+							<td>
+								<span id="lblRecepcionista">Cantidad de Predios:</span>
+							</td>
+							<td>
+								<input style="text-transform:uppercase; text-align:right" name="txtnpredio" id="txtnpredio" type="text" class="cajaoff" size="30" value="0" readonly />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span id="lblRecepcionista">Total Autovaluo:</span>
+							</td>
+							<td>
+								<input style="text-transform:uppercase; text-align:right" name="txttotavaluo" id="txttotavaluo" type="text" class="cajaoff" size="30" value="0.00" readonly />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span id="lblRecepcionista">Base Imponible:</span>
+							</td>
+							<td>
+								<input style="text-transform:uppercase; text-align:right" name="txtbase_imp" id="txtbase_imp" type="text" class="cajaoff" size="30" value="0.00" readonly />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span id="lblRecepcionista">Impuesto Anual:</span>
+							</td>
+							<td>
+								<input style="text-transform:uppercase; text-align:right" name="txtimpanual" id="txtimpanual" type="text" class="cajaoff" size="30" value="0.00" readonly />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span id="lblRecepcionista">Gasto Emision:</span>
+							</td>
+							<td>
+								<input style="text-transform:uppercase; text-align:right" name="txtgasemis" id="txtgasemis" type="text" class="cajaoff" size="30" value="0.00" readonly />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</fieldset>	    
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div>
+			<fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px"><b>Observaci&oacute;n :</b></legend>
+				<div class="contentForm">
+					<table class="tableContent">
+						<tr>
+						<td>
+							<textarea name="txt_observaciones" id="txt_observaciones" style="text-transform:uppercase; width:295px !important;" rows="6"  class="caja"></textarea>
+						</td>  
+						</tr>
+					</table>
+				</div>
+			</fieldset>	    
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div class="divButtons" style="margin:0px !important; ">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td style="padding-left:5px">
+						<button type="button" id="btnGuardar" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px">Guardar</button>
+						<button type="button" id="btnCancelar" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px">Cancelar</button>
+					</td>
+					 <td style="padding-left:5px">					   
+					</td>
+				</tr>
+			</table>
+		</div>
+	</td>
+</tr>
+</table>
+</form>

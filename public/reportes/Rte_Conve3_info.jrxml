@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Rte_Conve3" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true">
+	<parameter name="PCODIGO" class="java.lang.String"/>
+	<parameter name="PCONVENIO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Exec [Rentas].[ImprimeConvenio_infosat]  @buscar=2,@codigo=$P{PCODIGO} ,@convenio=$P{PCONVENIO}]]>
+	</queryString>
+	<field name="codigo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_referencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solicitud_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="concepto_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconcepto_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_des" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_rec_des" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_pred" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="periodo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="importe" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="174" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="32" width="555" height="32"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[En caso de no cumplir con las cuotas pactadas dentro de las fechas programadas, se perderá el beneficio del fraccionamiento y la deuda será trasladada a su cobranza por la vía coactiva.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="10" width="555" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*******Cancelación sólo en la tesorería de la Municipalidad********]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="64" width="555" height="50"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[En señal de aceptación a lo dispuesto en el reglamento para el Fraccionamiento del Pago de Deudas Tributarias y no Tributarias, <b>D.A N° 233-2011-MDI</b>; y de Conformidad a la presente  liquidación, firman al pie::]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="136" width="167" height="26"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[______________________________
+            <b>Gerencia de Rentas</b>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="136" width="167" height="37"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[______________________________
+       <b>Contribuyente/Representante</b>
+                      <b>Legal</b>]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+</jasperReport>

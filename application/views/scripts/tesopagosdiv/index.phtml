@@ -1,0 +1,107 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_Tesopagosdiv.js"></script>
+<form id="frmpagosdiv">
+		<div>
+		<fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+		<legend style="margin-left:5px">Datos de Contribuyente:</legend>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+		<td><span id="lblCodigo">Código:</span></td>
+		<td><input name="txtCodigo" id="txtCodigo" type="text" class="caja" size="10" maxlength="10" /></td>
+		<td><span id="lblNombre">Nombre:</span></td>
+		<td><input name="txtNombre" id="txtNombre" type="text" class="caja" maxlength="200" size="90" /></td>
+		</tr>
+		</table>
+		</fieldset>
+		</div>
+		<br style="clear:both"/>
+  <div>
+      <div>
+      <fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td style="padding-left:5px"><table>
+                <tr id="rowAddTupa">
+                  <td style="padding:3px"><input type="button" id="btnAddTupa" name="btnAddTupa" value="Agregar" style="width:80px" /></td>
+                </tr>
+                <tr id="rowSaveTupa">
+                  <td style="padding:3px"><input type="button" id="btnSaveTupa" name="btnSaveTupa" value="Guardar" style="width:80px" /></td>
+                </tr>
+                <tr id="rowEditTupa">
+                  <td style="padding:3px"><input type="button" id="btnEditTupa" name="btnEditTupa" value="Editar" style="width:80px" /></td>
+                </tr>
+                <tr id="rowCancelTupa">
+                  <td style="padding:3px"><input type="button" id="btnCancelTupa" name="btnCancelTupa" value="Cancelar" style="width:80px" /></td>
+                </tr>
+                <tr>
+                  <td style="padding:3px"><input type="button" id="btnDelTupa" name="btnDelTupa" value="Eliminar" style="width:80px"/></td>
+                </tr>
+              </table>
+                <table class="tableContentc" width="100%">
+                  <tr>
+                    <td valign="top"><div id="gridFicIndConst"></div></td>
+                    <td valign="top"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="3"><div id="divAddTupa" style="margin-top:2px;">
+                        <table class="hovertable">
+                          <tr>
+                            <td><input type="hidden" id="actTupa" name="actTupa">
+                                <input type="hidden" id="idcpisos" name="idcpisos">
+                                <table width="100%">
+                                  <tr>
+                                    <th><span>Tipo</span></th>
+                                    <th><span>Concepto</span></th>
+                                    <th><span>Precio</span></th>
+                                    <th><span>Cantidad</span></th>
+                                    <th><span>Total</span></th>
+                                  </tr>
+                                  <tr>
+                                    <td><div>
+                                      <input name="txttipo" type="text" class="cajaoff" id="txttipo" style="width:50px" maxlength="5">
+                                    </div></td>
+                                    <td><!--
+									<select name="cmbtipos" id="cmbtipos" class="combo valid" style="width:460px">
+                                    </select>-->
+									<input type="text" name="nom_pago_diver" id="nom_pago_diver" class="caja" style="text-transform:uppercase; width:835px" maxlength="400">
+									</td>
+                                    <td><input name="txtprecio" type="text" class="caja" id="txtprecio" style="width:80px;text-align:right" maxlength="5" value="0.00"></td>
+                                    <td><input name="txtcantidad" type="text" class="caja" id="txtcantidad" style="width:80px;text-align:right" maxlength="5" value="1"></td>
+                                    <td><input name="txttotal" type="text" class="cajaoff" id="txttotal" style="width:80px;text-align:right" maxlength="12" value="0.00" readonly ></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                        </table>
+                    </div></td>
+                  </tr>
+                </table>
+              <br style="clear:both"/>
+                <br/>
+                <div>
+                  <fieldset class="ui-widget ui-widget-content" style="padding: 8px;">
+                  <legend style="margin-left:5px">Detalle de Pago:</legend>
+                    <div id="gridPagDiversos"></div>
+                    <br/>
+                  <table align="right">
+                    <tr>
+                      <td><b>Total:</b></td>
+                      <td style="padding:5px"><input name="txtTotPag" id="txtTotPag" type="text" class="cajaoff" style="width:60px;text-align:right"  value="0.00" readonly /></td>
+                      <td width="80"></td>
+                    </tr>
+                  </table>
+                  </fieldset>
+                </div>
+              <br/>
+                <div class="divButtons">
+                  <input type="button" name="btnImpPag" id="btnImpPag" value="Pagar" />
+                  <input type="button" name="btnSalir" id="btnSalir" value="Cerrar" />
+              </div></td>
+    </table>
+	</div>
+	</div>
+</form>
+
+
+</form>

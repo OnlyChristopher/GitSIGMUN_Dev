@@ -1,0 +1,89 @@
+<h1>DOCUMENTOS</h1>
+<input type="hidden" id="oldDocItems" name="oldDocItems">
+<div style="margin-top:5px">
+<table class="tableContentc" width="100%">
+<tr>
+  <td valign="top">
+  <div id="gridFicIndDocu"></div>
+  </td>
+  <td valign="top">
+    <div class="divButtons" style="width:125px; margin-top:0">
+      <table>
+        <tr id="rowAddDocu">
+          <td style="padding:3px"><input type="button" id="btnAddDocu" name="btnAddDocu" value="Agregar" style="width:100px" /></td>
+          </tr>        
+        <tr id="rowSaveDocu">
+          <td style="padding:3px"><input type="button" id="btnSaveDocu" name="btnSaveDocu" value="Guardar" style="width:100px" /></td>
+          </tr>
+        <tr id="rowEditDocu">
+          <td style="padding:3px"><input type="button" id="btnEditDocu" name="btnEditDocu" value="Editar" style="width:100px" /></td>
+          </tr>
+        <tr id="rowCancelDocu">
+          <td style="padding:3px"><input type="button" id="btnCancelDocu" name="btnCancelDocu" value="Cancelar" style="width:100px" /></td>
+          </tr>
+        <tr>
+          <td style="padding:3px"><input type="button" id="btnDelDocu" name="btnDelDocu" value="Eliminar" style="width:100px"/></td>
+          </tr>
+        </table>
+      </div>    
+  </td>
+  </tr>
+<tr>
+	<td colspan="2">
+    <div id="divAddDocu" style="margin-top:10px;">
+    <table class="tableContentc">
+    <tr>
+    <td>
+    	<input type="hidden" id="actDocu" name="actDocu">
+        <input type="hidden" id="idcmdocum" name="idcmdocum">
+        <div class="lblCodField" style="width:25px">97</div>
+        <div class="lblTxtField" style="width:250px;">Tipo de Documento</div>
+        <div class="lblCodField" style="width:25px">98</div>
+        <div class="lblTxtField" style="width:150px;">N° de Documento</div>
+        <div class="lblCodField" style="width:25px">99</div>
+        <div class="lblTxtField" style="width:150px;">Fecha (Día / Mes / Año)</div>
+        <div class="lblCodField" style="width:30px">100</div>
+        <div class="lblTxtField" style="width:145px;">Area Autorizada</div>
+        <div class="lblObjField" style="clear:left; border-top:0">
+        <select name="ciddocud" id="ciddocud" class="comboc" style="width:273px"></select>
+		</div>
+        <div class="lblObjField" style="border-top:0; border-left:0">
+        <input name="nrodocud" type="text" class="cajac" id="nrodocud" style="width:174px" maxlength="15">
+        </div>
+        <div class="lblObjField" style="border-top:0; border-left:0">
+        <input name="fecdocud" type="text" class="cajac" id="fecdocud" style="width:174px" maxlength="10">
+		</div>
+        <div class="lblObjField" style="border-top:0; border-left:0">
+        <input name="areautod" type="text" class="cajac" id="areautod" style="width:174px" maxlength="20">
+        </div>
+    </td>
+    </tr>
+    </table>
+  	</div>
+    </td>
+</tr>
+</table>
+</div>
+<div style="margin-top:20px">
+	<table class="tableContentc">
+    <tr>
+    <td>
+    	<div class="lblCodField" style="width:30px; border-bottom:0">101</div>
+        <div class="lblTxtField" style="width:360px; border-bottom:0">Nombre de la Notaría</div>
+        <div class="lblCodField" style="width:30px; border-bottom:0">102</div>
+        <div class="lblTxtField" style="width:150px; border-left:0; border-bottom:0">Kardex</div>
+        <div class="lblCodField" style="width:30px; border-bottom:0">103</div>
+        <div class="lblTxtField" style="width:200px; border-left:0; border-bottom:0">Fecha de Escritura Pública</div>
+        <div class="lblObjField" style="clear:left;">
+        <input name="cidnota" type="text" class="cajac" id="cidnota" style="width:388px" maxlength="250">
+        </div>
+        <div class="lblObjField" style="border-left:0;">
+        <input name="vkardex" type="text" class="cajac" id="vkardex" style="width:179px" maxlength="20">
+        </div>
+        <div class="lblObjField" style="border-left:0;">
+        <input name="feescri" type="text" class="cajac" id="feescri" style="width:229px" maxlength="10">
+        </div>
+    </td>
+    </tr>
+    </table>
+</div>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_catasficind_subreport5" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true">
+	<parameter name="cidindi" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[exec MntCatas.pxCMdocum @busc=4, @cidindi=$P{cidindi}]]>
+	</queryString>
+	<field name="idsigma" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidindi" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ciddocu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nrodocu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecdocu" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="areauto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nestado" class="java.lang.Short">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="usuario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hostnam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fegraba" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vdescri" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="19" width="196" height="22" forecolor="#000000" backcolor="#CCFFCC"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="6" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[TIPO DE DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="267" y="19" width="78" height="11" forecolor="#000000" backcolor="#CCFFCC"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="6" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="19" width="12" height="11" forecolor="#000000" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[97]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="255" y="30" width="30" height="11" forecolor="#000000" backcolor="#CCFFCC"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="6" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[DÍA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="196" y="19" width="59" height="22" forecolor="#000000" backcolor="#CCFFCC"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="6" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[N° DE DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="196" y="19" width="12" height="11" forecolor="#000000" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[98]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="255" y="19" width="12" height="11" forecolor="#000000" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[99]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="285" y="30" width="30" height="11" forecolor="#000000" backcolor="#CCFFCC"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="6" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[MES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="315" y="30" width="30" height="11" forecolor="#000000" backcolor="#CCFFCC"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="6" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[AÑO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="345" y="19" width="210" height="22" forecolor="#000000" backcolor="#CCFFCC"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="6" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ÁREA AUTORIZADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="345" y="19" width="12" height="11" forecolor="#000000" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[100]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="196" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="196" y="0" width="59" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="255" y="0" width="90" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="345" y="0" width="210" height="11" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="4" y="0" width="192" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{vdescri}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="55" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nrodocu}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="255" y="0" width="90" height="11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{fecdocu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="0" width="206" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{areauto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

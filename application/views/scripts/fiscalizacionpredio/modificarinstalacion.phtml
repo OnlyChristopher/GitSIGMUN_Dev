@@ -1,0 +1,81 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1');?>
+<script type="text/javascript" src="<?php echo $this->ruta;?>js/js_Fiscalizacionpredio_modificarinstalacion.js"></script>
+<form id="formModificarInstalacion">
+	<input type="hidden" id="txtidpin" name="txtidpin" readonly />
+	<input type="hidden" id="txtanioin" name="txtanioin" readonly />
+	<table class="tableContent" width='100%' border=0 >
+		<tr>
+			<td>
+				<div>
+					<fieldset class="ui-widget ui-widget-content">
+						<legend style="margin-left:5px"><b>Datos de Instalacion :</b></legend>
+						<div class="contentForm">
+							<table class="tableContent" border=1 width='100%'>
+								<tr>
+									<td colspan='4' width='15%'>Instalacion</td>
+								</tr>
+								<tr>
+									<td colspan='4' width='15%'>
+									<select id="cbInstalacion" name="cbInstalacion" style="width:510px;padding:2px;"></select>
+									</td>
+								</tr>
+								<tr>
+									<td>Antiguedad</td>
+									<td>
+										<input style="text-transform:uppercase" name="txtantigueda" id="txtantigueda" type="text" class="caja" maxlength=4 size="4" value="9999"/>
+										<input style="text-transform:uppercase" name="txtperiodopi" id="txtperiodopi" type="text" class="caja" maxlength=4 size="4" value="9999"/>
+									</td>
+									<td>Valor Unitario</td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtvaluni" id="txtvaluni" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" readonly /></td>
+								</tr>
+								<tr>
+									<td>Clasificacion</td>
+									<td><select id="cbinClasificacion" name="cbinClasificacion" style="width:130px;padding:2px;"></select></td>
+									<td>Factor de Oficializacion</td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtfactor" id="txtfactor" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" readonly /></td>
+								</tr>
+								<tr>
+									<td>Material</td>
+									<td><select id="cbinMaterial" name="cbinMaterial" style="width:130px;padding:2px;"></select></td>
+									<td>% Depreciado</td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtporcendep" id="txtporcendep" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" readonly /></td>
+								</tr>
+								<tr>
+									<td>Estado</td>
+									<td><select id="cbinEstado" name="cbinEstado" style="width:130px;padding:2px;"></select></td>
+									<td>Valor Unitario Depreciado</td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtvalunidep" id="txtvalunidep" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" readonly /></td>
+								</tr>
+								<tr>
+									<td>Valor Estimado</td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtestimado" id="txtestimado" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" readonly /></td>
+									<td>Cantidad</td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtcantidad" id="txtcantidad" type="text" class="caja" maxlength=70 size="14" value="999,999,999.99" /></td>
+								</tr>
+								<tr>
+									<td>U. Med.</td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtmedida" id="txtmedida" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" readonly /></td>
+									<td>Valor de Instalacion</td>
+									<td><input style="text-transform:uppercase;text-align:right;" name="txtvalotota" id="txtvalotota" type="text" class="cajaoff" maxlength=70 size="14" value="999,999,999.99" readonly /></td>
+								</tr>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<div class="divButtons">
+		<table class="tableContent">
+		<tr>
+			<td style="padding-right:43px;padding-top:6px;padding-bottom:4px;">
+				<button type="button" style="width:106px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnGrabarInstalacion">Grabar</button>
+				<button type="button" style="width:116px;border-radius: 1px;font-family: tahoma,arial,verdana,sans-serif;text-align:left; padding-left:5px" id="btnCerrarInstalacion">Cerrar</button>
+			</td>
+		</tr>
+		<td style="padding-left:40px"></td>
+		</table>
+	</div>
+
+</form>

@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="idCartaReq" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[DECLARE @idCartaReq int = $P{idCartaReq}
+DECLARE @ii_nomapeInspector varchar(100)=''
+DECLARE @ii_dniInspector varchar(100)=''
+DECLARE @ti_nomapeInspector varchar(100)=''
+DECLARE @ti_dniInspector varchar(100)=''
+--CONCATENANDO TODAS LAS DIRECCIONES DE LOS PREDIOS
+DECLARE @dirPrediosTodos VARCHAR(MAX) = ''
+SELECT @dirPrediosTodos = (@dirPrediosTodos + ', '+
+							dbo.fn_fisca_getDirPredio(id_via,num_manz,num_lote,sub_lote,num_call,num_depa,referenc,cr.anio))
+							FROM Fiscalizacion.CARTAPREDIOS cp
+							INNER JOIN Fiscalizacion.CARTA_REQ cr ON cp.idCarta = cr.idCarta
+							WHERE cp.idCarta = @idCartaReq AND cp.confirmado = 1
+
+					SET @dirPrediosTodos = SUBSTRING(@dirPrediosTodos,3,LEN(@dirPrediosTodos))
+
+
+SELECT @ii_nomapeInspector=u.apellido_paterno+' '+u.apellido_materno+' '+u.nombres,@ii_dniInspector= u.dni
+FROM Fiscalizacion.FISCALIZADORES u ,FISCALIZACION.ACTA_VISITA av WHERE av.ii_idInspector = u.idFiscalizador AND av.idCarta = @idCartaReq
+
+SELECT @ti_nomapeInspector=u.apellido_paterno+' '+u.apellido_materno+' '+u.nombres,@ti_dniInspector= u.dni
+FROM Fiscalizacion.FISCALIZADORES u ,FISCALIZACION.ACTA_VISITA av WHERE av.ti_idInspector = u.idFiscalizador AND av.idCarta = @idCartaReq
+
+--SELECT @ii_nomapeInspector ii_nomapeInspector,@ii_dniInspector dniInspector
+
+
+SELECT c.paterno+' '+c.materno+' '+c.nombres contribuyente,c.num_doc nro_documento,av.codContrib idContrib,
+av.nroActaVisita,av.año,av.ReferenciaNroCarta,DAY(av.ii_fechaInspeccion) ii_dia,
+MONTH(av.ii_fechaInspeccion) ii_mes,YEAR(av.ii_fechaInspeccion) ii_anio,
+av.ii_horaInspeccion,av.ii_SroSra,av.ii_observa,av.ii_idInspector,@ii_nomapeInspector ii_nomapeInspector,@ii_dniInspector ii_dniInspector
+,av.ii_FirmaInspector
+,av.ii_FirmaContrib,av.ti_horaCulmina,DAY(av.ti_fecCulmina) ti_dia,
+MONTH(av.ti_fecCulmina) ti_mes,YEAR(av.ti_fecCulmina) ti_anio,av.ti_FRegTituloMinuta
+,av.ti_PDefunSucIntDecl,av.ti_TesPartDivAcumu,av.ti_DeclFabIndepReg,av.ti_LicConConfObra
+,av.ti_Planos,av.ti_LicFuncAnunRUC,av.ti_CertiNumeracion,av.ti_CPoderFLegal
+,av.ti_otros,av.ti_OtrosDoc,av.ti_idInspector,@ti_nomapeInspector ti_nomapeInspector,@ti_dniInspector ti_dniInspector,
+ av.ti_FirmaInspector,av.ti_FirmaContrib
+,@dirPrediosTodos dirPrediosTodos
+FROM Rentas.MContribuyente c, FISCALIZACION.ACTA_VISITA av
+WHERE av.codContrib = c.codigo AND av.idCarta=@idCartaReq]]>
+	</queryString>
+	<field name="contribuyente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nro_documento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idContrib" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nroActaVisita" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="año" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ReferenciaNroCarta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_dia" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_mes" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_anio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_horaInspeccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_SroSra" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_observa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_idInspector" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_nomapeInspector" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_dniInspector" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_FirmaInspector" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ii_FirmaContrib" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_horaCulmina" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_dia" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_mes" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_anio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_FRegTituloMinuta" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_PDefunSucIntDecl" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_TesPartDivAcumu" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_DeclFabIndepReg" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_LicConConfObra" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_Planos" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_LicFuncAnunRUC" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_CertiNumeracion" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_CPoderFLegal" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_otros" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_OtrosDoc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_idInspector" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_nomapeInspector" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_dniInspector" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_FirmaInspector" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ti_FirmaContrib" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dirPrediosTodos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="fechaInspeccion" class="java.lang.String">
+		<variableExpression><![CDATA[(($F{ii_dia}==null)? "" :$F{ii_dia}+"/"+$F{ii_mes}+"/"+$F{ii_anio})]]></variableExpression>
+	</variable>
+	<variable name="fechaCulmina" class="java.lang.String">
+		<variableExpression><![CDATA[($F{ti_dia}==null || $F{ti_dia}=="") ? ""  : $F{ti_dia}+"/"+$F{ti_mes}+"/"+$F{ti_anio}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="81" y="28" width="206" height="11"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SUBGERENCIA DE FISCALIZACION TRIBUTARIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="111" width="148" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Referencia a : Carta de Requerimiento Nº]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="97" width="100" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Código de Contribuyente: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="183" y="111" width="188" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ReferenciaNroCarta}+" - SFT-GAT-MDC"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="74" width="555" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ACTA DE VISITA Nº "+$F{nroActaVisita}+" - "+$F{año}+" -SFT-GAT-MDC"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="81" y="11" width="206" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUNICIPALIDAD DISTRITAL DE INDEPENDENCIA]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="14" y="4" width="65" height="66"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.60:8080/img/logo_muni.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="135" y="95" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{idContrib}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="250" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="35" y="5" width="100" height="11"/>
+				<textElement>
+					<font size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[INICIO DE INSPECCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="36" y="107" width="473" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Por lo que se deja constancia del inicio de las actividades descritas en el párrafo procedente.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="35" y="124" width="478" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES:]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="35" y="232" width="56" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["FECHA -."]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="347" y="196" width="158" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="35" y="221" width="56" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DNI -."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="347" y="210" width="55" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NOMBRE -."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="347" y="221" width="55" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DNI -."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="35" y="199" width="59" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[INSPECTOR]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="35" y="196" width="158" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="35" y="210" width="56" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NOMBRE -."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="347" y="232" width="55" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["FECHA -."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="347" y="199" width="73" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CONTRIBUYENTE]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="35" y="18" width="472" height="80"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["En el distrito de Carabayllo, el día "+(($V{fechaInspeccion}=="")? "........................" :$V{fechaInspeccion}) +
+" ,a horas "+(($F{ii_horaInspeccion}==null || $F{ii_horaInspeccion}.trim()=="" )? "......................" : $F{ii_horaInspeccion} )+" nos constituimos en el(los) predio(s) ubicado(s) en: "+
+( ($F{dirPrediosTodos}==null)? "..................................................................................................................................................................................................................." : $F{dirPrediosTodos})+" , con la presencia del Sr(a) "+
+( ($F{ii_SroSra}==null || $F{ii_SroSra}.trim()=="")? "................................................................." : $F{ii_SroSra} )+" ,para iniciar el proceso de inspección y proceder a realizar las tomas fotográficas de las características del predio y recepción de documentación probatoria; entendiéndose la diligencia, en esta etapa del proceso, por parte del Sr(a) "+
+( ($F{contribuyente}==null) ? "........................................................................" : $F{contribuyente}.toUpperCase().trim() )+" identificado con DNI/otro Nº "+( ($F{nro_documento}==null) ? "............................." : $F{nro_documento} )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="46" y="135" width="463" height="13"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{ii_observa}==null || $F{ii_observa}.trim()=="" )? "................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................" : $F{ii_observa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="91" y="210" width="164" height="11" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ii_nomapeInspector}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="91" y="221" width="164" height="11" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{ii_dniInspector}=="0" || $F{ii_dniInspector}==null)? "" : $F{ii_dniInspector}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="402" y="210" width="136" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{contribuyente}.toUpperCase().trim()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="402" y="221" width="100" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nro_documento}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="91" y="232" width="164" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{fechaInspeccion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="402" y="232" width="124" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{fechaInspeccion}.toUpperCase()]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="252">
+			<rectangle>
+				<reportElement positionType="Float" x="33" y="37" width="479" height="113"/>
+			</rectangle>
+			<line>
+				<reportElement positionType="Float" x="33" y="128" width="479" height="1"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="310" y="39" width="189" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Planos de distribución, ubicación (cuadro de áreas)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="69" y="107" width="198" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Declaratoria de fábrica, independización, reglamento interno]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="275" y="37" width="1" height="113"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="69" y="134" width="198" height="13"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Licencia de Construcción, Conformidad de Obra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="69" y="84" width="198" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Testimonio de Partición, División, Acumulación]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="305" y="37" width="1" height="113"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="311" y="84" width="188" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Certificado de Numeración]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="311" y="62" width="188" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Licencia de Funcionamiento, Licencia de Anuncios, RUC.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="35" y="5" width="122" height="11"/>
+				<textElement>
+					<font size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[TERMINO DE INSPECCIÓN]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="33" y="83" width="479" height="1"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="69" y="39" width="198" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Ficha Registrar, Título de propiedad, Minuta de Compra-Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="69" y="62" width="198" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Partida defunción, Suc. Intestada, Declaratoria de Herederos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="311" y="106" width="188" height="21"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Carta Poder con firma legalizada y/o Vigencia de Poder]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="62" y="37" width="1" height="113"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="33" y="105" width="479" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="33" y="61" width="479" height="1"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="32" y="203" width="59" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[INSPECTOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="347" y="214" width="55" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NOMBRE -."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="347" y="236" width="55" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["FECHA -."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="32" y="214" width="52" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NOMBRE -."]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="347" y="200" width="158" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="32" y="236" width="52" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["FECHA -."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="32" y="225" width="52" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DNI -."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="347" y="203" width="123" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CONTRIBUYENTE]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="347" y="225" width="55" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DNI -."]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="32" y="200" width="158" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="36" y="40" width="23" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{ti_FRegTituloMinuta}==true) ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="84" y="214" width="192" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ti_nomapeInspector}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="84" y="225" width="100" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{ti_dniInspector}=="0" || $F{ti_dniInspector}==null) ? "" : $F{ti_dniInspector}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="402" y="214" width="100" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{contribuyente}.toUpperCase().trim()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="402" y="225" width="100" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nro_documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="32" y="20" width="481" height="13"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Se culminó con la inspección a horas "+
+(($F{ti_horaCulmina}==null || $F{ti_horaCulmina}.trim()=="") ? "" : $F{ti_horaCulmina}.toUpperCase())
++" del día "+
+(($V{fechaCulmina}=="")? ".................. de ................ del ......" : $V{fechaCulmina})
++"  recibiendo el inspector en copias, la siguiente documentación."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="36" y="63" width="23" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{ti_PDefunSucIntDecl}==true)? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="36" y="85" width="23" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ti_TesPartDivAcumu}==true ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="36" y="107" width="23" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ti_DeclFabIndepReg}== true ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="36" y="130" width="23" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ti_LicConConfObra}== true ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="279" y="40" width="23" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ti_Planos}== true ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="279" y="63" width="23" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ti_LicFuncAnunRUC}== true ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="279" y="85" width="23" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ti_CertiNumeracion}== true ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="279" y="107" width="23" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ti_CPoderFLegal}== true ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="279" y="130" width="23" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ti_otros}==true ? "X" : ""== true ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="312" y="132" width="188" height="13"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Otros: "+(($F{ti_otros}==true) ? $F{ti_OtrosDoc}.toUpperCase() : "........................................................." )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="236" width="99" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{fechaCulmina}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="403" y="236" width="99" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{fechaCulmina}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="38">
+			<staticText>
+				<reportElement x="26" y="4" width="479" height="34"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[El contribuyente tendrá el plazo máximo de tres (03) días hábiles a partir del día hábil siguiente a la fecha de Inspección, para presentar la documentación no entregada durante la inspección en el módulo de atención de la Subgerencia de Fiscalización Tributaria.Av. Túpac Amaru Km. 4.5 - Independencia]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

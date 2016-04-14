@@ -1,0 +1,89 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+			
+			
+			<style type="text/css">
+				${demo.css}
+			</style>
+			
+			<style type="text/css">
+				#dynamic_data{
+				border: 1px solid gray;
+				border-radius: 10px;
+				padding: 10px;
+				text-decoration:none;
+				float:left;
+				margin:4px;
+				text-align:center;
+				display: block;
+				color: black;
+				}
+				
+
+			</style>
+		
+	<script>
+$(function () {
+ 
+		//on page load  
+		getAjaxData(1);
+ 
+		//on changing select option
+		$('#dynamic_data').change(function(){
+			var val = $('#dynamic_data').val();
+			getAjaxData(val);
+		});
+ 
+		function getAjaxData(id){
+ 
+		//use getJSON to get the dynamic data via AJAX call
+		$.getJSON('data', function(chartData) {
+			$('#container').highcharts({
+				chart: {
+					type: 'column'
+				},
+				title: {
+					text: 'Highcharts - Pulling data from PHP using Ajax'
+				},
+				xAxis: {
+					categories: ['One', 'Two', 'Three']
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: 'Value'
+					}
+				},
+				series: chartData
+			});
+		});
+	}
+});
+</script>
+	</head>
+	<body>
+
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/highcharts.js"></script>
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/modules/drilldown.js"></script>
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/modules/data.js"></script>
+		<script type="text/javascript" src="<?php echo $this->ruta;?>js/modules/exporting.js"></script>
+		<table border="0">
+		<tr>
+		<td>
+			<div id="texto"><span>Anio :</span><div>
+		</td>
+		<td>
+			<select id="dynamic_data">
+				<?php echo $this->cb_anno;?>
+			</select>
+		</td>
+		</tr>
+		</table>
+		<div id="container" style="min-width: 450px; max-width: 700px; height: 700; margin: 0 auto"></div>
+
+	</body>
+</html>

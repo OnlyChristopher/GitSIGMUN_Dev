@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="declaracion_jurda" language="groovy" pageWidth="595" pageHeight="842" columnWidth="536" leftMargin="39" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CODIGO" class="java.lang.String"/>
+	<parameter name="ANNO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[exec Rentas.Reporte @busc=11,@codigo=$P{CODIGO},@anno=$P{ANNO},@cod_pred='040000518',@anexo='0001',@sub_anexo='0001']]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dni" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_pred" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="condicion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_adquisicion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="uso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="porcen_propiedad" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="arancel" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_adquisicion" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_afectacion" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="area_terreno" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_total_terreno" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="area_comun" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_total_constru" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_total_instala" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_autoavaluo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_piso" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_nivel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="niv_piso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ano_cons" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_clafica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_materia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion_m" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_estados" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion_c" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Categorias" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_unitar" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incremento" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="por_deprec" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_deprec" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="val_un_dep" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valo_areas" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="porc_comun" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valo_const" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="area_const" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="comun_contr" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Motivo_glosa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Glosa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="codigo_predio">
+		<groupExpression><![CDATA[$F{codigo}]]></groupExpression>
+		<groupHeader>
+			<band height="549">
+				<staticText>
+					<reportElement x="0" y="281" width="273" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[DIRECCIÓN DEL PREDIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="301" width="536" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Dirección del Predio (Vía Nro- Int- Letra / Mza - Lote - Block Zona Urbana Distrito)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="327" width="159" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sector / Manzana Catastral]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="343" width="159" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sector / Manzana Catastral Fiscal]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="367" width="536" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CARACTERISTICAS DEL PREDIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="387" width="135" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Área Terreno (m²)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="401" width="135" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Frente(mt)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="415" width="135" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nro Suministro Energia]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="429" width="135" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ubicación Predio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="443" width="135" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Uso(s)  del Predio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="204" y="443" width="51" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tipo Uso ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="259" y="443" width="78" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Área Uso (m²)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="342" y="443" width="45" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Periodo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="396" y="443" width="54" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mes Inicio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="468" y="443" width="54" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mes Fin]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="469" width="109" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Condición Especial]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="485" width="109" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Situación Predio]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="300" width="522" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="255" y="387" width="135" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Área Terreno Común (m²)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="255" y="403" width="65" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fondo (mt)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="3" y="2" width="179" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[DATOS DEL CONTRIBUYENTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="369" y="28" width="72" height="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Identidad]]></text>
+				</staticText>
+				<line>
+					<reportElement x="4" y="15" width="522" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="369" y="17" width="72" height="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nro Docu-]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="3" y="17" width="51" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Código ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="58" y="17" width="211" height="14"/>
+					<textElement>
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Apellido y Nombre / Razón Social]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="3" y="44" width="119" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Típo de Contribuyente]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="67" width="520" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Domicilio Fiscal (Vía Nro- Int- Letra / Mza - Lote - Block Zona Urbana Distrito)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="136" width="115" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tipo Predio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="151" width="115" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Condición Propiedad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="105" width="265" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[DATOS DEL PREDIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="166" width="115" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tipo Adquisición]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="121" width="115" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Motivo Declaración ]]></text>
+				</staticText>
+				<line>
+					<reportElement x="4" y="96" width="522" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="309" y="169" width="98" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fecha Afectacion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="309" y="134" width="98" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Porc. Propiedad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="309" y="117" width="98" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Codigo Predio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="309" y="149" width="98" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fecha Adquisición ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="217" width="88" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tipo Documento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="232" width="88" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ap. y Nombres]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="202" width="88" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tipo Persona]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="247" width="88" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Notaria]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="187" width="88" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Transfente ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="309" y="203" width="102" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sub Tipo Persona]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="309" y="219" width="102" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nro Documento]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="274" width="522" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="0" y="520" width="536" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CARACTERISTICAS DE CONTRUCCIÓN ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="416" y="534" width="45" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Referencia]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="11" y="534" width="29" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Items]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="40" y="534" width="44" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Tipo Nivel]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="84" y="534" width="34" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Nivel]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="118" y="534" width="29" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Año]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="147" y="534" width="29" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Mes]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="176" y="534" width="19" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[AC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="194" y="534" width="26" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ACC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="219" y="534" width="21" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[MP]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="239" y="534" width="30" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[EC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="268" y="534" width="30" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Clasif.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="298" y="534" width="15" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[MC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="312" y="534" width="15" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[T]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="328" y="534" width="15" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[P]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="343" y="534" width="15" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[PV]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="358" y="534" width="15" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[R]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="373" y="534" width="15" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[B]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="393" y="534" width="15" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[I.E.]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="138" y="469" width="96" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[":"+ $F{estado}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="147" y="387" width="89" height="15"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{area_terreno}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="145" y="387" width="2" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="407" y="387" width="100" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{area_comun}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="405" y="386" width="2" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="406" y="117" width="100" height="13"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[":"+$F{cod_pred}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="145" y="166" width="100" height="13"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[":"+$F{tipo_adquisicion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="369" y="40" width="71" height="13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{dni}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="416" y="149" width="52" height="13"/>
+					<textElement/>
+					<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{fecha_adquisicion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="416" y="169" width="50" height="13"/>
+					<textElement/>
+					<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{fecha_afectacion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="418" y="219" width="88" height="14"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{dni}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="2" y="80" width="520" height="15"/>
+					<textElement>
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="145" y="151" width="98" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[":"+$F{condicion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="2" y="30" width="52" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{codigo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="58" y="33" width="210" height="11"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="314" width="528" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="322">
+				<staticText>
+					<reportElement x="202" y="39" width="107" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Pisos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="14" y="47" width="108" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Clasificación Depreciación]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="14" y="37" width="108" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Material Predominante]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="202" y="49" width="107" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Instalaciones Eléctricas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="14" y="17" width="108" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Área Construida]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="202" y="29" width="107" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Techos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="202" y="18" width="107" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Muros y Columnas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="14" y="27" width="108" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Área Común Construida  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="0" width="44" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Leyenda:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="18" width="80" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Puertas y Ventana]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="28" width="80" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Revestimientos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="39" width="80" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Baños]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="126" y="17" width="23" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[AC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="121" y="17" width="6" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="121" y="27" width="6" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="126" y="27" width="23" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ACC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="121" y="37" width="6" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="126" y="37" width="23" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[MP]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="126" y="47" width="23" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Clasif.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="121" y="47" width="6" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="49" width="6" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="18" width="6" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="313" y="39" width="23" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[P]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="29" width="6" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="313" y="49" width="23" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[I.E]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="313" y="18" width="23" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[MC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="39" width="6" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="313" y="29" width="23" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[T]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="444" y="39" width="23" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[B]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="444" y="28" width="23" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[R]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="439" y="39" width="6" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="439" y="18" width="6" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="444" y="18" width="23" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[PV]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="439" y="28" width="6" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="234" width="43" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Usuario]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="155" width="97" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Fecha Fizcalización]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="218" width="117" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Fecha y Hora de Impresión]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="182" width="516" height="24"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Declaro bajo juramento que los datos proporcionados a la administración tributaria son correctos, por lo que en señal de conformidad firmo al pie.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="11" y="114" width="522" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DATOS ADICIONALES ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="128" width="72" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Motivo Registro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="166" width="97" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Glosa Fizcalización]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="142" width="97" height="11"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Glosa Motivo Registro]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="286" y="295" width="210" height="11"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="271" y="275" width="237" height="20"/>
+					<textElement verticalAlignment="Bottom"/>
+					<text><![CDATA[_________________________________________]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="66">
+			<staticText>
+				<reportElement x="171" y="31" width="210" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MDI - Declaración Jurada Predial ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="5" y="3" width="68" height="56"/>
+				<imageExpression class="java.lang.String"><![CDATA["http://10.0.1.19:8080/img/logo_muni.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="159" y="16" width="263" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Municipalidad Distrital de Independencia]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="365" y="32" width="53" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{anno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="1" width="29" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{item_piso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="1" width="42" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipo_nivel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="1" width="37" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{niv_piso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="1" width="29" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ano_cons}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="3" width="109" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Categorias}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="2" width="30" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descripcion_c}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="1" width="13" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{id_clafica}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="135" splitType="Stretch"/>
+	</summary>
+</jasperReport>

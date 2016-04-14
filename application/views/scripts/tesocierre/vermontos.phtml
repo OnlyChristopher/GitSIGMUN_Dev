@@ -1,0 +1,28 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_tesocuadrecaja.js"></script>
+<div id="tabla002" align="center">
+<table width="100%" height="230" border="1">
+  <tr>
+    <td width="194" height="65">&nbsp;</td>
+    <td width="124">&iquest;CUADRO?</td>
+    <td width="210">MONTO INGRESADO POR EL CAJERO </td>
+    <td width="274">MONTO CALCULADO POR EL SISTEMA (SUMA DE TODOS LOS MOVIMIENTOS) </td>
+  </tr>
+  <tr>
+    <td>EFECTIVO:</td>
+    <td><input name="txtestado01" id="txtestado01" type="text" value="" class="caja" size="20" maxlength="100" readonly /></td>
+    <td><input name="txtcajeroefectivo" id="txtcajeroefectivo" type="text" value="" class="caja" size="20" maxlength="100" style="text-align:right" readonly /></td>
+    <td><input name="txtsistemaefectivo" id="txtsistemaefectivo" type="text" value="" class="caja" size="20" maxlength="100" style="text-align:right" readonly /></td>
+  </tr>
+  <tr>
+    <td>CHEQUE:</td>
+    <td><input name="txtestado02" id="txtestado02" type="text" value="" class="caja" size="20" maxlength="100" readonly /></td>
+    <td><input name="txtcajerocheque" id="txtcajerocheque" type="text" value="" class="caja" size="20" maxlength="100" style="text-align:right" readonly /></td>
+    <td><input name="txtsistemacheque" id="txtsistemacheque" type="text" value="" class="caja" size="20" maxlength="100" style="text-align:right" readonly /></td>
+  </tr>
+  <tr>
+	<td colspan="2"  align="center" class="text0">
+		<a href="#" onclick="javascript:abreCierre();" ><b>Ir a Cierre de Caja</b></a>
+	</td>
+  </tr>
+  </div>

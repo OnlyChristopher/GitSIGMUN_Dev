@@ -1,0 +1,180 @@
+<h1>CONSTRUCCIONES</h1>
+<input type="hidden" id="oldConItems" name="oldConItems">
+<div style="margin-top:5px">
+<table class="tableContentc" width="100%">
+<tr>
+  <td valign="top">
+  <div id="gridFicIndConst"></div>
+  </td>
+  <td valign="top">
+  	<div class="divButtons" style="margin-top:0">
+        <table>
+        <tr id="rowAddConst">
+        <td style="padding:3px"><input type="button" id="btnAddConst" name="btnAddConst" value="Agregar" style="width:80px" /></td>
+        </tr>        
+        <tr id="rowSaveConst">
+        <td style="padding:3px"><input type="button" id="btnSaveConst" name="btnSaveConst" value="Guardar" style="width:80px" /></td>
+        </tr>
+        <tr id="rowEditConst">
+        <td style="padding:3px"><input type="button" id="btnEditConst" name="btnEditConst" value="Editar" style="width:80px" /></td>
+        </tr>
+        <tr id="rowCancelConst">
+        <td style="padding:3px"><input type="button" id="btnCancelConst" name="btnCancelConst" value="Cancelar" style="width:80px" /></td>
+        </tr>
+        <tr>
+        <td style="padding:3px"><input type="button" id="btnDelConst" name="btnDelConst" value="Eliminar" style="width:80px"/></td>
+        </tr>
+        </table>
+    </div>    
+  </td>
+  <td valign="top" style="padding-left:5px">
+  <div class="contentBoxBr" style="background-color:#E6FFFF; width:130px">
+  <table class="tableContent" width="100%">
+  	<tr><td>79.-</td><td>Muros</td></tr>
+    <tr><td>80.-</td><td>Techo</td></tr>
+    <tr><td>81.-</td><td>Pisos</td></tr>
+    <tr><td>82.-</td><td>Puertas</td></tr>
+    <tr><td>83.-</td><td>Revestimiento</td></tr>
+    <tr><td>84.-</td><td>Baños</td></tr>
+    <tr><td>85.-</td><td>Instalaciones</td></tr>
+  </table>
+  </div>
+  </td>
+</tr>
+<tr>
+	<td colspan="3">
+    <div id="divAddConst" style="margin-top:2px;">
+    <table class="tableContentc">
+    <tr>
+    <td>
+    	<input type="hidden" id="actConst" name="actConst">
+        <input type="hidden" id="idcpisos" name="idcpisos">
+        <div class="lblCodField" style="width:25px">74</div>
+        <div class="lblTxtField" style="width:60px; border-bottom:0">N° Piso</div>
+        <div class="lblCodField" style="width:25px">75</div>
+        <div class="lblTxtField" style="width:80px;">Fecha Const.</div>
+        <div class="lblCodField" style="width:25px">76</div>
+        <div class="lblTxtField" style="width:10px; border-bottom:0">&nbsp;</div>
+        <div class="lblCodField" style="width:25px">77</div>
+        <div class="lblTxtField" style="width:10px; border-bottom:0">&nbsp;</div>
+        <div class="lblCodField" style="width:25px">78</div>
+        <div class="lblTxtField" style="width:10px; border-bottom:0">&nbsp;</div>
+        <div class="lblTxtField" style="width:280px; border-left:0; text-align:center">Categorías</div>
+        <div class="lblTxtField" style="width:160px; border-left:0; text-align:center">Area Construida (m2)</div>
+        <div class="lblCodField" style="width:25px">88</div>
+        <div class="lblTxtField" style="width:187px; border-bottom:0; text-align:center">Ubica Const. Antiregla. (UCA)</div>
+        
+        <div class="lblTxtField" style="clear:left; width:85px; border-top:0">&nbsp;</div>
+        <div class="lblTxtField" style="width:50px; border-left:0; border-top:0; text-align:center">Mes</div>
+        <div class="lblTxtField" style="width:55px; border-left:0; border-top:0; text-align:center">Año</div>
+        <div class="lblTxtField" style="width:35px; border-left:0; border-top:0; text-align:center">MEP</div>
+        <div class="lblTxtField" style="width:35px; border-left:0; border-top:0; text-align:center">ECS</div>
+        <div class="lblTxtField" style="width:35px; border-left:0; border-top:0; text-align:center">ECC</div>
+        <div class="lblCodField" style="width:25px; border-top:0;">79</div>
+        <div class="lblTxtField" style="width:15px; border-top:0">&nbsp;</div>
+        <div class="lblCodField" style="width:25px; border-top:0;">80</div>
+        <div class="lblTxtField" style="width:15px; border-top:0">&nbsp;</div>
+        <div class="lblCodField" style="width:25px; border-top:0;">81</div>
+        <div class="lblTxtField" style="width:15px; border-top:0">&nbsp;</div>
+        <div class="lblCodField" style="width:25px; border-top:0;">82</div>
+        <div class="lblTxtField" style="width:15px; border-top:0">&nbsp;</div>
+        <div class="lblCodField" style="width:25px; border-top:0;">83</div>
+        <div class="lblTxtField" style="width:15px; border-top:0">&nbsp;</div>
+        <div class="lblCodField" style="width:25px; border-top:0;">84</div>
+        <div class="lblTxtField" style="width:15px; border-top:0">&nbsp;</div>
+        <div class="lblCodField" style="width:25px; border-top:0;">85</div>
+        <div class="lblTxtField" style="width:15px; border-top:0">&nbsp;</div>
+        <div class="lblCodField" style="width:25px; border-top:0;">86</div>
+        <div class="lblTxtField" style="width:55px; border-top:0">Declar.</div>
+        <div class="lblCodField" style="width:25px; border-top:0;">87</div>
+        <div class="lblTxtField" style="width:55px; border-top:0">Verif.</div>
+        <div class="lblTxtField" style="width:212px; border-left:0; border-top:0">&nbsp;</div>
+        
+        <div class="lblObjField" style="clear:left; border-top:0;">
+        <input name="nropiso" type="text" class="cajac" id="nropiso" style="width:83px" maxlength="3">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="mescons" type="text" class="cajac" id="mescons" style="width:49px" maxlength="2">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="aniocons" type="text" class="cajac" id="aniocons" style="width:54px" maxlength="4">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="iddepcl" type="text" class="cajac" id="iddepcl" style="width:34px" maxlength="2">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="iddepma" type="text" class="cajac" id="iddepma" style="width:34px" maxlength="2">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="iddepco" type="text" class="cajac" id="iddepco" style="width:34px" maxlength="2">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="esmuros" type="text" class="cajac" id="esmuros" style="width:39px" maxlength="1">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="estecho" type="text" class="cajac" id="estecho" style="width:39px" maxlength="1">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="acapiso" type="text" class="cajac" id="acapiso" style="width:39px" maxlength="1">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="acapuer" type="text" class="cajac" id="acapuer" style="width:39px" maxlength="1">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="acareve" type="text" class="cajac" id="acareve" style="width:39px" maxlength="1">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="acabanio" type="text" class="cajac" id="acabanio" style="width:39px" maxlength="1">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="instele" type="text" class="cajac" id="instele" style="width:39px" maxlength="1">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="arconde" type="text" class="cajac" id="arconde" style="width:79px" maxlength="12">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <input name="arconve" type="text" class="cajac" id="arconve" style="width:79px" maxlength="12">
+        </div>
+        <div class="lblObjField" style="border-left:0; border-top:0;">
+        <select name="uconant" id="uconant" class="comboc" style="width:211px"></select>
+        </div>        
+    </td>
+    </tr>
+    </table>
+  	</div>
+    </td>
+</tr>
+</table>
+</div>
+<div style="margin-top:20px">
+	<table class="tableContentc">
+    <tr>
+    <td>
+    	<div class="lblCodField" style="width:25px; border-bottom:0">89</div>
+        <div class="lblTxtField" style="width:170px; border-bottom:0">Porcentaje de Bien Común:</div>
+        <div class="lblTxtField" style="width:150px; border-left:0; border-bottom:0">%B.C. Terreno Legal</div>
+        <div class="lblObjField" style="border-left:0; border-bottom:0;">
+        <input name="terlega" type="text" class="cajac" id="terlega" style="width:100px" maxlength="14">
+        </div>
+        <div class="lblTxtField" style="width:150px; border-left:0; border-bottom:0">%B.C. Construc. Legal</div>
+        <div class="lblObjField" style="border-left:0; border-bottom:0;">
+        <input name="consleg" type="text" class="cajac" id="consleg" style="width:100px" maxlength="14">
+        </div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    	<div class="lblCodField" style="width:25px; border-top:0">&nbsp;</div>
+        <div class="lblTxtField" style="width:170px; border-top:0">&nbsp;</div>
+        <div class="lblTxtField" style="width:150px; border-left:0;">%B.C. Terreno Físico</div>
+        <div class="lblObjField" style="border-left:0;">
+        <input name="terrfis" type="text" class="cajac" id="terrfis" style="width:100px" maxlength="14">
+        </div>
+        <div class="lblTxtField" style="width:150px; border-left:0;">%B.C. Construc. Físico</div>
+        <div class="lblObjField" style="border-left:0;">
+        <input name="consfis" type="text" class="cajac" id="consfis" style="width:100px" maxlength="14">
+        </div>
+    </td>
+    </tr>
+    </table>
+</div>

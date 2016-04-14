@@ -1,0 +1,319 @@
+<?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title></title>
+		
+		<script language="javascript">
+		/*$(document).ready(function()
+		{
+			$("#btnImprimir").bind("click",function()
+			{
+				//$("#Formulario_simulado").show().printElement();
+				infoMessage('SIGMUN','Calcula las cuotas del convenio antes de generar');
+				//$( "#mydivid" ).print();
+				prinDiv("mydivid");
+			});
+		});*/
+		$("#btnImprimir").live("click", function () {
+			$('#DivCabecera').hide();
+            var divContents = $("#dvContainer").html();
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head><title>SISMUNI</title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+			$('#DivCabecera').show();
+        });
+		function Impresion(){
+			document.getElementById("DivCabecera").style.display="none";
+			window.print();
+			document.getElementById("DivCabecera").style.display="";		
+		}
+		
+		</script>
+	<style>
+	BODY
+{
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-top: 0px;
+	font-family: tahoma;
+	background-color: white;
+	font-size: 15px;
+}
+
+
+table
+{
+	font-size: 14px;
+}
+
+.tabla_otros
+{
+	font-size: 12px;
+}
+
+
+
+
+/* cuotas fraccionadas */
+.recibo_fr_t1 
+{
+	font-family: tahoma;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	background-color: #FFFFFF;
+}
+.recibo_fr_titulo_t1{
+	text-align: center;
+	font-size: 13px;
+}
+.recibo_fr_t2 {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+
+}
+.recibo_fr_t2 TD
+{
+	font-family: tahoma;
+		font-size: 11px;
+}
+.recibo_fr_cabecera_columas_1{
+
+}
+.recibo_fr_cabecera_columas_1 TD
+{
+	font-size: 11px;
+}
+.recibo_fr_col_periodo{
+	color: blue;
+	font-weight: bold;
+}
+.recibo_fr_col_anno{
+	color: blue;
+}
+.recibo_fr_col_fecha_vencimiento{
+	color: blue;
+}
+.recibo_fr_col_total_parcial{
+	color: red;
+}
+
+.recibo_fr_col_tit_total{
+	color: black;
+	font-weight: bold;
+}
+.recibo_fr_col_amo_total{
+	color: black;
+	font-weight: bold;
+}
+.recibo_fr_col_int_total{
+	color: black;
+	font-weight: bold;
+}
+.recibo_fr_col_total{
+	color: red;
+	font-weight: bold;
+}
+
+
+.noVisible { VISIBILITY: hidden }
+	</style>
+	</HEAD>
+	<body>
+	<div id="dvContainer">
+		<form name="Formulario_simulado" method="post" class="imprime" action="" id="Form1">
+
+			<DIV id="DivCabecera" align="center">
+				<TABLE id="Table1" style="WIDTH: 593px; HEIGHT: 56px" cellSpacing="1" cellPadding="1" width="593"
+					align="center" border="0">
+					<TR>
+						<TD style="HEIGHT: 37px" colSpan="4">
+							<P align="center">
+								<INPUT id="btnImprimir" style="WIDTH: 96px; HEIGHT: 24px" onclick="" type="button"
+									value="Imprimir" name="btnImprimir">&nbsp;</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</DIV>
+			<DIV id="DivCuerpo" align="center">
+				<TABLE id="Table3" cellPadding="0" width="593" align="center" border="0">
+					<TBODY>
+						<TR>
+							<TD><span id="lblNombreInstitucion">Municipalidad Distrital de Independencia</span>&nbsp;-
+								<span id="lblNombreInstitucionAbreviado">MDI</span><BR>
+								Fraccionamiento
+							</TD>
+						</TR>
+						<TR>
+							<TD>
+								<P align="center"><STRONG>
+										<span id="lblTituloPreliminar">Convenio y Plan de Pagos</span>
+									</STRONG>
+								</P>
+							</TD>
+						</TR>
+						<tr>
+						<td><br></td>
+						</tr>
+						<TR>
+							<TD style="HEIGHT: 38px" align="center">
+								<TABLE id="Table2"  cellSpacing="0" cellPadding="0" width="100%" border="0">
+									<TR >
+										<TD nowrap valign="top"><b>Nombre/Razón Soc.:</b></TD>
+										<TD colSpan="3"><span id="lblNombreContribuyente"></span><BR>
+										</TD>
+									</TR>
+									<TR>
+										<TD nowrap><b>Domicilio Fiscal/Legal:</b></TD>
+										<TD colSpan="3"><span id="lblDomicilio"></span></TD>
+									</TR>
+									<TR>
+										<TD><b>Cod.Contrib.:</b></TD>
+										<TD><span id="lblCodigoContribuyente"></span></TD>
+										<TD><span id="lblTituloNroDoc1"><b>Nro. Doc:</b></span></TD>
+										<TD><span id="lblNumeroDocumento"></span></TD>
+									</TR>
+									<TR>
+										<TD><b>Monto Deuda:</b></TD>
+										<TD><span id="lblMontoDeuda"></span></TD>
+										<TD><b>Cuotas:</b></TD>
+										<TD><span id="lblCuotas"></span></TD>
+									</TR>
+									<TR>
+										<TD><b>Fecha proyección:</b></TD>
+										<TD><?php echo $this->fecha;?></TD>
+										<TD><b>Fecha emisión:</b></TD>
+										<TD><b><?php echo $this->fecha;?></b></TD>
+									</TR>
+									<TR>
+										<TD><b>Usuario:<b></TD>
+										<TD><span id="lblCodigoUsuario"><?php echo $this->usuario;?></span></TD>
+										<TD></TD>
+										<TD></TD>
+									</TR>
+								</TABLE>
+							</TD>
+						</TR>
+						<TR>
+							<TD style="HEIGHT: 18px" align="center"><STRONG><b><h3>DEUDA A FRACCIONAR</h3></b></STRONG>
+							</TD>
+						</TR>
+						<!-- parte originales agrupado-->
+					<!--	</table>-->
+						
+						<tr><td>
+						
+								<!--OVERFLOW: auto;-->
+								<div style="WIDTH: 100%">
+									<table id="Table5" cellSpacing="0" cellPadding="1" border="0" width="100%" class="recibo_fr_t2">
+										<tr class="recibo_fr_cabecera_columas_1">
+											<td align="center"><DIV id="parte_cuotas_agrupado" style="WIDTH: 100%; HEIGHT: 100%">Año</DIV></td>
+											<td align="center"><DIV id="parte_cuotas_agrupado" style="WIDTH: 100%; HEIGHT: 100%">Cpto.</DIV></td>
+											<td align="center"><DIV id="parte_cuotas_agrupado" style="WIDTH: 100%; HEIGHT: 100%">Sub.</DIV></td>							
+											<td align="center"><DIV id="parte_cuotas_agrupado" style="WIDTH: 120%; HEIGHT: 120%">Cod.Predio/Veh.</DIV></td>				
+											<td align="left"><DIV id="parte_cuotas_agrupado" style="WIDTH: 100%; HEIGHT: 100%">Cuotas</DIV></td>
+											<td align="left" class="recibo_fr_col_tit_total"><DIV id="parte_cuotas_agrupado" style="WIDTH: 100%; HEIGHT: 100%">Monto</DIV></td>
+										</tr>
+										<?php echo $this->tabla_deuda;?>
+										<TR>
+											<TD></TD>
+											<TD></TD>
+											<TD></TD>
+											<TD></TD>
+											<TD align="right"><b>TOTAL: &nbsp;&nbsp;S/</b></TD>
+											<TD align="right" id="lblTotalDeudaAntigua"><b><?PHP echo $this->tdeuda_fraccionada;?></b></TD>
+										</TR>
+									</table>
+								</div>
+						</td></tr>
+						<!--<table id="Table3" cellPadding="0" width="593" align="center" border="0">-->
+						<TR>
+							<TD style="HEIGHT: 32px" align="center"><STRONG><b><h3>CUOTAS FRACCIONADAS</h3></b></STRONG>
+							</TD>
+						</TR>
+						<!-- parte generadas agrupado-->
+						<TR>
+							<TD align="center" width="100%">
+								<!--OVERFLOW: auto;-->
+								
+							</TD>
+						</TR>
+						<!--	</table>-->
+						
+						<tr><td>
+						<div style="WIDTH: 100%">
+									<table id="tabla_deuda" class="recibo_fr_t2" cellSpacing="1" cellPadding="0" width="100%">
+										<tr class="recibo_fr_cabecera_columas_1">
+											<td align="center">
+												<DIV id="parte_generada_resumido" style="WIDTH: 100%; HEIGHT: 100%">Cuota</DIV>
+											</td>
+											<td align="center">
+												<DIV id="parte_generada_resumido" style="WIDTH: 100%; HEIGHT: 100%">Año</DIV>
+											</td>
+											<td align="center">
+												<DIV id="parte_generada_resumido" style="WIDTH: 100%; HEIGHT: 100%">Fec.Venc.</DIV>
+											</td>
+											<td align="right" class="recibo_fr_col_tit_total">
+												<DIV id="parte_generada_resumido" style="WIDTH: 100%; HEIGHT: 100%">Amort.</DIV>
+											</td>
+											<td align="right" class="recibo_fr_col_tit_total">
+												<DIV id="parte_generada_resumido" style="WIDTH: 100%; HEIGHT: 100%">Int.</DIV>
+											</td>
+											<td align="right" class="recibo_fr_col_tit_total">
+												<DIV id="parte_generada_resumido" style="WIDTH: 100%; HEIGHT: 100%">Total</DIV>
+											</td>
+										</tr>
+										<?php echo $this->tabla_cuotas;?>
+										<TR>
+											<TD></TD>
+											<TD></TD>
+											<TD></TD>
+											<TD></TD>
+											<TD align="right"><b>TOTAL: &nbsp;&nbsp;S/</b></TD>
+											<TD align="right"><b><?PHP echo $this->tdeuda_cuotas;?></b></TD>
+										</TR>
+									</table>
+								</div>
+						</td></tr>
+						<!--<table id="Table3" cellPadding="0" width="593" align="center" border="0">-->
+						
+						<TR>
+							<TD>
+								<P align="center"><STRONG></STRONG>&nbsp;</P>
+								<P align="center"><STRONG> _____________________________<BR>
+										<span id="lblNombreContribuyente2"></span><BR>
+										<span id="lblTituloNroDoc2">Nro. Doc:</span>&nbsp;
+										<span id="lblNumeroDocumento2"></span><BR>
+										<span id="lblRepresentadoPor2"></span></STRONG></P>
+							</TD>
+						</TR>
+					</TBODY>
+				</TABLE>
+			</DIV>
+		</form>
+		</TR></TBODY>
+		<DIV></DIV>
+		</FORM>
+		</div>
+	</body>
+</HTML>
