@@ -1,87 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c47b76e5-b3f6-4134-8a08-7b4415db411d" name="Default" comment="">
-      <change type="DELETED" beforePath="T:/.idea/dataSources.ids" afterPath="" />
-      <change type="DELETED" beforePath="T:/.idea/dataSources.local.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/.idea/dataSources.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/.idea/deployment.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/.idea/dictionaries/Christopher.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/.settings/.jsdtscope" afterPath="" />
-      <change type="DELETED" beforePath="T:/.settings/org.eclipse.php.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="T:/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterPath="" />
-      <change type="DELETED" beforePath="T:/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterPath="" />
-      <change type="DELETED" beforePath="T:/.zfproject.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/README.md" afterPath="" />
-      <change type="DELETED" beforePath="T:/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="T:/sigmun/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="T:/sigmun/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/sigmun/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/sigmun/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/sigmun/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/sigmun/.idea/sigmun.iml" afterPath="" />
-      <change type="DELETED" beforePath="T:/sigmun/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="T:/sigmun/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="T:/.idea/.name" afterPath="T:/.idea/.name" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/ReporteConvenio_SubReporteOrigen.jasper" afterPath="T:/public/reportes/ReporteConvenio_SubReporteOrigen.jasper" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/hl_anno.jasper" afterPath="T:/public/reportes/hl_anno.jasper" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaDetalladoPeriodos.jasper" afterPath="T:/public/reportes/rptEstCtaDetalladoPeriodos.jasper" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaDetalladoPeriodosContrib_proy.jasper" afterPath="T:/public/reportes/rptEstCtaDetalladoPeriodosContrib_proy.jasper" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaMaestroContrib.jasper" afterPath="T:/public/reportes/rptEstCtaMaestroContrib.jasper" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaMaestroContrib_proy.jasper" afterPath="T:/public/reportes/rptEstCtaMaestroContrib_proy.jasper" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaResumen.jasper" afterPath="T:/public/reportes/rptEstCtaResumen.jasper" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaResumenContrib.jasper" afterPath="T:/public/reportes/rptEstCtaResumenContrib.jasper" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rpt_notificamulta.jasper" afterPath="T:/public/reportes/rpt_notificamulta.jasper" />
-      <change type="MODIFICATION" beforePath="T:/.idea/SIGMUN.iml" afterPath="T:/.idea/SIGMUN.iml" />
-      <change type="MODIFICATION" beforePath="T:/.idea/encodings.xml" afterPath="T:/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="T:/.idea/modules.xml" afterPath="T:/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="T:/.idea/vcs.xml" afterPath="T:/.idea/vcs.xml" />
+    <list default="true" id="fc19a73d-57a0-4073-8818-19cd82f1f92f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="T:/.idea/workspace.xml" afterPath="T:/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/CatasficcotController.php" afterPath="T:/application/controllers/CatasficcotController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/FraccionarController.php" afterPath="T:/application/controllers/FraccionarController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/GpreventivaController.php" afterPath="T:/application/controllers/GpreventivaController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/MainController.php" afterPath="T:/application/controllers/MainController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/MantcontriController.php" afterPath="T:/application/controllers/MantcontriController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/PreventivaController.php" afterPath="T:/application/controllers/PreventivaController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/RecaudacionreportesController.php" afterPath="T:/application/controllers/RecaudacionreportesController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/RentasController.php" afterPath="T:/application/controllers/RentasController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/RentascajaController.php" afterPath="T:/application/controllers/RentascajaController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/RentascajaopController.php" afterPath="T:/application/controllers/RentascajaopController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/RentascajareccontriController.php" afterPath="T:/application/controllers/RentascajareccontriController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/SemanalController.php" afterPath="T:/application/controllers/SemanalController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/TesocajareccontriController.php" afterPath="T:/application/controllers/TesocajareccontriController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/TesopagosdivController.php" afterPath="T:/application/controllers/TesopagosdivController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/TesoprepagoController.php" afterPath="T:/application/controllers/TesoprepagoController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/TesoreportesController.php" afterPath="T:/application/controllers/TesoreportesController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/layouts/_header.phtml" afterPath="T:/application/layouts/_header.phtml" />
-      <change type="MODIFICATION" beforePath="T:/application/models/DbDatos/Datos.php" afterPath="T:/application/models/DbDatos/Datos.php" />
-      <change type="MODIFICATION" beforePath="T:/application/views/scripts/cuentacorriente/index.phtml" afterPath="T:/application/views/scripts/cuentacorriente/index.phtml" />
-      <change type="MODIFICATION" beforePath="T:/application/views/scripts/mantpoblado/frmarancel.phtml" afterPath="T:/application/views/scripts/mantpoblado/frmarancel.phtml" />
-      <change type="MODIFICATION" beforePath="T:/application/views/scripts/preventiva/notificacion.phtml" afterPath="T:/application/views/scripts/preventiva/notificacion.phtml" />
-      <change type="MODIFICATION" beforePath="T:/application/views/scripts/rentascaja/index.phtml" afterPath="T:/application/views/scripts/rentascaja/index.phtml" />
-      <change type="MODIFICATION" beforePath="T:/application/views/scripts/tesoreportes/reportemain.phtml" afterPath="T:/application/views/scripts/tesoreportes/reportemain.phtml" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_Gpreventiva.js" afterPath="T:/public/js/js_Gpreventiva.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_Mantcontri.js" afterPath="T:/public/js/js_Mantcontri.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_Rentascaja.js" afterPath="T:/public/js/js_Rentascaja.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_Semanal.js" afterPath="T:/public/js/js_Semanal.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_Tesomenuemitidos.js" afterPath="T:/public/js/js_Tesomenuemitidos.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_Tesoreportemain.js" afterPath="T:/public/js/js_Tesoreportemain.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_Tesoreportes.js" afterPath="T:/public/js/js_Tesoreportes.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_local.js" afterPath="T:/public/js/js_local.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_main.js" afterPath="T:/public/js/js_main.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_multasadmin_editar.js" afterPath="T:/public/js/js_multasadmin_editar.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_notificacion.js" afterPath="T:/public/js/js_notificacion.js" />
-      <change type="MODIFICATION" beforePath="T:/public/js/loginDialog.js" afterPath="T:/public/js/loginDialog.js" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/ReporteConvenio_SubReporteOrigen.jrxml" afterPath="T:/public/reportes/ReporteConvenio_SubReporteOrigen.jrxml" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaDetalladoPeriodos.jrxml" afterPath="T:/public/reportes/rptEstCtaDetalladoPeriodos.jrxml" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaMaestroContrib.jrxml" afterPath="T:/public/reportes/rptEstCtaMaestroContrib.jrxml" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaMaestroContrib_proy.jrxml" afterPath="T:/public/reportes/rptEstCtaMaestroContrib_proy.jrxml" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaResumen.jrxml" afterPath="T:/public/reportes/rptEstCtaResumen.jrxml" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rptEstCtaResumenContrib.jrxml" afterPath="T:/public/reportes/rptEstCtaResumenContrib.jrxml" />
-      <change type="MODIFICATION" beforePath="T:/public/reportes/rpt_notificamulta.jrxml" afterPath="T:/public/reportes/rpt_notificamulta.jrxml" />
     </list>
     <ignored path=".iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,28 +23,7 @@
     <favorites_list name="" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="AnundecjuradaController.php" pinned="false" current-in-tab="false">
-        <entry file="file://T:/application/controllers/AnundecjuradaController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActavisitaController.php" pinned="false" current-in-tab="true">
-        <entry file="file://T:/application/controllers/ActavisitaController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="T:/" />
@@ -133,16 +33,14 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
-  <component name="PhpServers">
-    <servers />
-  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1924" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -155,18 +53,19 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
-      <showMembers Scope="true" />
+      <showMembers ProjectPane="true" />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <autoscrollToSource Scope="true" />
-      <autoscrollFromSource Scope="true" />
+      <autoscrollToSource />
+      <autoscrollFromSource />
       <sortByType />
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -201,21 +100,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Changed Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="T:">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
         <subPane subId="Project Files">
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -241,31 +126,12 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="T:">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="application">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="controllers">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
-        <subPane subId="Tests" />
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -299,32 +165,28 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c47b76e5-b3f6-4134-8a08-7b4415db411d" name="Default" comment="" />
-      <created>1460676164982</created>
+      <changelist id="fc19a73d-57a0-4073-8818-19cd82f1f92f" name="Default" comment="" />
+      <created>1460677494496</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1460676164982</updated>
-      <workItem from="1460676166912" duration="476000" />
+      <updated>1460677494496</updated>
+      <workItem from="1460677496935" duration="416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="476000" />
+    <option name="totallyTimeSpent" value="416000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1924" height="1066" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -333,37 +195,27 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="T:/public/reportes" />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://T:/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://T:/.idea/misc.xml">
+    <entry file="file://T:/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -387,6 +239,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://T:/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://T:/.idea/encodings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -395,15 +255,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://T:/application/controllers/AnundecjuradaController.php">
+    <entry file="file://T:/.idea/copyright/profiles_settings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://T:/application/controllers/ActavisitaController.php">
+    <entry file="file://T:/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
