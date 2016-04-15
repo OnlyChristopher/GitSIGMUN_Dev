@@ -233,7 +233,8 @@ class MantaccesoController extends Zend_Controller_Action {
 			echo "Se grab&oacute; correctamente";
 		}
 	}	
-
+    //--------------------------------------------------------------------------------------------------------------------- 
+    
 	public function eliminarAction(){
 				
 		$this->_helper->getHelper('ajaxContext')->initContext();
@@ -254,7 +255,8 @@ class MantaccesoController extends Zend_Controller_Action {
     	}
 	}
 	
-
+	//--------------------------------------------------------------------------------------------------------------------- 
+    
 	public function combosAction(){
 				
 		$this->_helper->getHelper('ajaxContext')->initContext();

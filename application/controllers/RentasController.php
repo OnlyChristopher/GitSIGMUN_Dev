@@ -1789,7 +1789,7 @@ class RentasController extends Zend_Controller_Action
 						'fecha'=>utf8_encode(trim($row[16])),
 						'porc_propiedad'=>trim($row[13]),
 						'area_terreno'=>trim($row[17]),
-						'registrado'=>utf8_encode(trim($row[62])),
+						'registrado'=>utf8_encode(strtoupper(trim($row[62]))),
 						'fiscalizado'=>trim($row[76])
 				);
 				$jsonData['rows'][] = $entry;

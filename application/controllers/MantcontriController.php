@@ -430,7 +430,8 @@ class MantcontriController extends Zend_Controller_Action
 						'codigo'=>$row[0],				  
 						'nombres'=>utf8_encode($row[5])." ".utf8_encode($row[6])." ".utf8_encode($row[4]),
 						'documento'=>utf8_encode($row[28]),
-						'direccion'=>utf8_encode($row[27])
+						'direccion'=>utf8_encode($row[27]),
+						'flag_coactivo'=>$row[29],
 				);
 				$jsonData['rows'][] = $entry;
 			}
@@ -530,13 +531,13 @@ class MantcontriController extends Zend_Controller_Action
 
 	}
 
-	public function consultadatosAction()
-    {		
+	public function consultadatosAction(){		
     	$this->_helper->getHelper('ajaxContext')->initContext();
     	$this->_helper->viewRenderer->setNoRender();
     	$this->_helper->layout->disableLayout();
-    	if($this->getRequest()->isXmlHttpRequest()){
+		$login = new Zend_Session_Namespace('login');
 		
+    	if($this->getRequest()->isXmlHttpRequest()){
     		$cn = new Model_DbDatos_Datos();
     		
 			$codigo = $this->_request->getParam('codigo','');
@@ -547,7 +548,8 @@ class MantcontriController extends Zend_Controller_Action
 			
 			@$rows = $cn->ejec_store_procedura_sql('Rentas.sp_Mcontribuyente', $parametros);	
 			
-			echo $rows[0][0];
+			//echo $rows[0][0];
+			echo ($rows[0][0].'+'.$rows[0][1].'+'.$login->area.'+'.$login->perfil); //se agrego un parametro para validar si está en coactivo
 		}
 
 	}

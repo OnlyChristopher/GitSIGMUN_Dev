@@ -8,11 +8,13 @@ class MainController extends Zend_Controller_Action
         /* Initialize action controller here */			
     }
 
-    public function indexAction()
-    {	
-    	$this->view->showRenderer = 1;
-		
-    }
+	public function indexAction()
+	{
+		$this->view->showRenderer = 1;
+
+		$login = new Zend_Session_Namespace('login');
+		$this->view->narea = $login->narea;
+	}
 	
 	public function blankAction()
     {	
@@ -60,8 +62,8 @@ class MainController extends Zend_Controller_Action
 								qtip=>$row1[0],
 								//iconCls=>'aaa', //icono del nodo
 								hrefTarget=>$url."?mod=".$row1[0], //ruta enlace
-								cls=>$ar->EspecialChars($row[1]), //Text del menú padre
-								text=>$ar->EspecialChars($row1[1]), //Text del menú hijo
+								cls=>$ar->EspecialChars($row[1]), //Text del menï¿½ padre
+								text=>$ar->EspecialChars($row1[1]), //Text del menï¿½ hijo
 								leaf=>true
 							);
 							$mnuChildrens[] = $childs;
@@ -159,4 +161,5 @@ class MainController extends Zend_Controller_Action
 			echo $strAccesos;
 		}
 	}
+
 }

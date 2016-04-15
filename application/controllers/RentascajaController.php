@@ -52,10 +52,10 @@ class RentascajaController extends Zend_Controller_Action
 		$evt[] = array('#btnEstCta',"click","imprimeCuentaPdf()");
 		$evt[] = array('#btnCerrar',"click","closePopup('#poptesore');");
 		$evt[] = array('#btnFraccionar',"click","fraccionar();");
-		$evt[] = array('#btnFraccionamiento',"click","verfraccionamiento('fraccionar/detallefrac');");	
-		$evt[] = array('#btnRecibos',"click","recibos('rentascaja/verpagos');");	
+		$evt[] = array('#btnRecibos',"click","recibos('rentascaja/verpagos');");
 		
 		$evt[] = array('#btnCoactivo',"click","ReciboModificado()");
+		
 
 		$nomcombo="store_caja_framework";
 		$arraydatos_nomcombo[]=array("@msquery",'1');
@@ -304,11 +304,25 @@ class RentascajaController extends Zend_Controller_Action
 		@$rows = $cn->ejec_store_procedura_sql($nombrestore, $arraydatos);
 		echo 'Recibo nro. '.$recibo.' anulado con exito';
 	}
+
+
+
 	public function verpagosAction(){
 		$codigo=$this->_request->getParam('codigo');
+		
+		$flag=$this->_request->getParam('flag');
+		
 		$cn = new Model_DbDatos_Datos();
 		
+		if ($flag==1){
 		$nombrestore='[Rentas].[Recibos_reporte]';
+		$titulo='<div align=center><span><H1>Consulta de Pagos de Caja (SIGMUN)</H1></span></div>';
+		}
+		else{
+		$nombrestore='[Rentas].[Recibos_reporte_infosat]';
+		$titulo='<div align=center><span><H1>Consulta de Pagos de Caja (INFOSAT)</H1></span></div>';
+		}
+		
 		$arraydatos[]=array("@buscar", '2');
 		$arraydatos[]=array("@codigo", $codigo);
 		$rows = $cn->ejec_store_procedura_sql($nombrestore, $arraydatos);
@@ -317,9 +331,13 @@ class RentascajaController extends Zend_Controller_Action
 		$tabla="";
 		$num_ingr2=trim($rows[0][0]);
 		
+			echo $titulo;
+		
 			for($i=0;$i<count($rows);$i++){
 			
 			$num_ingr=trim($rows[$i][0]);
+			
+			
 			
 			$contribuyente=$rows[$i][9];
 			$nro_recibo=$rows[$i][0];
@@ -329,25 +347,28 @@ class RentascajaController extends Zend_Controller_Action
 					
 			if(trim($rows[$i][13])=='1'){
 			$flag=0;
+					
+					//echo $num_ingr2." | ";
+			
 					if(trim($num_ingr2)<>trim($num_ingr)){	
 						$tabla.='</table>';	
 					}
 					
 						$tabla.='
 							<span><Hr><br>Contribuyente :'.$rows[$i][9].'<br></span>
-							<span>Recibo N° :'.$rows[$i][0].'<br></span>
+							<span>Recibo Nï¿½ :'.$rows[$i][0].'<br></span>
 							<span>Fecha de pago : '.$rows[$i][1].'<br></span>
 							<span>Total Pagado : '.$rows[$i][2].'<br><br></span>
 				
 				
 							<table cellspacing="0" width="100%" align="Center" rules="all" border="1" id="_ctl29" style="width:488px;border-collapse:collapse;">
 								<tr align="Center" style="color:White;background-color:DimGray;">
-									<td>Año Obligación</td>
-									<td>Cod Obligación</td>
+									<td>AÃ±o ObligaciÃ³n</td>
+									<td>Cod ObligaciÃ³n</td>
 									<td style="width=200px;">Tributo</td>
 									<td>Cuota</td>
 									<td>Insoluto</td>
-									<td>Emisión</td>
+									<td>EmisiÃ³n</td>
 									<td>Descuento</td>
 									<td>Total Pagado</td>
 									<td>Cod Regerencia</td>

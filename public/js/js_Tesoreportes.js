@@ -143,15 +143,18 @@ Ext.onReady(function(){
                     var rec = grid.getStore().getAt(rowIndex);
 					
 				if(rec.get('tipo_operacion').trim()=='1'){
-					window.open(urljs +"tesoprepago/imprimirrecibopagos?nrorecibo="+rec.get('recibo'),"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no");
+					//window.open(urljs +"tesoprepago/imprimirrecibopagos?nrorecibo="+rec.get('recibo'),"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no");
+					window.open(urljs +"tesoprepago/reimprimirrecibo?nrorecibo="+rec.get('recibo'),"_blank","width=1, height=1, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no");
 					return;
 				}
 				if(rec.get('tipo_operacion').trim()=='2'){
-					window.open(urljs +"tesopagosdiv/imprimirrecibopagostupa?idx=1&nrorecibo="+rec.get('recibo'),"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); 
+					//window.open(urljs +"tesopagosdiv/imprimirrecibopagostupa?idx=1&nrorecibo="+rec.get('recibo'),"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); 
+					window.open(urljs +"tesopagosdiv/imprimirrecibopagostupa3?idx=1&nrorecibo="+rec.get('recibo'),"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); 
 					return;
 				}
 				if(rec.get('tipo_operacion').trim()=='4'){
-					window.open(urljs +"tesopagosdiv/imprimirrecibopagostupa?idx=2&nrorecibo="+rec.get('recibo'),"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); 
+					//window.open(urljs +"tesopagosdiv/imprimirrecibopagostupa?idx=2&nrorecibo="+rec.get('recibo'),"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); 
+					window.open(urljs +"tesopagosdiv/imprimirrecibopagostupa3?idx=2&nrorecibo="+rec.get('recibo'),"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); 
 					return;
 				}				
 

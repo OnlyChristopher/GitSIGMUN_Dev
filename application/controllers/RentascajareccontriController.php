@@ -112,21 +112,7 @@ public function conreccontriAction()
         }
 
 		$str_predios=substr($str_predios,0,-1);
-		/*
-			echo $str_annos.'<br>';
-			echo $str_tipos;
-			echo $str_periodos.'<br>';
-			echo $str_predios.'<br>';
-		*/
-		//print_r($data_annos);
-		//print_r($data_annos);
-		//echo $str_annos;
-		//$codigo=$codigocontri;
-		//$concept=$concept;//'"02.01","11.00","11.04"';
-		//$arbitrio='"11.00"';
-		//$aniose=$data_query[0][0];//'"2004","2005","2006","2007","2008","2009","2010","2011","2012"';
-		//$perio=$periodos;//'"01","02","03","04","05","06","07","08","09","10","11","12"';
-		//$preddd=$predios;//'"0000003"';
+
 
 		$nombrestore='Caja.sp_EstCta_Rentas';
 		$arraydatos[]=array("@codigo", $str_codigo);

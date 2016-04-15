@@ -3,6 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="fc19a73d-57a0-4073-8818-19cd82f1f92f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="T:/.idea/workspace.xml" afterPath="T:/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/FraccionarController.php" afterPath="T:/application/controllers/FraccionarController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/GpreventivaController.php" afterPath="T:/application/controllers/GpreventivaController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/MainController.php" afterPath="T:/application/controllers/MainController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/MantaccesoController.php" afterPath="T:/application/controllers/MantaccesoController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/MantcontriController.php" afterPath="T:/application/controllers/MantcontriController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/PreventivaController.php" afterPath="T:/application/controllers/PreventivaController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/RecaudacionreportesController.php" afterPath="T:/application/controllers/RecaudacionreportesController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/RentasController.php" afterPath="T:/application/controllers/RentasController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/RentascajaController.php" afterPath="T:/application/controllers/RentascajaController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/RentascajareccontriController.php" afterPath="T:/application/controllers/RentascajareccontriController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/SemanalController.php" afterPath="T:/application/controllers/SemanalController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/TesocajareccontriController.php" afterPath="T:/application/controllers/TesocajareccontriController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/TesopagosdivController.php" afterPath="T:/application/controllers/TesopagosdivController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/TesoprepagoController.php" afterPath="T:/application/controllers/TesoprepagoController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/controllers/TesoreportesController.php" afterPath="T:/application/controllers/TesoreportesController.php" />
+      <change type="MODIFICATION" beforePath="T:/application/views/scripts/cuentacorriente/index.phtml" afterPath="T:/application/views/scripts/cuentacorriente/index.phtml" />
+      <change type="MODIFICATION" beforePath="T:/application/views/scripts/tesoreportes/reportemain.phtml" afterPath="T:/application/views/scripts/tesoreportes/reportemain.phtml" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_Tesoreportes.js" afterPath="T:/public/js/js_Tesoreportes.js" />
     </list>
     <ignored path=".iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,10 +41,28 @@
     <favorites_list name="" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="MantaccesoController.php" pinned="false" current-in-tab="true">
+        <entry file="file://T:/application/controllers/MantaccesoController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="412">
+              <caret line="272" column="40" selection-start-line="272" selection-start-column="40" selection-end-line="272" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="T:/" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="T:/application/controllers/MantaccesoController.php" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsBuildToolPackageJson" detection-done="true" />
@@ -98,6 +134,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SIGMUN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="T:" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -135,6 +189,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="last_opened_file_path" value="T:/" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -172,22 +227,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1460677494496</updated>
-      <workItem from="1460677496935" duration="416000" />
+      <workItem from="1460677496935" duration="3098000" />
     </task>
+    <task id="LOCAL-00001" summary="Se elimino variables comentadas">
+      <created>1460678731062</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1460678731062</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="416000" />
+    <option name="totallyTimeSpent" value="3098000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25426438" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -209,6 +273,8 @@
     <ignored-roots>
       <path value="T:/public/reportes" />
     </ignored-roots>
+    <MESSAGE value="Se elimino variables comentadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se elimino variables comentadas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -267,6 +333,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://T:/application/controllers/MantaccesoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="272" column="40" selection-start-line="272" selection-start-column="40" selection-end-line="272" selection-end-column="40" />
           <folding />
         </state>
       </provider>

@@ -686,17 +686,22 @@ class PreventivaController extends Zend_Controller_Action
 			
 			$f_notificacion = $rowsMulta [0] [7];
 			$h_notificacion = $rowsMulta [0] [8];
-			
-			//$factor== $rowsMulta [0] [23];
-			
+
+
+			$fecha_informe = $rowsMulta[0][50];
+			$tipo_exp = $rowsMulta[0][51];
+			$nro_exp  = $rowsMulta[0][52];
+			$anno_exp = $rowsMulta[0][53];
+			$descago =  $rowsMulta[0][54];
+			$nro_resol =  $rowsMulta[0][55];
+			$fecha_resol =  $rowsMulta[0][56];
+
 			
 			
 			
 			
 			$preimpreso  = $rowsMulta [0] [1];
 			$anno_multa  		= $rowsMulta [0] [2];
-				//$numero_multa= $rowsMulta [0] [3];
-			//$fecha_multa 		= $rowsMulta [0] [5];
 			$anno_multa  		= substr($rowsMulta[0][5],6);
 			
 			$anno_area  		= $rowsMulta [0] [17]; 
@@ -766,11 +771,22 @@ class PreventivaController extends Zend_Controller_Action
 			$val[] = array('#txtnumero', $num_local, 'val');
 			$val[] = array('#txtmanzana', $manz_local, 'val');
 			$val[] = array('#txtnlote', $lot_local, 'val');
+
+
+			$val[] = array('#txtfechanot', $fecha_informe, 'val');
+			$val[] = array('#cmbtipoexpdoc', $tipo_exp, 'val');
+			$val[] = array('#txtxnroexpdoc', $nro_exp, 'val');
+			$val[] = array('#cb_fechexpdoc', $anno_exp, 'val');
+			$val[] = array('#cmbdescargo', $descago, 'val');
+			$val[] = array('#resolucion', $nro_resol, 'val');
+			$val[] = array('#txtfecharesol', $fecha_resol, 'val');
+
 			
 			$int_local		= $rowsMulta [0][30];
 			$val[] = array('#txtinterior', $int_local, 'val');
 			
 			$uso_local		= $rowsMulta [0][31];
+
 			$act_local		= $rowsMulta [0][32];
 			
 			$giro_local		= $rowsMulta [0][33];
@@ -1056,7 +1072,7 @@ class PreventivaController extends Zend_Controller_Action
 		$arRows = $ar->RegistrosCombo($rows,0,1);				
 		$val[] = array('#cmbuso',$fn->ContenidoCombo($arRows,'[Seleccione]',$uso_local,''),'html');
 		
-		$val[] = array('#cmbactividad',$fn->ContenidoCombo($arRows,'[Seleccione]',$area,''),'html');
+		$val[] = array('#cmbactividad',$fn->ContenidoCombo($arRows,'[Seleccione]',$act_local,''),'html');
 		
 		// unset ( $arraydatos );
 		// $arraydatosu [] = array ('@msquery', 3 );
@@ -1106,6 +1122,8 @@ class PreventivaController extends Zend_Controller_Action
 		
 		$evt[] = array('#fecha_multa',"change","calcUIT(this.value);");
 		$evt[] = array('#fecha_multa',"datepicker","");
+		$evt[] = array('#txtfechanot',"datepicker","");
+		$evt[] = array('#txtfecharesol',"datepicker","");
 		//----------------añadio manuel------------------
 		$evt[] = array('#txtFechResolucion',"datepicker","");
 		
@@ -1274,6 +1292,14 @@ class PreventivaController extends Zend_Controller_Action
 			$obs_subsa = $this->_request->getPost ('txaObservacion');
 			$n_informe = $this->_request->getPost ('informe');
 			$anno_informe = $this->_request->getPost ('cb_fechinf');
+			$fecha_informe = $this->_request->getPost ('txtfechanot');
+			$tipo_exp = $this->_request->getPost ('cmbtipoexpdoc');
+			$nro_exp = $this->_request->getPost ('txtxnroexpdoc');
+			$anno_exp = $this->_request->getPost ('cb_fechexpdoc');
+			$nro_resol = $this->_request->getPost ('resolucion');
+			$fecha_resol = $this->_request->getPost ('txtfecharesol');
+
+
 			
 			//**************************
 			//Mpreventiva.MNotificacion
@@ -1351,43 +1377,30 @@ class PreventivaController extends Zend_Controller_Action
 			$arraydatos[] =array ("@fec_notif",$fec_notif);
 			$arraydatos[] =array ("@h_notif",$h_notif);
 
-			
-			// $arraydatos[] =array ("@est_subsa",$est_subsa);	
-
-				// if($est_subsa=='1') 
-				// {				
-					// $arraydatos[] =array ("@fec_subsa",$fec_subsa);
-					// $arraydatos[] =array ("@fec_carta",$fec_carta);
-					// $arraydatos[] =array ("@sustento",$sustento);
-					// $arraydatos[] =array ("@n_carta",$n_carta);
-					// $arraydatos[] =array ("@obs_subsa",$obs_subsa);
-				// }
-				// else
-				// {
-					// $arraydatos[] =array ("@fec_subsa",'');
-					// $arraydatos[] =array ("@fec_carta",'');
-					// $arraydatos[] =array ("@sustento",'');
-					// $arraydatos[] =array ("@n_carta",'');
-					// $arraydatos[] =array ("@obs_subsa",'');
-				// }
-			
 
 			
 			$arraydatos[] =array ("@n_informe",$n_informe);
+			$arraydatos[] =array ("@fecha_informe",$fecha_informe);
 			$arraydatos[] =array ("@anno_informe",$anno_informe);
 			
 			//DNotificacion
-			$arraydatos[] = array("@anno_area", $array[0] );
-			//$arraydatos[] = array("@anno_area", $anno_area_f );
+			$arraydatos[] = array("@anno_area", '2016' );
 			$arraydatos[] = array("@codigo_area", $array_area[0] );
-			$arraydatos[] = array("@tipo_infraccion", $array[2]);
-			$arraydatos[] = array("@codigo_infraccion", $array[3]);
+			$arraydatos[] = array("@tipo_infraccion", $array[1]);
+			$arraydatos[] = array("@codigo_infraccion", $array[2]);
 			$arraydatos[] = array("@codigo_adicional", $array[4] );
 			$arraydatos[] = array("@base_cal", $base );
 			$arraydatos[] = array("@factor", $factor );
 			$arraydatos[] = array("@monto", $montoTotal );
 			
 			$arraydatos[] = array("@observacion", $observacion );
+			$arraydatos[] = array("@tipo_exp", $tipo_exp );
+			$arraydatos[] = array("@nro_exp", $nro_exp );
+			$arraydatos[] = array("@anno_exp", $anno_exp );
+			$arraydatos[] = array("@nro_resol", $nro_resol );
+			$arraydatos[] = array("@fecha_resol", $fecha_resol );
+
+
 			///local
 			$arraydatos[] = array("@cod_via_local", $cod_via_local );
 			$arraydatos[] = array("@num_local", $num_local );
@@ -1451,33 +1464,28 @@ class PreventivaController extends Zend_Controller_Action
 			$arraydatos[] =array ("@fec_imposicion",$fec_imposicion);
 			$arraydatos[] =array ("@fec_notif",$fec_notif);
 			$arraydatos[] =array ("@h_notif",$h_notif);
-			
-			// $arraydatos[] =array ("@est_subsa",$est_subsa);		
-			
-			    // if($est_subsa=='1') 
-				// {				
-					// $arraydatos[] =array ("@fec_subsa",$fec_subsa);
-					// $arraydatos[] =array ("@fec_carta",$fec_carta);
-					// $arraydatos[] =array ("@sustento",$sustento);
-					// $arraydatos[] =array ("@n_carta",$n_carta);
-					// $arraydatos[] =array ("@obs_subsa",$obs_subsa);
-				// }
-			
+
 			
 			$arraydatos[] =array ("@n_informe",$n_informe);
+			$arraydatos[] =array ("@fecha_informe",$fecha_informe);
 			$arraydatos[] =array ("@anno_informe",$anno_informe);
 			
 			//DNotificacion
-			$arraydatos[] = array("@anno_area", $array[0] );
+			$arraydatos[] = array("@anno_area", '2011' );
 			$arraydatos[] = array("@codigo_area", $array_area[0] );
-			$arraydatos[] = array("@tipo_infraccion", $array[2]);
-			$arraydatos[] = array("@codigo_infraccion", $array[3]);
-			$arraydatos[] = array("@codigo_adicional", $array[4] );
+			$arraydatos[] = array("@tipo_infraccion", $array[1]);
+			$arraydatos[] = array("@codigo_infraccion", $array[2]);
+			$arraydatos[] = array("@codigo_adicional", $array[3] );
 			$arraydatos[] = array("@base_cal", $base );
 			$arraydatos[] = array("@factor", $factor );
 			$arraydatos[] = array("@monto", $montoTotal );
-			
 			$arraydatos[] = array("@observacion", $observacion );
+			$arraydatos[] = array("@tipo_exp", $tipo_exp );
+			$arraydatos[] = array("@nro_exp", $nro_exp );
+			$arraydatos[] = array("@anno_exp", $anno_exp );
+			$arraydatos[] = array("@nro_resol", $nro_resol );
+			$arraydatos[] = array("@fecha_resol", $fecha_resol );
+
 			///local
 			$arraydatos[] = array("@cod_via_local", $cod_via_local );
 			$arraydatos[] = array("@num_local", $num_local );
@@ -1513,8 +1521,9 @@ class PreventivaController extends Zend_Controller_Action
 			$arraydatos[] = array('@usuario',$usuario);
 			$arraydatos[] = array('@estacion',$IP);
 			
-			@$rows = $cn->ejec_store_procedura_sql ('Mpreventiva.Notificacion', $arraydatos );	
-			
+			@$rows = $cn->ejec_store_procedura_sql ('Mpreventiva.Notificacion', $arraydatos );
+
+
 			}
 			echo 'Verifique si los datos fueron guardados correctamente!!!!';
 		
@@ -1523,236 +1532,237 @@ class PreventivaController extends Zend_Controller_Action
 	}
 	
 	public function pruebaAction()
-    {
-    	$path = new Zend_Session_Namespace('path');
-		$this->view->ruta = $path->data;
+			{
+				$path = new Zend_Session_Namespace('path');
+				$this->view->ruta = $path->data;
 
-		$cn = new Model_DbDatos_Datos();
-		$ar = new Libreria_ArraysFunctions();
-		$fn = new Libreria_Pintar();
-
-
-		//Para los tabs
-		$evt[] = array('#contentBox',"tabs","");
-		$evt[] = array('#contentTabsLeft',"tabs","");
-		$evt[] = array('#txtFechaPre',"datepicker","");
-        $evt[] = array('#txtFchViDel',"datepicker","");
-        $evt[] = array('#txtFchViAl',"datepicker","");
-		$evt[] = array('#txtArancel',"keypress","return validaTeclas(event,'number');");
-		$evt[] = array('#txtNro',"keypress","return validaTeclas(event,'number');");
-		$evt[] = array('#txtPhone',"keypress","return validaTeclas(event,'number');");
-		$evt[] = array('#txtExp',"keypress","return validaTeclas(event,'number');");
-		$evt[] = array('#txtNroLi',"keypress","return validaTeclas(event,'number');");
-        $evt[] = array('#txtNroDocRe',"keypress","return validaTeclas(event,'number');");
-        //$mask[] = array("txtAreaL");
-        //$mask[] = array("txtAreaAl");
-        $mask[] = array("txtAreaTo");
-        $evt[] = array('#cmbTipAnun',"change","getTipoAnuncio()");
-        //$evt[] = array('#chkOtro',"checked","getTipoAutorizacion()");
-        $mask[] = array("txtlargo");
-        $mask[] = array("txtancho");
-        $mask[] = array("txtalto");
-        $mask[] = array("txtarea");
-        $evt[] = array('#txtNroEs',"keypress","return validaTeclas(event,'number');");
-        $evt[] = array('#txtDptoEs',"keypress","return validaTeclas(event,'number');");
-        $evt[] = array('#txtcaras',"keypress","return validaTeclas(event,'number');");
+				$cn = new Model_DbDatos_Datos();
+				$ar = new Libreria_ArraysFunctions();
+				$fn = new Libreria_Pintar();
 
 
-		$evt[] = array('#btnBusPerSol',"click","showPopup('mantpers/buscar','#popBusPersSol','700','400','Buscador de Personas');");
-		$evt[] = array('#btnPredio',"click","showPopup('mantpred/buscar','#popBusPre','700','400','Buscador de Predios');");
-		$evt[] = array('#btnAddDetPago',"click","maxRowPagos();");
+				//Para los tabs
+				$evt[] = array('#contentBox',"tabs","");
+				$evt[] = array('#contentTabsLeft',"tabs","");
+				$evt[] = array('#txtFechaPre',"datepicker","");
 
-		$evt[] = array('#btnSaveSol',"click","goToFormulario('frmlicendecjurada');");
-		$evt[] = array('#btnSalirSol',"click","closePopup('#popanundecjurada ');");
-
-
-		//Para los tabs
-		$evt[] = array('#contentBox',"tabs","");
-		$evt[] = array('#contentTabsLeft',"tabs","");
-
-
-
-		unset($parametros);
-		$parametros[] = array('@msquery',12);
-		$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-		$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-		$val[] = array('#cmbTipLicencia',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoLice)),'html');
-
-		unset($parametros);
-		$parametros[] = array('@msquery',2);
-		$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-		$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-		$val[] = array('#cmbTipPredio2',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoDoc)),'html');
-
-		unset($parametros);
-		$parametros[] = array('@msquery',3);
-		$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-		$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-		$val[] = array('#cmbTipInscrip',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoInscrip)),'html');
-
-		unset($parametros);
-		$parametros[] = array('@msquery',4);
-		$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-		$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-		$val[] = array('#cmbTipEmpresa',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoEmpr)),'html');
-
-		unset($parametros);
-		$parametros[] = array('@msquery',5);
-		$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-		$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-        $val[] = array('#cmbTipSector',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoSector)),'html');
+				$evt[] = array('#txtFchViDel',"datepicker","");
+				$evt[] = array('#txtFchViAl',"datepicker","");
+				$evt[] = array('#txtArancel',"keypress","return validaTeclas(event,'number');");
+				$evt[] = array('#txtNro',"keypress","return validaTeclas(event,'number');");
+				$evt[] = array('#txtPhone',"keypress","return validaTeclas(event,'number');");
+				$evt[] = array('#txtExp',"keypress","return validaTeclas(event,'number');");
+				$evt[] = array('#txtNroLi',"keypress","return validaTeclas(event,'number');");
+				$evt[] = array('#txtNroDocRe',"keypress","return validaTeclas(event,'number');");
+				//$mask[] = array("txtAreaL");
+				//$mask[] = array("txtAreaAl");
+				$mask[] = array("txtAreaTo");
+				$evt[] = array('#cmbTipAnun',"change","getTipoAnuncio()");
+				//$evt[] = array('#chkOtro',"checked","getTipoAutorizacion()");
+				$mask[] = array("txtlargo");
+				$mask[] = array("txtancho");
+				$mask[] = array("txtalto");
+				$mask[] = array("txtarea");
+				$evt[] = array('#txtNroEs',"keypress","return validaTeclas(event,'number');");
+				$evt[] = array('#txtDptoEs',"keypress","return validaTec	las(event,'number');");
+				$evt[] = array('#txtcaras',"keypress","return validaTeclas(event,'number');");
 
 
-		unset($parametros);
-		$parametros[] = array('@msquery',2);
-		$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-		$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-		$val[] = array('#cmbTipPredio6',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoDoc)),'html');
+				$evt[] = array('#btnBusPerSol',"click","showPopup('mantpers/buscar','#popBusPersSol','700','400','Buscador de Personas');");
+				$evt[] = array('#btnPredio',"click","showPopup('mantpred/buscar','#popBusPre','700','400','Buscador de Predios');");
+				$evt[] = array('#btnAddDetPago',"click","maxRowPagos();");
+
+				$evt[] = array('#btnSaveSol',"click","goToFormulario('frmlicendecjurada');");
+				$evt[] = array('#btnSalirSol',"click","closePopup('#popanundecjurada ');");
 
 
-		unset($parametros);
-		$parametros[] = array('@msquery',6);
-		$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-		$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-		$val[] = array('#cmbTipPredio7',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoZonif)),'html');
-
-        unset($parametros);
-        $parametros[] = array('@msquery',7);
-        $documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-        $arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-        $val[] = array('#cmbTipAnun',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipo)),'html');
-
-        unset($parametros);
-        $parametros[] = array('@msquery',8);
-        $documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-        $arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-        $val[] = array('#cmbTipIlum',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipo)),'html');
-
-        unset($parametros);
-        $parametros[] = array('@msquery',9);
-        $documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-        $arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-        $val[] = array('#cmbTipAuto',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipo)),'html');
-/*
-        unset($parametros);
-        $parametros[] = array('@msquery',10);
-        $documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
-        $arDocumentos = $ar->RegistrosCombo($documentos,0,1);
-        $val[] = array('#cmbCptoLicencia',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim(idCpto)),'html');
-*/
-      /*
-        $letras  = array("a","b","c","d","e","f","g","h","i","j","k","l","ll","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z");
-
-        $anuncio = '<table><tr><td valign="top"><table>';
-        $id = 0;
-        foreach($documentos as $documentos){
-            $id++;
-
-            $anuncio .= '<tr>';
-            $anuncio .= '<td><table style="background:#f2f2f2;" ><tr style="font-size:9px"><td height="50">'.utf8_decode($letras[$id -1 ]).'.</td><td width="110">'.$documentos[1].'</td><td style="padding-right:5px;" bgcolor="#999"><input type="checkbox" id="TipoAnun" name="TipoAnun" value="'.$documentos[0].'" ></td></tr></table></td>';
-            $anuncio .= '</tr>';
-
-            if ($id % 5 == 0)
-            $anuncio .= '</table></td><td valign="top"><table>';
-
-        }
-        $anuncio .= '</table></td></tr></table>';
-
-        $val[] = array('#anuncio',$anuncio,'html');
-*/
-
-		$idSolLice = $this->_request->getParam('idSolLice','');
-		$this->view->idSolLice=$idSolLice;
+				//Para los tabs
+				$evt[] = array('#contentBox',"tabs","");
+				$evt[] = array('#contentTabsLeft',"tabs","");
 
 
-        $cod_sol = $this->_request->getParam('cod_sol','');
-        $this->view->cod_sol=$cod_sol;
 
-		$readonly = $this->_request->getParam('readonly','');
-		$this->view->readonly=$readonly;
+				unset($parametros);
+				$parametros[] = array('@msquery',12);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbTipLicencia',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoLice)),'html');
 
-		$accion = $this->_request->getParam('accion','');
-		$this->view->accion=$accion;
+				unset($parametros);
+				$parametros[] = array('@msquery',2);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbTipPredio2',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoDoc)),'html');
 
-		unset($parametros);
-		if(strlen($idSolLice)>0)
-		{
-			$parametros[] = array('@msql',3);
-			$parametros[] = array('@idSolLice',$idSolLice);
-            $parametros[] = array('@cod_sol',$cod_sol);
-			$rowLicencia = $cn->ejec_store_procedura_sql('wbSpPredio', $parametros);
+				unset($parametros);
+				$parametros[] = array('@msquery',3);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbTipInscrip',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoInscrip)),'html');
 
-            $idSol = $rowLicencia[0][1];
-            $codpro = $rowLicencia[0][2];
-			$nompro = $rowLicencia[0][3];
+				unset($parametros);
+				$parametros[] = array('@msquery',4);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbTipEmpresa',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoEmpr)),'html');
 
-            $tip_lice = $rowLicencia[0][5];
-            $tip_doc = $rowLicencia[0][4];
-            $nro_doc = $rowLicencia[0][7];
-            $direccion = $rowLicencia[0][12];
-            $deno = $rowLicencia[0][11];
-            $nomest = $rowLicencia[0][10];
-			$direpro = $rowLicencia[0][8];
-			$fecha = $rowLicencia[0][31];
-            $codpre = $rowLicencia[0][7];
-            $numEs = $rowLicencia[0][13];
-            $depEs = $rowLicencia[0][14];
-            $StEs = $rowLicencia[0][15];
-            $MaEs = $rowLicencia[0][16];
-            $LoEs = $rowLicencia[0][17];
-            $PuEs = $rowLicencia[0][18];
-            $areal = $rowLicencia[0][20];
-            $areaal = $rowLicencia[0][21];
-            $areatotal = $rowLicencia[0][22];
-            $nroh = $rowLicencia[0][23];
-            $nrom = $rowLicencia[0][24];
-            $tiposector = $rowLicencia[0][25];
-            $tipoinscrip = $rowLicencia[0][26];
-            $tipoempre = $rowLicencia[0][27];
-            $idpredio = $rowLicencia[0][9];
-            $observa = $rowLicencia[0][28];
+				unset($parametros);
+				$parametros[] = array('@msquery',5);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbTipSector',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoSector)),'html');
 
 
-		}
-
-        $val[] = array('#txtNroLi',$idSol,'val');
-        $val[] = array('#txtCodPer',$codpro,'val');
-        $val[] = array('#txtNomPer',$nompro,'val');
-        $val[] = array('#txtTipDoc',$tip_doc,'val');
-        $val[] = array('#txtNroDoc',$nro_doc,'val');
-        $val[] = array('#cmbTipLicencia',$tip_lice,'val');
-        $val[] = array('#txtNomEs',$nomest,'val');
-        $val[] = array('#txtUbiEs',$direccion,'val');
-        $val[] = array('#txtUrb',$deno,'val');
-		$val[] = array('#txtDirPer',$direpro,'val');
-		$val[] = array('#txtFechaPre',$fecha,'val');
-        $val[] = array('#txtCodPre',$codpre,'val');
-        $val[] = array('#txtpredio',$idpredio,'val');
-        $val[] = array('#txtNroEs',$numEs,'val');
-        $val[] = array('#txtDptoEs',$depEs,'val');
-        $val[] = array('#txtInEs',$StEs,'val');
-        $val[] = array('#txtMzEs',$MaEs,'val');
-        $val[] = array('#txtLtEs',$LoEs,'val');
-        $val[] = array('#txtModEs',$PuEs,'val');
-        $val[] = array('#txtAreaL',$areal,'val');
-        $val[] = array('#txtAreaAl',$areaal,'val');
-        $val[] = array('#txtAreaTo',$areatotal,'val');
-        $val[] = array('#txtnh',$nroh,'val');
-        $val[] = array('#txtnm',$nrom,'val');
-        $val[] = array('#cmbTipSector',$tiposector,'val');
-        $val[] = array('#cmbTipInscrip',$tipoinscrip,'val');
-        $val[] = array('#cmbTipEmpresa',$tipoempre,'val');
-        $val[] = array('#txtobs',$observa,'val');
+				unset($parametros);
+				$parametros[] = array('@msquery',2);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbTipPredio6',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoDoc)),'html');
 
 
-		$evt[] = array('#btnCloseSol',"click","closePopup('#poplicendecjurada');");
+				unset($parametros);
+				$parametros[] = array('@msquery',6);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbTipPredio7',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipoZonif)),'html');
 
-		$fn->CampoDinero($mask);
-		$fn->PintarEvento($evt);
-		$fn->PintarValor($val);
+				unset($parametros);
+				$parametros[] = array('@msquery',7);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbTipAnun',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipo)),'html');
+
+				unset($parametros);
+				$parametros[] = array('@msquery',8);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbTipIlum',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipo)),'html');
+
+				unset($parametros);
+				$parametros[] = array('@msquery',9);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbTipAuto',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim($idTipo)),'html');
+		/*
+				unset($parametros);
+				$parametros[] = array('@msquery',10);
+				$documentos = $cn->ejec_store_procedura_sql('WbSpLicenciaCombos', $parametros);
+				$arDocumentos = $ar->RegistrosCombo($documentos,0,1);
+				$val[] = array('#cmbCptoLicencia',$fn->ContenidoCombo($arDocumentos,'[Seleccione]',trim(idCpto)),'html');
+		*/
+			  /*
+				$letras  = array("a","b","c","d","e","f","g","h","i","j","k","l","ll","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z");
+
+				$anuncio = '<table><tr><td valign="top"><table>';
+				$id = 0;
+				foreach($documentos as $documentos){
+					$id++;
+
+					$anuncio .= '<tr>';
+					$anuncio .= '<td><table style="background:#f2f2f2;" ><tr style="font-size:9px"><td height="50">'.utf8_decode($letras[$id -1 ]).'.</td><td width="110">'.$documentos[1].'</td><td style="padding-right:5px;" bgcolor="#999"><input type="checkbox" id="TipoAnun" name="TipoAnun" value="'.$documentos[0].'" ></td></tr></table></td>';
+					$anuncio .= '</tr>';
+
+					if ($id % 5 == 0)
+					$anuncio .= '</table></td><td valign="top"><table>';
+
+				}
+				$anuncio .= '</table></td></tr></table>';
+
+				$val[] = array('#anuncio',$anuncio,'html');
+		*/
+
+				$idSolLice = $this->_request->getParam('idSolLice','');
+				$this->view->idSolLice=$idSolLice;
 
 
-  }
+				$cod_sol = $this->_request->getParam('cod_sol','');
+				$this->view->cod_sol=$cod_sol;
+
+				$readonly = $this->_request->getParam('readonly','');
+				$this->view->readonly=$readonly;
+
+				$accion = $this->_request->getParam('accion','');
+				$this->view->accion=$accion;
+
+				unset($parametros);
+				if(strlen($idSolLice)>0)
+				{
+					$parametros[] = array('@msql',3);
+					$parametros[] = array('@idSolLice',$idSolLice);
+					$parametros[] = array('@cod_sol',$cod_sol);
+					$rowLicencia = $cn->ejec_store_procedura_sql('wbSpPredio', $parametros);
+
+					$idSol = $rowLicencia[0][1];
+					$codpro = $rowLicencia[0][2];
+					$nompro = $rowLicencia[0][3];
+
+					$tip_lice = $rowLicencia[0][5];
+					$tip_doc = $rowLicencia[0][4];
+					$nro_doc = $rowLicencia[0][7];
+					$direccion = $rowLicencia[0][12];
+					$deno = $rowLicencia[0][11];
+					$nomest = $rowLicencia[0][10];
+					$direpro = $rowLicencia[0][8];
+					$fecha = $rowLicencia[0][31];
+					$codpre = $rowLicencia[0][7];
+					$numEs = $rowLicencia[0][13];
+					$depEs = $rowLicencia[0][14];
+					$StEs = $rowLicencia[0][15];
+					$MaEs = $rowLicencia[0][16];
+					$LoEs = $rowLicencia[0][17];
+					$PuEs = $rowLicencia[0][18];
+					$areal = $rowLicencia[0][20];
+					$areaal = $rowLicencia[0][21];
+					$areatotal = $rowLicencia[0][22];
+					$nroh = $rowLicencia[0][23];
+					$nrom = $rowLicencia[0][24];
+					$tiposector = $rowLicencia[0][25];
+					$tipoinscrip = $rowLicencia[0][26];
+					$tipoempre = $rowLicencia[0][27];
+					$idpredio = $rowLicencia[0][9];
+					$observa = $rowLicencia[0][28];
+
+
+				}
+
+				$val[] = array('#txtNroLi',$idSol,'val');
+				$val[] = array('#txtCodPer',$codpro,'val');
+				$val[] = array('#txtNomPer',$nompro,'val');
+				$val[] = array('#txtTipDoc',$tip_doc,'val');
+				$val[] = array('#txtNroDoc',$nro_doc,'val');
+				$val[] = array('#cmbTipLicencia',$tip_lice,'val');
+				$val[] = array('#txtNomEs',$nomest,'val');
+				$val[] = array('#txtUbiEs',$direccion,'val');
+				$val[] = array('#txtUrb',$deno,'val');
+				$val[] = array('#txtDirPer',$direpro,'val');
+				$val[] = array('#txtFechaPre',$fecha,'val');
+				$val[] = array('#txtCodPre',$codpre,'val');
+				$val[] = array('#txtpredio',$idpredio,'val');
+				$val[] = array('#txtNroEs',$numEs,'val');
+				$val[] = array('#txtDptoEs',$depEs,'val');
+				$val[] = array('#txtInEs',$StEs,'val');
+				$val[] = array('#txtMzEs',$MaEs,'val');
+				$val[] = array('#txtLtEs',$LoEs,'val');
+				$val[] = array('#txtModEs',$PuEs,'val');
+				$val[] = array('#txtAreaL',$areal,'val');
+				$val[] = array('#txtAreaAl',$areaal,'val');
+				$val[] = array('#txtAreaTo',$areatotal,'val');
+				$val[] = array('#txtnh',$nroh,'val');
+				$val[] = array('#txtnm',$nrom,'val');
+				$val[] = array('#cmbTipSector',$tiposector,'val');
+				$val[] = array('#cmbTipInscrip',$tipoinscrip,'val');
+				$val[] = array('#cmbTipEmpresa',$tipoempre,'val');
+				$val[] = array('#txtobs',$observa,'val');
+
+
+				$evt[] = array('#btnCloseSol',"click","closePopup('#poplicendecjurada');");
+
+				$fn->CampoDinero($mask);
+				$fn->PintarEvento($evt);
+				$fn->PintarValor($val);
+
+
+		  }
 	
 	
 	

@@ -146,25 +146,26 @@ class GpreventivaController extends Zend_Controller_Action
 		{
 			foreach($rows AS $row){
 				$entry = array(
-						'id_notif'		=>	$row[0],
-						'anno_notif'	=>	$row[1],
-						'codigo'		=>	$row[2],
-						'n_notif'		=>	$row[3],
-						't_notif'		=>	$row[4],
-						'fec_notif'		=>	$row[5],	
-						'est_subsa'		=>	$row[6],	
-						'anno_area'		=>	$row[7],  
-						'codigo_area'	=>	$row[8],
-						'tipo_infraccion'=>	$row[9],
-						'codigo_infraccion'=>$row[10],
-						'codigo_adicional'=>$row[11],
-						'd_infraccion'	=>	utf8_encode($row[12]),
-						'base_calc'		=>	$row[13],  
-						'factor'		=>	$row[14],
-						'monto'			=>	$row[15],
-						'codtipocontri'	=>	$row[16],
-						'resolucion'	=>	$row[17],
-						'pase'			=>	$row[18]
+						'nro_resol'		=>	$row[0],
+						'id_notif'		=>	$row[1],
+						'anno_notif'	=>	$row[2],
+						'codigo'		=>	$row[3],
+						'n_notif'		=>	$row[4],
+						't_notif'		=>	$row[5],
+						'fec_notif'		=>	$row[6],
+						'est_subsa'		=>	$row[7],
+						'anno_area'		=>	$row[8],
+						'codigo_area'	=>	$row[9],
+						'tipo_infraccion'=>	$row[10],
+						'codigo_infraccion'=>$row[11],
+						'codigo_adicional'=>$row[12],
+						'd_infraccion'	=>	utf8_encode($row[13]),
+						'base_calc'		=>	$row[14],
+						'factor'		=>	$row[15],
+						'monto'			=>	$row[16],
+						'codtipocontri'	=>	$row[17],
+						'resolucion'	=>	$row[18],
+						'pase'			=>	$row[19]
 						
 				);
 				$jsonData['rows'][] = $entry;

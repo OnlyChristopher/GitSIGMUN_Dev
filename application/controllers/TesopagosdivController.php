@@ -280,11 +280,11 @@ class TesopagosdivController extends Zend_Controller_Action
 
 			echo ' <script language=\'javascript\'>';
 			//for($i=0;$i<2;$i++){
-			echo 'window.open(\'tesopagosdiv/imprimirrecibopagostupa?idx='.$idx.'&nrorecibo='.$rowrecibos[0][0].'\',"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); ';
+			echo 'window.open(\'tesopagosdiv/imprimirrecibopagostupa3?idx='.$idx.'&nrorecibo='.$rowrecibos[0][0].'\',"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); ';
 			//}	
 			echo '  function ventanaSecundaria(){ ';
 			//for($i=0;$i<2;$i++){			
-				echo 'ventana=window.open(\'tesopagosdiv/imprimirrecibopagostupa?idx='.$idx.'&nrorecibo='.$rowrecibos[0][0].'\',"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no");ventana.focus();';
+				echo 'ventana=window.open(\'tesopagosdiv/imprimirrecibopagostupa3?idx='.$idx.'&nrorecibo='.$rowrecibos[0][0].'\',"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no");ventana.focus();';
 			//}
 			echo '	} 
 				    </script>				    
@@ -560,5 +560,353 @@ class TesopagosdivController extends Zend_Controller_Action
 	$this->view->varhtml = $printrecibo;
 	//echo $idx ;
 	}
+	
+	//NUEVO FORMATO PAGOS TUPA 2016/03
+	public function imprimirrecibopagostupa3Action(){
+
+		$path = new Zend_Session_Namespace('path');
+		$this->view->ruta = $path->data;
+
+		$nrorecibo = $this->_request->getParam('nrorecibo','');
+		$idx = $this->_request->getParam('idx','');
+		
+		$printrecibo='';
+		$arraydatos=null;
+		$printrecibo='';
+		$htmlhead='';
+		$htmlbody='';
+		$htmlfoot='';
+		
+		$cn = new Model_DbDatos_Datos();
+		
+		$cod_pred=$rowcabecera[2];
+		$anexo=$rowcabecera[3];
+		$sub_anexo=$rowcabecera[4];
+		$tipo=$rowcabecera[5];
+			
+			
+			
+		unset($arraydatos);
+		unset($nombrestore);
+		unset($rowrecibos);
+		
+    	$nombrestore  = 'Caja.sp_Recibos_emitidos';
+		$arraydatos[]=array("@buscar", '6');
+		$arraydatos[]=array("@num_ingr", trim($nrorecibo));
+
+		$rowrecibos = $cn->ejec_store_procedura_sql($nombrestore, $arraydatos);
+
+		$local='MUNICIPALIDAD DISTRITAL DE <BR> INDEPENDENCIA';
+		$vararea='Sub Gerencia de Tesoreria';
+		$varruc='R.U.C. 20131373661';
+		$idx =='1' ? $varconpeto = 'TUPA':  $varconpeto = 'ENTRADA';
+
+		$recibo=$rowrecibos[0][0];
+		$codigo=$rowrecibos[0][1];
+		$nombre=$rowrecibos[0][2];
+		$fechor=$rowrecibos[0][4];
+		$nrcaja=$rowrecibos[0][3];
+		$monto_total=number_format ( $rowrecibos[20], '2', '.', '' );
+		$total=number_format ( $rowrecibos[20], '2', '.', '' );
+		$nomcajero=$rowrecibos[0][31];
+		$concepto=$rowrecibos[0][32];
+		$direccionfis=$rowrecibos[0][25];
+		$subtotal=0;
+		$movimiento=$rowrecibos[0][33];
+		$estado = $rowrecibos[0][6];
+		$concepto=$rowrecibos[0][32];
+		$criterio=$rowrecibos[0][34];
+		$partida=$rowrecibos[0][35];
+		$referencia=$rowrecibos[0][26];
+		
+		$observacion2=$rowrecibos[0][37];
+
+		if($estado=="1"){
+			$de_estado='**** CANCELADO ****';
+		}
+		else{
+			$de_estado='ANULADO';
+		}
+
+		 
+		# 1=Tupa
+		# 2=Entrada
+		
+		if($idx=='1'){
+			$varhtml='
+			<div>
+			<table width="100%" style="margin:auto;">
+			<tbody>
+			<tr>
+				<td width="100%" align="center">
+					<table width="100%" border="0">
+					<tbody>
+					<tr>
+						<td>
+							<table style="margin:auto">
+							<tr>
+								<td><img src="'.$path->data."img/logo_muni2.jpg".'" width="25px" style="vertical-align:top"></td>
+								<td align="center" style="font-weight:bolder; font-family:arial;font-size:12px;">'.$local.'</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					<tr><td width="100%" style="font-weight:bold;font-family:arial;font-size:10px; text-align:center">'.$vararea.'</td></tr>
+					<tr><td width="100%" style="font-weight:bold;font-family:arial;font-size:10px;text-align:center">'.$varruc.'</td></tr>
+					
+					<tr>
+						<td width="100%" >
+							<table width="100%" cellspacing="0" cellpadding="0" border="0" class="text1">
+							<tbody>
+							<tr>
+								<td colspan="2">
+									<table style="width:100%; border-spacing:0;" class="text1">
+									<tr>
+										<td class="NEGRITA">N&deg; RECIBO:</td><td style="font-size:13px">'.$recibo.'</td>
+										<td class="NEGRITA">Mov.:</td><td>'.str_pad($movimiento, 5, "0", STR_PAD_LEFT).'</td>
+									</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA">CONCEPTO:</td><td>'.$varconpeto.'</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA" colspan="2">NOMBRE:</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="font-size:12px">'.$nombre.'</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA">FECHA:</td><td>'.$fechor.'</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA">PARTIDA:</td><td>'.$partida.'</td>
+							</tr>
+							<tr><td colspan="2"><hr /></td></tr>
+							<tr>
+								<td class="NEGRITA" colspan="2">CONCEPTO:</td>
+							</tr>
+							<tr>
+								<td colspan="2">'.$concepto.' - '.trim($referencia).trim($criterio).'</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA" colspan="2">OBSERVACION:</td>
+							</tr>
+							<tr>
+								<td colspan="2">'.$observacion2.'</td>
+							</tr>
+							<tr><td colspan="2"><hr /></td></tr>
+							</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" border="0" class="text1" style="border-spacing:0;">
+							<tbody>
+							<tr>
+								<td class="NEGRITA">CANTIDAD</td>
+								<td class="NEGRITA">MONTO</td>
+								<td class="NEGRITA">TOTAL</td>
+							</tr>
+							<tr><td colspan="3"><hr /></td></tr>
+							';
+
+						foreach($rowrecibos AS $rowdetalles){
+							$varhtml .= '<tr>';
+								$varhtml .= '<td align=center>' . $rowdetalles[19] . '</td>';
+								$varhtml .= '<td align=center>' . number_format ( $rowdetalles[20], '2', '.', '' ) . '</td>';
+								$varhtml .= '<td align=center><div style="width:90%; margin:auto; text-align: right;">' . number_format ( $rowdetalles[5], '2', '.', '' ) . '</div></td>';
+							$varhtml .= '</tr>';
+							$subtotal=$rowdetalles[5];
+						}
+							$nrotostr=new Libreria_Numerosletras();
+							$subtotalstr=$nrotostr->num2letras($subtotal);
+
+				$varhtml.='<tr>
+								<td colspan="2" style="text-align: right;" class="NEGRITA">TOTAL S/.</td>
+								<td class="NEGRITA"><div style="width:90%; margin:auto; text-align: right;">'.$subtotal.'</div></td>
+							</tr>
+							<tr><td colspan="3"><hr /></td></tr>
+							</tbody>
+							</table>
+						</td>
+
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" cellspacing="0" cellpadding="0" border="0" class="text1">
+							<tr>
+								<td class="NEGRITA" >T. OPERACION:</td>
+								<td>'.$rowdetalles[36].'</td>
+								
+							</tr>
+							<tr>
+								<td class="NEGRITA" >CAJA: '.$nrcaja.'</td>
+								<td class="NEGRITA" >CAJERO: '.$nomcajero.'</td>
+							</tr>
+							<tr>
+								<td align="center" style="font-family:arial;font-size:14px;" colspan="2">** '.$de_estado.' **</td></tr>
+							<tr>
+								<td class="NEGRITA" colspan="2" align="CENTER" style="font-size:14px">PAGO TOTAL: '.number_format ($subtotal, '2', '.', ',' ).'</td>
+							</tr>	
+							<tr>
+								<td colspan="2" style="text-align:center">SON: '.strtoupper($subtotalstr).' Nuevos Soles</td>
+							</tr>	
+							</table>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			</table>
+			<br />
+			</div>';
+		
+		}else{
+			$varhtml='
+			<div>
+			<table width="100%" style="margin:auto;">
+			<tbody>
+			<tr>
+				<td width="100%" align="center">
+					<table width="100%" border="0" style="border-spacing:0">
+					<tbody>
+					<tr>
+						<td>
+							<table style="margin:auto; border-spacing:0">
+							<tr>
+								<td><img src="'.$path->data."img/logo_muni2.jpg".'" width="25px" style="vertical-align:top"></td>
+								<td align="center" style="font-weight:bolder; font-family:arial;font-size:12px;">'.$local.'</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					<tr><td width="100%" style="font-weight:bold;font-family:arial;font-size:10px; text-align:center">'.$vararea.'</td></tr>
+					<tr><td width="100%" style="font-weight:bold;font-family:arial;font-size:10px;text-align:center">'.$varruc.'</td></tr>
+					<tr>
+						<td width="100%" >
+							<table width="100%" cellspacing="0" cellpadding="0" border="0" class="text1">
+							<tbody>
+							<tr>
+								<td colspan="2">
+									<table style="width:100%; border-spacing:0;" class="text1">
+									<tr>
+										<td class="NEGRITA">N&deg; RECIBO:</td><td style="font-size:13px">'.$recibo.'</td>
+										<td class="NEGRITA">Mov.:</td><td>'.str_pad($movimiento, 5, "0", STR_PAD_LEFT).'</td>
+									</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA">CONCEPTO:</td><td>'.$varconpeto.'</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA" colspan="2">NOMBRE:</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="font-size:12px">'.$nombre.'</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA">FECHA:</td><td>'.$fechor.'</td>
+							</tr>
+							<tr><td colspan="2"><hr /></td></tr>
+							<tr>
+								<td class="NEGRITA">PARTIDA:</td><td>'.$partida.'</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA">CONCEPTO:</td>
+								<td style="vertical-align:top">'.$concepto.' - '.trim($criterio).'</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA" colspan="2">REFERENCIA:</td>
+							</tr>
+							<tr>
+								<td colspan="2">'.$referencia.'</td>
+							</tr>
+							<tr>
+								<td class="NEGRITA" colspan="2">OBSERVACION:</td>
+							</tr>
+							<tr>
+								<td colspan="2">'.$observacion2.'</td>
+							</tr>
+							<tr><td colspan="2"><hr /></td></tr>
+							</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" cellspacing="0" cellpadding="0" border="0" class="text1">
+							<tbody>
+							<tr>
+								<td class="NEGRITA">CANTIDAD</td>
+								<td class="NEGRITA">MONTO</td>
+								<td class="NEGRITA">TOTAL</td>
+							</tr>
+							<tr><td colspan="3"><hr /></td></tr>
+							';
+
+					foreach($rowrecibos AS $rowdetalles){
+						$varhtml .= '<tr>';
+							$varhtml .= '<td align=center>' . $rowdetalles[19] . '</td>';
+							$varhtml .= '<td align=center>' . number_format ( $rowdetalles[20], '2', '.', '' ) . '</td>';
+							$varhtml .= '<td align=center><div style="width:90%; margin:auto; text-align: right;">' . number_format ( $rowdetalles[5], '2', '.', '' ) . '</div></td>';
+						$varhtml .= '</tr>';
+						$subtotal=$rowdetalles[5];
+					}
+							$nrotostr=new Libreria_Numerosletras();
+							$subtotalstr=$nrotostr->num2letras($subtotal);
+
+				$varhtml.='<tr>
+								<td colspan="2" style="text-align: right;">TOTAL S/.</td>
+								<td style="text-align: right;"><div style="width:90%; margin:auto; text-align: right;">'.$subtotal.'</div></td>
+							</tr>
+							<tr><td colspan="3"><hr /></td></tr>
+							</tbody>
+							</table>
+						</td>
+
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" cellspacing="0" cellpadding="0" border="0" class="text1">
+							<tr>
+								<td class="NEGRITA" >T. OPERACION:</td>
+								<td>'.$rowdetalles[36].'</td>
+								
+							</tr>
+							<tr>
+								<td class="NEGRITA">CAJA: '.$nrcaja.'</td>
+								<td class="NEGRITA">CAJERO: '.$nomcajero.'</td>
+							</tr>
+							<tr>
+								<td align="center" style="font-family:arial;font-size:14px;" colspan="2">** '.$de_estado.' **</td></tr>
+							</tr>
+							<tr>
+								<td class="NEGRITA" colspan="2" align="CENTER" style="font-size:14px">PAGO TOTAL: '.number_format ($subtotal, '2', '.', ',' ).'</td>
+							</tr>	
+							<tr>
+								<td colspan="2" style="text-align:center">SON: '.strtoupper($subtotalstr).' Nuevos Soles</td>
+							</tr>	
+							</table>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			</table>
+			<br />
+			</div>';
+			
+		}
+		$printrecibo.=$varhtml;
+		$this->view->varhtml = $printrecibo;
+		//echo $idx ;
+	}
+	
 }
 

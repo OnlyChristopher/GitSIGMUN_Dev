@@ -835,16 +835,48 @@ public function exportarrptfracc1Action()
         //$cad1.=$data_codigo."</br>";
         echo $ini.$cad1;
     }
+	public function menureporteingresosAction(){
+
+		$fn = new Libreria_Pintar ();
+		$cn = new Model_DbDatos_Datos();
+
+		$nombrestore  = 'dbo.sp_getfecha';
+		$fecharow = $cn->ejec_store_procedura_sql($nombrestore, null);
+
+		$tesodesde = $fecharow[0][0];
+		$tesohasta = $fecharow[0][0];
+
+		$this->view->title = "Reporte de Ingresos por Rango de Fechas";
+
+		$evt[] = array('#tesodesde',"datepicker","");
+		$evt[] = array('#tesohasta',"datepicker","");
+
+		$val[] = array('#tesodesde',$tesodesde,"val");
+		$val[] = array('#tesohasta',$tesohasta,"val");
+
+		$evt[] = array("#btnvolver", "click", 'goToInterno(urljs + "semanal/index","Reportes Gerenciales")');
+		$evt[] = array("#btnaceptar", "click", 'exportaringresosxrango()');
+
+		$fn->PintarValor($val);
+		$fn->PintarEvento($evt);
+
+	}
 
 
-    public function exportarrptingresosAction(){
+
+	public function exportarrptingresosAction(){
 
     	$cn   	= new Model_DbDatos_Datos();
 	
-		$mes = $this->_request->getParam('mes',''); 
+
+
+		$desde = $this->_request->getParam('desde','');
+		$hasta = $this->_request->getParam('hasta','');
 
 		$parametros[] = array('@busc','4');
-		$parametros[] = array('@mes',$mes);
+		$parametros[] = array('@fecha_ini',$desde);
+		$parametros[] = array('@fecha_fin',$hasta);
+
 		
 		$rows = $cn->ejec_store_procedura_sql('[Rentas].[Reportes_Diversos]', $parametros);
 	

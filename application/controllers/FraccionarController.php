@@ -203,9 +203,13 @@ class FraccionarController extends Zend_Controller_Action
 		}
 		
     }
+
 	public function detallefracAction(){
 		$path->codigo = $this->_request->getParam('codigo','');
     	
+		$flag= $this->_request->getParam('flag','');
+    	$val[] = array("#txtflag",$flag,'val');
+		
     	$codigo=$path->codigo ;
     	
 		$nombrestore = 'Rentas.sp_rentasmain';
@@ -235,6 +239,42 @@ class FraccionarController extends Zend_Controller_Action
 		
 		
 	}
+
+		public function detallefracinfoAction(){
+		$path->codigo = $this->_request->getParam('codigo','');
+		
+		$flag= $this->_request->getParam('flag','');
+    	$val[] = array("#txtflag",$flag,'val');
+    	$codigo=$path->codigo ;
+    	
+		$nombrestore = 'Rentas.sp_rentasmain';
+        $arraydatos[0]= array('@buscar','3');
+        $arraydatos[1]= array('@codigo',$codigo);
+        
+        $cn = new Model_DbDatos_Datos();
+        $datoglobal = $cn->ejec_store_procedura_sql($nombrestore,$arraydatos);
+
+		$fn = new Libreria_Pintar();
+		$ar = new Libreria_ArraysFunctions();
+		
+		$val[] = array("#divCodFracc",$codigo,"html");
+		$val[] = array("#divNombre",$datoglobal[0][1],"html");
+/*		$val[] = array("#divDireccion",$rows[0][3],"html");
+		$val[] = array("#divAnno",$anno,"html");
+		$evt[] = array('#btnDeterminacionip',"click","calcularip();");
+		$evt[] = array('#btnDeterminacionarb',"click","calculararb();");
+		
+*/		$evt[] = array('#btnSalir',"click","closePopup('#poplistafrac');");
+		//$evt[] = array('#btnReporte',"click","closePopup('#poplistafrac');");
+		$evt[] = array('#btnReporteFracc',"click","showPopup('fraccionar/reportes','#listadoreporte','900','620','Reporte de Fraccionamiento','frmReporteFracc');");
+		
+		
+		$fn->PintarValor($val);		
+		$fn->PintarEvento($evt);	
+		
+		
+	}
+
 	public function simuladofracAction(){
 		$this->_helper->Layout->disableLayout();	
 		$login = new Zend_Session_Namespace('login');
@@ -381,6 +421,40 @@ class FraccionarController extends Zend_Controller_Action
 
 		$this->view->data = json_encode($jsonData);
     }
+
+    public function consultafraccinfoAction()
+    {
+
+    	$codigo = $this->_request->getParam('codigo','');
+    	    	
+    	$cn = new Model_DbDatos_Datos();
+    	
+    	$nombrestore  = '[Rentas].[ImprimeConvenio_infosat]';
+		$arraydatos[]=array("@buscar", 4);
+		$arraydatos[]=array("@codigo", $codigo);
+		
+		$rowcuotas = $cn->ejec_store_procedura_sql($nombrestore, $arraydatos);
+		
+		$ntotal=count($rowcuotas);
+
+		$jsonData = array('total'=>$ntotal,'rows'=>array());
+		foreach($rowcuotas AS $row){
+			$entry = array(
+					'convenio'=>$row[1],				  
+					'anno'=>$row[2],
+					'cuotas'=>$row[3],
+					'monto'=>$row[4],
+					'estado'=>utf8_encode($row[6]),
+					'usuario'=>$row[7],
+					'fecha'=>$row[8]
+			);
+			$jsonData['rows'][] = $entry;
+		}
+
+		$this->view->data = json_encode($jsonData);
+    }
+
+
 	public function resolfraccAction(){
 	
 		$codigo = $this->_request->getParam('codigo','');

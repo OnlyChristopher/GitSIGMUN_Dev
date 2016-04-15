@@ -250,21 +250,39 @@ public function registrapagoAction(){
 			$arraydatos[]=array("@montoacuenta", $txtEfectivo);
 
 			$rowrecibos = $cn->ejec_store_procedura_sql($nombrestore, $arraydatos);
-
+			$count_round  = count($rowrecibos);
+			
+			
+			echo ' <script language=\'javascript\'>';
+			for($i=0;$i<$count_round;$i++){
+				
+				$cod_pred=$rowrecibos[$i][2]; 		#codido del predio
+				$anexo=$rowrecibos[$i][3];			#anexo 
+				$sub_anexo=$rowrecibos[$i][4];		#sub anexos
+				$tipo=$rowrecibos[$i][5];			#tipo de tributo
+				$destributo = $rowrecibos[$i][6];
+				$periodo_anio=$rowrecibos[$i][10];	#total
+				$dire_predio= $rowrecibos[$i][11];	#dire predio
+				echo 'window.open(\'tesoprepago/imprimirrecibopagos3?nrorecibo='.$rowrecibos[$i][1].'&cod_pred='.$cod_pred.'&anexo='.$anexo.'&sub_anexo='.$sub_anexo.'&tipo='.$tipo.'&desctrib='.$destributo.'&periodo_anio='.$periodo_anio.'&direpredio='.$dire_predio.'\',"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); ';
+			}	
+			
+		    echo ' </script>';
+			
+			/*
 			echo ' <script language=\'javascript\'>';
 			//for($i=0;$i<2;$i++){
 				echo 'window.open(\'tesoprepago/imprimirrecibopagos?nrorecibo='.$rowrecibos[0][0].'\',"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); ';
 			//}	
 			echo '  function ventanaSecundaria(){ ';
-			//for($i=0;$i<2;$i++){			
+			//for($i=0;$i<2;$i++){
 				echo 'ventana=window.open(\'tesoprepago/imprimirrecibopagos?nrorecibo='.$rowrecibos[0][0].'\',"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no");ventana.focus();';
 			//}
 			echo '	} 
-				    </script>				    
-				   
+				    </script>
 				 <input type="button" name="imprimir" id="imprimir" value="Imprimir recibo" onClick="ventanaSecundaria()" />
 				 <br />
-				 <br />';
+				 <br />';*/
+				 
 		}else{
 			echo 'El usuario no tiene caja asignada';
 		}

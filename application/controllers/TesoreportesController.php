@@ -83,6 +83,38 @@ class TesoreportesController extends Zend_Controller_Action
 		$this->view->data = json_encode($jsonData);
     }
 	
+	#Nuevo Reimprimir Recibos por Tributo, por año 
+	/*public function reimprimirreciboAction(){
+
+		$nrorecibo = $this->_request->getParam('nrorecibo',''); #numero de recibo
+		$cn = new Model_DbDatos_Datos();
+
+		$nombrestore01  = 'Caja.sp_Recibos_emitidos';
+		$arraydatos01[] = array("@buscar", '4');	#CABECERA DE RECIBO
+		$arraydatos01[] = array("@num_ingr", $nrorecibo);
+
+		$rowrecibos = $cn->ejec_store_procedura_sql($nombrestore01, $arraydatos01);
+
+		$count_round  = count($rowrecibos);
+			
+		echo ' <script language=\'javascript\'>';
+		for($i=0;$i<$count_round;$i++){
+			
+			$cod_pred=$rowrecibos[$i][2]; 		#codido del predio
+			$anexo=$rowrecibos[$i][3];			#anexo 
+			$sub_anexo=$rowrecibos[$i][4];		#sub anexos
+			$tipo=$rowrecibos[$i][5];			#tipo de tributo
+			$destributo = $rowrecibos[$i][6];
+			$periodo_anio=$rowrecibos[$i][10];	#total
+			$dire_predio= $rowrecibos[$i][11];	#dire predio
+			
+			echo 'window.open(\'tesoprepago/imprimirrecibopagos3?nrorecibo='.$rowrecibos[$i][1].'&cod_pred='.$cod_pred.'&anexo='.$anexo.'&sub_anexo='.$sub_anexo.'&tipo='.$tipo.'&desctrib='.$destributo.'&periodo_anio='.$periodo_anio.'&direpredio='.$dire_predio.'\',"_blank","width=570, height=500, scrollbars=no, menubar=no, location=no, resizable=no,status =no,directories=no"); ';
+			
+		}	
+	    echo ' </script>';
+
+	}*/
+	
 	public function reportexpartidaAction(){
 		$getlogin = new Zend_Session_Namespace('login');
 		$username= strtoupper($getlogin->user);
@@ -981,6 +1013,13 @@ class TesoreportesController extends Zend_Controller_Action
 		
     	$nombrestore  = 'Caja.sp_rptTesoreria';
     	$parametros[] = array('@buscar','7');
+		//$parametros[] = array('@cajero',$cajero);
+		//$parametros[] = array('@fec_desde',$desde);
+		//$parametros[] = array('@fec_hasta',$hasta);
+		
+		//$parametros[] = array('@tipo_operacion',$tipooperacion);
+		//$parametros[] = array('@extorno',$extornada);
+		//$parametros[] = array('@codigo',$txtcodigo);
 		$parametros[] = array('@movimiento',$txtmovimiento);
 	
 		$rows = $cn->ejec_store_procedura_sql($nombrestore, $parametros);
@@ -1280,17 +1319,40 @@ class TesoreportesController extends Zend_Controller_Action
 		$total=0;
 		$strHtml1="";
 
-		$this->view->nombrearea=$rows[0][15];
+
+		if ($tipooperacion=='9999')
+		{
+			$this->view->nombrearea="INGRESOS POR GERENCIAS";
+		}else{
+			$this->view->nombrearea=$rows[0][15];
+		}
+
+
+
+
+
 		if(count($rows)){
 			
 			$strHtml = "";
 			foreach($rows AS $row){
-				$total+=$row[7];
+				if ($tipooperacion=='9999')
+				{
+					$total+=$row[4];
+				}else{
+					$total+=$row[7];
+				}
+
 				
 				$strHtml .= "<tr>";
 					$strHtml .= "<td align='left' style='padding-top:3px'>".$row[2]."</td>";
 					$strHtml .= "<td align='left' style='padding-top:3px'>".$row[3]."</td>";
+				if ($tipooperacion=='9999')
+				{
+					$strHtml .= "<td align='right' style='padding-top:3px'>".number_format($row[4],2)."</td>";
+				}else{
 					$strHtml .= "<td align='right' style='padding-top:3px'>".number_format($row[7],2)."</td>";
+				}
+
 				$strHtml .= "</tr>";
 			}
 		}
@@ -1320,19 +1382,7 @@ class TesoreportesController extends Zend_Controller_Action
 
     	$nombrestore  = 'dbo.sp_getfecha';
 		$fecharow = $cn->ejec_store_procedura_sql($nombrestore, null);
-	/*	
-    	$nombrestore  = 'Calculo.sp_ListaCombo';
-		$parametros[] = array('@busc','16');
-		
-		$operacion[0] = array('','seleccionar');
-		
-		$dataoperacion = $cn->ejec_store_procedura_sql($nombrestore, $parametros);
-		
-        for($i=0; $i < count($dataoperacion); $i++){
-            $operacion[$i+1] = array(trim($dataoperacion[$i][0]),trim($dataoperacion[$i][1]));
-        }
-		$val[] = array("#cmbOperacion",$fn->ContenidoCombo2($operacion,'',''),"html");
-	*/	
+
 		$tesodesde = $fecharow[0][0];
 		$tesohasta = $fecharow[0][0];
 		
@@ -1421,5 +1471,55 @@ class TesoreportesController extends Zend_Controller_Action
 		$this->view->total = number_format($total,2);
 
 	}
+
+	public function menureportediarioAction(){
+	
+	    $fn = new Libreria_Pintar ();
+		$cn = new Model_DbDatos_Datos();
+
+    //	$nombrestore  = 'dbo.sp_getfecha';
+	//	$fecharow = $cn->ejec_store_procedura_sql($nombrestore, null);
+	/*	
+    	$nombrestore  = 'Calculo.sp_ListaCombo';
+		$parametros[] = array('@busc','16');
+		
+		$operacion[0] = array('','seleccionar');
+		
+		$dataoperacion = $cn->ejec_store_procedura_sql($nombrestore, $parametros);
+		
+        for($i=0; $i < count($dataoperacion); $i++){
+            $operacion[$i+1] = array(trim($dataoperacion[$i][0]),trim($dataoperacion[$i][1]));
+        }
+		$val[] = array("#cmbOperacion",$fn->ContenidoCombo2($operacion,'',''),"html");
+	*/	
+		/*$tesodesde = $fecharow[0][0];
+		$tesohasta = $fecharow[0][0];
+		
+		$evt[] = array('#tesodesde',"datepicker","");
+		$evt[] = array('#tesohasta',"datepicker","");
+		
+		$val[] = array('#tesodesde',$tesodesde,"val");
+		$val[] = array('#tesohasta',$tesohasta,"val");
+
+		$evt[] = array("#btnvolver", "click", 'goToInterno(urljs + "tesoreportes/reportemain","Reportes")');
+		$evt[] = array("#btnaceptar", "click", 'ReporteVehiculosMenores()');
+	*/
+		$evt[] = array("#btnaceptar", "click", "reportediario();");
+		$evt[] = array('#fecha',"datepicker","");
+
+
+		//$fn->PintarValor($val);
+		$fn->PintarEvento($evt);
+
+	}
+
+
+
+
+
+
+
+
+
 	
 }
