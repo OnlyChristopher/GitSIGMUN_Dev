@@ -93,7 +93,7 @@ Ext.onReady(function() {
 	tb.render('toolbarMain');
 
 	tb.add( {
-		text : 'Usuario',
+		text : userjs,
 		iconCls : 'user',
 		menu : {
 			xtype : 'menu',

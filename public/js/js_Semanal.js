@@ -6,7 +6,7 @@ function abrirventana(idmenu){
 
 	switch(idmenu){
 		case  1: exportarsaldos();break//goToInterno(urljs + "Semanal/Exportasaldos",'Gerencia de Rentas'); break
-		case  2: exportaringresos();break//goToInterno(urljs + "Semanal/Exportaingresos",'Gerencia de Rentas'); break
+		case  2: goToInterno(urljs + "Semanal/menureporteingresos",'mod=19.98.00'); break /*exportaringresos();break//*/
 		case  3: exportarFraccionamientos();break//goToInterno(urljs + "Semanal/Exportafraccionamientos",'Gerencia de Rentas'); break
 	}
 }
@@ -36,6 +36,16 @@ function exportaringresos()
 		}
 	};
 	confirmMessage('Exportar','Desea exportar los Ingresos?',showResult);
+
+}
+
+function exportaringresosxrango()
+{
+
+	var tesodesde=$('#tesodesde').val();
+	var tesohasta=$('#tesohasta').val();
+
+	window.open(urljs+'semanal/exportarrptingresos?desde='+tesodesde+'&hasta='+tesohasta);
 
 }
 

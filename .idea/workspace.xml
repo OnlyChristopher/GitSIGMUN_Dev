@@ -3,24 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="fc19a73d-57a0-4073-8818-19cd82f1f92f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="T:/.idea/workspace.xml" afterPath="T:/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/FraccionarController.php" afterPath="T:/application/controllers/FraccionarController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/GpreventivaController.php" afterPath="T:/application/controllers/GpreventivaController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/MainController.php" afterPath="T:/application/controllers/MainController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/MantaccesoController.php" afterPath="T:/application/controllers/MantaccesoController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/MantcontriController.php" afterPath="T:/application/controllers/MantcontriController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/PreventivaController.php" afterPath="T:/application/controllers/PreventivaController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/RecaudacionreportesController.php" afterPath="T:/application/controllers/RecaudacionreportesController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/RentasController.php" afterPath="T:/application/controllers/RentasController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/RentascajaController.php" afterPath="T:/application/controllers/RentascajaController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/RentascajareccontriController.php" afterPath="T:/application/controllers/RentascajareccontriController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/SemanalController.php" afterPath="T:/application/controllers/SemanalController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/TesocajareccontriController.php" afterPath="T:/application/controllers/TesocajareccontriController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/TesopagosdivController.php" afterPath="T:/application/controllers/TesopagosdivController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/TesoprepagoController.php" afterPath="T:/application/controllers/TesoprepagoController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/controllers/TesoreportesController.php" afterPath="T:/application/controllers/TesoreportesController.php" />
-      <change type="MODIFICATION" beforePath="T:/application/views/scripts/cuentacorriente/index.phtml" afterPath="T:/application/views/scripts/cuentacorriente/index.phtml" />
-      <change type="MODIFICATION" beforePath="T:/application/views/scripts/tesoreportes/reportemain.phtml" afterPath="T:/application/views/scripts/tesoreportes/reportemain.phtml" />
-      <change type="MODIFICATION" beforePath="T:/public/js/js_Tesoreportes.js" afterPath="T:/public/js/js_Tesoreportes.js" />
+      <change type="MODIFICATION" beforePath="T:/application/layouts/_header.phtml" afterPath="T:/application/layouts/_header.phtml" />
+      <change type="MODIFICATION" beforePath="T:/application/views/scripts/mantpoblado/frmarancel.phtml" afterPath="T:/application/views/scripts/mantpoblado/frmarancel.phtml" />
+      <change type="MODIFICATION" beforePath="T:/application/views/scripts/preventiva/notificacion.phtml" afterPath="T:/application/views/scripts/preventiva/notificacion.phtml" />
+      <change type="MODIFICATION" beforePath="T:/application/views/scripts/rentascaja/index.phtml" afterPath="T:/application/views/scripts/rentascaja/index.phtml" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_Gpreventiva.js" afterPath="T:/public/js/js_Gpreventiva.js" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_Mantcontri.js" afterPath="T:/public/js/js_Mantcontri.js" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_Rentascaja.js" afterPath="T:/public/js/js_Rentascaja.js" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_Semanal.js" afterPath="T:/public/js/js_Semanal.js" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_Tesomenuemitidos.js" afterPath="T:/public/js/js_Tesomenuemitidos.js" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_Tesoreportemain.js" afterPath="T:/public/js/js_Tesoreportemain.js" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_local.js" afterPath="T:/public/js/js_local.js" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_main.js" afterPath="T:/public/js/js_main.js" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_multasadmin_editar.js" afterPath="T:/public/js/js_multasadmin_editar.js" />
+      <change type="MODIFICATION" beforePath="T:/public/js/js_notificacion.js" afterPath="T:/public/js/js_notificacion.js" />
+      <change type="MODIFICATION" beforePath="T:/public/js/loginDialog.js" afterPath="T:/public/js/loginDialog.js" />
     </list>
     <ignored path=".iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +42,8 @@
       <file leaf-file-name="MantaccesoController.php" pinned="false" current-in-tab="true">
         <entry file="file://T:/application/controllers/MantaccesoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="272" column="40" selection-start-line="272" selection-start-column="40" selection-end-line="272" selection-end-column="40" />
+            <state relative-caret-position="259">
+              <caret line="263" column="48" selection-start-line="263" selection-start-column="48" selection-end-line="263" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -227,7 +224,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1460677494496</updated>
-      <workItem from="1460677496935" duration="3098000" />
+      <workItem from="1460677496935" duration="5086000" />
     </task>
     <task id="LOCAL-00001" summary="Se elimino variables comentadas">
       <created>1460678731062</created>
@@ -236,34 +233,41 @@
       <option name="project" value="LOCAL" />
       <updated>1460678731062</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Errorr de Actulizar version">
+      <created>1460728082656</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1460728082656</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3098000" />
+    <option name="totallyTimeSpent" value="5086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25426438" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6698821" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -274,7 +278,8 @@
       <path value="T:/public/reportes" />
     </ignored-roots>
     <MESSAGE value="Se elimino variables comentadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se elimino variables comentadas" />
+    <MESSAGE value="Errorr de Actulizar version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Errorr de Actulizar version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -339,8 +344,8 @@
     </entry>
     <entry file="file://T:/application/controllers/MantaccesoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="272" column="40" selection-start-line="272" selection-start-column="40" selection-end-line="272" selection-end-column="40" />
+        <state relative-caret-position="259">
+          <caret line="263" column="48" selection-start-line="263" selection-start-column="48" selection-end-line="263" selection-end-column="48" />
           <folding />
         </state>
       </provider>

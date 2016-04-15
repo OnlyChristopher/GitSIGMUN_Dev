@@ -289,7 +289,8 @@ Ext.define('Contri', {
             {name: 'codigo'},
             {name: 'nombres', type: 'string'},
             {name: 'documento', type: 'string'},
-            {name: 'direccion', type: 'string'}
+            {name: 'direccion', type: 'string'},
+			{name: 'flag_coactivo', type: 'string'},
         ]
     });
     
@@ -318,7 +319,15 @@ Ext.define('Contri', {
             	refresh: function(view) {
 					setTimeout(function(){ verificaIconos(); },100);
             	}
-        	}
+        	},
+			getRowClass: function(record, index){
+				var clsRow = '';
+				
+				switch(record.get('flag_coactivo').trim()){
+					case '1': clsRow='xrow-coactivo'; break
+				}
+				return clsRow;
+			}
     	},
 		//Fin valida iconos
         //selModel: Ext.create('Ext.selection.CheckboxModel'),
@@ -413,7 +422,7 @@ Ext.define('Contri', {
                     var ruta='rentascaja/index?codigo=';
                     var papup='#poptesore';
                     var largo='1000';
-                    var ancho='540';
+                    var ancho='620';
                     var cabecera='Rentas';
                     
                      VerificaDato(ruta,codigo,papup,largo,ancho,cabecera); 
@@ -692,30 +701,48 @@ $('#gridContri').html('');
 }
 
 
-function VerificaDato(ruta,codigo,papup,largo,ancho,cabecera)
-{
+function VerificaDato(ruta,codigo,papup,largo,ancho,cabecera){
     $.ajax({
-            type: "GET", 
-            url: 'mantcontri/consultadatos',
-            data: 'codigo='+codigo,
-            success: function(data){
-              var valor=parseInt(data);
-              if(valor==1)
-              {
-                //showPopup('mantcontri/formu?codigo='+codigo,'#popcontri','820','680','Editar Contribuyente');
-                showPopup(ruta+codigo,papup,largo,ancho,cabecera);    
-              }
-              else
-              {
-                var showResult = function(btn){
-                if(btn=='yes')
-                    showPopup('mantcontri/formu?codigo='+codigo,'#popcontri','820','680','Editar Contribuyente');      
-                else
-                    showPopup(ruta+codigo,papup,largo,ancho,cabecera);    
-                };
-                confirmMessage('Actualizacion de Datos Presonales','Solicitamos actualizar la informacion para el codigo '+codigo+' Desea Actualizarlo ahora ?',showResult);  
-              }
-            } 
+		type: "GET", 
+		url: 'mantcontri/consultadatos',
+		data: 'codigo='+codigo,
+		success: function(data){
+      		//var valor=parseInt(data);
+      		var valor=data;
+			var valor1=valor.split('+');
+			var in_actualiza= valor1[0]; //1=esta Actualizado; 0=no actualizado
+			var in_coactivo = valor1[1]; //1=en coactivo
+			var id_area 	= valor1[2]; //id del area login Coactivo =4004
+			var id_perfil 	= valor1[3]; //id perfil
+				
+			if(id_perfil=='0000004'){ //las demas areas
+				if(in_actualiza==1 && in_coactivo!=1){ //si actualizado y no coactivo
+	            	//showPopup('mantcontri/formu?codigo='+codigo,'#popcontri','820','680','Editar Contribuyente');
+	            	showPopup(ruta+codigo,papup,largo,ancho,cabecera);    
+	          	}else if((in_actualiza==1 || in_actualiza==0) && in_coactivo==1){ //si actualizado o no actualizado pero en coativo
+	          		//Ext.MessageBox.alert('Alerta', 'El Contribuyente se encuentra en coactivo, No Emitir Estado de Cuenta');
+
+							Ext.Msg.prompt("Aviso", "El Contribuyente se encuentra en coactivo, No Emitir Estado de Cuenta", function(btnText, sInput){
+						if(btnText === 'ok'){
+							showPopup(ruta+codigo,papup,largo,ancho,cabecera);
+						}
+					}, this);
+
+				}
+	          	else{ //todo lo demas
+	            	var showResult = function(btn){
+		            	if(btn=='yes')
+		                	showPopup('mantcontri/formu?codigo='+codigo,'#popcontri','820','680','Editar Contribuyente');      
+		            	//else
+			                //Se anula el estado de cuenta mientras no actualiza el formulario
+			                /*showPopup(ruta+codigo,papup,largo,ancho,cabecera);    */
+	            	};
+            		confirmMessage('Actualizacion de Datos Presonales','Solicitamos actualizar la informacion para el codigo '+codigo+' Desea Actualizarlo ahora ?',showResult);  
+	          	}
+			}else{
+				showPopup(ruta+codigo,papup,largo,ancho,cabecera); 
+			}
+		} 
     }); 
 }
 

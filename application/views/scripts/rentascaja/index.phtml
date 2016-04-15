@@ -230,8 +230,34 @@ var data1='<?php echo $this->data; ?>';
         <td style="padding-right:5px"><input type="button" id="btnEstCta" value="Est. de cuenta" style="width:100px;"/></td>
         <!--<td style="padding-right:5px"><input type="button" id="btnPagarRecibos" value="Pagar" style="width:100px;"/></td>-->
         <td style="padding-right:5px"><input type="button" id="btnFraccionar" value="Fraccionar" style="width:100px;"/></td>
-		<td style="padding-right:5px"><input type="button" id="btnFraccionamiento" value="Ver Fraccionamiento" style="width:100px;"/></td>
-		<td style="padding-right:5px"><input type="button" id="btnRecibos" value="Ver Pagos" style="width:100px;"/></td>	
+		<td style="padding-right:5px">
+
+			<div>
+	          <div>
+	            <button id="btnViewFraccionamientos">Ver Fracc</button>
+	            <button id="select">Seleccione una opción</button>
+	          </div>
+	          <ul id="btnPrintMenu1">
+	            <li><a onclick="print_fracc(1);" style="cursor:pointer">SIGMUN</a></li>
+				<li><a onclick="print_fracc(2);" style="cursor:pointer">INFOSAT</a></li>
+	          </ul>
+	        </div>
+
+		</td>
+
+
+		<td style="padding-right:5px">
+				<div>
+		          <div>
+		            <button id="btnViewPagos">Ver Pagos</button>
+		            <button id="select">Seleccione una opción</button>
+		          </div>
+		          <ul id="btnPrintMenu2">
+		            <li><a onclick="print_recibos(1);" style="cursor:pointer">SIGMUN</a></li>
+					<li><a onclick="print_recibos(2);" style="cursor:pointer">INFOSAT</a></li>
+		          </ul>
+		        </div>
+		</td>	
 		<!--<td style="padding-right:5px"><input type="button" id="btnpg2013" value="Pago 2013" /></td>-->
 		<!--<td style="padding-right:5px"><input type="button" id="btnpgpronto" value="Pronto Pago" /></td>-->
 		<td style="padding-right:5px"><input type="button" id="btnCoactivo" value="Pasar a Coactivo" style="width:130px;"/></td>

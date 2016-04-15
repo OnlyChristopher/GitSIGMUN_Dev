@@ -10,6 +10,22 @@ $(function(){
 	
 	$("#nlicencia").attr("disabled", "disabled");
 	$("#cmbanolic").attr("disabled", "disabled");
+
+
+	if($('#cmbdescargo').val() == 1)
+	{
+		$("#cmbtipoexpdoc").removeAttr("disabled");
+		$("#txtxnroexpdoc").removeAttr("disabled");
+		$("#cb_fechexpdoc").removeAttr("disabled");
+	}
+	else
+	{
+		$("#cmbtipoexpdoc").attr("disabled", "disabled");
+		$("#txtxnroexpdoc").attr("disabled", "disabled");
+		$("#cb_fechexpdoc").attr("disabled", "disabled");
+
+	}
+
 	
 	//$("#txthora").val('14:02');
 	
@@ -44,9 +60,9 @@ $(function(){
 			'fecha_multa': 	{ required: 'Ingrese la fecha' },
 			'preimpreso': 	{ required: 'Ingrese el preimpreso' },
 			'estado': 	{ required: 'Seleccione el estado' },
-			'codigo_area': 	{ required: 'Seleccione el 1° campo de infraccion' },
-			'tipo_infraccion': 	{ required: 'Seleccione el 2° campo de infraccion' },
-			'codigo_infraccion': 	{ required: 'Seleccione el 3° campo de infraccion' },
+			'codigo_area': 	{ required: 'Seleccione el 1ï¿½ campo de infraccion' },
+			'tipo_infraccion': 	{ required: 'Seleccione el 2ï¿½ campo de infraccion' },
+			'codigo_infraccion': 	{ required: 'Seleccione el 3ï¿½ campo de infraccion' },
 			'ctxtFechResolucion': 	{ required: 'Ingrese la fecha de la resolucion' },
 			'txtNResolucion': 	{ required: 'Ingrese el Numnero de resolucion' },
 			'txaObservacion': 	{ required: 'ingrese la glosa' },
@@ -80,7 +96,7 @@ $(function(){
 		}
 	});
 	
-	//Todo a mayúscula
+	//Todo a mayï¿½scula
 	$('.caja').blur(function(event){
 		this.value = this.value.toUpperCase();
 	});
@@ -107,9 +123,9 @@ $(function(){
 	
 	var acceso=$('#txtmod').val();
 	if(acceso=='01.09.01')
-	alert('no se puede');
+	console.log('no se puede');
 	else
-	alert('si se puede');
+	console.log('si se puede');
 	
 	
 });
@@ -198,13 +214,17 @@ $('#tipo_infraccion').change(function(){
 $('#chkPeriodo').click(function() {
 	if($('#chkPeriodo').is(':checked'))
 	{
-		$('#factor').val('0.00');			
+		$('#factor').val('0.00');
 	}
 	else
 	{
-		calcTotal($('#codigo_infraccion').val())	
-	}	
+		calcTotal($('#codigo_infraccion').val())
+	}
 });
+
+
+
+
 
 
 // $('#chkResoluciones').click(function() {
@@ -260,13 +280,30 @@ $('#chkLicencia').click(function() {
 	if($('#chkLicencia').is(':checked'))
 	{
 		$("#nlicencia").removeAttr("disabled");
-        $("#cmbanolic").removeAttr("disabled");	
+        $("#cmbanolic").removeAttr("disabled");
 	}
 	else
 	{
 		$("#nlicencia").attr("disabled", "disabled");
-		$("#cmbanolic").attr("disabled", "disabled");	
+		$("#cmbanolic").attr("disabled", "disabled");
 	}	
+});
+
+
+$('#cmbdescargo').change(function() {
+	if($('#cmbdescargo').val() == 1)
+	{
+		$("#cmbtipoexpdoc").removeAttr("disabled");
+		$("#txtxnroexpdoc").removeAttr("disabled");
+		$("#cb_fechexpdoc").removeAttr("disabled");
+	}
+	else
+	{
+		$("#cmbtipoexpdoc").attr("disabled", "disabled");
+		$("#txtxnroexpdoc").attr("disabled", "disabled");
+		$("#cb_fechexpdoc").attr("disabled", "disabled");
+
+	}
 });
 
 // $('#chkResoluciones').click(function() {

@@ -1,26 +1,17 @@
 <?php header('Content-Type: text/html; charset=iso-8859-1'); ?>
 <script type="text/javascript" src="<?php echo $this->ruta; ?>js/js_notificacion.js"></script>
 <form id="frmultedit">
-<!--codigo--><input type="text" name="codigo" id='codigo' size="10" class="cajaoff" readonly />
-<!--tip_cont--><input type="text" name="numeroMulta" id='numeroMulta' size="10" class="cajaoff" readonly />
-t_contri<input type="text" name="tipocontri_multa" id='tipocontri_multa' size="10" class="cajaoff" readonly />
-anno<input type="text" name="anno_area" id="anno_area" size="5" class="cajaoff" readonly value="<?php echo $this->anno_area; ?> " />
+<input type="hidden" name="codigo" id='codigo' size="10" class="cajaoff"  />
+<input type="hidden" name="numeroMulta" id='numeroMulta' size="10" class="cajaoff"  />
+<input type="hidden" name="tipocontri_multa" id='tipocontri_multa' size="10" class="cajaoff" />
+<input type="hidden" name="anno_area" id="anno_area" size="5" class="cajaoff" value="<?php echo $this->anno_area; ?> " />
+<input name="txtnotificacion" type="hidden" class="cajaoff" id="txtnotificacion" />
+<input name="txtannonotif" type="hidden" class="cajaoff" id="txtannonotif" >
+				
 
 <input type="hidden" name="tipocontri_multa" id='tipocontri_multa' size="10" class="cajaoff" readonly />
 
-<fieldset class="ui-widget ui-widget-content">
-				<legend style="margin-left:5px">Datos Generales</legend>
-				<div class="contentForm">
-				  <table>
-				  <tr>
-					<td>&nbsp;id_notif: &nbsp;</td>
-					<td><input name="txtnotificacion" type="text" class="cajaoff" id="txtnotificacion" style="text-transform:uppercase; width:120px" readonly /></td>
-					<td>&nbsp;anno_notif: &nbsp;</td>
-					<td><input name="txtannonotif" type="text" class="cajaoff" id="txtannonotif" style="text-transform:uppercase; width:120px" readonly /></td>
-				  </tr>
-				  </table>
-				</div>
-</fieldset>
+
 <br>
 		<div id="contentTabsLeft" class="ui-tabs-left">
 	        <ul>
@@ -113,34 +104,94 @@ anno<input type="text" name="anno_area" id="anno_area" size="5" class="cajaoff" 
 				</fieldset>
                 <br>
                 <fieldset class="ui-widget ui-widget-content">
-				<legend style="margin-left:5px">Registro de Informe:
+				<legend style="margin-left:5px">Registro de Informe:</legend>
 				
-				</legend>
+				
 				<div class="contentForm">
 				  <table width="100%" border="0">
 				    <tr>
 				      <td width="137">N. Informe :</td>
-				      <td width="138"><input name="informe" type="text" class="caja" id="informe" style="text-transform:uppercase; width:120px" maxlength="10" /></td>
+				      <td width="138"><input name="informe" type="text" class="caja" id="informe" style="text-transform:uppercase; width:120px" maxlength="20" /></td>
+                      <td width="70"> Fecha :</td>
+                       <td width="85"><input name="txtfechanot" type="datetime" class="caja" id="txtfechanot" style="text-transform:uppercase; width:80px" maxlength="10" /></td>
 				      <td width="94"> A&ntildeo :</td>
 				      <!--<td width="496"><input name="fechinf" type="text" class="caja" id="fechinf" style="text-transform:uppercase; width:120px" maxlength="10" /></td>-->
-					  <td width="496"><select name="cb_fechinf" id='cb_fechinf' class="combo" style="width:100px"><?php echo $this->cb_anno2;?></select></td>
+					 
+                      <td width="200"><select name="cb_fechinf" id='cb_fechinf' class="combo" style="width:100px"><?php echo $this->cb_anno2;?></select></td>
+                       
+			        </tr>
 			        </tr>
 				    
 			      </table>
+                  </div>
+				</fieldset>
+                 <br>
+                
+                <fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px">Registro de Expediente:				
+				</legend>
+				<div class="contentForm">
+				  <table width="100%" border="0">
+                  <tr height="31">
+                   <td>Presento descargo: </td>
+                   <td colspan="6"><select name="cmbdescargo" id="cmbdescargo" class="caja">
+                 <option value="1">SI</option>
+                 <option selected="selected" value="2">NO</option>
+                 </select>
+                 </td>
+                  </tr>
+				    <tr>
+				      <td width="137">Tipo :</td>
+				      <td width="138"><select name="cmbtipoexpdoc" class="caja" id="cmbtipoexpdoc" style="text-transform:uppercase; width:120px" maxlength="10">
+                      <option value="1">Expediente</option>
+					  <option value="2">Doc. Simple</option>
+                      </select>
+                      </td>
+                      <td width="70"> Nro :</td>
+                       <td width="80"><input name="txtxnroexpdoc" type="text" class="caja" id="txtxnroexpdoc" style="text-transform:uppercase; width:70px" maxlength="8" /></td>
+				      <td width="94"> A&ntildeo :</td>
+				      <!--<td width="496"><input name="fechinf" type="text" class="caja" id="fechinf" style="text-transform:uppercase; width:120px" maxlength="10" /></td>-->
+					 
+                      <td width="200"><select name="cb_fechexpdoc" id='cb_fechexpdoc' class="combo" style="width:100px"><?php echo $this->cb_anno2;?></select></td>
+                       
+			        </tr>
+			        </tr>
+				    
+			      </table>
+                  </div>
 				</fieldset>
 			</div>
+            
 			
 	        <div id="tabs-1">
-			
+            <fieldset class="ui-widget ui-widget-content">
+				<legend style="margin-left:5px">Registro de Resoluci&oacute;n</legend>
+            
+            <table class="tableContent" border=0 width="100%" height="40" style="padding-top:20px">
+                     <tr>
+						<td colspan="2"><span>N. Resoluci&oacute;n :</span></td>
+						<td><input name="resolucion" type="text" class="caja" id="resolucion" style="text-transform:uppercase; width:120px" maxlength="7" /></td>
+					  
+                      <td><span>Fecha. Resoluci&oacute;n :</span></td>
+						<td colspan="2"><input name="txtfecharesol" type="datetime" class="caja" id="txtfecharesol" style="text-transform:uppercase; width:120px" maxlength="10" /></td>
+                      </tr>
+                      </table>
+                    
+			</fieldset>
+              <br />
+            
 				<fieldset class="ui-widget ui-widget-content">
 				<legend style="margin-left:5px">Registro de Notificaciones</legend>
 						
 				<div class="contentForm">
-					<table class="tableContent" border=0 width="100%">
+					
+                      <table class="tableContent" border=0 width="100%">
 					  <tr>
 						<td><span>N. Preventiva :</span></td>
 						<td colspan="4"><input name="notificacion" type="text" class="caja" id="notificacion" style="text-transform:uppercase; width:120px" maxlength="7" /></td>
-					  </tr>
+					  
+                      </tr>
+                      
 					
                       <tr>
 						  <td><span>Tip. Documento: </span></td>
@@ -262,8 +313,8 @@ anno<input type="text" name="anno_area" id="anno_area" size="5" class="cajaoff" 
 				      <td width="116"><select name="cmb_doctestigo" id='cmb_doctestigo' class="combo" style="width:100px">
 			          </select></td>
 				      <td width="70"> Numero :</td>
-				      <td width="542"><input name="txtndoc" type="text" class="caja" id="txtndoc" style="text-transform:uppercase; width:120px" maxlength="8" /></td>
-			        </tr>
+				      <td width="50"><input name="txtndoc" type="text" class="caja" id="txtndoc" style="text-transform:uppercase; width:50px" maxlength="8" /></td>
+                     
 				    
 			      </table>
 				</div>
@@ -293,7 +344,7 @@ anno<input type="text" name="anno_area" id="anno_area" size="5" class="cajaoff" 
 			      <td colspan="2"><input style="text-transform:uppercase" name="txtDesUrb" id="txtDesUrb" type="text" class="caja" size="40" maxlength="200" /></td>
 		       </tr>
 			   <tr id="rowViaOtherDis">
-			      <td><span id="lblTipVia">Tipo Vía:</span></td>
+			      <td><span id="lblTipVia">Tipo V&iacute;a:</span></td>
 			      <td><select name="cmbTipVia" id="cmbTipVia" class="combo" style="width:140px">
 			        <option>[Seleccione]</option>
 			        </select></td>

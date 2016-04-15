@@ -156,8 +156,7 @@ function calcTotal(valor){
 
 	//alert(valor);
 	var array=valor.split(':');
-	if(valor.substr(0,11)=='07URB:1:102' || valor.substr(0,11)=='07URB:1:103' || valor.substr(0,11)=='07URB:1:104')
-	{
+	if(valor.substr(0,11)=='07URB:1:102' || valor.substr(0,11)=='07URB:1:103' || valor.substr(0,11)=='07URB:1:104' || valor.substr(0,15)=='331-2015:23:147' || valor.substr(0,15)=='331-2015:23:148'){
 		$("#divvalorizacion").show();
 		$("#divcalculo").hide();
 		$('#txtfactorvalorizacion').val(array[5]);
@@ -165,8 +164,7 @@ function calcTotal(valor){
 		$('#txtvalorizacion').focus();
 		$('#txtmultavalorizacion').val('0.00');
 	}
-	else
-	{
+	else{
 		$("#divvalorizacion").hide();
 		$("#divcalculo").show();
 	}

@@ -6,6 +6,7 @@ Ext.onReady(function(){
     Ext.define('Gpreventiva', {
         extend: 'Ext.data.Model',
         fields: [
+			{name: 'nro_resol'},
             {name: 'id_notif'},
 			{name: 'anno_notif'},
 			{name: 'codigo'},
@@ -53,7 +54,13 @@ Ext.onReady(function(){
     	},
         //selModel: Ext.create('Ext.selection.CheckboxModel'),
         columns: [ 
-        Ext.create('Ext.grid.RowNumberer'),    
+        Ext.create('Ext.grid.RowNumberer'),
+		{
+			text: 'N. Resolucion',
+			width: 90,
+			align:'center',
+			dataIndex: 'nro_resol'
+		},
         {
             text: 'N. Preventiva',
             width: 90, 

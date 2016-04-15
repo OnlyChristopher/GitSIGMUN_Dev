@@ -51,8 +51,8 @@ Ext.define('Ext.ux.LoginDialog', {
         this.messages = this.messages || {};
         this.messages = Ext.Object.merge({
             wait: 'Espere un momento...',
-            header: 'Acceso restringido sólo para usuarios autorizados.<br />' +
-                'Por favor ingrese su usuario y contraseña.'
+            header: 'Acceso restringido s&oacute;lo para usuarios autorizados.<br />' +
+                'Por favor ingrese su usuario y contrase&ntilde;a.'
         }, this.messages);
 
         this.headerPanel = this.headerPanel || {};
@@ -114,7 +114,7 @@ Ext.define('Ext.ux.LoginDialog', {
             inputType: 'password',
             id: 'txtclave',
             name: 'txtclave',
-            fieldLabel: 'Contraseña',
+            fieldLabel: 'Contrase&ntilde;a',
             enableKeyEvents: true,
             listeners: {
 				render: {

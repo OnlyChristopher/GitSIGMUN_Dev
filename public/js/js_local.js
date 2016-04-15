@@ -141,7 +141,7 @@ Ext.onReady(function(){
             	
                     var rec = grid.getStore().getAt(rowIndex);    
 					//alert(rec.get('codigo')+'/'+rec.get('id_notif')+'/'+rec.get('anno_notif')+'/'+$('#tipocontri').val());
-                    showPopup('preventiva/notificacion?codigo='+rec.get('codigo')+'&anno_notif='+rec.get('anno_notif')+'&id_notif='+rec.get('id_notif')+'&codtipocontri='+$('#tipocontri').val(),'#popnewmulta','700','450','Editar Preventiva');                     
+                    showPopup('preventiva/notificacion?codigo='+rec.get('codigo')+'&anno_notif='+rec.get('anno_notif')+'&id_notif='+rec.get('id_notif')+'&codtipocontri='+$('#tipocontri').val(),'#popnewmulta','700','500','Editar Preventiva');
 					
                 }
             }

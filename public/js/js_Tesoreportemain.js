@@ -18,10 +18,11 @@ function abrirventana(idmenu){
 		case 17: goToInterno(urljs + "tesoreportes/menureporteingresoxgerencia",'Tesorer&iacute;a Municipal'); break
         case  7: goToInterno(urljs + "tesoreportes/menureportereciboemitidosdetallado",'Tesorer&iacute;a Municipal'); break
 		case 18: goToInterno(urljs + "tesoreportes/menureportevehiculosmenores",'Tesorer&iacute;a Municipal'); break
+		case 19: goToInterno(urljs + "tesoreportes/menureportediario",'Tesorer&iacute;a Municipal'); break
 	}
 }
 
 
-function GenerarEstadosdeCajas(){
+	function GenerarEstadosdeCajas(){
 	showPopupReportHtml('tesoreportes/estadosdecajas','pouprptemitidos','Estado de Cajas');
 }

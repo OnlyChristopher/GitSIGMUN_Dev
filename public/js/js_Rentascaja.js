@@ -3,6 +3,72 @@ Ext.onReady(function(){
     
 	$("input[type='button']").button();
 	
+
+	/*para visualizar los fraccionamientos */
+		$( "#btnViewFraccionamientos" ).button().click(function() {
+			$('#btnPrintMenu1').show();
+      	})
+      	.next().button({        
+			text: false,
+            icons: { primary: "ui-icon-triangle-1-s"
+		           }
+        }).click(function() {
+          var menu = $( this ).parent().next().show().position({
+            my: "left top",
+            at: "left bottom",
+            of: this
+          });
+		  
+          $( document ).one( "click", function() {
+            $('#btnPrintMenu1').hide();
+          });
+
+          return false;
+
+         })
+
+        .parent()
+          .buttonset()
+          .next()
+            .hide()
+            .menu();
+	/*fin de la visualizacion de fraccionamientos*/
+	
+	
+	
+	
+	/*para visualizar los pagos */
+		$( "#btnViewPagos" ).button().click(function() {
+			$('#btnPrintMenu2').show();
+      	})
+      	.next().button({        
+			text: false,
+            icons: { primary: "ui-icon-triangle-1-s"
+		           }
+        }).click(function() {
+          var menu = $( this ).parent().next().show().position({
+            my: "left top",
+            at: "left bottom",
+            of: this
+          });
+		  
+          $( document ).one( "click", function() {
+            $('#btnPrintMenu2').hide();
+          });
+
+          return false;
+
+         })
+
+        .parent()
+          .buttonset()
+          .next()
+            .hide()
+            .menu();
+	/*fin de la visualizacion de pagos*/
+
+
+
 	callAjax('rentascaja/periodos?codigocaja='+codigocaja,'','#boxCajaPeriodo','html');
 
     callAjax('rentascaja/predios?codigocaja='+codigocaja,'','#divPredios','html');
@@ -284,6 +350,27 @@ Ext.onReady(function(){
     grid.render('gridRecContri');
     
 });
+
+
+//PARA MOSTRAR LOS FRACCIONAMIENTOS
+function print_fracc(flag){
+
+	var codigo=$('#divCodigo').html();
+
+	if (flag==1){
+	showPopup('fraccionar/detallefrac?codigo='+codigo+'&flag='+flag,'#poplistafrac','990','400','Convenios realizados con el SIGMUN');
+	}
+	else if (flag==2){
+	showPopup('fraccionar/detallefracinfo?codigo='+codigo+'&flag='+flag,'#poplistafrac','990','400','Convenios realizados con el INFOSAT');
+	}
+}
+
+//PARA MOSTRAR LOS PAGOS REALIZADOS
+function print_recibos(flag){
+	var codigo=$('#divCodigo').html();
+	showPopup('rentascaja/verpagos?codigo='+codigo+'&flag='+flag,'#poplistafrac','990','400','Recibos');
+}
+
 
 function mostrarRecContri(criterio){
 	
@@ -1183,12 +1270,10 @@ function imprimeCuentaPdfPpago(criterio){
 
 
 function deuda(est, obj){
-
 		var dt=0;
 		var ctotal='';
 		
 	if ( obj.get('ubica').trim()=='EM-*' || obj.get('ubica').trim()=='FR'){
-		//alert(obj.get('ubica'));
 	}
 	else{
 		if(est==true){
@@ -1273,20 +1358,7 @@ function deuda(est, obj){
 		
 	}
 }
-/*
-function fraccionar(){
-	var totalpagar=0.00;
-	
-	var totalpagar=$('#txt_total').val().replace(',','');
 
-	if(totalpagar==0.00){
-//	alert(totalpagar);
-		infoMessage('SIGMUN','El monto seleccionado debe ser mayor ');
-	}else{
-		showPopup('fraccionar/index?totalpagar='+totalpagar,'#popfraccionardeuda','990','400','Fraccionar Deuda');
-	}	
-}
-*/
 function fraccionar(){
 
 //CAPTURAMOS EL TIPO DE OPCION DE FRACCIONAMIENTO

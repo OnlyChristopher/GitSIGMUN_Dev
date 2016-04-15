@@ -158,6 +158,20 @@ function ReporteVehiculosMenores(){
 	
 }
 
+function reportediario(){
+
+	//var tipooperacion=$('#cmbOperacion').val();
+	var fecha=$('#fecha').val();
+	var anno = fecha.substring(6,10);
+
+
+	//alert(anno);
+	//var tesohasta=$('#tesohasta').val();
+	showPopupReport('schema=&tipo=pdf&nombrereporte=PAGOS_CONTRI&param=anno^'+anno+'|fecha^'+fecha,'pouprptdiario',700,600,'INGRESOS DIARIOS');
+	
+}
+
+
 
 
 $('#cmbOperacion').change(function(){
