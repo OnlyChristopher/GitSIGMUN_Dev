@@ -356,7 +356,7 @@ class RentascajaController extends Zend_Controller_Action
 					
 						$tabla.='
 							<span><Hr><br>Contribuyente :'.$rows[$i][9].'<br></span>
-							<span>Recibo N� :'.$rows[$i][0].'<br></span>
+							<span>Recibo N° :'.$rows[$i][0].'<br></span>
 							<span>Fecha de pago : '.$rows[$i][1].'<br></span>
 							<span>Total Pagado : '.$rows[$i][2].'<br><br></span>
 				
@@ -381,7 +381,7 @@ class RentascajaController extends Zend_Controller_Action
 								<tr align="Center">
 									<td>'.$rows[$i][3].'</td>
 									<td>'.$rows[$i][4].'</td>
-									<td align="Left" >'.$rows[$i][6].'</td>
+									<td align="Left" >'.utf8_encode($rows[$i][6]).'</td>
 									<td>'.$rows[$i][5].'</td>
 									<td>'.$rows[$i][10].'</td>
 									<td>'.$rows[$i][11].'</td>
